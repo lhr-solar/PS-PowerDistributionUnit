@@ -1,0 +1,463 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "cca971b9-d711-49db-8483-774cce0ddc7a")
+	(paper "A4")
+	(lib_symbols)
+	(text_box "[FOR VERSION A ONLY]\nI_{CL} = K_{CL} / R_{CL}\nK_{CL} = 102 [A*kΩ]\n\nR_{CL} range: 5 kΩ (20.4 A) - 25 kΩ (4.08 A)\nIf R_{CL} is open, current limit will default to 29.1 A. \n\nThere is a brief blanking period at startup and a deglitching period of 3 µs before the short circuit protection will act. \n\nNote: these values are approxiamte and values can range. Refer to \"CURRENT LIMIT CHARACTERISTICS\" in datasheet. "
+		(exclude_from_sim no)
+		(at 91.44 22.86 0)
+		(size 66.04 26.67)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "012adacd-d27a-448d-aa26-3160f094893b")
+	)
+	(text_box "SENSING"
+		(exclude_from_sim no)
+		(at 19.05 19.05 0)
+		(size 71.12 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left top)
+		)
+		(uuid "042733fd-8998-411a-99a9-0788666b9139")
+	)
+	(text_box "[FOR VERSION A ONLY]\nFor current sensing I range 0 - 30.5 A, I_{SNSI} current range is 0 - 8 mA. \n(values calculated from equation, current limit range is 4.1 A - 22 A, with 29.1 A if ILIM is left open)\nFor thermal sensing range -40 - 150 °C, I_{SNST} current range is 0 - 2.7 mA. \n(values obtained datasheet table, operating temp range is -40 - 125 °C)\n\nR_{SNS} = 375 Ω.\nCurrent sensing range: 0 - 3 V\nThermal sensing range: 0 - 1.0125 V (use ADS131M08 input PGA)\n\nWhen the device is faulted, it will output I_{SNSFH} (4.5 mA typ). \n\nWhen EN is low and DIA_EN is high, the device will perform open-load detection and ouput I_{SNSFH} if detected.\n\nIt is recommended for the software to take multiple samples and use a median."
+		(exclude_from_sim no)
+		(at 19.05 38.1 0)
+		(size 71.12 29.21)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "63089172-22c6-43d1-9273-eac692aa9ba3")
+	)
+	(text_box "CURRENT LIMIT"
+		(exclude_from_sim no)
+		(at 91.44 19.05 0)
+		(size 66.04 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left top)
+		)
+		(uuid "95a56de8-c3be-4574-a4b7-c6f49f8a9752")
+	)
+	(table
+		(column_count 4)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 6.35 7.62 21.59 35.56)
+		(row_heights 2.54 2.54 2.54 2.54 5.08)
+		(cells
+			(table_cell "SEL1"
+				(exclude_from_sim no)
+				(at 19.05 22.86 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "efa256e3-ca40-49fb-8047-bf5be79906de")
+			)
+			(table_cell "SEL2"
+				(exclude_from_sim no)
+				(at 25.4 22.86 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "100cdaf6-6913-4063-afef-770fbbabce37")
+			)
+			(table_cell "Output"
+				(exclude_from_sim no)
+				(at 33.02 22.86 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "2611ec84-8bec-48a1-a886-7d6c914d62e5")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 54.61 22.86 0)
+				(size 35.56 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "358ab5f9-9232-4c6c-b13a-f180bf3bbfbd")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 19.05 25.4 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e50dcf65-45b2-462b-9220-8a1b6b841830")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 25.4 25.4 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b5fa87bb-6c5d-4b66-8791-c00b1392e01d")
+			)
+			(table_cell "CH1 Current"
+				(exclude_from_sim no)
+				(at 33.02 25.4 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "25c28b34-5a9a-467a-8549-50bda8dfb7b8")
+			)
+			(table_cell "I_{SNSI} = I_{OUT} / K_{SNS}      K_{SNS} = 3000"
+				(exclude_from_sim no)
+				(at 54.61 25.4 0)
+				(size 35.56 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 2)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1 1)
+					)
+					(justify left top)
+				)
+				(uuid "9e71da5d-7568-46c7-8dff-e3aa7efdaed7")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 19.05 27.94 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "586369b5-ca64-44bf-ac61-a5c66d3dc5ff")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 25.4 27.94 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "90c645ed-9ee9-40b7-ac0f-9238c309424b")
+			)
+			(table_cell "CH2 Current"
+				(exclude_from_sim no)
+				(at 33.02 27.94 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "90f9202a-8099-4220-92ae-9e9820f850b6")
+			)
+			(table_cell "rgb(124, 124, 124)"
+				(exclude_from_sim no)
+				(at 54.61 27.94 0)
+				(size 35.56 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 0 0)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "93c0b736-cdfa-4db4-aac5-da4aa621651c")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 19.05 30.48 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "467fbbf7-68b5-4b77-849c-83cad8f91ce8")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 25.4 30.48 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "486f7902-c206-4855-bd08-16956785c8f2")
+			)
+			(table_cell "Device Temperature"
+				(exclude_from_sim no)
+				(at 33.02 30.48 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1c181fd7-2718-4016-bda2-55684eeba121")
+			)
+			(table_cell "I_{SNST} = (T_{J} - 25 [°C]) * dI_{SNST}/dT + 0.85      dI_{SNST}/dT = 0.011 [mA/°C]"
+				(exclude_from_sim no)
+				(at 54.61 30.48 0)
+				(size 35.56 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1 1)
+					)
+					(justify left top)
+				)
+				(uuid "3b5f11b9-79e4-4291-ab56-f308d61ee802")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 19.05 33.02 0)
+				(size 6.35 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7327f22d-940b-4b03-9275-4c233eb566ff")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 25.4 33.02 0)
+				(size 7.62 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d76737ae-0cfc-4d50-af86-449fb38d828f")
+			)
+			(table_cell "X"
+				(exclude_from_sim no)
+				(at 33.02 33.02 0)
+				(size 21.59 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "39aacc33-4bde-4036-b073-6848f0319166")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 54.61 33.02 0)
+				(size 35.56 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b350889f-b975-43e5-b0b7-5917a98aa676")
+			)
+		)
+	)
+)

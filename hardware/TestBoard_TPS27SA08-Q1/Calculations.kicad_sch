@@ -1,0 +1,422 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "cca971b9-d711-49db-8483-774cce0ddc7a")
+	(paper "A4")
+	(lib_symbols)
+	(text_box "SENSING"
+		(exclude_from_sim no)
+		(at 16.51 15.24 0)
+		(size 88.9 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left top)
+		)
+		(uuid "2f4d8c5d-e423-40e2-917b-c3ab632ec13e")
+	)
+	(text_box "[FOR VERSION A ONLY]\n> For current sensing I range 0 - 30 A, I_{SNSI} current range is 0 - 6.522 mA. \n  (from datasheet, worst-case current limit range is 12.8 - 27.8 A (nominally 20 A))\n> For thermal sensing range -40 - 150 °C, I_{SNST} current range is 0 - 2.25 mA. \n  (values obtained from datasheet table, operating temp range is -40 - 125 °C)\n> For voltage sensing range 0 - 40 V, I_{SNSV} current range is 0 - 3.468 mA. \n  (values obtained from datasheet table, operating voltage range is 8 - 36 V, with max long transient 40 V)\n\nWhen the device is faulted, SNS will output I_{SNSFH} (6.9 mA nom, 7.6 mA max) and the ~{ST} pin will be pulled low.\n\nAs the ADC full-scale voltage is 3.3 V, target a SNS voltage range of 0 - 3 V (to provide some buffer).\nResistor value is selected to be R_{SNS} = 392 Ω (ideally 394.737 Ω), then...\nFault range: 0 - 2.9792 V\nCurrent sensing range: 0 - 2.568 V\nThermal sensing range: 0 - 0.882 V (consider using PGA)\nVoltage sensing range: 0 - 1.359 V (consider using PGA)\n\nPreferably a 1% tolerance resistor. (Maximum voltage with worst-case resistor 3.009 V)\nConsider measuring each resistor and populating its precise value in code to maximize sensing accuracy.\n\nWhen EN is low and DIA_EN is high, the device will perform open-load detection and ouput I_{SNSFH} if detected.\n\nIt is recommended for the software to take multiple samples and use a median."
+		(exclude_from_sim no)
+		(at 16.51 34.29 0)
+		(size 88.9 40.64)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "ea5d671e-bb3c-4c06-a50e-8934d251ee68")
+	)
+	(table
+		(column_count 4)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 6.35 7.62 21.59 53.34)
+		(row_heights 2.54 2.54 2.54 5.08 2.54)
+		(cells
+			(table_cell "SEL1"
+				(exclude_from_sim no)
+				(at 16.51 19.05 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "efa256e3-ca40-49fb-8047-bf5be79906de")
+			)
+			(table_cell "SEL2"
+				(exclude_from_sim no)
+				(at 22.86 19.05 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "100cdaf6-6913-4063-afef-770fbbabce37")
+			)
+			(table_cell "Output"
+				(exclude_from_sim no)
+				(at 30.48 19.05 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "2611ec84-8bec-48a1-a886-7d6c914d62e5")
+			)
+			(table_cell "Conversion"
+				(exclude_from_sim no)
+				(at 52.07 19.05 0)
+				(size 53.34 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(thickness 0.254)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "358ab5f9-9232-4c6c-b13a-f180bf3bbfbd")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 16.51 21.59 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "e50dcf65-45b2-462b-9220-8a1b6b841830")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 22.86 21.59 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "b5fa87bb-6c5d-4b66-8791-c00b1392e01d")
+			)
+			(table_cell "Load Current"
+				(exclude_from_sim no)
+				(at 30.48 21.59 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "25c28b34-5a9a-467a-8549-50bda8dfb7b8")
+			)
+			(table_cell "I_{SNSI} = I_{OUT} / K_{SNS}            K_{SNS} = 4600"
+				(exclude_from_sim no)
+				(at 52.07 21.59 0)
+				(size 53.34 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1 1)
+					)
+					(justify left top)
+				)
+				(uuid "9e71da5d-7568-46c7-8dff-e3aa7efdaed7")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 16.51 24.13 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "586369b5-ca64-44bf-ac61-a5c66d3dc5ff")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 22.86 24.13 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "90c645ed-9ee9-40b7-ac0f-9238c309424b")
+			)
+			(table_cell "Not Used"
+				(exclude_from_sim no)
+				(at 30.48 24.13 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "90f9202a-8099-4220-92ae-9e9820f850b6")
+			)
+			(table_cell "rgb(124, 124, 124)"
+				(exclude_from_sim no)
+				(at 52.07 24.13 0)
+				(size 53.34 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "93c0b736-cdfa-4db4-aac5-da4aa621651c")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 16.51 26.67 0)
+				(size 6.35 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "467fbbf7-68b5-4b77-849c-83cad8f91ce8")
+			)
+			(table_cell "0"
+				(exclude_from_sim no)
+				(at 22.86 26.67 0)
+				(size 7.62 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "486f7902-c206-4855-bd08-16956785c8f2")
+			)
+			(table_cell "Device Temperature"
+				(exclude_from_sim no)
+				(at 30.48 26.67 0)
+				(size 21.59 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "1c181fd7-2718-4016-bda2-55684eeba121")
+			)
+			(table_cell "I_{SNST} = (T_{J} - 25 [°C]) * dI_{SNST}/dT + 0.85                  dI_{SNST}/dT = 0.0112 [mA/°C]"
+				(exclude_from_sim no)
+				(at 52.07 26.67 0)
+				(size 53.34 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1 1)
+					)
+					(justify left top)
+				)
+				(uuid "3b5f11b9-79e4-4291-ab56-f308d61ee802")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 16.51 31.75 0)
+				(size 6.35 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "7327f22d-940b-4b03-9275-4c233eb566ff")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 22.86 31.75 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "d76737ae-0cfc-4d50-af86-449fb38d828f")
+			)
+			(table_cell "Supply Voltage"
+				(exclude_from_sim no)
+				(at 30.48 31.75 0)
+				(size 21.59 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "39aacc33-4bde-4036-b073-6848f0319166")
+			)
+			(table_cell "I_{SNSV} = (V_{BB}) * dI_{SNSV}/dV      K_{SNSV} = 0.0867"
+				(exclude_from_sim no)
+				(at 52.07 31.75 0)
+				(size 53.34 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1 1)
+					)
+					(justify left top)
+				)
+				(uuid "b350889f-b975-43e5-b0b7-5917a98aa676")
+			)
+		)
+	)
+)
