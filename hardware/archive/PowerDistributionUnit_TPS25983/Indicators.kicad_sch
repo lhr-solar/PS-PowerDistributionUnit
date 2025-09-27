@@ -1,0 +1,4370 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "8592bc78-546b-447e-a112-ae221689602d")
+	(paper "A4")
+	(title_block
+		(title "Indicators")
+		(date "2025-04-17")
+		(rev "A")
+		(company "Longhorn Racing Solar")
+		(comment 1 "Changxu Liu, Watts Yasueda")
+	)
+	(lib_symbols
+		(symbol "Device:C_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.254 1.778 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Small"
+				(at 0.254 -2.032 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Unpolarized capacitor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "capacitor cap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "C_Small_0_1"
+				(polyline
+					(pts
+						(xy -1.524 0.508) (xy 1.524 0.508)
+					)
+					(stroke
+						(width 0.3048)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
+					)
+					(stroke
+						(width 0.3302)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 2.032)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "PowerDistributionUnitLib:587-1016-247F"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at -7.112 8.636 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "587-1016-247F"
+				(at 4.064 8.636 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+				(at -12.7 16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+				(at -14.224 16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at -14.224 12.192 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "587-1016-247F_0_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end -1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27) (xy 1.27 0) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -1.27)
+					(end -1.27 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy -1.524 2.794) (xy -0.762 2.794) (xy -1.524 2.794) (xy -1.524 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 1.27) (xy -0.508 2.794) (xy 0.254 2.794) (xy -0.508 2.794) (xy -0.508 2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "587-1016-247F_1_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "RGB"
+					(at 0 -2.54 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "587-1016-247F_1_1"
+				(rectangle
+					(start -7.62 7.62)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 1.27 0)
+					(length 2.54)
+					(name "CKI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -1.27 0)
+					(length 2.54)
+					(name "SDI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 1.27 180)
+					(length 2.54)
+					(name "CKO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -1.27 180)
+					(length 2.54)
+					(name "SDO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(no_connect
+		(at 247.65 101.6)
+		(uuid "843c793b-fb9b-45cf-8940-4e9bee1de16e")
+	)
+	(no_connect
+		(at 247.65 104.14)
+		(uuid "9d90779a-07d5-4115-839d-0c9714a28829")
+	)
+	(wire
+		(pts
+			(xy 87.63 104.14) (xy 93.98 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0039ebfb-42d1-4f23-b715-3106954e280b")
+	)
+	(wire
+		(pts
+			(xy 66.04 128.27) (xy 66.04 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09565e5f-33de-4fb9-b76d-86cc4d33109f")
+	)
+	(wire
+		(pts
+			(xy 252.73 74.93) (xy 254 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09bc656e-5083-4c99-870d-bf00496ee7a8")
+	)
+	(wire
+		(pts
+			(xy 78.74 128.27) (xy 78.74 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cc080ca-46b5-4e29-a7fd-3de890c77fa9")
+	)
+	(wire
+		(pts
+			(xy 254 83.82) (xy 252.73 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d0b8c30-0c92-417b-b154-6f82950353e0")
+	)
+	(wire
+		(pts
+			(xy 167.64 101.6) (xy 173.99 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f3d44d7-6e4b-4816-9b60-3e78c1b2c0af")
+	)
+	(wire
+		(pts
+			(xy 167.64 104.14) (xy 173.99 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12e146aa-37b2-4737-a8e4-9099a038e829")
+	)
+	(wire
+		(pts
+			(xy 33.02 87.63) (xy 34.29 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14a5a570-3585-40d8-a27e-bb966fac8384")
+	)
+	(wire
+		(pts
+			(xy 167.64 72.39) (xy 173.99 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "163a703d-5496-488f-85c6-79ab121ef6eb")
+	)
+	(wire
+		(pts
+			(xy 116.84 151.13) (xy 116.84 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "169f1e52-4b19-47bc-956e-9b6d4f74bc6c")
+	)
+	(wire
+		(pts
+			(xy 104.14 143.51) (xy 104.14 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17947155-9fae-4018-9a7b-3459af71eb11")
+	)
+	(wire
+		(pts
+			(xy 53.34 135.89) (xy 53.34 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e1048f8-53b3-400b-9ba2-ba7ef426dac6")
+	)
+	(wire
+		(pts
+			(xy 252.73 85.09) (xy 33.02 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f070501-1d0c-4ec7-8db6-4653a682e749")
+	)
+	(wire
+		(pts
+			(xy 194.31 74.93) (xy 200.66 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "208a4aa5-710e-424c-8a9e-9fcd318d6dae")
+	)
+	(wire
+		(pts
+			(xy 114.3 104.14) (xy 120.65 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2096b794-cc08-4f00-8b42-23d38128826c")
+	)
+	(wire
+		(pts
+			(xy 60.96 101.6) (xy 67.31 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2360c426-0aa2-4c2a-9a86-313aa67d9cf7")
+	)
+	(wire
+		(pts
+			(xy 247.65 72.39) (xy 254 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2754bd7c-4ca6-4a1c-8fad-783264116a48")
+	)
+	(wire
+		(pts
+			(xy 220.98 101.6) (xy 227.33 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2847eaf6-8674-4b54-af0f-6c9280633256")
+	)
+	(wire
+		(pts
+			(xy 78.74 143.51) (xy 78.74 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d646ce0-3f8c-4cdf-8279-b39a9102dbf6")
+	)
+	(wire
+		(pts
+			(xy 87.63 101.6) (xy 93.98 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30f69538-bf6b-4e17-a387-ef5384f33df5")
+	)
+	(wire
+		(pts
+			(xy 167.64 74.93) (xy 173.99 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "323b89ea-b482-40e1-a0ae-1db1f50f88c1")
+	)
+	(wire
+		(pts
+			(xy 91.44 143.51) (xy 91.44 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32f82587-211e-4e8f-b7c7-744af65b1022")
+	)
+	(wire
+		(pts
+			(xy 53.34 151.13) (xy 53.34 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c7a7caf-0459-490f-8f77-a2de55cc7975")
+	)
+	(wire
+		(pts
+			(xy 78.74 151.13) (xy 78.74 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "410a4e47-4f85-4bb9-80e7-f9265d9fb763")
+	)
+	(wire
+		(pts
+			(xy 40.64 128.27) (xy 40.64 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "413d29d2-3dcf-4620-9661-a5520ba8f879")
+	)
+	(wire
+		(pts
+			(xy 34.29 101.6) (xy 40.64 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "426a5720-5426-4cb2-8959-af04f5cebb56")
+	)
+	(wire
+		(pts
+			(xy 129.54 128.27) (xy 129.54 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43e2b0d2-2557-4276-a72f-b4dea1d60d98")
+	)
+	(wire
+		(pts
+			(xy 60.96 74.93) (xy 67.31 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a0afd26-9c0d-489c-887c-77285f2eda12")
+	)
+	(wire
+		(pts
+			(xy 116.84 135.89) (xy 116.84 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a5aaa1f-8d55-48b2-ac09-4a8438bd87b9")
+	)
+	(wire
+		(pts
+			(xy 33.02 104.14) (xy 40.64 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "502e8b31-11ec-4bc6-b8b9-89d962d87563")
+	)
+	(wire
+		(pts
+			(xy 247.65 74.93) (xy 252.73 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5215ac50-2d92-4933-acf4-48cfcd0fca44")
+	)
+	(wire
+		(pts
+			(xy 129.54 151.13) (xy 129.54 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "544704e5-0aa2-4ee3-ab3a-b831ffc5da40")
+	)
+	(wire
+		(pts
+			(xy 254 86.36) (xy 255.27 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ae70dd5-983e-4291-ab24-501ae2e9e1ae")
+	)
+	(wire
+		(pts
+			(xy 194.31 72.39) (xy 200.66 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6188e08a-f8e6-4e60-9bbe-5db8a4e0172c")
+	)
+	(wire
+		(pts
+			(xy 194.31 104.14) (xy 200.66 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6257df4b-24d0-46f7-b4d2-b6bb8821e9dd")
+	)
+	(wire
+		(pts
+			(xy 140.97 104.14) (xy 147.32 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6589081a-97dd-4dab-8e78-bdc900754fa9")
+	)
+	(wire
+		(pts
+			(xy 31.75 86.36) (xy 31.75 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b22297d-859e-4ff4-9b52-5a967e731c26")
+	)
+	(wire
+		(pts
+			(xy 116.84 143.51) (xy 116.84 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b7cba85-7312-4185-b580-3ba874d66c2a")
+	)
+	(wire
+		(pts
+			(xy 66.04 135.89) (xy 66.04 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6be7c89b-e7bc-4cd3-b921-7544324c6e0d")
+	)
+	(wire
+		(pts
+			(xy 129.54 135.89) (xy 129.54 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ec850ac-c457-4669-a48d-1ac522324839")
+	)
+	(wire
+		(pts
+			(xy 87.63 72.39) (xy 93.98 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "706e7728-a4a4-470f-a3e9-ec233809a499")
+	)
+	(wire
+		(pts
+			(xy 60.96 104.14) (xy 67.31 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71ef1ae6-c08b-41a9-808e-bac1da685285")
+	)
+	(wire
+		(pts
+			(xy 116.84 128.27) (xy 116.84 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a628f89-2e3a-4ff8-af84-7590fb9946ed")
+	)
+	(wire
+		(pts
+			(xy 91.44 151.13) (xy 91.44 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7af4775d-794d-4b96-bdf4-30953db6ffdd")
+	)
+	(wire
+		(pts
+			(xy 140.97 74.93) (xy 147.32 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89258535-aa68-438b-9f30-52e223891178")
+	)
+	(wire
+		(pts
+			(xy 34.29 86.36) (xy 254 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf67f52-8956-4b7e-b2cd-ccf2330884f8")
+	)
+	(wire
+		(pts
+			(xy 40.64 151.13) (xy 40.64 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cfecfcc-e193-4a80-a1f2-93dcd92c474a")
+	)
+	(wire
+		(pts
+			(xy 255.27 73.66) (xy 254 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "932260ab-cc57-4327-9a42-d6c12c1cb53d")
+	)
+	(wire
+		(pts
+			(xy 220.98 74.93) (xy 227.33 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "935f29b3-a0ad-4ff4-9197-c274a30eb458")
+	)
+	(wire
+		(pts
+			(xy 66.04 151.13) (xy 66.04 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "975776cd-fda5-4855-9d9d-703e5779f476")
+	)
+	(wire
+		(pts
+			(xy 140.97 101.6) (xy 147.32 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9876b602-d15d-4bdb-8acc-1bc3a7b1b77e")
+	)
+	(wire
+		(pts
+			(xy 66.04 143.51) (xy 66.04 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bb6e1bb-9127-4ee7-8343-d33fa3d9aece")
+	)
+	(wire
+		(pts
+			(xy 104.14 135.89) (xy 104.14 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e24bb1d-5173-4310-9d5f-6c3bafe37a99")
+	)
+	(wire
+		(pts
+			(xy 104.14 128.27) (xy 104.14 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a910d177-40c7-469b-9ef7-5b322d0f3c45")
+	)
+	(wire
+		(pts
+			(xy 53.34 143.51) (xy 53.34 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa8507bc-567b-45df-b95a-9cd1b767b8dc")
+	)
+	(wire
+		(pts
+			(xy 194.31 101.6) (xy 200.66 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac603eaf-558c-4745-ab27-ab6bf38df626")
+	)
+	(wire
+		(pts
+			(xy 114.3 101.6) (xy 120.65 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b07c5d95-5d1e-4992-8ee2-1de19c38326e")
+	)
+	(wire
+		(pts
+			(xy 129.54 143.51) (xy 129.54 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b45d4f59-e717-478d-bece-00b5c6a7124a")
+	)
+	(wire
+		(pts
+			(xy 87.63 74.93) (xy 93.98 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9665ec4-8cfb-4c9c-9993-e40191f66dc4")
+	)
+	(wire
+		(pts
+			(xy 33.02 85.09) (xy 31.75 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd8ed9cf-1a09-46a6-8515-8786a26f610e")
+	)
+	(wire
+		(pts
+			(xy 40.64 143.51) (xy 40.64 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be3b73e6-ca87-49af-93b3-031dd9953a29")
+	)
+	(wire
+		(pts
+			(xy 78.74 135.89) (xy 78.74 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf336d9e-00b2-4526-ad46-e07cbdf5a122")
+	)
+	(wire
+		(pts
+			(xy 91.44 135.89) (xy 91.44 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c14b32d5-330e-42f3-a664-115f37bbca55")
+	)
+	(wire
+		(pts
+			(xy 31.75 102.87) (xy 33.02 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c207e142-fd62-4045-a135-a568d7ecb6ef")
+	)
+	(wire
+		(pts
+			(xy 34.29 101.6) (xy 33.02 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4c7f3f7-286a-40ff-9580-135fd01c5916")
+	)
+	(wire
+		(pts
+			(xy 40.64 135.89) (xy 40.64 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c559ceb9-1eed-4f30-a1d2-ac751b54d54f")
+	)
+	(wire
+		(pts
+			(xy 140.97 72.39) (xy 147.32 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56955ea-1327-4d83-a0f3-e535d877afe5")
+	)
+	(wire
+		(pts
+			(xy 33.02 100.33) (xy 33.02 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9ef0ce4-0628-44c6-83a0-b7c3f360c814")
+	)
+	(wire
+		(pts
+			(xy 91.44 128.27) (xy 91.44 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf0ff0a6-899e-4007-918b-8c0e73f6cc1e")
+	)
+	(wire
+		(pts
+			(xy 114.3 72.39) (xy 120.65 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0193ebb-4720-42cb-8017-ee4cc2821356")
+	)
+	(wire
+		(pts
+			(xy 53.34 128.27) (xy 53.34 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d13ba7a0-f3f1-43b1-9152-37885d8fb829")
+	)
+	(wire
+		(pts
+			(xy 104.14 151.13) (xy 104.14 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d694911a-16ba-4396-adfa-e4ff8e39fa5d")
+	)
+	(wire
+		(pts
+			(xy 220.98 104.14) (xy 227.33 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e083aec0-e08c-47f7-baa8-9aa1a16b9506")
+	)
+	(wire
+		(pts
+			(xy 254 76.2) (xy 254 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e837a4cd-ecbf-42a9-919b-0c47e4237924")
+	)
+	(wire
+		(pts
+			(xy 220.98 72.39) (xy 227.33 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e83ee94f-68f0-4ab7-b167-5c350b094d2a")
+	)
+	(wire
+		(pts
+			(xy 114.3 74.93) (xy 120.65 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e851bde3-ad98-42d8-bbd0-b296b7a81a25")
+	)
+	(wire
+		(pts
+			(xy 60.96 72.39) (xy 67.31 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb9f6bb9-33bb-4eae-8de3-964fbbdfc6f8")
+	)
+	(wire
+		(pts
+			(xy 255.27 73.66) (xy 255.27 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6c60371-e708-4e75-b6d1-9cd7c2e2b370")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 227.33 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "00c945eb-6184-437c-8e65-98a2ee85082c")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 227.33 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0138af44-d4db-4a37-8adf-4cb4e58119b7")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 40.64 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0f242b66-26e2-4cee-bc54-c00be6ed61d5")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 53.34 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1e5376a7-13bb-4614-aab3-1fac8c8c996e")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 200.66 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "285f65dc-f154-4ecb-bbe5-f99b9f9acefb")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 66.04 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2be4f070-66dd-433b-8633-9c6982929ffa")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 129.54 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "342bf2f4-5fb9-45ff-a8dd-c2886a3ee90e")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 104.14 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3483cbf1-5589-44bb-a708-4bf698340fc5")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 129.54 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "353251d5-2c21-42ee-89ef-78b55463a76b")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 67.31 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "39ff363c-0629-4333-9468-0173cc17080c")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 67.31 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "39ffd01d-f23a-46a4-b224-53698ac0dba2")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 53.34 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3cb8a67a-30c9-43ea-8fe8-5f01926e5ce3")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 40.64 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4b5f61bb-e04e-479b-818c-d00d613c6c0d")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 147.32 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4dff5322-6c6f-4300-8a67-aac324eadc46")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 93.98 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f4ea740-1bc5-4a63-8792-36a117694591")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 116.84 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "51b91ded-e9ef-4cdb-8d54-5629f1f254f7")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 173.99 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "54b931d7-483d-4591-baf1-2377b65cd5ee")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 91.44 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60ce3d0b-d1b0-4b5b-a18d-71ef30be3021")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 173.99 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "65b889d3-d7ad-41ff-8f7d-56f0724699d1")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 173.99 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ab6efd8-f5c8-461f-9464-5b5ed749a9df")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 93.98 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6d3254b8-6296-4b83-a733-566ce6e6ab49")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 104.14 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6f149c28-8cb2-4818-b416-2298ac28474a")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 129.54 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7066fd86-a281-455f-b96c-78b2e22d4ca4")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 147.32 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "70e02a33-8bb8-4763-b2cc-09f34ae396a0")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 93.98 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "77584c46-b5db-4d83-b51c-50ead8dcc949")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 40.64 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "77dca85f-61dd-44b1-a4c4-f68ed6cf8200")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 173.99 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7c39f1d4-502e-4ca0-ad2e-df77bbbf6fdf")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 147.32 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7d0b537d-75c6-43ec-9e18-ce9533aed85d")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 40.64 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7eb37a79-dd95-4b60-843e-3eab1835d0fb")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 93.98 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "921844de-26ed-49bd-8b18-fc611139c29b")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 91.44 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9768df39-17c7-4afa-86a9-96bedbc206ba")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 78.74 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "99d16477-4259-4d3e-984c-a56ba562e381")
+	)
+	(hierarchical_label "CK"
+		(shape input)
+		(at 40.64 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a0a31a48-63ee-4f2e-81b6-a9543c0c9ca2")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 40.64 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a6e20a08-8cb3-4e8e-b9be-dd4655fb7619")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 116.84 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "aa560ead-2d1d-4d25-a3ee-79712bf5b106")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 66.04 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "afeb8e37-3f07-41ac-afe2-8f8ac3b9a3fc")
+	)
+	(hierarchical_label "SD"
+		(shape input)
+		(at 40.64 74.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3997fb1-ee9c-446d-82e9-b0c5af38d4f5")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 200.66 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b4e95375-711a-4bda-a3c8-8e0271cac425")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 78.74 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b4f5e489-5f66-405a-a07c-7cc7165442c3")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 129.54 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bc354d63-bf13-4172-a942-8bd675d858bf")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 53.34 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bdb53ec0-dd37-49c7-8a46-6440a0bfdfed")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 104.14 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c1084fb4-3df9-41bb-ad69-952065de5561")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 40.64 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c1bca6a3-2e4c-4747-ab26-3a530c9689c9")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 147.32 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c20b7d43-301b-4c95-89c2-617a22493325")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 67.31 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c30eb39b-44fe-4b97-b52a-3a45c8d3b818")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 53.34 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c419d8a3-9b5e-4cf2-a052-8c02b9a55e66")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 200.66 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c54d573b-3053-4b4d-b695-68cfd4632b13")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 104.14 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c63fa168-a5c5-409b-82f1-0482bacd55b6")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 227.33 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c90650ca-c0a5-4f5a-9121-50381f6df8bb")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 66.04 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c916b43f-8fe3-4bd2-8c81-94f10dda2f13")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 66.04 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cc2e2ae1-a541-4458-b3fd-6f6fad68f03c")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 227.33 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d0b6fca4-96c6-4976-aeb4-74c7a3068efd")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 91.44 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d1ba5642-46e4-4095-a0cb-173a2f79b776")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 40.64 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d3db7198-b575-40dc-b8d3-4280f394904b")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 120.65 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d419f201-40d0-45bd-a10b-2b4968cad158")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 120.65 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d5af4d9b-3eca-48ae-a154-0e63567dd8f0")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 120.65 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d93db1cb-5a38-4258-9dda-49c00825e2cc")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 67.31 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dee41676-270b-437f-a163-a5508eb11d95")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 91.44 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e2e68b3f-5119-4ab7-9c58-bd2db2dfbb5f")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 120.65 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e3fa3bb0-9c49-49db-b9da-a6b981999998")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 200.66 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ec49c163-934a-45b1-9daa-d70f3ed2b947")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 116.84 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ef1867b6-1f0b-4856-8d5e-f5e623774487")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 78.74 128.27 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f1ce792c-9caf-46b5-825a-cd4a8344b74d")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 78.74 143.51 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f3f7e855-78d6-4930-8c61-3169bdc5b0e5")
+	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 40.64 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f71af580-ffb1-4380-9c00-2fad6d3ac8c3")
+	)
+	(hierarchical_label "GND"
+		(shape passive)
+		(at 116.84 138.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fc61900e-69a1-4af3-b903-5ce17a4481f7")
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 78.74 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "050cd6fd-a2ca-4696-adf4-896720116450")
+		(property "Reference" "C198"
+			(at 81.28 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 81.28 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 78.74 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 78.74 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ee11fc76-2aba-4bd5-a465-746ce8af73e3")
+		)
+		(pin "1"
+			(uuid "d2673346-d4b7-4253-8151-24576775fc0a")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C198")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 78.74 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0516bfab-851a-4ab6-94c2-59b8d4e931bc")
+		(property "Reference" "C190"
+			(at 81.28 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 81.28 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 78.74 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 78.74 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a8eff094-83bb-402d-9459-8dc474bd8482")
+		)
+		(pin "1"
+			(uuid "767c67f8-946e-47d1-9876-f8d2996c4a92")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C190")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 129.54 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0664ff81-9c08-4e33-8d68-81b0a44c3d1e")
+		(property "Reference" "C230"
+			(at 132.08 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 132.08 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 129.54 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 129.54 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ce0edfa6-5042-4059-a519-93d0bb7c3b2d")
+		)
+		(pin "1"
+			(uuid "ff1abd35-bf5a-4e78-9692-f24252985c37")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C230")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 157.48 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d095ce5-e737-43fc-8f81-3753baad4632")
+		(property "Reference" "D45"
+			(at 157.48 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 157.48 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 144.78 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 143.256 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 143.256 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "09a91a09-2ddd-42f3-828c-e4ab7561cda5")
+		)
+		(pin "2"
+			(uuid "83a9d65c-3928-4ece-aeda-92ff7a220488")
+		)
+		(pin "1"
+			(uuid "8b50b1a8-2e92-4e77-9125-f849e55e5d40")
+		)
+		(pin "5"
+			(uuid "70a7e3d8-71f9-46c2-a68f-4df1c5bbf2e1")
+		)
+		(pin "4"
+			(uuid "f537fe6f-7d4c-491a-bc36-51ff446f0bd6")
+		)
+		(pin "3"
+			(uuid "09285b25-6af6-4b84-91de-e0d1adb97d61")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 237.49 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0e2038d5-8c51-46f8-9163-7ddbfbdefcff")
+		(property "Reference" "D48"
+			(at 237.49 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 237.49 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 224.79 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 223.266 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 223.266 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "043e1d3b-0637-4366-bab8-d9f49eb6e464")
+		)
+		(pin "2"
+			(uuid "4da2b47d-140c-47d4-85df-2073fb086471")
+		)
+		(pin "1"
+			(uuid "4251a6bc-3ff4-46df-b093-59f627212f7f")
+		)
+		(pin "5"
+			(uuid "5a0f4db0-480a-4383-810c-b95736923860")
+		)
+		(pin "4"
+			(uuid "e6103894-6631-42fa-9658-b40905e6f8d3")
+		)
+		(pin "3"
+			(uuid "87076655-a936-483e-b056-b837ce99e8f7")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 77.47 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "13b37a20-9a6a-41f8-9988-4f51dd192441")
+		(property "Reference" "D42"
+			(at 77.47 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 77.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 64.77 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 63.246 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.246 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0b8886d9-b9fb-44fb-9368-efd24b8e8286")
+		)
+		(pin "2"
+			(uuid "9035194b-e80e-4f38-b152-655fbfdb2134")
+		)
+		(pin "1"
+			(uuid "a186ec1b-19bd-4e6e-b67b-06fe2dda5907")
+		)
+		(pin "5"
+			(uuid "5e4433f4-12e7-49b5-ae63-04f53392fc8d")
+		)
+		(pin "4"
+			(uuid "5671ddf9-4016-40a6-8e61-7ced56dbf23c")
+		)
+		(pin "3"
+			(uuid "8ef373c6-358f-4b15-bcd0-174cef2799ed")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 116.84 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "196bf842-a53a-47b9-9aa3-0a1ca02f68ad")
+		(property "Reference" "C201"
+			(at 119.38 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 119.38 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 116.84 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 116.84 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "8785836b-dd44-4517-bcf5-258e6c460597")
+		)
+		(pin "1"
+			(uuid "75125a2b-d9e9-431d-85d3-1bcbf96930f9")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 130.81 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2890fb7d-b51d-41c6-9305-5a404b7cb6c5")
+		(property "Reference" "D36"
+			(at 130.81 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 130.81 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 118.11 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 116.586 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.586 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "6babd442-bf06-4571-8a6d-3642846848c3")
+		)
+		(pin "2"
+			(uuid "8574532b-d9d0-456c-938e-97a235bdc084")
+		)
+		(pin "1"
+			(uuid "c2bcd02a-0591-4cd3-94aa-9c98c1d10b91")
+		)
+		(pin "5"
+			(uuid "31c50d0c-6ee4-40af-8c32-9efbb39f8ed2")
+		)
+		(pin "4"
+			(uuid "6b6dd37c-73ac-4013-9638-6ebb71b24277")
+		)
+		(pin "3"
+			(uuid "7b46e146-12b5-4b24-9ae8-1d78dca68cd3")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 210.82 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ad09a47-7f66-494c-a437-bdb85660e546")
+		(property "Reference" "D47"
+			(at 210.82 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 210.82 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 198.12 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 196.596 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.596 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "1cac6589-8a43-4bf7-ae2f-64e33e45c88f")
+		)
+		(pin "2"
+			(uuid "75b2e463-8ead-40cb-8939-1a3c98be11f6")
+		)
+		(pin "1"
+			(uuid "26e8c05e-347f-4960-b8e7-459e63c31fee")
+		)
+		(pin "5"
+			(uuid "b278fdb7-3127-4d5b-871e-7a21582aabd4")
+		)
+		(pin "4"
+			(uuid "ac8a7adb-7eac-4bff-8aa1-693f7894ba82")
+		)
+		(pin "3"
+			(uuid "a06cf0e1-9ebe-482d-a703-3aea7b0f6b53")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 91.44 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cf12e75-4828-4e7a-9f0c-fcff311efc5f")
+		(property "Reference" "C191"
+			(at 93.98 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 93.98 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 91.44 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 91.44 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "619c4e4d-c9fe-4e60-aa71-cb2a3ce4dbc6")
+		)
+		(pin "1"
+			(uuid "08006de0-bb7f-4aa4-bde1-1399ecf971a9")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C191")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 104.14 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "341bdbc7-ccec-4ab3-9848-6b5c82ba884d")
+		(property "Reference" "C200"
+			(at 106.68 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 106.68 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 104.14 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 104.14 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3c3e8fe2-c347-4e07-be95-5a801ffa54b8")
+		)
+		(pin "1"
+			(uuid "66f046a4-22be-4d10-b7ac-2a4cbda601f2")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C200")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 104.14 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "38a7ebd4-fbc4-4b4f-b472-034e1630f7ac")
+		(property "Reference" "D35"
+			(at 104.14 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 104.14 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 91.44 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 89.916 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 89.916 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "e239fc92-d2a9-492b-9989-a65f2ab9d2fc")
+		)
+		(pin "2"
+			(uuid "31fbe15d-1604-4e98-b89b-f3b15a524f5b")
+		)
+		(pin "1"
+			(uuid "9b0edefb-f9d1-4def-85b2-b582548fd2aa")
+		)
+		(pin "5"
+			(uuid "4d36f51c-5bf6-4289-8bb6-a4bd60d7621c")
+		)
+		(pin "4"
+			(uuid "f8c0563a-b370-4bfc-b4de-b403c2922395")
+		)
+		(pin "3"
+			(uuid "7e6579c6-a4a3-4f5b-9ff5-f648d7ecf01c")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 210.82 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4203514e-fe76-4ba6-a1a1-57fd90cdbe66")
+		(property "Reference" "D39"
+			(at 210.82 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 210.82 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 198.12 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 196.596 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.596 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "7e6e9565-5a80-4a25-8611-d4d76a50f4c9")
+		)
+		(pin "2"
+			(uuid "a115cf72-80dc-46cd-81ae-36148aafa1ce")
+		)
+		(pin "1"
+			(uuid "2529e4ac-6d94-46a5-89e6-8fb3c10d76b3")
+		)
+		(pin "5"
+			(uuid "58d653ac-4a13-471b-93af-55869a8c9926")
+		)
+		(pin "4"
+			(uuid "b6217a65-b3ca-4a56-9a3f-f2b722820ea3")
+		)
+		(pin "3"
+			(uuid "01c491c8-256b-43f7-9d37-76ce1955137f")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 237.49 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "49544765-d320-4063-a3b2-277c9aeb4f4f")
+		(property "Reference" "D40"
+			(at 237.49 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 237.49 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 224.79 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 223.266 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 223.266 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "df88d615-c5e2-445d-bdc9-32963717d8a5")
+		)
+		(pin "2"
+			(uuid "e0cc58c9-f9a9-4feb-9462-bc81efb2806f")
+		)
+		(pin "1"
+			(uuid "ef192706-7448-4272-bb62-654275ae172f")
+		)
+		(pin "5"
+			(uuid "cec5bd36-febc-4d84-b681-c523c7fcf22b")
+		)
+		(pin "4"
+			(uuid "0fe575e1-1a6d-4de5-8405-38c9d3a5cd8e")
+		)
+		(pin "3"
+			(uuid "3defb94c-330d-4c6c-bdcd-85507d26cab6")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 104.14 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "506d2424-a3e2-4327-8a84-566715538114")
+		(property "Reference" "D43"
+			(at 104.14 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 104.14 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 91.44 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 89.916 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 89.916 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "c12b1fc3-da64-45db-a50f-e7316aa064b9")
+		)
+		(pin "2"
+			(uuid "9f7029b3-86e8-4bd9-be5c-0ececa0e49a9")
+		)
+		(pin "1"
+			(uuid "4b0c7f6f-3b50-4356-87e0-74560e84142a")
+		)
+		(pin "5"
+			(uuid "23edef4d-72dd-4d63-ade1-5a4e29b21991")
+		)
+		(pin "4"
+			(uuid "c9d093ed-02a3-4136-8cbf-bd99784895fa")
+		)
+		(pin "3"
+			(uuid "81fa80d0-ca3f-4f61-869a-27f15f289a78")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D43")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 50.8 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5e8cc7e3-d77c-4c73-875a-6f609be72e28")
+		(property "Reference" "D29"
+			(at 50.8 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 50.8 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 38.1 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 36.576 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 36.576 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "b9cbd828-de24-4d96-b5a9-a1843331ca78")
+		)
+		(pin "2"
+			(uuid "fac13b17-d9a6-4afc-9028-4911de4d9cde")
+		)
+		(pin "1"
+			(uuid "bc66423d-0512-4ad5-b081-56d0640ea650")
+		)
+		(pin "5"
+			(uuid "890be189-abe4-40ce-90c3-3c6acdb06e22")
+		)
+		(pin "4"
+			(uuid "f4590502-7524-40c4-b330-c52f46cea6d6")
+		)
+		(pin "3"
+			(uuid "46376f6a-86b8-4a88-92ea-6f2f8746b966")
+		)
+		(instances
+			(project ""
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 157.48 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "768427a6-ba95-4796-8106-d885cfe4ba05")
+		(property "Reference" "D37"
+			(at 157.48 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 157.48 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 144.78 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 143.256 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 143.256 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0bd36188-d1a0-4483-b9ee-479975d202db")
+		)
+		(pin "2"
+			(uuid "9afb481a-4d46-4808-88a1-148519b144e1")
+		)
+		(pin "1"
+			(uuid "2034669d-18b0-4d92-a4ed-0e2decc18b83")
+		)
+		(pin "5"
+			(uuid "631f9f8f-4327-4930-8ad7-5079b668f387")
+		)
+		(pin "4"
+			(uuid "03d6bdcd-4086-4205-8e81-46439d3e7b37")
+		)
+		(pin "3"
+			(uuid "0fffaa4f-c25b-48cd-b810-526eee7d7099")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 129.54 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80ef1c1d-2926-49e0-978a-c8ff5e42f6b9")
+		(property "Reference" "C194"
+			(at 132.08 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 132.08 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 129.54 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 129.54 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 129.54 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d1ef4f2a-7c25-4e98-9b75-d65fc974ad16")
+		)
+		(pin "1"
+			(uuid "344750ea-2655-4d29-9e93-1cd7655b3bcf")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C194")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 130.81 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8be4b1c4-6e09-48e1-b0f0-42d76b20e798")
+		(property "Reference" "D44"
+			(at 130.81 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 130.81 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 118.11 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 116.586 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.586 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "bc24d48d-e897-4e3b-a616-6e4697b598ae")
+		)
+		(pin "2"
+			(uuid "c76ca80a-5ee9-44f9-aa0f-cd01b11bc175")
+		)
+		(pin "1"
+			(uuid "b09bfa22-f69f-4cfb-ae14-eaa07615e15d")
+		)
+		(pin "5"
+			(uuid "206cbcc3-2aa7-483e-9d96-57ce8aff99d9")
+		)
+		(pin "4"
+			(uuid "1975f48e-fdd5-467e-9837-f3c527dac9e9")
+		)
+		(pin "3"
+			(uuid "7193b592-49aa-4333-b7ae-0af6eb87cba1")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D44")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 66.04 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "928cdcbe-15ea-4e71-aaa5-aa353657f29a")
+		(property "Reference" "C189"
+			(at 68.58 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 68.58 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 66.04 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 66.04 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "e801e4de-a723-4af9-a66e-7833d992ce2d")
+		)
+		(pin "1"
+			(uuid "120f2a49-c594-46a2-985e-5dbe65980d2e")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C189")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 40.64 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93008399-038a-4d92-a85a-bc13e4a7751e")
+		(property "Reference" "C195"
+			(at 43.18 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 43.18 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 40.64 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "10715e4b-8e8d-4635-97ff-501dd3e2e6c8")
+		)
+		(pin "1"
+			(uuid "8dbb9a3f-41e8-407e-a85c-03e45523a02c")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C195")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 40.64 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ad88a31d-02c7-4cf2-9f22-46a14b841a06")
+		(property "Reference" "C187"
+			(at 43.18 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 43.18 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 40.64 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 40.64 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3febc102-109d-4943-96b1-0bf8957a0b7b")
+		)
+		(pin "1"
+			(uuid "4a42592b-8038-408a-8d4a-895bf166ca9e")
+		)
+		(instances
+			(project ""
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C187")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 116.84 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b3675604-0965-4c52-b836-979ca4f3ce33")
+		(property "Reference" "C193"
+			(at 119.38 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 119.38 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 116.84 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 116.84 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ba7e3f05-be31-4db2-b535-13d496b1f9a4")
+		)
+		(pin "1"
+			(uuid "be6b97d0-38a7-4e9c-93cc-038f5405eb47")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C193")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 53.34 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bcd1716c-7745-4e12-9f2d-373c14d8bc09")
+		(property "Reference" "C196"
+			(at 55.88 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 55.88 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 53.34 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.34 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 53.34 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2b0dfd8d-ecb7-4e05-9291-b1725a4358f5")
+		)
+		(pin "1"
+			(uuid "a8d0912e-b2a4-41a4-b19a-3d89def7f2fa")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C196")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 184.15 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0e30dc4-f643-4a23-b10f-e9816a0c96c4")
+		(property "Reference" "D46"
+			(at 184.15 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 184.15 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 171.45 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 169.926 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 169.926 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "31675e3a-ec00-4c38-aa29-0fff53893b56")
+		)
+		(pin "2"
+			(uuid "b4f796b3-6635-4073-899e-c844032ce7b5")
+		)
+		(pin "1"
+			(uuid "561a1f1f-3ffe-4ea1-a381-477d416a0640")
+		)
+		(pin "5"
+			(uuid "d8b52f79-f345-4847-a01b-1c6fbecd666c")
+		)
+		(pin "4"
+			(uuid "721036b0-cc4e-41af-8132-bd74cb8fb13a")
+		)
+		(pin "3"
+			(uuid "d458443c-133e-459f-8dc6-eb6e87001584")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D46")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 184.15 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c7e45497-2978-4546-9d4c-5363f74b8cf5")
+		(property "Reference" "D38"
+			(at 184.15 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 184.15 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 171.45 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 169.926 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 169.926 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "57f4c7b8-504a-4634-b799-868b0b61861e")
+		)
+		(pin "2"
+			(uuid "a6dd2881-89ae-4f0a-a8de-012bc3191721")
+		)
+		(pin "1"
+			(uuid "d87e1526-22a5-4ad7-8658-6b46a7e2387b")
+		)
+		(pin "5"
+			(uuid "e7abf960-3a04-4ab2-b804-b6e454bb5448")
+		)
+		(pin "4"
+			(uuid "d5628aa1-3331-4a3f-8c5a-1a04196caae6")
+		)
+		(pin "3"
+			(uuid "1d43ca0a-0cbf-410a-aaa4-06e79fe8ce0b")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 104.14 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d2d3a431-9f51-4753-be0f-184143523fd0")
+		(property "Reference" "C192"
+			(at 106.68 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 106.68 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 104.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 104.14 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "659e0bce-3126-4fd6-bddc-7af5cb1fa937")
+		)
+		(pin "1"
+			(uuid "103a7ff6-3763-412b-b4bc-5fae147629dc")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C192")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 50.8 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dccf2bd3-7d54-4688-ac0b-d238b85c6191")
+		(property "Reference" "D41"
+			(at 50.8 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 38.1 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 36.576 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 36.576 90.678 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "374a13d8-987b-4564-892e-08b9c14bf1b6")
+		)
+		(pin "2"
+			(uuid "c84f075d-b0c0-4902-a5bb-448a22db33f1")
+		)
+		(pin "1"
+			(uuid "db74c743-3db9-42ce-a825-7b76a0345900")
+		)
+		(pin "5"
+			(uuid "11b43779-64a8-4987-81a5-99b447ecf784")
+		)
+		(pin "4"
+			(uuid "76566a8f-9646-448b-96f7-46ab862083ac")
+		)
+		(pin "3"
+			(uuid "be144053-d366-42c0-bc6f-d20c4e756449")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 66.04 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "df5dfe52-2015-4d6a-8feb-398aa74f90c8")
+		(property "Reference" "C197"
+			(at 68.58 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 68.58 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 66.04 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 66.04 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "0be479c3-ae4b-4c11-a5fc-7a49af8d3bf9")
+		)
+		(pin "1"
+			(uuid "f8709190-681d-41ed-9d53-61d61153183e")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C197")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 53.34 133.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e08c7bc0-4663-4623-9456-820eed42bc73")
+		(property "Reference" "C188"
+			(at 55.88 132.0862 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 55.88 134.6262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 53.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 53.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 53.34 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f24058a1-7729-41b6-9596-e13250c9ff1d")
+		)
+		(pin "1"
+			(uuid "67f1ffef-2ad0-44eb-a9e1-c97a90921d37")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C188")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PowerDistributionUnitLib:587-1016-247F")
+		(at 77.47 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2c02be0-bf5e-4031-9b48-bf5f2528c3f9")
+		(property "Reference" "D34"
+			(at 77.47 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "587-1016-247F"
+			(at 77.47 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PowerDistributionUnitLib:587-1016-247F"
+			(at 64.77 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "${KIPRJMOD}/lib/docs/Dialight_datasheet_587_1016_247F_Addressable_RGB-3392649.pdf"
+			(at 63.246 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.246 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "6ec787f6-2195-42e6-9c29-6df5f0595b62")
+		)
+		(pin "2"
+			(uuid "70ac673c-2293-4000-bdeb-be8cc60c35ba")
+		)
+		(pin "1"
+			(uuid "18a4a240-34dc-4ebf-9a4e-04bb185cab49")
+		)
+		(pin "5"
+			(uuid "1b0063b1-d25e-4e20-a67d-6ab5ac16f29b")
+		)
+		(pin "4"
+			(uuid "7046acfc-8ee8-4daf-8fb6-720edb1aa2ad")
+		)
+		(pin "3"
+			(uuid "6f6d6e70-0f7b-4b55-bf0e-3e9b897bf318")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "D34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 91.44 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3928b78-338f-45f1-819c-c5e4d9cbf539")
+		(property "Reference" "C199"
+			(at 93.98 147.3262 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 93.98 149.8662 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 91.44 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "afd35411-800c-4d26-942f-46bb9c3906eb")
+		)
+		(pin "1"
+			(uuid "b37f69e6-ef53-45c7-bcfa-3911c89f2d5f")
+		)
+		(instances
+			(project "PowerDistributionUnit"
+				(path "/93fa4ef0-f02c-4535-aca9-c62461ff58dd/2a873162-e338-45b7-9ca3-38caea89bc21"
+					(reference "C199")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

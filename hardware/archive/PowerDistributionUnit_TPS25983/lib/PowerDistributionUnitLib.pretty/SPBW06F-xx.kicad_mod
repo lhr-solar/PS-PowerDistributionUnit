@@ -1,0 +1,161 @@
+(footprint "SPBW06F-xx"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "SIP 8-pin (http://www.njr.com/semicon/PDF/package/SIP8_E.pdf)")
+	(tags "SIP8")
+	(property "Reference" "REF**"
+		(at -8.636 -5.334 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "91db2e6c-e854-4ca1-9416-10c506dd6ddb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SIP-8"
+		(at 0 6.35 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cbd88c21-be90-4d1a-ad16-09e501017c89")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at -39.09 6.27 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2217ad4b-ff7b-4497-a994-2d53b33c2317")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at -39.09 6.27 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b1f1dea9-91ed-46b8-acc8-454e584a92da")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at -39.09 6.27 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9fff0446-8a26-4552-8ee3-9b687a9869c4")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -10.81 4.938)
+		(end 10.99 -4.262)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "f58cfcae-f255-47c1-9594-0958ff7dc5dd")
+	)
+	(fp_rect
+		(start -9.81 0.238)
+		(end -7.81 -1.762)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "f522b257-8c78-4279-b0cf-27ba9a29c12d")
+	)
+	(pad "1" thru_hole rect
+		(at -8.81 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d9df7bb0-e718-4116-b488-b15852b4132a")
+	)
+	(pad "2" thru_hole circle
+		(at -6.31 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "147b0ded-311e-46e9-af9b-4a00a754f520")
+	)
+	(pad "3" thru_hole circle
+		(at -3.81 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "71095521-d6c5-4961-8981-816359111f93")
+	)
+	(pad "5" thru_hole circle
+		(at 1.49 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3289fa2f-cfcb-4285-9748-6e43d2c05078")
+	)
+	(pad "6" thru_hole circle
+		(at 3.99 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6acfb1dd-2db7-4372-a9fe-0b4c2153fb65")
+	)
+	(pad "7" thru_hole circle
+		(at 6.49 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "e70993a0-ffc8-4d95-a7f3-54cb4ed5a32b")
+	)
+	(pad "8" thru_hole circle
+		(at 8.99 -0.762 270)
+		(size 1.45 1.45)
+		(drill 0.85)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "91d9a8ef-a55f-4b4b-be53-88d157ebdf5c")
+	)
+	(model "SPBW06(EC4SAW).STEP"
+		(offset
+			(xyz 0.1 -0.25 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)
