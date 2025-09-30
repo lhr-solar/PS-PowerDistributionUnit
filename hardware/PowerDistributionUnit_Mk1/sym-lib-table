@@ -6,4 +6,7 @@
   (lib (name "utsvt_power")(type "KiCad")(uri "${KIPRJMOD}/../lib/KiCAD-Sharepoint/utsvt_power.kicad_sym")(options "")(descr ""))
   (lib (name "utsvt_special")(type "KiCad")(uri "${KIPRJMOD}/../lib/KiCAD-Sharepoint/utsvt_special.kicad_sym")(options "")(descr ""))
   (lib (name "PowerDistributionUnitLib")(type "KiCad")(uri "${KIPRJMOD}/../lib/PowerDistributionUnitLib.kicad_sym")(options "")(descr ""))
+  (lib (name "PowerDistributionUnitPassivesLib")(type "KiCad")(uri "/Users/changxuliu/Documents/LHR/PowerDistributionUnitPCB/hardware/lib/PowerDistributionUnitPassivesLib.kicad_sym")(options "")(descr ""))
+  (lib (name "PowerDistributionUnitResistorLib")(type "KiCad")(uri "/Users/changxuliu/Documents/LHR/PowerDistributionUnitPCB/hardware/lib/PowerDistributionUnitResistorLib.kicad_sym")(options "")(descr ""))
+  (lib (name "PowerDistributionUnitCapacitorLib")(type "KiCad")(uri "/Users/changxuliu/Documents/LHR/PowerDistributionUnitPCB/hardware/lib/PowerDistributionUnitCapacitorLib.kicad_sym")(options "")(descr ""))
 )
