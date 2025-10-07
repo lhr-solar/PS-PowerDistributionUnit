@@ -23405,15 +23405,15 @@
 		(instances
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
-					(reference "#PWR0168")
+					(reference "#PWR0114")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(reference "#PWR0168")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(reference "#PWR0168")
+					(reference "#PWR0108")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0"
@@ -23561,7 +23561,7 @@
 		(instances
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
-					(reference "#PWR0137")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
@@ -23574,115 +23574,6 @@
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0"
 					(reference "#PWR0137")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PowerDistributionUnitCapacitorLib:1u")
-		(at 52.07 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6ca80175-d6e3-4d96-9b64-87e27cf7af46")
-		(property "Reference" "C25"
-			(at 55.88 80.0099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1u"
-			(at 55.88 82.5499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 53.0352 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "kicad-embed://MLR01_e.pdf"
-			(at 52.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 52.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "MLASU168SB5105KTNA01"
-			(at 52.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser P/N" "963-MLASU168SB5105KT"
-			(at 52.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey P/N" ""
-			(at 52.07 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4b2303f2-50b8-4110-b888-ca090ebfebd4")
-		)
-		(pin "2"
-			(uuid "b13bbb0c-4287-4007-a2e3-e4bd5ccbb6c2")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
-					(reference "C25")
-					(unit 1)
-				)
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(reference "C25")
-					(unit 1)
-				)
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(reference "C25")
-					(unit 1)
-				)
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0"
-					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -24365,15 +24256,15 @@
 		(instances
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
-					(reference "#PWR0167")
+					(reference "#PWR0115")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(reference "#PWR0167")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(reference "#PWR0167")
+					(reference "#PWR0109")
 					(unit 1)
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0"
@@ -24776,6 +24667,115 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "PowerDistributionUnitCapacitorLib:1u")
+		(at 52.07 81.28 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f32bec2a-228c-4edc-b361-d9f6e4d68399")
+		(property "Reference" "C25"
+			(at 55.88 80.0099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1u"
+			(at 55.88 82.5499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 53.0352 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "kicad-embed://MLR01_e.pdf"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "P/N" "MLASU168SB5105KTNA01"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Mouser P/N" "963-MLASU168SB5105KT"
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey P/N" ""
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88ac8f66-734e-4aec-a986-cfd58fd72688")
+		)
+		(pin "2"
+			(uuid "f16fd1da-b5d4-4537-9d6a-8ef6791a7bc4")
+		)
+		(instances
+			(project ""
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
+					(reference "C117")
+					(unit 1)
+				)
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
+					(reference "C115")
+					(unit 1)
+				)
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
+					(reference "C116")
+					(unit 1)
+				)
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0"
+					(reference "C25")
+					(unit 1)
+				)
+			)
+		)
+	)
 	(sheet
 		(at 166.37 99.06)
 		(size 22.86 20.32)
@@ -24906,10 +24906,10 @@
 					(page "7")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(page "17")
+					(page "12")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(page "13")
+					(page "18")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
 					(page "22")
@@ -25047,10 +25047,10 @@
 					(page "8")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(page "18")
+					(page "13")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(page "12")
+					(page "17")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
 					(page "23")
@@ -25188,10 +25188,10 @@
 					(page "6")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(page "16")
+					(page "11")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(page "10")
+					(page "15")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
 					(page "21")
@@ -25329,10 +25329,10 @@
 					(page "5")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397"
-					(page "15")
+					(page "10")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656"
-					(page "11")
+					(page "16")
 				)
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85"
 					(page "20")
