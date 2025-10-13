@@ -50986,7 +50986,7 @@
 		(uuid "283f0806-aec8-40e9-aa66-be8f60ab7844")
 	)
 	(label "LV_OUT.4"
-		(at 180.34 45.72 0)
+		(at 180.34 43.18 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51116,7 +51116,7 @@
 		(uuid "4a648780-00ba-4c5a-ad70-37c74939a41f")
 	)
 	(label "LV_OUT.6"
-		(at 180.34 50.8 0)
+		(at 180.34 38.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51196,7 +51196,7 @@
 		(uuid "756629bf-e0df-4cc9-b5dc-10a85565abcd")
 	)
 	(label "LV_OUT.5"
-		(at 180.34 48.26 0)
+		(at 180.34 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51246,7 +51246,7 @@
 		(uuid "8128d89e-746f-438d-8d4e-72e76de5a75c")
 	)
 	(label "LV_OUT.0"
-		(at 180.34 35.56 0)
+		(at 180.34 53.34 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51296,7 +51296,7 @@
 		(uuid "980a72f0-725d-4f50-9081-e2d494a46df7")
 	)
 	(label "LV_OUT.2"
-		(at 180.34 40.64 0)
+		(at 180.34 48.26 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51306,7 +51306,7 @@
 		(uuid "9a754ea8-9e61-4f04-91bc-fda3a7a80374")
 	)
 	(label "LV_OUT.1"
-		(at 180.34 38.1 0)
+		(at 180.34 50.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51316,7 +51316,7 @@
 		(uuid "9ff5a4a7-ddea-43c1-a621-23f81aa3152b")
 	)
 	(label "LV_OUT.3"
-		(at 180.34 43.18 0)
+		(at 180.34 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -51436,7 +51436,7 @@
 		(uuid "d3ed0d0b-c03a-4b32-afd7-c60139542b38")
 	)
 	(label "LV_OUT.7"
-		(at 180.34 53.34 0)
+		(at 180.34 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
