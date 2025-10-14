@@ -48918,12 +48918,6 @@
 		(uuid "06744752-db03-45c7-9833-73978cbac7f6")
 	)
 	(junction
-		(at 246.38 77.47)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "34235f96-1fc6-49dc-8858-174fad6b0d51")
-	)
-	(junction
 		(at 33.02 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -48934,12 +48928,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5957feb9-6579-4870-9222-00c5836a47e5")
-	)
-	(junction
-		(at 246.38 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "67ec73c4-fd1e-4b63-9e20-be4de1545697")
 	)
 	(junction
 		(at 77.47 29.21)
@@ -48991,15 +48979,6 @@
 			(type default)
 		)
 		(uuid "06968ba3-1523-4899-9546-af8a1636904d")
-	)
-	(bus_entry
-		(at 222.25 62.23)
-		(size 1.27 1.27)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "091635da-dffa-4118-919f-af7e582deac2")
 	)
 	(bus_entry
 		(at 177.8 44.45)
@@ -49119,15 +49098,6 @@
 		(uuid "964fbde7-87bf-486d-bcc1-81dc2ea46465")
 	)
 	(bus_entry
-		(at 222.25 76.2)
-		(size 1.27 1.27)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9a94ee43-cca0-40be-9926-35b7b31290ff")
-	)
-	(bus_entry
 		(at 177.8 69.85)
 		(size 1.27 1.27)
 		(stroke
@@ -49200,16 +49170,6 @@
 			(type default)
 		)
 		(uuid "04ca4714-db35-40cd-bfdb-708fdfc0b336")
-	)
-	(wire
-		(pts
-			(xy 246.38 63.5) (xy 248.92 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05c4bf8b-ae65-4131-97d8-65c098324edf")
 	)
 	(wire
 		(pts
@@ -49383,16 +49343,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 77.47) (xy 248.92 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "277a5a86-58d6-4187-a388-cfb4a188ee8d")
-	)
-	(wire
-		(pts
 			(xy 85.09 165.1) (xy 100.33 165.1)
 		)
 		(stroke
@@ -49410,16 +49360,6 @@
 			(type default)
 		)
 		(uuid "2ef4b189-aec7-4c65-aced-9e46f18ffcdc")
-	)
-	(wire
-		(pts
-			(xy 247.65 80.01) (xy 248.92 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3160977b-e2aa-4792-9fe7-ece8951636cb")
 	)
 	(wire
 		(pts
@@ -49613,16 +49553,6 @@
 	)
 	(bus
 		(pts
-			(xy 222.25 62.23) (xy 222.25 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "691b4a81-0095-48b6-a75b-45a6757917d7")
-	)
-	(bus
-		(pts
 			(xy 177.8 39.37) (xy 177.8 41.91)
 		)
 		(stroke
@@ -49710,16 +49640,6 @@
 			(type default)
 		)
 		(uuid "7a29e7d4-eefc-4169-97ef-67694016cdc4")
-	)
-	(bus
-		(pts
-			(xy 222.25 48.26) (xy 222.25 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c0f8eaa-dbb7-4edb-968a-f1775fd88122")
 	)
 	(bus
 		(pts
@@ -49860,16 +49780,6 @@
 			(type default)
 		)
 		(uuid "90e726be-799d-45a0-9f6d-f48154139f8d")
-	)
-	(wire
-		(pts
-			(xy 247.65 66.04) (xy 248.92 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9122ba1f-05cb-48fc-9180-41b36fd927c4")
 	)
 	(bus
 		(pts
@@ -50021,16 +49931,6 @@
 		)
 		(uuid "a86919cc-b63b-4459-8595-428cfb3cc23b")
 	)
-	(wire
-		(pts
-			(xy 223.52 77.47) (xy 234.95 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a9c3b9c6-e6ab-49b2-8e8b-f7b7c117ee4e")
-	)
 	(bus
 		(pts
 			(xy 177.8 44.45) (xy 177.8 46.99)
@@ -50060,16 +49960,6 @@
 			(type default)
 		)
 		(uuid "af55c77b-fd73-424a-b668-f876414377c0")
-	)
-	(wire
-		(pts
-			(xy 245.11 63.5) (xy 246.38 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b0c89854-ed80-42e7-aa06-5c4b59096530")
 	)
 	(wire
 		(pts
@@ -50263,16 +50153,6 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 77.47) (xy 246.38 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1f64796-4fea-4020-a30a-a2fe68559917")
-	)
-	(wire
-		(pts
 			(xy 48.26 102.87) (xy 49.53 102.87)
 		)
 		(stroke
@@ -50290,16 +50170,6 @@
 			(type default)
 		)
 		(uuid "d3d22d45-9cd2-42f0-bdba-4e3081d19851")
-	)
-	(wire
-		(pts
-			(xy 223.52 63.5) (xy 234.95 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d61861e2-436d-4c40-99f2-93011f845243")
 	)
 	(wire
 		(pts
@@ -50393,16 +50263,6 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 80.01) (xy 247.65 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e525a156-2a1b-4012-bbbd-e24a7bcd0173")
-	)
-	(wire
-		(pts
 			(xy 85.09 135.89) (xy 104.14 135.89)
 		)
 		(stroke
@@ -50430,16 +50290,6 @@
 			(type default)
 		)
 		(uuid "f0cd1867-db75-433e-93f2-14459f5762f7")
-	)
-	(wire
-		(pts
-			(xy 247.65 66.04) (xy 247.65 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f14c3cb2-e665-4459-b76c-9dbb605c5292")
 	)
 	(wire
 		(pts
@@ -51035,16 +50885,6 @@
 		)
 		(uuid "3d6f6630-0eba-4757-9d2b-8c5a39d2c586")
 	)
-	(label "LV_OUT.3"
-		(at 224.79 77.47 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3e2c9669-b1b4-4204-a3b8-df840fd107c0")
-	)
 	(label "LED_SRCLK"
 		(at 97.79 168.91 180)
 		(effects
@@ -51375,16 +51215,6 @@
 		)
 		(uuid "bb2e3451-a94b-4f22-81fc-febb860ba10e")
 	)
-	(label "LV_OUT.2"
-		(at 224.79 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c70dcc01-b7f0-4251-86d0-9e338d570fc5")
-	)
 	(label "HSS_DIA_EN"
 		(at 69.85 54.61 0)
 		(effects
@@ -51515,7 +51345,7 @@
 		)
 		(uuid "e9a26dbd-f594-4210-95ff-eadb6cdbf5f6")
 	)
-	(label "LV_OUT.1"
+	(label "LV_OUT.15"
 		(at 224.79 49.53 0)
 		(effects
 			(font
@@ -51951,73 +51781,6 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 246.38 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "2523a472-e9ce-4f90-9f46-0cfac4742e13")
-		(property "Reference" "TP193"
-			(at 247.65 60.198 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 248.92 61.4679 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 251.46 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 251.46 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 246.38 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2f388fbc-5642-49d5-9a82-b07ccfa7d27b")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "TP193")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
 		(at 243.84 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -52216,72 +51979,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GNDPWR")
-		(at 247.65 67.31 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "300b4dd3-86fc-42bd-bdd1-9728ae31d43d")
-		(property "Reference" "#PWR0462"
-			(at 247.65 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDPWR"
-			(at 247.523 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 247.65 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 247.65 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 247.65 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "87dd6342-20ac-4d9d-b7bc-e3891782c3fb")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0462")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 243.84 137.16 0)
 		(unit 1)
@@ -52341,102 +52038,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PowerDistributionUnitLib:Molex_NanoFit_1x2")
-		(at 254 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "35a95ae2-bca3-46b8-ab27-199f4e75238c")
-		(property "Reference" "J7"
-			(at 256.54 77.4699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Molex_NanoFit_1x2"
-			(at 256.54 80.0099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PowerDistributionUnitLib:CONN_SD-105309-100_02_MOL"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "kicad-embed://1053091102.pdf"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "1053091102"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser P/N" "538-105309-1102"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey P/N" "WM16865-ND"
-			(at 254 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8c43faab-6816-401d-979b-63fbf687dc59")
-		)
-		(pin "2"
-			(uuid "70c963cd-e8bc-4771-a1a5-f99b45ecdc46")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -53321,100 +52922,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:3568")
-		(at 240.03 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "93cc722f-4888-4909-b7fe-542877b53bef")
-		(property "Reference" "F4"
-			(at 240.03 72.898 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3568"
-			(at 240.03 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Fuse:Fuseholder_Blade_Mini_Keystone_3568"
-			(at 238.252 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "kicad-embed://3568.PDF"
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Fuse Holder"
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "3568"
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser P/N" "534-3568"
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey P/N" "36-3568-ND"
-			(at 240.03 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "8a63affb-e235-4099-9627-b05c9c50e269")
-		)
-		(pin "1"
-			(uuid "0e5bf205-2a92-4dd9-8844-154fac461f7f")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "F4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PowerDistributionUnitLib:Molex_NanoFit_1x2")
 		(at 43.18 102.87 0)
 		(mirror y)
@@ -54038,100 +53545,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:3568")
-		(at 240.03 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "abab8dd7-60ed-4974-a1a2-02b6afa905c4")
-		(property "Reference" "F3"
-			(at 240.03 58.928 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3568"
-			(at 240.03 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Fuse:Fuseholder_Blade_Mini_Keystone_3568"
-			(at 238.252 63.5 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "kicad-embed://3568.PDF"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Fuse Holder"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "3568"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser P/N" "534-3568"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey P/N" "36-3568-ND"
-			(at 240.03 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "7ea16bfa-01f0-4f4d-b740-e95ecf0b9b42")
-		)
-		(pin "1"
-			(uuid "1cc0c551-a49c-48f7-8f51-fe26055e8bb4")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "F3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PowerDistributionUnitLib:AMASS_XT-30_Vertical")
 		(at 20.32 31.75 180)
 		(unit 1)
@@ -54421,103 +53834,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:Molex_NanoFit_1x2")
-		(at 254 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c31f9f31-238a-4daa-bdf0-c864cea3d586")
-		(property "Reference" "J6"
-			(at 256.54 63.4999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Molex_NanoFit_1x2"
-			(at 256.54 66.0399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "PowerDistributionUnitLib:CONN_SD-105309-100_02_MOL"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "kicad-embed://1053091102.pdf"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "P/N" "1053091102"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Mouser P/N" "538-105309-1102"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey P/N" "WM16865-ND"
-			(at 254 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "760d4ce9-9576-40ce-8423-1d69dc8a99a1")
-		)
-		(pin "2"
-			(uuid "ba1e96c4-16f7-4246-a1db-194970babec2")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 274.32 129.54 0)
 		(unit 1)
@@ -54579,73 +53895,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 246.38 77.47 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "cccab269-dcc2-4196-ac1c-716a9fef9684")
-		(property "Reference" "TP194"
-			(at 247.65 74.168 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 248.92 75.4379 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 251.46 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 251.46 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 246.38 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "63bafbf7-0ff2-4507-b2f2-329db50502b1")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "TP194")
 					(unit 1)
 				)
 			)
@@ -54779,72 +54028,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDPWR")
-		(at 247.65 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d67ff609-a143-497d-a829-c51ee4016261")
-		(property "Reference" "#PWR0463"
-			(at 247.65 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDPWR"
-			(at 247.523 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 247.65 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 247.65 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 247.65 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3dc7c7ca-a104-4008-b197-a5463465b21e")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0463")
 					(unit 1)
 				)
 			)
