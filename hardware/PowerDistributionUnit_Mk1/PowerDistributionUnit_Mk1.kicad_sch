@@ -51045,7 +51045,7 @@
 		)
 		(uuid "75de1b22-0340-46d7-8476-57fd95d39060")
 	)
-	(label "~{DRDY}_SNS0"
+	(label "~{DRDY}_SNS1"
 		(at 165.1 91.44 180)
 		(effects
 			(font

@@ -31190,16 +31190,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 119.38) (xy 50.8 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30c8f786-e6ce-4f09-868a-bc68c60bee7f")
-	)
-	(wire
-		(pts
 			(xy 115.57 105.41) (xy 119.38 105.41)
 		)
 		(stroke
@@ -31440,16 +31430,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 119.38) (xy 50.8 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70370dd4-2349-461e-9a84-a059e41bd688")
-	)
-	(wire
-		(pts
 			(xy 226.06 107.95) (xy 240.03 107.95)
 		)
 		(stroke
@@ -31667,6 +31647,16 @@
 			(type default)
 		)
 		(uuid "a034b114-f97a-4939-871a-be5485f475d6")
+	)
+	(wire
+		(pts
+			(xy 50.8 120.65) (xy 50.8 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a13e6a62-1576-4fdc-864c-5afd6a41e3d8")
 	)
 	(bus
 		(pts
@@ -32177,16 +32167,6 @@
 			(justify right bottom)
 		)
 		(uuid "052bf57d-8a21-4a2a-a177-2569b7e7889a")
-	)
-	(label "LV_PROT"
-		(at 43.18 119.38 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "075c686f-b2fb-4602-ad28-1ed0c6572f7a")
 	)
 	(label "MISO_2"
 		(at 227.33 110.49 0)
@@ -34081,6 +34061,72 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 50.8 120.65 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "75dccb7c-3ec0-4ccd-aa00-713b30f78186")
+		(property "Reference" "#PWR086"
+			(at 50.8 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 50.8 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 50.8 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "00cbfb78-c1e3-4ac9-a427-9b7dd964bc4a")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
+					(reference "#PWR086")
 					(unit 1)
 				)
 			)
