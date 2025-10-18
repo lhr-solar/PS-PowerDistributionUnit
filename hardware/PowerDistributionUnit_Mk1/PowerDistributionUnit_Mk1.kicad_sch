@@ -50765,7 +50765,7 @@
 		)
 		(uuid "031cc6ff-9d7e-4249-9395-c1d51d8c6712")
 	)
-	(label "MOSI_2"
+	(label "MOSI_3"
 		(at 69.85 46.99 0)
 		(effects
 			(font
@@ -50995,7 +50995,7 @@
 		)
 		(uuid "6630b0f2-b76b-4b00-bb06-2582db09dc3e")
 	)
-	(label "CLK_2"
+	(label "CLK_3"
 		(at 69.85 41.91 0)
 		(effects
 			(font
@@ -51365,7 +51365,7 @@
 		)
 		(uuid "fdcdddaa-6779-44b0-8225-8aaddab63d74")
 	)
-	(hierarchical_label "{SPI2}"
+	(hierarchical_label "{SPI3}"
 		(shape bidirectional)
 		(at 64.77 39.37 180)
 		(effects
