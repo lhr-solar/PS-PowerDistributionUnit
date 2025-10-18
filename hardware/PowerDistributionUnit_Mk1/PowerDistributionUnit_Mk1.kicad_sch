@@ -48911,6 +48911,28 @@
 		)
 		(uuid "80358154-5d9d-4ba7-983d-e3f62d1915d3")
 	)
+	(text_box "Change to 6x1"
+		(exclude_from_sim no)
+		(at 199.39 80.01 0)
+		(size 11.43 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+			(color 255 0 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 0.8 0.8)
+				(color 255 0 0 1)
+			)
+			(justify left top)
+		)
+		(uuid "96f1f536-342f-4496-91d7-67be45902c28")
+	)
 	(junction
 		(at 176.53 29.21)
 		(diameter 0)
@@ -50865,7 +50887,7 @@
 		)
 		(uuid "36b48827-2edc-4eca-9b4a-2ea2ec0cdaf3")
 	)
-	(label "~{ST)_INT"
+	(label "~{ST}_INT"
 		(at 104.14 138.43 180)
 		(effects
 			(font

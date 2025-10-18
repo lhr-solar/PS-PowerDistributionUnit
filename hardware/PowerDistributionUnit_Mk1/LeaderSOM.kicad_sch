@@ -31250,6 +31250,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 66.04) (xy 157.48 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43b9a2cd-ad95-43f1-b24b-df0aa2f84c57")
+	)
+	(wire
+		(pts
 			(xy 243.84 46.99) (xy 257.81 46.99)
 		)
 		(stroke
@@ -31857,6 +31867,16 @@
 			(type default)
 		)
 		(uuid "c721332a-894c-4238-b582-97c831d13f5e")
+	)
+	(wire
+		(pts
+			(xy 157.48 68.58) (xy 165.1 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8f93c63-22a3-4c85-9eb5-afb0ba262abd")
 	)
 	(wire
 		(pts
@@ -32477,7 +32497,7 @@
 	)
 	(hierarchical_label "HSS_DIA_EN"
 		(shape output)
-		(at 165.1 120.65 0)
+		(at 165.1 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -32609,7 +32629,7 @@
 	)
 	(hierarchical_label "HSS_SEL2"
 		(shape output)
-		(at 172.72 81.28 0)
+		(at 165.1 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -32664,7 +32684,7 @@
 	)
 	(hierarchical_label "~{ST}_INT"
 		(shape input)
-		(at 165.1 118.11 0)
+		(at 165.1 120.65 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -32719,7 +32739,7 @@
 	)
 	(hierarchical_label "LED_EN"
 		(shape input)
-		(at 165.1 71.12 0)
+		(at 165.1 118.11 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -32741,7 +32761,7 @@
 	)
 	(hierarchical_label "HSS_SEL1"
 		(shape output)
-		(at 165.1 125.73 0)
+		(at 165.1 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -33060,72 +33080,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
 					(reference "#PWR0469")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GNDPWR")
-		(at 55.88 143.51 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1cb343b9-06c4-462f-bb67-e1b5968aeb43")
-		(property "Reference" "#PWR064"
-			(at 55.88 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GNDPWR"
-			(at 55.753 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 55.88 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 55.88 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
-			(at 55.88 143.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f5df9836-2ab4-4645-bda0-7b8287cd23ca")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
-					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -33604,6 +33558,71 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
 					(reference "#PWR0478")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 55.88 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3e47eff2-c416-40ac-827c-b6c2e801604d")
+		(property "Reference" "#PWR087"
+			(at 55.88 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 55.88 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "78e231f7-fb83-4497-8544-833dd13f0d53")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b/9db45747-239d-4a98-a456-ca77cdc3d84b"
+					(reference "#PWR087")
 					(unit 1)
 				)
 			)
