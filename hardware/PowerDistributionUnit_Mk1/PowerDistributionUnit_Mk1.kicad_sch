@@ -50847,7 +50847,7 @@
 		)
 		(uuid "1de39b60-340a-459e-b740-13afe79cf114")
 	)
-	(label "HSS_RCLK"
+	(label "HSS_SR_OUT_CLK"
 		(at 104.14 115.57 180)
 		(effects
 			(font
@@ -55582,7 +55582,7 @@
 				(justify right)
 			)
 		)
-		(pin "HSS_RCLK" output
+		(pin "HSS_SR_OUT_CLK" output
 			(at 85.09 115.57 0)
 			(uuid "fef05b8e-d6ef-42a4-bd6a-5ceccb3defce")
 			(effects
