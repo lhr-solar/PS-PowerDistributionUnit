@@ -32204,7 +32204,7 @@
 		)
 		(uuid "1b65ab09-7ed7-4c29-a491-c6a4cc94704a")
 	)
-	(label "SEL1"
+	(label "HSS_SEL1"
 		(at 218.44 113.03 0)
 		(effects
 			(font
@@ -32214,7 +32214,7 @@
 		)
 		(uuid "2314b56d-cbcc-4ff3-bc2e-56af38bf299e")
 	)
-	(label "SEL2"
+	(label "HSS_SEL2"
 		(at 261.62 113.03 180)
 		(effects
 			(font
@@ -32354,7 +32354,7 @@
 		)
 		(uuid "63722b08-479b-4f91-89c1-3e906e2d14f6")
 	)
-	(label "DIA_EN"
+	(label "HSS_DIA_EN"
 		(at 218.44 115.57 0)
 		(effects
 			(font
