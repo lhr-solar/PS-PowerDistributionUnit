@@ -52376,71 +52376,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 217.17 125.73 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "44c37912-ca2c-40c3-9a2d-8a0f55837818")
-		(property "Reference" "#PWR026"
-			(at 217.17 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 217.17 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 217.17 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 217.17 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 217.17 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "07720a28-cd66-4225-8b17-71be7a98f573")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 276.86 153.67 0)
 		(unit 1)
@@ -52566,6 +52501,72 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "#PWR0482")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GNDPWR")
+		(at 247.65 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "645c3600-1ee2-458e-9a90-1978d520181b")
+		(property "Reference" "#PWR090"
+			(at 247.65 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GNDPWR"
+			(at 247.523 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 247.65 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ec804317-64fb-4a43-bb6f-ff838eb7d71b")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -54034,16 +54035,17 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 247.65 137.16 0)
+		(lib_id "power:GNDPWR")
+		(at 217.17 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "beed76e5-43ee-4a6b-9dc1-bd9799d4635a")
-		(property "Reference" "#PWR090"
-			(at 247.65 143.51 0)
+		(fields_autoplaced yes)
+		(uuid "c6943585-76eb-4fbd-92c2-1995ae0a769f")
+		(property "Reference" "#PWR026"
+			(at 217.17 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54051,8 +54053,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 247.65 140.97 0)
+		(property "Value" "GNDPWR"
+			(at 217.043 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54060,7 +54062,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 247.65 137.16 0)
+			(at 217.17 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54069,7 +54071,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 137.16 0)
+			(at 217.17 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54077,8 +54079,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 247.65 137.16 0)
+		(property "Description" "Power symbol creates a global label with name \"GNDPWR\" , global ground"
+			(at 217.17 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54087,12 +54089,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e2cf55a8-82c3-4e95-a30f-dfe62e95af4a")
+			(uuid "5ee79653-a529-406d-94b9-1a764add777a")
 		)
 		(instances
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR090")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
