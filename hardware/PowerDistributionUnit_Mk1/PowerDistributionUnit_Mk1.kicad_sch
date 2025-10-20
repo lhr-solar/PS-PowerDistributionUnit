@@ -51399,6 +51399,73 @@
 		(uuid "90c7fc0a-9af1-47e2-bad2-c7ab85d09ec6")
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 247.65 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "0258f4a3-d7a4-4f8f-8713-b372a01a0e5a")
+		(property "Reference" "TP194"
+			(at 248.92 122.428 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 250.19 123.6979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+			(at 252.73 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 252.73 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 247.65 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f4548f0b-68b5-45c5-8e2f-bfd76d1a68f8")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "TP194")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GNDA")
 		(at 271.78 137.16 0)
 		(unit 1)
@@ -51465,7 +51532,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 236.22 137.16 0)
+		(at 217.17 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -51473,7 +51540,7 @@
 		(dnp no)
 		(uuid "10c6380c-f709-4852-8766-46216ee91467")
 		(property "Reference" "TP12"
-			(at 237.49 133.858 0)
+			(at 218.44 133.858 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51482,7 +51549,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 238.76 135.1279 0)
+			(at 219.71 135.1279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51492,7 +51559,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 241.3 137.16 0)
+			(at 222.25 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51501,7 +51568,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 241.3 137.16 0)
+			(at 222.25 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51510,7 +51577,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 236.22 137.16 0)
+			(at 217.17 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51736,7 +51803,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 259.08 125.73 0)
+		(at 240.03 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -51744,7 +51811,7 @@
 		(dnp no)
 		(uuid "2515ece5-9727-4e98-910a-bb1670943c77")
 		(property "Reference" "TP11"
-			(at 260.35 122.428 0)
+			(at 241.3 122.428 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51753,7 +51820,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 261.62 123.6979 0)
+			(at 242.57 123.6979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51763,7 +51830,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 264.16 125.73 0)
+			(at 245.11 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51772,7 +51839,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 264.16 125.73 0)
+			(at 245.11 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51781,7 +51848,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 259.08 125.73 0)
+			(at 240.03 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51803,15 +51870,15 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 243.84 125.73 0)
+		(at 247.65 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "260e3412-4846-4c5a-958e-e1cbdf7aa1e5")
-		(property "Reference" "TP9"
-			(at 245.11 122.428 0)
+		(uuid "253f39ce-51c9-42e1-9dfe-168ea04424aa")
+		(property "Reference" "TP237"
+			(at 248.92 133.858 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51820,7 +51887,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 246.38 123.6979 0)
+			(at 250.19 135.1279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51830,7 +51897,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 248.92 125.73 0)
+			(at 252.73 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51839,7 +51906,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 248.92 125.73 0)
+			(at 252.73 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51848,7 +51915,74 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 243.84 125.73 0)
+			(at 247.65 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fe94616f-e7c9-4691-9a95-4c2b56e37aa8")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "TP237")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 224.79 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "260e3412-4846-4c5a-958e-e1cbdf7aa1e5")
+		(property "Reference" "TP9"
+			(at 226.06 122.428 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 227.33 123.6979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+			(at 229.87 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 229.87 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 224.79 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51870,7 +52004,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 236.22 125.73 0)
+		(at 217.17 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -51878,7 +52012,7 @@
 		(dnp no)
 		(uuid "28e87bc6-9e6e-489a-8c92-f780ace0f012")
 		(property "Reference" "TP8"
-			(at 237.49 122.428 0)
+			(at 218.44 122.428 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51887,7 +52021,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 238.76 123.6979 0)
+			(at 219.71 123.6979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51897,7 +52031,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 241.3 125.73 0)
+			(at 222.25 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51906,7 +52040,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 241.3 125.73 0)
+			(at 222.25 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51915,7 +52049,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 236.22 125.73 0)
+			(at 217.17 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52001,16 +52135,83 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 256.54 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "2fb16514-6540-41c1-a8a4-449cee84c691")
+		(property "Reference" "TP239"
+			(at 257.81 133.858 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 259.08 135.1279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+			(at 261.62 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 261.62 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 256.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "34f72f72-d20f-4fe0-a031-4f2c15f03c59")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "TP239")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 243.84 137.16 0)
+		(at 247.65 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3114ee68-abef-4559-8492-4c6535645017")
-		(property "Reference" "#PWR031"
-			(at 243.84 143.51 0)
+		(uuid "307e15d6-e4b7-4b8c-bff2-dd067fb79426")
+		(property "Reference" "#PWR089"
+			(at 247.65 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52019,7 +52220,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 243.84 140.97 0)
+			(at 247.65 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52027,7 +52228,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 243.84 137.16 0)
+			(at 247.65 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52036,7 +52237,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 243.84 137.16 0)
+			(at 247.65 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52045,7 +52246,72 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 243.84 137.16 0)
+			(at 247.65 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6e2c35a7-36fe-4ed4-959e-13dbdc99617b")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "#PWR089")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 224.79 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3114ee68-abef-4559-8492-4c6535645017")
+		(property "Reference" "#PWR031"
+			(at 224.79 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 224.79 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 224.79 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52132,7 +52398,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 251.46 125.73 0)
+		(at 232.41 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -52140,7 +52406,7 @@
 		(dnp no)
 		(uuid "3c2c5dc1-6edc-44af-8c48-2b5edbe97f7f")
 		(property "Reference" "TP10"
-			(at 252.73 122.428 0)
+			(at 233.68 122.428 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52149,7 +52415,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 254 123.6979 0)
+			(at 234.95 123.6979 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52159,7 +52425,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 256.54 125.73 0)
+			(at 237.49 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52168,7 +52434,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 256.54 125.73 0)
+			(at 237.49 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52177,7 +52443,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 251.46 125.73 0)
+			(at 232.41 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52266,7 +52532,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 236.22 125.73 0)
+		(at 217.17 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -52274,7 +52540,7 @@
 		(dnp no)
 		(uuid "44c37912-ca2c-40c3-9a2d-8a0f55837818")
 		(property "Reference" "#PWR026"
-			(at 236.22 132.08 0)
+			(at 217.17 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52283,7 +52549,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 236.22 129.54 0)
+			(at 217.17 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52291,7 +52557,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 236.22 125.73 0)
+			(at 217.17 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52300,7 +52566,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 236.22 125.73 0)
+			(at 217.17 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52309,7 +52575,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 236.22 125.73 0)
+			(at 217.17 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52462,7 +52728,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 251.46 137.16 0)
+		(at 232.41 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -52470,7 +52736,7 @@
 		(dnp no)
 		(uuid "64e7d83c-65d4-41f4-83e4-54d95dd8963e")
 		(property "Reference" "TP14"
-			(at 252.73 133.858 0)
+			(at 233.68 133.858 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52479,7 +52745,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 254 135.1279 0)
+			(at 234.95 135.1279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52489,7 +52755,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 256.54 137.16 0)
+			(at 237.49 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52498,7 +52764,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 256.54 137.16 0)
+			(at 237.49 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52507,7 +52773,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 251.46 137.16 0)
+			(at 232.41 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52944,6 +53210,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 256.54 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b6d5015-9529-4805-84c9-bcace0d94fef")
+		(property "Reference" "TP238"
+			(at 257.81 122.428 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 259.08 123.6979 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
+			(at 261.62 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 261.62 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 256.54 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aeaceb20-1380-4293-8e33-46f65d4d6166")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "TP238")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PowerDistributionUnitLib:Molex_NanoFit_1x2")
 		(at 43.18 102.87 0)
 		(mirror y)
@@ -53172,7 +53505,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 236.22 137.16 0)
+		(at 217.17 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -53180,7 +53513,7 @@
 		(dnp no)
 		(uuid "9deb549a-0b9c-4f56-b215-7c7752d277c7")
 		(property "Reference" "#PWR030"
-			(at 236.22 143.51 0)
+			(at 217.17 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53189,7 +53522,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 236.22 140.97 0)
+			(at 217.17 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53197,7 +53530,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 236.22 137.16 0)
+			(at 217.17 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53206,7 +53539,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 236.22 137.16 0)
+			(at 217.17 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53215,7 +53548,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 236.22 137.16 0)
+			(at 217.17 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53237,7 +53570,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 259.08 137.16 0)
+		(at 240.03 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -53245,7 +53578,7 @@
 		(dnp no)
 		(uuid "9e4a326a-cfa6-4352-956f-61ff3411dd00")
 		(property "Reference" "#PWR033"
-			(at 259.08 143.51 0)
+			(at 240.03 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53254,7 +53587,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 259.08 140.97 0)
+			(at 240.03 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53262,7 +53595,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 137.16 0)
+			(at 240.03 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53271,7 +53604,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 137.16 0)
+			(at 240.03 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53280,7 +53613,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 259.08 137.16 0)
+			(at 240.03 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53302,7 +53635,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 243.84 137.16 0)
+		(at 224.79 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -53310,7 +53643,7 @@
 		(dnp no)
 		(uuid "9ea6d1d0-9b22-4ea3-a10e-b9cc6e75f595")
 		(property "Reference" "TP13"
-			(at 245.11 133.858 0)
+			(at 226.06 133.858 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53319,7 +53652,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 246.38 135.1279 0)
+			(at 227.33 135.1279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53329,7 +53662,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 248.92 137.16 0)
+			(at 229.87 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53338,7 +53671,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 248.92 137.16 0)
+			(at 229.87 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53347,7 +53680,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 243.84 137.16 0)
+			(at 224.79 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53662,7 +53995,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 137.16 0)
+		(at 232.41 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -53670,7 +54003,7 @@
 		(dnp no)
 		(uuid "b5e56d86-025d-4bdd-a7c4-e39fecda030f")
 		(property "Reference" "#PWR032"
-			(at 251.46 143.51 0)
+			(at 232.41 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53679,7 +54012,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 251.46 140.97 0)
+			(at 232.41 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53687,7 +54020,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 137.16 0)
+			(at 232.41 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53696,7 +54029,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 137.16 0)
+			(at 232.41 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53705,7 +54038,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 251.46 137.16 0)
+			(at 232.41 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53727,7 +54060,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 125.73 0)
+		(at 232.41 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -53735,7 +54068,7 @@
 		(dnp no)
 		(uuid "ba80a3ad-887d-49ed-9890-e8ddb2e69b83")
 		(property "Reference" "#PWR028"
-			(at 251.46 132.08 0)
+			(at 232.41 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53744,7 +54077,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 251.46 129.54 0)
+			(at 232.41 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53752,7 +54085,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 125.73 0)
+			(at 232.41 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53761,7 +54094,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 125.73 0)
+			(at 232.41 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53770,7 +54103,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 251.46 125.73 0)
+			(at 232.41 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53850,6 +54183,71 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 247.65 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "beed76e5-43ee-4a6b-9dc1-bd9799d4635a")
+		(property "Reference" "#PWR090"
+			(at 247.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.65 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 247.65 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e2cf55a8-82c3-4e95-a30f-dfe62e95af4a")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "#PWR090")
 					(unit 1)
 				)
 			)
@@ -53990,7 +54388,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 259.08 137.16 0)
+		(at 240.03 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -53998,7 +54396,7 @@
 		(dnp no)
 		(uuid "ced2c5b7-5f36-447a-b17d-b434bbd009b3")
 		(property "Reference" "TP15"
-			(at 260.35 133.858 0)
+			(at 241.3 133.858 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54007,7 +54405,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 261.62 135.1279 0)
+			(at 242.57 135.1279 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54017,7 +54415,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
-			(at 264.16 137.16 0)
+			(at 245.11 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54026,7 +54424,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 264.16 137.16 0)
+			(at 245.11 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54035,7 +54433,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 259.08 137.16 0)
+			(at 240.03 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54449,6 +54847,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 256.54 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e0878dd3-4281-4573-b45c-0f14d8678cf5")
+		(property "Reference" "#PWR093"
+			(at 256.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 256.54 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 256.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 256.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63416f90-8077-429b-98eb-f527e6a84d8c")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "#PWR093")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3VA")
 		(at 269.24 129.54 0)
 		(unit 1)
@@ -54639,6 +55102,71 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "#PWR0480")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 256.54 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9fd3043-b639-4d5d-a94b-deefc9d0bac9")
+		(property "Reference" "#PWR092"
+			(at 256.54 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 256.54 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 256.54 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 256.54 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "59f37eaa-9391-43f1-bfaf-6acbbcc053a0")
+		)
+		(instances
+			(project "PowerDistributionUnit_Mk1"
+				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
+					(reference "#PWR092")
 					(unit 1)
 				)
 			)
@@ -54949,7 +55477,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 259.08 125.73 0)
+		(at 240.03 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -54957,7 +55485,7 @@
 		(dnp no)
 		(uuid "ef6c625d-8dc7-4572-9bc1-a33d33d55e9e")
 		(property "Reference" "#PWR029"
-			(at 259.08 132.08 0)
+			(at 240.03 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54966,7 +55494,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 259.08 129.54 0)
+			(at 240.03 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54974,7 +55502,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 125.73 0)
+			(at 240.03 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54983,7 +55511,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 125.73 0)
+			(at 240.03 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54992,7 +55520,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 259.08 125.73 0)
+			(at 240.03 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55014,7 +55542,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 243.84 125.73 0)
+		(at 224.79 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -55022,7 +55550,7 @@
 		(dnp no)
 		(uuid "fe27da3e-5b7b-4157-a17b-a17975d76a14")
 		(property "Reference" "#PWR027"
-			(at 243.84 132.08 0)
+			(at 224.79 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55031,7 +55559,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 243.84 129.54 0)
+			(at 224.79 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55039,7 +55567,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 243.84 125.73 0)
+			(at 224.79 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55048,7 +55576,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 243.84 125.73 0)
+			(at 224.79 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55057,7 +55585,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 243.84 125.73 0)
+			(at 224.79 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
