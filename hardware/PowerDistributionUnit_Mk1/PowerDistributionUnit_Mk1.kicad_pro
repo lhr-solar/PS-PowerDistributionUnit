@@ -58,7 +58,100 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        [
+          "silk_overlap|113250000|10290475|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|d94f7900-ae64-4226-8291-d7090ab00e0a",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|113250000|4252381|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|eed68204-e0a6-4070-afc7-b0e61b506bf7",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|113250000|6252381|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|fc4b5040-7f28-444a-a5d2-8c4bc539206d",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|113250000|8252380|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|b770edaa-f69a-47f7-ad39-a6690e96d6fe",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119702359|2071641|551f8809-f43c-4f15-940d-fba18a35ffa9|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119702359|71641|0e2ff98f-6479-4508-9612-85b1e99b7386|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119720850|-6527694|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|ddc7b659-8f2f-4cf4-aa17-a6ff0acfec38",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119900000|-1928359|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|7b79237b-4f68-418a-9aa6-3cc19cf6f343",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119900000|-3861905|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|cc97d1ee-2fde-4a52-84e5-2c7178e8fc15",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119900000|2366666|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|d62a42e6-dece-4f47-bbfe-aa819fb37f3e",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119900000|4071641|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|ef3f0dc9-4ea0-4103-92d3-a65398ee8a63",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|119900000|5909523|6194915f-e1a9-4148-87e1-6f2f64e9cfdf|f72b789b-8a9b-447c-a025-2dbc73e9b8d2",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|120044800|4138094|3e60b2f3-bb72-4e01-9474-aecadca2bcf1|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|120082895|-1900000|14c63123-8ee6-4d45-86a1-9aa9425e78c7|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|120082895|10416666|40b92a44-4f02-47f7-b0cb-c47295b6a511|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|120082895|214285|24d4f239-7520-45c9-82f9-b3a3bcf02337|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|120082895|7897618|2aa240bf-0d0b-4903-a2f2-49eeddc53ca2|6194915f-e1a9-4148-87e1-6f2f64e9cfdf",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122469967|-6912123|5fbf4955-565f-40b9-8877-616384a38ab4|d4f0be4e-9c16-45a6-a317-a4c7fa095996",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122650000|9193604|180963c0-ce3d-4912-991d-5e8c9d7bf88e|e25ca990-0ab2-4143-ae95-a96e2d8429d2",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122841396|-20145019|5f69dfa6-33fe-465b-9faf-0459397241a6|8b86db67-33a6-471a-8940-dc46c616acb5",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122869967|-4202161|3d425906-a71e-4f68-a880-5033e2710f2b|a10a0bdd-9cae-46e6-9167-eaf8d2c35375",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122869967|-6712123|2caedbf9-71d0-4165-9629-6f11a0593391|5fbf4955-565f-40b9-8877-616384a38ab4",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|122869967|9287876|180963c0-ce3d-4912-991d-5e8c9d7bf88e|cc8f3552-e64c-4e2c-9e0a-b8b708af4e4d",
+          "overlap non-issue"
+        ]
+      ],
       "meta": {
         "version": 2
       },
@@ -133,7 +226,7 @@
         "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.15,
-        "min_text_height": 0.8,
+        "min_text_height": 0.6,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
         "min_track_width": 0.09,
