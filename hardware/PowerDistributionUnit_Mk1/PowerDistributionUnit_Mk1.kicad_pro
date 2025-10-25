@@ -220,6 +220,18 @@
           "overlap non-issue"
         ],
         [
+          "silk_overlap|176120967|3421428|095c8858-f822-4340-af0e-1d2a6c5421b2|42660009-df2f-40e6-bd74-670b6bba8d08",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|179328571|6320967|00bdab1f-b54c-469a-992c-ede1946eaf53|eeb79d2f-2f76-4b9d-bb3c-c777eafc4ff1",
+          "overlap non-issue"
+        ],
+        [
+          "silk_overlap|179900000|2289499|309f0cb8-ec40-431e-8d4d-07bd94e849fe|8be5e33d-682e-496c-9c1d-0d621cf258d3",
+          "overlap non-issue"
+        ],
+        [
           "silk_overlap|181176834|-29109100|1bd86a2e-839f-4249-b4e9-36dea42a11cb|bf05296f-37dc-4512-b319-654b770867ff",
           "overlap non-issue"
         ],
@@ -685,7 +697,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "out/PowerDistributionUnit_Mk1.step",
       "svg": "",
       "vrml": ""
     },
