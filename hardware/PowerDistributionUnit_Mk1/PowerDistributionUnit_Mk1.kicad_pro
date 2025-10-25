@@ -60,6 +60,798 @@
       ],
       "drc_exclusions": [
         [
+          "clearance|160987500|16750000|4df6c8f3-ddfc-411d-9a2f-3932c76a08be|ab45dd81-7b8f-417c-bb8e-c9569ca7c51e",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "clearance|160987500|17400000|ab45dd81-7b8f-417c-bb8e-c9569ca7c51e|56fcd96f-3a95-44db-ab98-0b1fe77b64c2",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "clearance|160987500|18050000|56fcd96f-3a95-44db-ab98-0b1fe77b64c2|5986f6e2-a530-48c1-9979-715aaed798fb",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "clearance|163262500|17150000|6586b521-c67e-45d8-818b-5a10ec0df41a|aa8355b7-7913-4cbe-a0f3-8cf59b7c433c",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "clearance|163262500|17800000|081078c7-a5fa-43e3-845f-57bb95e14f44|6586b521-c67e-45d8-818b-5a10ec0df41a",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "clearance|163262500|18450000|34aa7da8-5e32-4ce3-9f7d-e972ed0481c5|081078c7-a5fa-43e3-845f-57bb95e14f44",
+          "footprint previously used on VCU with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|106650000|7c8cb226-b235-4d7b-967c-5cffd4559da7|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|107850000|07dc8cb8-4f39-41a3-a016-31c4a1571294|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|109050000|469ebc26-911b-475a-9f14-c257ae11bb6f|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|119650000|1fc1249e-859e-4941-81a9-d0168865ec99|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|120850000|e49edf66-7558-4436-9fa5-a7bc41cfb3ed|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|122050000|4fa836a2-2325-4b06-9c0b-21b2bb0479d3|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|132650000|60bbe0e4-0e84-42ae-84b4-7aec514e9324|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|133850000|667b23e2-0afa-460b-83fc-7e30bb16ebc3|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|135050000|c4fed2ce-9e23-47ef-957c-373dcd3bd148|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|145650000|d22c521c-0263-4790-b56a-06c1ca51f4db|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|146850000|692b97c0-3d83-4cc6-bf2d-f7061b29d661|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|148050000|e3a3b7a7-ea21-4999-88a1-b1731472da14|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|42950000|b9585767-5ee1-44a1-b873-115b89aca47e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|44150000|779566b7-a000-4c37-a7c9-c10dba9758a1|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|45350000|6a3e1e46-484f-458d-a02b-967339437772|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|55950000|b2ecdebe-1399-42eb-95a1-6f89541c6411|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|57150000|8520104c-eb71-4aeb-93f2-96c0d3227cc4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|58350000|4152ed97-8775-4fd7-b9c5-11f0e3c58262|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|68950000|f01c2189-8295-40af-b895-817377d0d984|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|70150000|6ee9ba91-51a6-45b1-8e8c-5ce4f8023b17|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|71350000|65f9816c-cba9-459c-9e3f-67a8e1bfb2d7|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|81950000|cf6cca17-2b6b-45cf-895e-76c469290c76|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|83150000|990e7430-13dd-41f2-a196-63a6944122d4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|127648000|84350000|5d2fabd1-112d-463a-b578-75256d8d66ee|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|106650000|43e15ac4-7310-4a8f-a672-270e4c465274|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|107850000|ed654dad-c95a-4154-b709-8be7be5092ac|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|109050000|13901384-5116-40d9-8f49-3e28a8659edc|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|119650000|4570e01c-9430-46a6-a73f-bc4b56cce07e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|120850000|7abf6b38-c7b9-4ac8-9495-788146f68829|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|122050000|b103eaca-1317-4ed8-91a8-76bfb5998418|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|132650000|24984524-d5a2-4ad7-90ad-9cf6cc96e0c9|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|133850000|4ba1fd46-9f04-4498-81e4-4b710ec39dbc|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|135050000|91519178-816a-4c1f-84e8-5a585df06e71|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|145650000|af5a86cd-84eb-48bc-a579-cb91edfbf7c6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|146850000|08e2b23a-3bfb-4c43-aba2-9c63209cd133|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|148050000|76b1b166-a060-4f66-ae33-fd66a8865a54|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|42950000|fad716df-9219-4afd-adb8-74e1be8a9211|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|44150000|9ef48ed9-266e-4ff7-bff7-c483edbf753b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|45350000|4caff71d-3a38-439d-bb7d-b0797f4acaa6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|55950000|2d0d8689-b5c6-409c-85fb-bfd4a83173d6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|57150000|bcf99492-9959-469d-b1aa-990a91e553fd|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|58350000|f1cbaa2c-3a79-4c90-8d6c-f5447cb71f72|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|68950000|23673dc0-7800-4f9e-874a-8dfdcab72e12|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|70150000|c59ab6da-dbe5-420b-b0f8-870ebcc568f0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|71350000|ce885dfc-ac34-4282-aa23-9620e0618a4c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|81950000|19a160ba-1a9d-4503-b724-270fc8c5b791|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|83150000|5461286a-7edf-4d98-be3e-c10fcdbc1e2c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|128848000|84350000|f149dadb-8f27-4642-9231-af827780249a|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|106650000|10b234ca-6a1e-41ed-b684-a3063de8192c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|107850000|1bcfb6d1-8796-41f9-9fc0-18b451e7853e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|109050000|c42b01b4-9bee-406f-9ba2-390d5276145b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|119650000|e1a95431-4489-4664-9513-89dda267cb59|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|120850000|58505593-5b26-4c19-a699-9893402d7edb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|122050000|92de746e-b8b1-4ebf-9963-2e3dd4666f53|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|132650000|13a00b77-563b-4faf-a778-aac44fb043ef|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|133850000|91f8d423-e62c-4cb6-a5f7-e5ab5c2598a1|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|135050000|7ac833e3-3e75-4b37-8561-b343a0e79f33|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|145650000|7728d8e1-3c2f-41e2-a141-08fc8e798a77|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|146850000|411454ae-1c22-4ebb-9987-2af2a5f2d5d9|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|148050000|6112c00c-fd76-4eb5-8eb1-fbd419b43cc9|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|42950000|d194c783-78a0-4b4b-afcb-003da7319fc3|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|44150000|77d126e0-4340-4862-834f-a13160f66643|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|45350000|7bb1610b-4bec-4293-ac83-59559ec2a9ac|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|55950000|104391ea-ec64-470f-9cdd-7fc1bbd5f21f|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|57150000|411fb91b-f51a-4a75-901d-d45c2a035b31|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|58350000|2fee4be0-7d74-4243-bef4-5c3a16c70a67|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|68950000|b5b260b8-54eb-4738-901f-abbe03690d5e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|70150000|8f6b1433-a090-4b4b-a592-f7429dac45c8|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|71350000|a470750a-dddb-484d-847c-ac1fb73df682|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|81950000|c5ded1f3-7b58-4596-a53d-5e6bdf326662|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|83150000|37cc1c57-0bd7-42a1-90b3-d2a4d2855ecc|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|130048000|84350000|04ea5d51-b906-4bf0-a6a1-9ff723bd8344|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|106650000|f8b8b772-4592-43a5-b61a-31713192172b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|107850000|c958319c-0b0c-4712-a4d9-97a7df115cf4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|109050000|1aefea02-58d7-41bc-9aac-98e5ef76889b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|119650000|448e5daa-031a-41e2-b64c-f1881c0a4ead|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|120850000|46d92634-261b-46a2-bc57-e8d60b75d874|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|122050000|099cb342-ae0b-418b-8d21-e22b18b049ae|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|132650000|860c1266-2140-4c8a-8422-619dba5be2fb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|133850000|263e7385-ec08-4bd0-a73a-16013f238ff8|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|135050000|d7acec68-11aa-4dad-bb19-e212d38e9c9f|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|145650000|5dec4132-8d0c-4767-a174-8373393118e4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|146850000|4c6ac503-989a-41d5-9ebe-3201c62e513b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|148050000|b0b5ce07-b3bd-49e5-9a39-ec01d9035598|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|42950000|7732ac81-3094-4c8f-8d0b-9300e1a402ba|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|44150000|a59ca219-7492-4af3-879b-3e21265ffdd6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|45350000|8c46e532-f213-40a1-8ef7-7b619f9d30b0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|55950000|21c6df98-2dbd-4830-b3b8-bc22679de500|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|57150000|2d3cf32b-c3ac-4393-a976-32d0f185d148|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|58350000|78d59d5e-d355-44a9-8581-3d9ad415ec49|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|68950000|857031cc-e617-4138-ae88-9e6f5bb5887b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|70150000|390726c1-7318-44b5-8702-cedb7b8e2407|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|71350000|b86576be-8d01-4339-8064-ddfea8fe2fcf|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|81950000|f0ec6a25-77cf-4308-9de0-63096ba0fa6a|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|83150000|e1a34b0d-30fe-47fb-8ac3-2ab8f4e6522b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|131248000|84350000|b38ff705-bf77-494b-af7b-4176db0ca7c8|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|118150000|ac18e2a6-1e47-4d38-92f8-5389ca31c877|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|119350000|7caf3472-5ccf-4ec4-b1e4-e149b3711b05|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|120550000|196755e5-9389-4611-becc-5da196641036|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|131150000|1273a4d7-d060-4e0d-b750-18b31fc0a13e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|132350000|31bc8999-f63e-4be9-8126-5af144a85910|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|133550000|8fbdcf28-7743-4ec5-9980-97bc7d278aeb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|144150000|5c00e492-3383-45ed-9677-2fe140bfe164|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|145350000|c9f9da25-5f15-4701-b93e-e9160a15094b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|146550000|d38956f1-9578-4e78-8036-aa62316cbbde|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|157150000|08dd6637-954b-41fe-b626-c8244e47610a|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|158350000|179814f8-0fd2-4891-89e5-b3644b970fc0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|159550000|9a7d5d71-89c8-40b0-aae5-477b595c6470|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|54750000|09451eb1-a36e-4489-9710-a494a9c04172|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|55950000|fa1d74a3-fc8b-4bb6-90ed-80aca8e511eb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|57150000|d4501569-76b1-43c1-96ba-21a9197e07e2|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|67750000|2409fc0a-2172-44ee-8ea6-89c8a39d4866|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|68950000|b562fdd4-c348-450a-8407-af84d04c05a1|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|70150000|c27249ae-38ba-4bdb-9385-961f2e35d310|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|80750000|7080ac9f-bf4d-4fd6-a71d-97a23dfc0305|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|81950000|78604877-03b4-46d5-b83c-71dbc7d0ba24|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|83150000|8411156d-1b77-4f17-acba-9548264377f1|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|93750000|76eb480d-0b07-4f85-b828-9ea9cbacf2e7|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|94950000|349f30c9-147a-47e9-a361-16d4f63a4427|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|172950000|96150000|871a9490-f6c4-43d0-9313-4bcee7ddbc12|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|118150000|f4f16bb4-c87e-4b50-b036-f56388b7674c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|119350000|0bbe8cf2-2134-478f-baed-c62abae90e42|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|120550000|3f40b7e0-dbdb-4318-8d27-069c21110575|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|131150000|eb977dd9-86d6-4b58-b12f-953f3dd48720|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|132350000|57a9e151-ba50-457f-a173-81b69de946f1|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|133550000|ba04b066-5c8a-4975-b02a-86da87e27ba6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|144150000|88f83e3d-28a2-4b82-8698-4261d34006fe|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|145350000|8edca67c-9dae-448b-8a87-e1ddb0af7576|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|146550000|c9d6a28a-df2e-4d02-8ae5-82418761561c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|157150000|4394e04f-296c-4862-917e-17131aab6878|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|158350000|05cf179a-ae11-40c3-a4cc-31508c37375c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|159550000|3c364cde-4c58-423b-b4b8-ee40a6799202|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|54750000|518269be-97e3-485a-96cc-94e6037011c4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|55950000|7876cfdc-06d7-4fff-a4bd-ee1ffc50f9bd|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|57150000|83f2d47c-e896-4243-adc4-85bc3af71ed2|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|67750000|df16df01-9204-4404-8ba6-697ec1b16ac8|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|68950000|cd63eb7f-30ba-4cee-853c-06b4391799ce|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|70150000|cdf15f56-fad8-4dc6-9eb8-d8f8e5046bb0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|80750000|a0815b76-6d7d-493a-a3b0-72bef152e535|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|81950000|9a8354bc-3532-4f02-97c8-8f3c8babef10|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|83150000|55fa7fac-c888-464d-8c0c-d5b683557cfb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|93750000|4c6cdbca-aa40-4d53-8f3a-f7527c87c04b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|94950000|8b811d78-4434-4ad8-842a-5499f302ef5c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|174150000|96150000|4dc6dec6-f0d5-4841-b371-d12acd06a1f0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|118150000|179c84bb-0943-4ead-b8a4-1883820db023|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|119350000|a13ceaa0-f7d7-42a1-9ad6-020a02026528|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|120550000|73dfa5c0-368f-490e-8e7d-c6a7d300a325|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|131150000|c93ef6c9-d540-4750-9ebb-e349c69a6d39|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|132350000|82c322a4-d514-453d-b45d-3b1593b22b33|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|133550000|73677813-e99d-44b9-a708-cc5af38d7be4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|144150000|1a694953-1a87-4d68-9259-22e24e13f362|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|145350000|7e5396f1-0e48-45cd-b275-392c9ddf0912|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|146550000|ebf7527f-5fc5-4170-973d-e7e35f6d8a27|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|157150000|be28c5cd-fc41-4e8e-a1ca-7ea0a87d0d0e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|158350000|d5025142-8938-4e60-b41a-0dde4a3fa92b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|159550000|2a385e3a-9e41-4ce4-8f07-bfb0797f2b7b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|54750000|82ae5fad-3f60-4e22-ae59-50b15c9d0a67|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|55950000|081be3b8-da7f-4529-b732-4d1547e41179|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|57150000|e181bbcf-a210-40d2-bfa3-b5eb084e8672|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|67750000|33e086e1-fb2a-4b07-b0ec-1ec3f7c140fb|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|68950000|7c873663-371f-4e49-9eb5-76293e4949b4|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|70150000|73bf5bc3-55db-4056-b808-f655d1198b0c|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|80750000|394fd2dd-928d-4043-b28f-d699884e4be6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|81950000|e1e1ac50-caa9-4eae-bef6-39350701e58b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|83150000|78396941-b07c-4f8a-b411-917ac9db5104|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|93750000|b9913310-109d-45dc-9c26-ce61151f6442|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|94950000|54fb70b6-2beb-4d21-bbe6-1d41457fae1f|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|175350000|96150000|bcd891eb-3179-4ac3-88d8-9c9498b23906|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|118150000|e004baec-3845-4d10-a94e-9ffdb7a966ef|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|119350000|7b26d7c5-e349-41e9-ae85-8b9606763ef8|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|120550000|6ed83000-8c23-4bf8-a17b-eaf83e19fe80|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|131150000|dfca5e18-e415-4ea5-8b8d-0a34b48d8dcc|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|132350000|71852bd8-1d93-418a-9998-4f8c0787049e|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|133550000|33dd4a97-d02b-465f-9cb3-a8f36bd466ad|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|144150000|02ccd461-3fa4-4dbb-8ee8-ec958362ef14|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|145350000|21d09ef5-9d79-4687-88a0-8907646a3fb6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|146550000|45a41043-0d2d-48bb-8644-c6873a3fb671|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "drill_out_of_range|176550000|157150000|faaa9d6c-7fd6-482e-93e7-f8322a77c188|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|158350000|e1a2e3a8-f47e-4413-b52d-fc50ce3c9e06|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|159550000|f36d62fe-630c-4eb3-b150-1b145b7f838d|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|54750000|93053771-48bc-4637-b81d-00837eef7cea|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|55950000|f5a6996d-3a80-436a-b54c-bbcbc41a9c68|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|57150000|03ae6316-3d6b-447e-ae9c-a0e8e1f6b251|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|67750000|5780f4ab-c922-4d06-8380-9bccbc4c09a3|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|68950000|9cad71c7-e365-4bf1-a67a-44541b64953f|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|70150000|aa011b82-d4e7-40a0-b8ce-64e236e57030|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|80750000|f8f932ea-b4c4-4bb8-83fb-da20620e31f0|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|81950000|138e7285-b3bf-4598-8c0a-fdfe94c8f7d6|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|83150000|ff6613a4-95cf-45e1-8941-d7a92d8ed494|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|93750000|0c6f8796-3a53-41b7-acf4-c07795f3b0fa|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|94950000|371b9e86-b4bb-416c-8c32-e94ce7f3544b|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
+          "drill_out_of_range|176550000|96150000|44202a28-c052-4e33-99d8-50470ae151b2|00000000-0000-0000-0000-000000000000",
+          "footprint previously used on TestBoard_TPS27SA08-Q1 with no issues"
+        ],
+        [
           "silk_over_copper|158188205|-31663996|9ebf57df-20b1-445c-b672-75b4f4c7f25f|00000000-0000-0000-0000-000000000000",
           "overlap non-issue"
         ],
@@ -140,11 +932,11 @@
           "overlap non-issue"
         ],
         [
-          "silk_overlap|138248000|80760000|0b30b68a-259c-44bb-b0a4-3fd44d7b76b2|e077e455-f1cc-4ed3-8237-3ffbd46019e6",
+          "silk_overlap|138248000|105940000|38183bfd-fc59-4cbd-9a39-c0d5e9e5fb6a|768cd927-d75d-4ebc-b8f6-6b284f802ec9",
           "overlap non-issue"
         ],
         [
-          "silk_overlap|138300000|105940000|38183bfd-fc59-4cbd-9a39-c0d5e9e5fb6a|768cd927-d75d-4ebc-b8f6-6b284f802ec9",
+          "silk_overlap|138248000|81240000|0b30b68a-259c-44bb-b0a4-3fd44d7b76b2|e077e455-f1cc-4ed3-8237-3ffbd46019e6",
           "overlap non-issue"
         ],
         [
@@ -232,7 +1024,7 @@
           "overlap non-issue"
         ],
         [
-          "silk_overlap|165900000|57860000|2e491f4b-7be5-4633-91c8-0eed1c120958|4df23a51-f7ef-4c03-80a7-833e1c976aa6",
+          "silk_overlap|165900000|58340000|2e491f4b-7be5-4633-91c8-0eed1c120958|4df23a51-f7ef-4c03-80a7-833e1c976aa6",
           "overlap non-issue"
         ],
         [
@@ -248,7 +1040,7 @@
           "overlap non-issue"
         ],
         [
-          "silk_overlap|165950000|121740000|31dad50d-06ba-47c3-b64a-3cb05284f63e|bcb8da26-06ef-4f14-a5fc-e3c376055562",
+          "silk_overlap|165950000|121260000|31dad50d-06ba-47c3-b64a-3cb05284f63e|bcb8da26-06ef-4f14-a5fc-e3c376055562",
           "overlap non-issue"
         ],
         [
