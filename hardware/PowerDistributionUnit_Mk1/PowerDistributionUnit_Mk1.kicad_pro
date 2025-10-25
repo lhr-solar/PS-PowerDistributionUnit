@@ -72,10 +72,6 @@
           "overlap non-issue"
         ],
         [
-          "silk_overlap|122755681|-6940694|5fbf4955-565f-40b9-8877-616384a38ab4|d4f0be4e-9c16-45a6-a317-a4c7fa095996",
-          "overlap non-issue"
-        ],
-        [
           "silk_overlap|140240000|15650000|64f920ea-6bb0-4840-ba25-cbfe64c1ee2b|7c4796ef-83c2-4ad3-bc7b-cd6554fef27e",
           "overlap non-issue"
         ],
@@ -90,6 +86,10 @@
         [
           "silk_overlap|162559420|15660000|6687c833-f38b-47c1-8082-e741b42152df|7c4796ef-83c2-4ad3-bc7b-cd6554fef27e",
           "overlap non-issue"
+        ],
+        [
+          "silk_overlap|164507277|22795019|00985b49-8d4d-461b-a05f-1b3cc8c4e298|1131e372-96fb-44b2-8620-803988c4ebcb",
+          "overlap non-issue (intentional)"
         ],
         [
           "silk_overlap|165200000|15650000|7c4796ef-83c2-4ad3-bc7b-cd6554fef27e|f9bdee1f-6bf6-4a74-a1f4-28068dd2816e",
