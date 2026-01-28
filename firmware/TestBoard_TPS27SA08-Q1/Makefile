@@ -22,7 +22,7 @@ TEST ?= main
 # PSOM: stm32l431cbt
 # FAT NUCLEO: stm32g474xx
 # BAD NUCLEO: stm32l432kcu
-PROJECT_TARGET ?= stm32g474xx
+PROJECT_TARGET ?= stm32l432kcu
 
 # SOURCE AND INCLUDE DIRECTORIES
 PROJECT_C_INCLUDES = $(wildcard core/inc) $(wildcard ../driver/inc)
@@ -113,12 +113,12 @@ else
 endif
 
 ifeq ($(MADEFILE), true)
-	$(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j | tee -a ${MADEFILE_DIR}/Madefile
+	@set -o pipefail; $(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j | tee -a ${MADEFILE_DIR}/Madefile
 else
 	$(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j
 endif
 
-	@echo -e "${GREEN}Compiled! Splendid! Jolly Good!!${NC}"
+	@echo -e "${GREEN}Compiled! Splendid! Jolly Good!!!\n${NC}"
 	
 ifeq ($(MADEFILE), true)
 	@echo -e "\nCompiled! Splendid! Jolly Good!!\n" >> ${MADEFILE_DIR}/Madefile
@@ -127,16 +127,14 @@ endif
 
 
 # FLASH -----------------------------------------------------------------------
-flash: 	
-	$(MAKE) -C $(BUILD_MAKEFILE_DIR) flash
-# -----------------------------------------------------------------------------
-
-
-# FLASH -----------------------------------------------------------------------
-clean:
-	-rm -fR $(MADEFILE_DIR)/Madefile
-	$(MAKE) -C $(BUILD_MAKEFILE_DIR) clean
-# -----------------------------------------------------------------------------
+flash:
+	@set -o pipefail; if $(MAKE) -C $(BUILD_MAKEFILE_DIR) flash; then \
+		echo -e "${GREEN}Flash successful.\n${NC}"; \
+	else \
+		echo -e "${RED}Flash failure.\n${NC}"; \
+		exit 1; \
+	fi
+# # -----------------------------------------------------------------------------
 
 
 # DOCUMENTATION ---------------------------------------------------------------
