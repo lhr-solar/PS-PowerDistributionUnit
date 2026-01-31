@@ -1,0 +1,256 @@
+#include "MCP23S17.h"
+
+#define MCP23S17_IOCON_MIRROR_MASK 0x40
+#define MCP23S17_IOCON_HAEN_MASK 0x08
+#define MCP23S17_IOCON_ODR_MASK 0x04
+#define MCP23S17_IOCON_INTPOL_MASK 0x02
+
+#define MCP23S17_PORT_PIN_INVALID_CHECK port >= MCP23S17_PORT_INVALID || pin >= MCP23S17_PIN_INVALID
+#define MCP23S17_REG_INVALID_CHECK (reg_addr+num_regs-1) >= MCP23S17_REG_INVALID
+
+void MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+{
+    if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return;}
+
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
+    HAL_Delay(1);
+
+    uint8_t opcode = MCP23S17_WRITE_OPCODE | (device->addr << 1);
+
+    HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(device->spi, data, num_regs, HAL_MAX_DELAY);
+
+    HAL_Delay(5);
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+}
+
+void MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+{
+    if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return;}
+
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
+    HAL_Delay(1);
+
+    uint8_t opcode = MCP23S17_READ_OPCODE | (device->addr << 1);    
+
+    HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY);
+    HAL_SPI_Receive(device->spi, (uint8_t*) data, num_regs, HAL_MAX_DELAY);
+
+    HAL_Delay(5);
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+}
+
+static inline void MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool val)
+{
+    uint8_t reg_state = 0;
+    MCP23S17_ReadRegs(device, reg, &reg_state, 1);
+
+    if(val)
+    {
+        reg_state |= (0x01 << pin);
+    }
+    else
+    {
+        reg_state &= ~(0x01 << pin);
+    }
+
+    MCP23S17_WriteRegs(device, reg, &reg_state, 1);
+}
+
+static inline bool MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin)
+{
+    uint8_t reg_state = 0;
+    MCP23S17_ReadRegs(device, reg, &reg_state, 1);
+
+    return (reg_state >> pin) & 0x01;
+}
+
+bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint8_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol)
+{
+    device->spi = spi;
+    device->addr = address_en == MCP23S17_ADDRESSING_ENABLE ? addr << 1 : 0;
+    device->cs_port = cs_port;
+    device->cs_pin = cs_pin;
+
+    uint8_t configuration = 0;
+
+    // IOCON.BANK = 0 | REGISTER ADDRESSING
+    // This driver is designed ONLY for IOCON.BANK=0 register addresses.
+    
+    // IOCON.MIRROR | INT PIN MIRRORING
+    if(int_mirror)
+    {
+        configuration |= MCP23S17_IOCON_MIRROR_MASK;
+    }
+
+    // IOCON.SEQOP = 0 | SEQUENTIAL OPERATION MODE
+    // This driver is designed to utilize sequential operations. 
+
+    // IOCON.DISSLW = 0 | SDA SLEW RATE CONTROL
+    // I don't know why this is here or what it's for.
+
+    // IOCON.HAEN | HARDWARE ADDRESS ENABLE
+    if(address_en == MCP23S17_ADDRESSING_ENABLE)
+    {
+        configuration |= MCP23S17_IOCON_HAEN_MASK;
+    }
+
+    // IOCON.ODR | INT PIN OPEN-DRAIN
+    if(int_odr == MCP23S17_CONFIG_INT_OD)
+    {
+        configuration |= MCP23S17_IOCON_ODR_MASK;
+    }
+
+    // IOCON.INTPOL | INT PIN POLARITY
+    if(int_pol == MCP23S17_CONFIG_INT_ACTIVE_HIGH)
+    {
+        configuration |= MCP23S17_IOCON_INTPOL_MASK;
+    }
+
+    // Write configuration
+    MCP23S17_WriteRegs(device, MCP23S17_REG_IOCON, &configuration, 1);
+
+    // Verify configuration
+    uint8_t configuration_readback = 0;
+    MCP23S17_ReadRegs(device, MCP23S17_REG_IOCON, &configuration_readback, 1);
+
+    if(configuration == configuration_readback)
+    {
+       return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+// is any checking of valid handle or initialization necessary?
+void MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Dir dir)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_IODIRA+port), pin, dir);
+}
+
+void MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Pullup pu)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPPUA+port), pin, pu);
+}
+
+void MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InputPolarity pol)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_IPOLA+port), pin, pol);
+}
+
+void MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool state)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPIOA+port), pin, state);
+}
+
+void MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    // check size of state?
+    MCP23S17_WriteRegs(device, MCP23S17_REG_GPIOA, state, 2);
+}
+
+bool MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return false;}
+
+    return MCP23S17_ReadBit(device, (MCP23S17_REG_GPIOA+port), pin);
+}
+
+void MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    MCP23S17_ReadRegs(device, MCP23S17_REG_GPIOA, state, 2);
+}
+
+void MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptEnable inten)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPINTENA+port), pin, inten);
+}
+
+void MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptMode intmode)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_INTCONA+port), pin, intmode);
+}
+
+void MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool defval)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
+
+    MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_DEFVALA+port), pin, defval);
+}
+
+void MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval)
+{
+    // check size of state?
+    MCP23S17_WriteRegs(device, MCP23S17_REG_DEFVALA, defval, 2);
+}
+
+uint8_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port)
+{
+    uint8_t reg_state = 0;
+    MCP23S17_ReadRegs(device, (MCP23S17_REG_INTFA+port), &reg_state, 1);
+
+    return reg_state;
+}
+
+void MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    MCP23S17_ReadRegs(device, MCP23S17_REG_INTFA, state, 2);
+}
+
+uint8_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port)
+{
+    uint8_t reg_state = 0;
+    MCP23S17_ReadRegs(device, (MCP23S17_REG_INTCAPA+port), &reg_state, 1);
+
+    return reg_state;
+}
+
+void MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    MCP23S17_ReadRegs(device, MCP23S17_REG_INTCAPA, state, 2);
+}
+
+// set up struct for pin information instead?
+void MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput pin_config)
+{
+    // pin setup
+    MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_OUTPUT);
+    MCP23S17_SetPullup_Pin(device, pin_config.port, pin_config.pin, MCP23S17_PULLUP_DISABLED);
+    MCP23S17_WriteGPIO_Pin(device, pin_config.port, pin_config.pin, pin_config.initial_state);
+}
+
+void MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput pin_config)
+{
+    // pin setup
+    MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_INPUT);
+    MCP23S17_SetPullup_Pin(device, pin_config.port, pin_config.pin, pin_config.pullup);
+    MCP23S17_SetInputPolarity_Pin(device, pin_config.port, pin_config.pin, pin_config.inpol);
+
+    // interrupt setup
+    MCP23S17_SetInterruptEnable_Pin(device, pin_config.port, pin_config.pin, pin_config.inten);
+    MCP23S17_SetInterruptMode_Pin(device, pin_config.port, pin_config.pin, pin_config.intmode);
+    MCP23S17_SetInterruptDefaultValue_Pin(device, pin_config.port, pin_config.pin, pin_config.default_value);
+}
+
+void MCP23S17_TheBestGPIOInterruptSetupThatYoullEverSeeAnywhereInTheSolarSystem_CallNowToSeeItHappen(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptEnable inten, MCP23S17_InterruptMode intmode, bool defval)
+{
+    MCP23S17_SetInterruptEnable_Pin(device, port, pin, inten);
+    MCP23S17_SetInterruptMode_Pin(device, port, pin, intmode);
+    MCP23S17_SetInterruptDefaultValue_Pin(device, port, pin, defval);
+}
