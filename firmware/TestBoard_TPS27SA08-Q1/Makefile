@@ -113,15 +113,21 @@ else
 endif
 
 ifeq ($(MADEFILE), true)
-	@set -o pipefail; $(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j | tee -a ${MADEFILE_DIR}/Madefile
+	@set -o pipefail; if $(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j | tee -a ${MADEFILE_DIR}/Madefile; then \
+		echo -e "${GREEN}Compiled! Splendid! Jolly Good!!!\n${NC}"; \
+		echo -e "\nCompiled! Splendid! Jolly Good!!\n" >> ${MADEFILE_DIR}/Madefile; \
+	else \
+		echo -e "${RED}Build failure.\n${NC}"; \
+		echo -e "\nBuild failure.\n" >> ${MADEFILE_DIR}/Madefile; \
+		exit 1; \
+	fi
 else
-	$(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j
-endif
-
-	@echo -e "${GREEN}Compiled! Splendid! Jolly Good!!!\n${NC}"
-	
-ifeq ($(MADEFILE), true)
-	@echo -e "\nCompiled! Splendid! Jolly Good!!\n" >> ${MADEFILE_DIR}/Madefile
+	@set -o pipefail; if $(BEAR_PREFIX) $(MAKE) -C $(BUILD_MAKEFILE_DIR) all -j; then \
+		echo -e "${GREEN}Compiled! Splendid! Jolly Good!!!\n${NC}"; \
+	else \
+		echo -e "${RED}Build failure.\n${NC}"; \
+		exit 1; \
+	fi
 endif
 # -----------------------------------------------------------------------------
 
@@ -134,7 +140,14 @@ flash:
 		echo -e "${RED}Flash failure.\n${NC}"; \
 		exit 1; \
 	fi
-# # -----------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
+
+
+# CLEAN -----------------------------------------------------------------------
+clean:
+	$(MAKE) -C $(BUILD_MAKEFILE_DIR) clean
+	-rm -fR $(MADEFILE_DIR)/Madefile
+# -----------------------------------------------------------------------------
 
 
 # DOCUMENTATION ---------------------------------------------------------------
