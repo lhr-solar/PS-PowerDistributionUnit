@@ -30812,10 +30812,6 @@
 		(uuid "819e5b8f-742d-4498-836a-6e353b30b2d2")
 	)
 	(no_connect
-		(at 243.84 115.57)
-		(uuid "d696a5d5-1781-42db-bd47-8cc53689781c")
-	)
-	(no_connect
 		(at 157.48 81.28)
 		(uuid "d8aae7c6-5068-46ba-911c-e28324924330")
 	)
@@ -31283,6 +31279,16 @@
 			(type default)
 		)
 		(uuid "52199d0a-16c0-47b6-b43e-10a0942e25c5")
+	)
+	(wire
+		(pts
+			(xy 243.84 115.57) (xy 251.46 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "550386ab-b06b-4dd8-9e6b-eedc80d95752")
 	)
 	(wire
 		(pts
@@ -32305,7 +32311,7 @@
 		(uuid "67b34a43-c581-49d5-a092-cad2401c103b")
 	)
 	(label "MOSI_3"
-		(at 257.81 110.49 180)
+		(at 261.62 110.49 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -32413,6 +32419,28 @@
 			(justify right bottom)
 		)
 		(uuid "fb1de8eb-92fb-4028-b7e3-9f138a7fa003")
+	)
+	(global_label "SRCLK_ENed"
+		(shape input)
+		(at 251.46 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "41fb5bdc-ec83-4efa-8316-237cbecb58b6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 266.1775 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "LED_SRCLK"
 		(shape output)

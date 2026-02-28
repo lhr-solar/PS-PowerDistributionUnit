@@ -20692,7 +20692,7 @@
 	)
 	(rectangle
 		(start 20.32 45.72)
-		(end 90.17 78.74)
+		(end 104.14 78.74)
 		(stroke
 			(width 0)
 			(type default)
@@ -21905,7 +21905,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 64.77) (xy 78.74 66.04)
+			(xy 92.71 64.77) (xy 92.71 66.04)
 		)
 		(stroke
 			(width 0)
@@ -23065,7 +23065,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 55.88) (xy 78.74 57.15)
+			(xy 92.71 55.88) (xy 92.71 57.15)
 		)
 		(stroke
 			(width 0)
@@ -23075,7 +23075,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 62.23) (xy 72.39 62.23)
+			(xy 63.5 62.23) (xy 71.12 62.23)
 		)
 		(stroke
 			(width 0)
@@ -23593,16 +23593,6 @@
 		)
 		(uuid "8b1b8f9c-8391-4ff0-867a-65a495b46371")
 	)
-	(label "SRCLK_ENed"
-		(at 72.39 62.23 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8ca01f6a-e3bc-4093-a57e-b0029e3ad6aa")
-	)
 	(label "~{ST}.1"
 		(at 74.93 130.81 0)
 		(effects
@@ -23852,6 +23842,28 @@
 			(justify left bottom)
 		)
 		(uuid "ff69678b-f584-4a95-8d43-d8927cc86950")
+	)
+	(global_label "SRCLK_ENed"
+		(shape input)
+		(at 71.12 62.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2514aa96-c9a5-4c30-aecf-8a4a5dec91ef")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 85.8375 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "SNS.[0..15]"
 		(shape output)
@@ -25783,7 +25795,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 78.74 55.88 0)
+		(at 92.71 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25791,7 +25803,7 @@
 		(dnp no)
 		(uuid "6b5c23bd-b663-442e-8f3d-f081ce6af8ac")
 		(property "Reference" "#PWR016"
-			(at 78.74 59.69 0)
+			(at 92.71 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25800,7 +25812,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 78.74 52.07 0)
+			(at 92.71 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25808,7 +25820,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25817,7 +25829,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25826,7 +25838,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26086,7 +26098,7 @@
 	)
 	(symbol
 		(lib_id "PowerDistributionUnitCapacitorLib:1u")
-		(at 78.74 60.96 0)
+		(at 92.71 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26095,7 +26107,7 @@
 		(fields_autoplaced yes)
 		(uuid "7d3a2031-cc77-4641-b5d1-006a8ba1b993")
 		(property "Reference" "C102"
-			(at 82.55 59.6899 0)
+			(at 96.52 59.6899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26104,7 +26116,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 82.55 62.2299 0)
+			(at 96.52 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26113,7 +26125,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 79.7052 64.77 0)
+			(at 93.6752 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26122,7 +26134,7 @@
 			)
 		)
 		(property "Datasheet" "kicad-embed://MLR01_e.pdf"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26131,7 +26143,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26140,7 +26152,7 @@
 			)
 		)
 		(property "P/N" "MLASU168SB5105KTNA01"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26149,7 +26161,7 @@
 			)
 		)
 		(property "Mouser P/N" "963-MLASU168SB5105KT"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26158,7 +26170,7 @@
 			)
 		)
 		(property "Digikey P/N" ""
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26676,7 +26688,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 78.74 66.04 0)
+		(at 92.71 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26684,7 +26696,7 @@
 		(dnp no)
 		(uuid "de1b4fb8-e968-4662-8417-eabb06cbcef9")
 		(property "Reference" "#PWR018"
-			(at 78.74 72.39 0)
+			(at 92.71 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26693,7 +26705,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 78.74 69.596 0)
+			(at 92.71 69.596 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26701,7 +26713,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26710,7 +26722,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26719,7 +26731,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
