@@ -34464,7 +34464,7 @@
 				)
 			)
 		)
-		(property "Footprint" "UTSVT_Special:LeaderSOM"
+		(property "Footprint" "PowerDistributionUnitLib:LeaderSOM_Centered"
 			(at 138.43 64.77 0)
 			(effects
 				(font
@@ -34936,7 +34936,7 @@
 				)
 			)
 		)
-		(property "Footprint" "UTSVT_Special:LeaderSOM"
+		(property "Footprint" "PowerDistributionUnitLib:LeaderSOM_Centered"
 			(at 138.43 127 0)
 			(effects
 				(font
