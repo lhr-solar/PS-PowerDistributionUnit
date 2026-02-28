@@ -151388,7 +151388,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C128"
-			(at -0.3 -1 180)
+			(at -0.2 -1 180)
 			(layer "B.SilkS")
 			(uuid "1ed6bd50-95e9-4343-8c5c-599b6ae6ac9f")
 			(effects
@@ -153916,7 +153916,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C118"
-			(at -0.3 -1 0)
+			(at -0.2 -1 0)
 			(layer "B.SilkS")
 			(uuid "e4881945-84cf-4829-9dc2-a69c5b745dd3")
 			(effects
@@ -177589,7 +177589,7 @@
 		(uuid "0a406293-94c1-4520-816e-78423324badd")
 	)
 	(gr_line
-		(start 165.5 72.2)
+		(start 165.5 75.1)
 		(end 165.5 82.4)
 		(stroke
 			(width 0.1)
@@ -178639,6 +178639,16 @@
 		(uuid "9263c0da-1bd2-4772-90c4-03070e648e47")
 	)
 	(gr_line
+		(start 165.5 72.2)
+		(end 165.5 74.1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "94e9a565-d251-453e-81ed-262ed841edcd")
+	)
+	(gr_line
 		(start 126.6 105)
 		(end 126.6 88.9)
 		(stroke
@@ -179269,7 +179279,7 @@
 		(uuid "e19b31c3-7c5c-403a-a69f-9d3ea9b17db4")
 	)
 	(gr_line
-		(start 165.5 59.2)
+		(start 165.5 62.1)
 		(end 165.5 69.4)
 		(stroke
 			(width 0.1)
@@ -179397,6 +179407,16 @@
 		)
 		(layer "B.SilkS")
 		(uuid "ee3b0269-e71f-4081-8547-e6ba3ed676cb")
+	)
+	(gr_line
+		(start 165.5 61.1)
+		(end 165.5 59.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "f071cb10-a787-43b7-95c8-9f909e5e669f")
 	)
 	(gr_line
 		(start 182.2 81)
