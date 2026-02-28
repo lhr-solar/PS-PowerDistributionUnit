@@ -138810,6 +138810,16 @@
 	)
 	(wire
 		(pts
+			(xy 185.42 63.5) (xy 185.42 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cb14651-df46-419c-8b05-f05a5fc969b1")
+	)
+	(wire
+		(pts
 			(xy 73.66 66.04) (xy 85.09 66.04)
 		)
 		(stroke
@@ -138897,16 +138907,6 @@
 			(type default)
 		)
 		(uuid "645b2631-dca3-4438-99c4-4bf990fd7ede")
-	)
-	(wire
-		(pts
-			(xy 185.42 63.5) (xy 185.42 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64d2bef1-0a75-4d20-a722-15fe4a7c8b3e")
 	)
 	(wire
 		(pts
@@ -139643,6 +139643,16 @@
 			(justify left bottom)
 		)
 		(uuid "520ad939-ab1c-4e59-ab3f-106bb86c9487")
+	)
+	(label "RPP_SRC"
+		(at 185.42 66.04 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "8543209f-df8d-44ff-9096-340200c46d4b")
 	)
 	(label "LV_IN_FUSED"
 		(at 177.8 104.14 180)
