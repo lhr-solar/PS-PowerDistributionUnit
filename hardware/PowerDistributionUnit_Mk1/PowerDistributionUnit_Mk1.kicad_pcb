@@ -176779,7 +176779,7 @@
 	)
 	(gr_rect
 		(start 154.8 63.95)
-		(end 157.15 71.55)
+		(end 157.15 76.55)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -180605,7 +180605,7 @@
 			(justify top)
 		)
 	)
-	(gr_text "Rev A"
+	(gr_text "Rev B"
 		(at 156.85 65.6 90)
 		(layer "F.SilkS")
 		(uuid "77973f65-d9bf-4c22-878a-d4978d9785a6")
@@ -180960,8 +180960,8 @@
 			(justify right top)
 		)
 	)
-	(gr_text "2025"
-		(at 156.65 71.4 90)
+	(gr_text "2025-2026"
+		(at 156.6 76.4 90)
 		(layer "F.SilkS")
 		(uuid "9de42340-83b7-4ee9-90fa-744cebcb3c7b")
 		(effects
