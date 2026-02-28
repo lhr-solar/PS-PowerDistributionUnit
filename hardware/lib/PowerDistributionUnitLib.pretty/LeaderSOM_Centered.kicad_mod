@@ -19664,7 +19664,7 @@
 	)
 	(model "kicad-embed://LeaderSOM.step"
 		(offset
-			(xyz -163.8 76.8 4.5)
+			(xyz -163.8 99.3 4.5)
 		)
 		(scale
 			(xyz 1 1 1)
