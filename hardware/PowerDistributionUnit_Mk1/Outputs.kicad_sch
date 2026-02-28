@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Outputs")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 	)

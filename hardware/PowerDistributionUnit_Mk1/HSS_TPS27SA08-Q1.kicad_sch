@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "High Side Switch (TPS27SA08-Q1)")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 	)
@@ -171607,6 +171608,18 @@
 		)
 		(uuid c516779f-42a5-46c1-9240-05b204493302)
 	)
+	(text "As the sensitvity of the external current sensor is higher, it is recommended to use that instead. "
+		(exclude_from_sim no)
+		(at 54.356 194.31 0)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+		)
+		(uuid "1d5dfdf5-c492-46ce-bca9-bc403a1ed955")
+	)
 	(text "Configuration Pull-up/down"
 		(exclude_from_sim no)
 		(at 253.746 107.188 0)
@@ -171700,10 +171713,53 @@
 		)
 		(uuid "ad5e7ee4-220b-44ce-8e0b-3ab7a4e69502")
 	)
-	(text_box "> For current sensing I range 0 - 30 A, I_{SNSI} current range is 0 - 6.522 mA. \n  (from datasheet, worst-case current limit range is 12.8 - 27.8 A (nominally 20 A))\n> For thermal sensing range -40 - 150 °C, I_{SNST} current range is 0 - 2.25 mA. \n  (values obtained from datasheet table, operating temp range is -40 - 125 °C)\n> For voltage sensing range 0 - 40 V, I_{SNSV} current range is 0 - 3.468 mA. \n  (values obtained from datasheet table, operating voltage range is 8 - 36 V, with max long transient 40 V)\n\nWhen the device is faulted, SNS will output I_{SNSFH} (6.9 mA nom, 7.6 mA max) and the ~{ST} pin will be pulled low.\n\nAs the ADC full-scale voltage is 3.3 V, target a SNS voltage range of 0 - 3 V (to provide some buffer).\nResistor value is selected to be R_{SNS} = 392 Ω (ideally 394.737 Ω), then...\nFault range: 0 - 2.9792 V\nCurrent sensing range: 0 - 2.568 V\nThermal sensing range: 0 - 0.882 V (consider using PGA)\nVoltage sensing range: 0 - 1.359 V (consider using PGA)\n\nPreferably a 1% tolerance resistor. (Maximum voltage with worst-case resistor 3.009 V)\nConsider measuring each resistor and populating its precise value in code to maximize sensing accuracy.\n\nWhen EN is low and DIA_EN is high, the device will perform open-load detection and ouput I_{SNSFH} if detected.\n\nIt is recommended for the software to take multiple samples and use a median."
+	(text_box "EXTERNAL CURRENT SENSOR"
 		(exclude_from_sim no)
-		(at 15.24 154.94 0)
-		(size 88.9 40.64)
+		(at 105.41 133.35 0)
+		(size 67.31 3.81)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left top)
+		)
+		(uuid "b1ad6273-a5c7-4a68-b019-bad9bb2e2197")
+	)
+	(text_box "Note: when DIA_EN is high and EN is low, the device will perform open-load detection. An unloaded output will read ~21 V on a multimeter for 24 V input. However, this is a high-impedance output (~1 MΩ) and will drop to zero for any load - the switch is still OFF. "
+		(exclude_from_sim no)
+		(at 109.22 101.6 0)
+		(size 59.69 11.43)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "c63dfa11-33f8-43d1-8bf0-13af301f1e79")
+	)
+	(text_box "> For current sensing I range 0 - 30 A, I_{SNSI} current range is 0 - 6.522 mA. \n  (from datasheet, worst-case current limit range is 12.8 - 27.8 A (nominally 20 A))\n> For thermal sensing range -40 - 150 °C, I_{SNST} current range is 0 - 2.25 mA. \n  (values obtained from datasheet table, operating temp range is -40 - 125 °C)\n> For voltage sensing range 0 - 40 V, I_{SNSV} current range is 0 - 3.468 mA. \n  (values obtained from datasheet table, operating voltage range is 8 - 36 V, with max long transient 40 V)\n\nWhen the device is faulted, SNS will output I_{SNSFH} (6.9 mA nom, 7.6 mA max) and the ~{ST} pin will be pulled low.\n\nAs the ADC full-scale voltage is 3.3 V, target a SNS voltage range of 0 - 3 V (to provide some buffer).\nResistor value is selected to be R_{SNS} = 392 Ω (ideally 394.737 Ω), then...\nFault range: 0 - 2.9792 V\nCurrent sensing range: 0 - 2.568 V\nThermal sensing range: 0 - 0.882 V (consider using PGA)\nVoltage sensing range: 0 - 1.359 V (consider using PGA)\n\nPreferably a 1% tolerance resistor. (Maximum voltage with worst-case resistor 3.009 V)\nConsider measuring each resistor and populating its precise value in code to maximize sensing accuracy.\n\nWhen EN is low and DIA_EN is high, the device will perform open-load detection and output I_{SNSFH} if detected.\n\nIt is recommended for the software to take multiple samples and use a median.\n\nThe sensitivity of current measurements of this device is 85.22 mV/A."
+		(exclude_from_sim no)
+		(at 15.24 152.4 0)
+		(size 88.9 43.18)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -171720,9 +171776,9 @@
 		)
 		(uuid "c7cc483e-26ba-4e31-8ffc-82d2258ba99a")
 	)
-	(text_box "DIAGNOSTICS"
+	(text_box "HSS DIAGNOSTICS"
 		(exclude_from_sim no)
-		(at 15.24 135.89 0)
+		(at 15.24 133.35 0)
 		(size 88.9 3.81)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
@@ -171742,6 +171798,26 @@
 			(justify left top)
 		)
 		(uuid "cc62ab1a-1eed-43fc-9175-d2b96dad1d63")
+	)
+	(text_box "Current sensor reading:\nI_{sense} = ((V_{out} - V_{QVO})/S = (V_{out} - 1.65)/0.132 [A]\n\nFor the current sense range of -10 A to 10 A, the output voltage range is 0.33 - 2.97 V. \n\nFor this application's current range of 0 A to 8 A (SMD fuse value), the output voltage range is 1.65 - 2.706 V.\nWith ADCIN- set to 1.65 V, this is within the ADS131M08-Q1 ADC's input limit of 1.2 V differential (max: 1.056 V) and -1.3 to 3.3 V absolute. "
+		(exclude_from_sim no)
+		(at 105.41 142.24 0)
+		(size 67.31 53.34)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "db1437ab-111f-4cdd-9eac-0e10a007a958")
 	)
 	(junction
 		(at 160.02 45.72)
@@ -172792,6 +172868,131 @@
 		(uuid "fe445548-29ef-45c9-8fc1-1b4970a87c7f")
 	)
 	(table
+		(column_count 3)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 36.83 22.86 7.62)
+		(row_heights 2.54 2.54)
+		(cells
+			(table_cell "Quiescent Voltage Output (V_{QVO})"
+				(exclude_from_sim no)
+				(at 105.41 137.16 0)
+				(size 36.83 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "0f5eb52f-022e-4fb2-acaa-4bb0048d7492")
+			)
+			(table_cell "1.65 V"
+				(exclude_from_sim no)
+				(at 142.24 137.16 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "ca943d72-a555-4592-ad59-bc15be02b1ac")
+			)
+			(table_cell "V"
+				(exclude_from_sim no)
+				(at 165.1 137.16 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "fa778642-0f43-415d-9082-e9834d902ce5")
+			)
+			(table_cell "Sensitivity (S)"
+				(exclude_from_sim no)
+				(at 105.41 139.7 0)
+				(size 36.83 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "681dcd79-9438-4208-8c56-d1d5267c2380")
+			)
+			(table_cell "132 mV/A"
+				(exclude_from_sim no)
+				(at 142.24 139.7 0)
+				(size 22.86 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "5dca3c15-1b7a-4212-baed-ce45712b1105")
+			)
+			(table_cell "mV/A"
+				(exclude_from_sim no)
+				(at 165.1 139.7 0)
+				(size 7.62 2.54)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "589137ad-351c-424b-af19-410dd00e1ab3")
+			)
+		)
+	)
+	(table
 		(column_count 4)
 		(border
 			(external yes)
@@ -172814,7 +173015,7 @@
 		(cells
 			(table_cell "SEL1"
 				(exclude_from_sim no)
-				(at 15.24 139.7 0)
+				(at 15.24 137.16 0)
 				(size 6.35 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172833,7 +173034,7 @@
 			)
 			(table_cell "SEL2"
 				(exclude_from_sim no)
-				(at 21.59 139.7 0)
+				(at 21.59 137.16 0)
 				(size 7.62 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172852,7 +173053,7 @@
 			)
 			(table_cell "Output"
 				(exclude_from_sim no)
-				(at 29.21 139.7 0)
+				(at 29.21 137.16 0)
 				(size 21.59 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172871,7 +173072,7 @@
 			)
 			(table_cell "Conversion"
 				(exclude_from_sim no)
-				(at 50.8 139.7 0)
+				(at 50.8 137.16 0)
 				(size 53.34 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172890,7 +173091,7 @@
 			)
 			(table_cell "0"
 				(exclude_from_sim no)
-				(at 15.24 142.24 0)
+				(at 15.24 139.7 0)
 				(size 6.35 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172907,7 +173108,7 @@
 			)
 			(table_cell "0"
 				(exclude_from_sim no)
-				(at 21.59 142.24 0)
+				(at 21.59 139.7 0)
 				(size 7.62 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172924,7 +173125,7 @@
 			)
 			(table_cell "Load Current"
 				(exclude_from_sim no)
-				(at 29.21 142.24 0)
+				(at 29.21 139.7 0)
 				(size 21.59 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172941,7 +173142,7 @@
 			)
 			(table_cell "I_{SNSI} = I_{OUT} / K_{SNS}            K_{SNS} = 4600"
 				(exclude_from_sim no)
-				(at 50.8 142.24 0)
+				(at 50.8 139.7 0)
 				(size 53.34 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172958,7 +173159,7 @@
 			)
 			(table_cell "0"
 				(exclude_from_sim no)
-				(at 15.24 144.78 0)
+				(at 15.24 142.24 0)
 				(size 6.35 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172975,7 +173176,7 @@
 			)
 			(table_cell "1"
 				(exclude_from_sim no)
-				(at 21.59 144.78 0)
+				(at 21.59 142.24 0)
 				(size 7.62 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -172992,7 +173193,7 @@
 			)
 			(table_cell "Not Used"
 				(exclude_from_sim no)
-				(at 29.21 144.78 0)
+				(at 29.21 142.24 0)
 				(size 21.59 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173009,7 +173210,7 @@
 			)
 			(table_cell ""
 				(exclude_from_sim no)
-				(at 50.8 144.78 0)
+				(at 50.8 142.24 0)
 				(size 53.34 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173026,7 +173227,7 @@
 			)
 			(table_cell "1"
 				(exclude_from_sim no)
-				(at 15.24 147.32 0)
+				(at 15.24 144.78 0)
 				(size 6.35 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173043,7 +173244,7 @@
 			)
 			(table_cell "0"
 				(exclude_from_sim no)
-				(at 21.59 147.32 0)
+				(at 21.59 144.78 0)
 				(size 7.62 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173060,7 +173261,7 @@
 			)
 			(table_cell "Device Temperature"
 				(exclude_from_sim no)
-				(at 29.21 147.32 0)
+				(at 29.21 144.78 0)
 				(size 21.59 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173077,7 +173278,7 @@
 			)
 			(table_cell "I_{SNST} = (T_{J} - 25 [°C]) * dI_{SNST}/dT + 0.85                  dI_{SNST}/dT = 0.0112 [mA/°C]"
 				(exclude_from_sim no)
-				(at 50.8 147.32 0)
+				(at 50.8 144.78 0)
 				(size 53.34 5.08)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173094,7 +173295,7 @@
 			)
 			(table_cell "1"
 				(exclude_from_sim no)
-				(at 15.24 152.4 0)
+				(at 15.24 149.86 0)
 				(size 6.35 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173111,7 +173312,7 @@
 			)
 			(table_cell "1"
 				(exclude_from_sim no)
-				(at 21.59 152.4 0)
+				(at 21.59 149.86 0)
 				(size 7.62 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173128,7 +173329,7 @@
 			)
 			(table_cell "Supply Voltage"
 				(exclude_from_sim no)
-				(at 29.21 152.4 0)
+				(at 29.21 149.86 0)
 				(size 21.59 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)
@@ -173145,7 +173346,7 @@
 			)
 			(table_cell "I_{SNSV} = (V_{BB}) * dI_{SNSV}/dV      K_{SNSV} = 0.0867"
 				(exclude_from_sim no)
-				(at 50.8 152.4 0)
+				(at 50.8 149.86 0)
 				(size 53.34 2.54)
 				(margins 0.9525 0.9525 0.9525 0.9525)
 				(span 1 1)

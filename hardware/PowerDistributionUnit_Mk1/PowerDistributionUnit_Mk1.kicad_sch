@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Big Brain Power Distribution Unit (Mk.1)")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 		(comment 4 "In Memory of Wataru Yasueda (2023-2025)")
@@ -53094,28 +53095,6 @@
 			(justify left top)
 		)
 		(uuid "22346f79-d8b6-4bc2-b2af-08dfe1fbd480")
-	)
-	(text_box "Digital power monitor to LSOM and computer stuff?"
-		(exclude_from_sim no)
-		(at 27.94 62.23 0)
-		(size 27.94 3.81)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-			(color 255 0 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 0.8 0.8)
-				(color 255 0 0 1)
-			)
-			(justify left top)
-		)
-		(uuid "80358154-5d9d-4ba7-983d-e3f62d1915d3")
 	)
 	(junction
 		(at 176.53 29.21)
