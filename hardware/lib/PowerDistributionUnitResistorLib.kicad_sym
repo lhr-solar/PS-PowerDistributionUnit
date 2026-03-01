@@ -84,6 +84,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C21189"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -2463,6 +2472,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C21189"
 			(at 0 0 0)
 			(effects
 				(font
@@ -4859,6 +4877,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C25804"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -7238,6 +7265,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 0 0 0)
 			(effects
 				(font
@@ -9634,6 +9670,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C22808"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -12013,6 +12058,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-CRCW0603150RFKECCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C22808"
 			(at 0 0 0)
 			(effects
 				(font
@@ -14409,6 +14463,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C844548"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -16788,6 +16851,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C844548"
 			(at 0 0 0)
 			(effects
 				(font
@@ -19176,6 +19248,15 @@
 			)
 		)
 		(property "Digikey P/N" "P205KHCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C22949"
 			(at 0 0 0)
 			(effects
 				(font
@@ -34062,6 +34143,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C31850"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -36390,6 +36480,15 @@
 			)
 		)
 		(property "Digikey P/N" "10-ERA-3AEB3920VCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C245964"
 			(at 0 0 0)
 			(effects
 				(font
@@ -45724,6 +45823,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C23179"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "ki_keywords" "R res resistor"
 			(at 0 0 0)
 			(effects
@@ -48104,6 +48212,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C849792"
 			(at 0 0 0)
 			(effects
 				(font
@@ -56760,6 +56877,15 @@
 			)
 		)
 		(property "Digikey P/N" "13-RT0603BRE0750RLCT-ND"
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C849792"
 			(at 0 0 0)
 			(effects
 				(font
