@@ -31210,7 +31210,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitLib:74LVC594APW,118"
+		(symbol "PowerDistributionUnitLib:74LVC594AD,118"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -31222,7 +31222,7 @@
 					)
 				)
 			)
-			(property "Value" "74LVC594APW,118"
+			(property "Value" "74LVC594AD,118"
 				(at 0 15.748 0)
 				(effects
 					(font
@@ -31257,7 +31257,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "74LVC594APW,118"
+			(property "P/N" "74LVC594AD,118"
 				(at 0 0 0)
 				(effects
 					(font
@@ -31266,7 +31266,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "771-LVC594APW118"
+			(property "Mouser P/N" "771-LVC594AD118"
 				(at 0 0 0)
 				(effects
 					(font
@@ -31275,7 +31275,7 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "1727-6687-1-ND"
+			(property "Digikey P/N" "1727-74LVC594AD,118CT-ND"
 				(at 0 0 0)
 				(effects
 					(font
@@ -31284,7 +31284,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC P/N" "C548830"
+			(property "LCSC P/N" "C548827"
 				(at 0 0 0)
 				(effects
 					(font
@@ -31293,7 +31293,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "74LVC594APW,118_1_0"
+			(symbol "74LVC594AD,118_1_0"
 				(pin power_in line
 					(at -8.89 11.43 0)
 					(length 2.54)
@@ -31583,7 +31583,7 @@
 					)
 				)
 			)
-			(symbol "74LVC594APW,118_1_1"
+			(symbol "74LVC594AD,118_1_1"
 				(rectangle
 					(start -6.35 13.97)
 					(end 6.35 -13.97)
@@ -79277,7 +79277,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:74LVC594APW,118")
+		(lib_id "PowerDistributionUnitLib:74LVC594AD,118")
 		(at 78.74 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -79293,7 +79293,7 @@
 				)
 			)
 		)
-		(property "Value" "74LVC594APW,118"
+		(property "Value" "74LVC594AD,118"
 			(at 78.74 85.09 0)
 			(effects
 				(font
@@ -79328,7 +79328,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "74LVC594APW,118"
+		(property "P/N" "74LVC594AD,118"
 			(at 78.74 101.6 0)
 			(effects
 				(font
@@ -79337,7 +79337,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "771-LVC594APW118"
+		(property "Mouser P/N" "771-LVC594AD118"
 			(at 78.74 101.6 0)
 			(effects
 				(font
@@ -79346,7 +79346,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey P/N" "1727-6687-1-ND"
+		(property "Digikey P/N" "1727-74LVC594AD,118CT-ND"
 			(at 78.74 101.6 0)
 			(effects
 				(font
@@ -79355,7 +79355,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC P/N" "C548830"
+		(property "LCSC P/N" "C548827"
 			(at 78.74 101.6 0)
 			(effects
 				(font
@@ -83066,7 +83066,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:74LVC594APW,118")
+		(lib_id "PowerDistributionUnitLib:74LVC594AD,118")
 		(at 78.74 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -83083,7 +83083,7 @@
 				)
 			)
 		)
-		(property "Value" "74LVC594APW,118"
+		(property "Value" "74LVC594AD,118"
 			(at 78.74 125.73 0)
 			(effects
 				(font
@@ -83118,7 +83118,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "74LVC594APW,118"
+		(property "P/N" "74LVC594AD,118"
 			(at 78.74 142.24 0)
 			(effects
 				(font
@@ -83127,7 +83127,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "771-LVC594APW118"
+		(property "Mouser P/N" "771-LVC594AD118"
 			(at 78.74 142.24 0)
 			(effects
 				(font
@@ -83136,7 +83136,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey P/N" "1727-6687-1-ND"
+		(property "Digikey P/N" "1727-74LVC594AD,118CT-ND"
 			(at 78.74 142.24 0)
 			(effects
 				(font
@@ -83145,7 +83145,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC P/N" "C548830"
+		(property "LCSC P/N" "C548827"
 			(at 78.74 142.24 0)
 			(effects
 				(font
