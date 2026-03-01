@@ -139624,7 +139624,7 @@
 				)
 				(uuid "b8ada974-649f-4412-b1f2-29c5135ca8e3")
 			)
-			(table_cell "2"
+			(table_cell "20"
 				(exclude_from_sim no)
 				(at 48.26 92.71 0)
 				(size 10.16 2.54)
