@@ -220,6 +220,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C15849"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -13588,6 +13597,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C5628891"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "LED RGB diode"
 				(at 0 0 0)
 				(effects
@@ -21973,6 +21991,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C22808"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
@@ -28909,6 +28936,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C15849"
+			(at 99.06 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4b1cf1a6-23ae-4b98-9142-552b3c25a846")
 		)
@@ -29379,6 +29415,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-CRCW0603150RFKECCT-ND"
+			(at 55.88 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C22808"
 			(at 55.88 138.43 0)
 			(effects
 				(font
@@ -29876,6 +29921,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C5628891"
+			(at 50.8 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "a93971ef-e33e-4022-b04c-b52630a15e34")
 		)
@@ -30254,6 +30308,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 99.06 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
 			(at 99.06 43.18 0)
 			(effects
 				(font
@@ -30819,6 +30882,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 87.63 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
 			(at 87.63 66.04 0)
 			(effects
 				(font

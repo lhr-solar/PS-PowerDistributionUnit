@@ -201,6 +201,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C15849"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -13565,6 +13574,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C548830"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(symbol "74LVC594APW,118_1_0"
 				(pin power_in line
 					(at -8.89 11.43 0)
@@ -19035,6 +19053,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C844548"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
@@ -23243,6 +23270,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C844548"
+			(at 64.77 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "cf2f2ff8-63e4-41ca-9cc8-d249b1c68026")
 		)
@@ -24052,6 +24088,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C548830"
+			(at 90.17 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "1732adc1-4fd2-4069-b62e-a823a1e88f7a")
 		)
@@ -24742,6 +24787,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
 			(at 52.07 81.28 0)
 			(effects
 				(font

@@ -308,6 +308,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C57112"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -18365,6 +18374,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C14663"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -31738,6 +31756,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C14663"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "capacitor cap"
 				(at 0 0 0)
 				(effects
@@ -44996,6 +45023,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C344195"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -58246,6 +58282,15 @@
 				)
 			)
 			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C15849"
 				(at 0 0 0)
 				(effects
 					(font
@@ -71626,6 +71671,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C2165811"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "cap capacitor"
 				(at 0 0 0)
 				(effects
@@ -82115,6 +82169,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C5628891"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "LED RGB diode"
 				(at 0 0 0)
 				(effects
@@ -87319,6 +87382,15 @@
 				)
 			)
 			(property "Digikey P/N" "296-LM74502HDDFRCT-ND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C5219202"
 				(at 0 0 0)
 				(effects
 					(font
@@ -111432,6 +111504,15 @@
 					(hide yes)
 				)
 			)
+			(property "Alt LCSC P/N" "C133142"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(symbol "NVMFWS1D7N04XMT1G_0_1"
 				(polyline
 					(pts
@@ -114499,6 +114580,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C1973846"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "diode TVS thyrector"
 				(at 0 0 0)
 				(effects
@@ -116108,6 +116198,15 @@
 				)
 			)
 			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C25804"
 				(at 0 0 0)
 				(effects
 					(font
@@ -118504,6 +118603,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C22808"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
@@ -120884,6 +120992,15 @@
 				)
 			)
 			(property "Digikey P/N" "P205KHCT-ND"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C22949"
 				(at 0 0 0)
 				(effects
 					(font
@@ -135770,6 +135887,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C23179"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "R res resistor"
 				(at 0 0 0)
 				(effects
@@ -139723,6 +139849,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C14663"
+			(at 73.66 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a4089c22-e2a7-411f-af4c-72090783a5b9")
 		)
@@ -139879,6 +140014,15 @@
 			)
 		)
 		(property "Digikey P/N" "399-EXV227M050S9PAACT-ND"
+			(at 234.95 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C2165811"
 			(at 234.95 72.39 0)
 			(effects
 				(font
@@ -140050,6 +140194,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C25804"
+			(at 147.32 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d6e00988-9755-4877-a5f3-b3f6a0054c44")
 		)
@@ -140137,6 +140290,15 @@
 			)
 		)
 		(property "Digikey P/N" "488-NVMFWS1D7N04XMT1GCT-ND"
+			(at 177.8 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Alt LCSC P/N" "C133142"
 			(at 177.8 68.58 0)
 			(effects
 				(font
@@ -140448,6 +140610,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C5628891"
+			(at 71.12 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "d513805d-6f26-4f38-844e-0e13d08e535a")
 		)
@@ -140543,6 +140714,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-CRCW0603150RFKECCT-ND"
+			(at 71.12 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C22808"
 			(at 71.12 173.99 0)
 			(effects
 				(font
@@ -140715,6 +140895,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C344195"
+			(at 158.75 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "97c6c9d3-4405-4079-addd-31608ef0d260")
 		)
@@ -140804,6 +140993,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 85.09 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C57112"
 			(at 85.09 72.39 0)
 			(effects
 				(font
@@ -141108,6 +141306,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C1973846"
+			(at 111.76 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "23217765-0eba-48de-950c-c5755097321d")
 		)
@@ -141205,6 +141412,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C15849"
+			(at 97.79 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c14df0ac-fa0a-42ec-8a4a-e7cc484ce909")
 		)
@@ -141293,6 +141509,15 @@
 			)
 		)
 		(property "Digikey P/N" "1080-1552-1-ND"
+			(at 45.72 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C5628891"
 			(at 45.72 162.56 0)
 			(effects
 				(font
@@ -141402,6 +141627,15 @@
 				(hide yes)
 			)
 		)
+		(property "Alt LCSC P/N" "C133142"
+			(at 200.66 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "5c85b275-e131-4b45-9e5b-090ddd63f597")
 		)
@@ -141500,6 +141734,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-470FCT-ND"
+			(at 40.64 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C23179"
 			(at 40.64 173.99 0)
 			(effects
 				(font
@@ -141671,6 +141914,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C22949"
+			(at 147.32 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "36242dcb-c128-4842-b31c-24c701056413")
 		)
@@ -141760,6 +142012,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 138.43 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C14663"
 			(at 138.43 100.33 0)
 			(effects
 				(font
@@ -141990,6 +142251,15 @@
 			)
 		)
 		(property "Digikey P/N" "296-LM74502HDDFRCT-ND"
+			(at 185.42 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C5219202"
 			(at 185.42 90.17 0)
 			(effects
 				(font
@@ -142463,6 +142733,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 170.18 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
 			(at 170.18 110.49 0)
 			(effects
 				(font
