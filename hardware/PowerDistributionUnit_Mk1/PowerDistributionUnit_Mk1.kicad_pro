@@ -1176,10 +1176,6 @@
           ""
         ],
         [
-          "silk_overlap|158913824|15650000|d5d2d44a-4718-4bd4-a579-4cfd7c446b27|fce1537d-a6aa-468a-b8ff-4019b4da6a76",
-          ""
-        ],
-        [
           "silk_overlap|162559420|15660000|6687c833-f38b-47c1-8082-e741b42152df|d5d2d44a-4718-4bd4-a579-4cfd7c446b27",
           ""
         ],
@@ -1907,6 +1903,18 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC P/N",
+          "name": "LCSC P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Alt LCSC P/N",
+          "name": "Alt LCSC P/N",
           "show": false
         }
       ],
