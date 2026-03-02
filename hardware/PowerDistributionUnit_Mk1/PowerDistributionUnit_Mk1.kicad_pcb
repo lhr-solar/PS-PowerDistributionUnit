@@ -145586,13 +145586,14 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R24"
-			(at 0 1.43 90)
+			(at 0.6 1.0375 90)
 			(layer "B.SilkS")
 			(uuid "4bba3603-5e7e-407b-aeb6-8fd8d96698b2")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.6 0.6)
+					(thickness 0.127)
+					(bold yes)
 				)
 				(justify mirror)
 			)
@@ -185285,6 +185286,16 @@
 		(uuid "54e89de4-74c7-4b7c-88eb-335bb883cb42")
 	)
 	(gr_line
+		(start 141.4 -16.2)
+		(end 140.4 -16.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "550ba618-d2e0-42d3-be36-6624e71e2d62")
+	)
+	(gr_line
 		(start 134.25 1.6)
 		(end 134.25 -0.4)
 		(stroke
@@ -185393,6 +185404,16 @@
 		)
 		(layer "B.SilkS")
 		(uuid "65ca9792-d349-4429-b5a3-a1b11929c1c8")
+	)
+	(gr_line
+		(start 139.9 -15.7)
+		(end 139.9 -15.2)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "6a8c5311-d990-4aa0-bc5a-7682c2174ec7")
 	)
 	(gr_line
 		(start 164.1 145.8)
@@ -185553,6 +185574,16 @@
 		)
 		(layer "B.SilkS")
 		(uuid "79d026b0-6c86-4b4a-a600-524eaad3c060")
+	)
+	(gr_line
+		(start 140.4 -16.2)
+		(end 139.9 -15.7)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "B.SilkS")
+		(uuid "7adc756c-7ca3-43ea-b4b7-ef161a82bc75")
 	)
 	(gr_line
 		(start 179.2 81)
@@ -189360,6 +189391,18 @@
 				(thickness 0.1)
 			)
 			(justify left mirror)
+		)
+	)
+	(gr_text "External ADC reference\n(1.25 V max)"
+		(at 141.4 -16.2 0)
+		(layer "B.SilkS")
+		(uuid "6c998156-7a38-4895-90bb-c3f65e604abb")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.075)
+			)
+			(justify right mirror)
 		)
 	)
 	(gr_text "LED\nPOW"
