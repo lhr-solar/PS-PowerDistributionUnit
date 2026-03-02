@@ -110066,7 +110066,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85/774c990e-27d9-4e98-b9bf-e5bb9c0872ff/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_3/HSS_D/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -113090,7 +113090,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0/b585b4b4-8ced-4393-8bc7-231a253d1161/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_0/HSS_B/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
@@ -118468,7 +118468,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656/d25e0d2e-8298-4e91-b0e4-e22b212ef881/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_2/HSS_A/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -122565,7 +122565,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397/774c990e-27d9-4e98-b9bf-e5bb9c0872ff/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_1/HSS_D/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
@@ -157728,7 +157728,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0/774c990e-27d9-4e98-b9bf-e5bb9c0872ff/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_0/HSS_D/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
@@ -159501,7 +159501,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/2ff9b2f2-b82f-4b54-b9d4-41fee04845a8")
 		(sheetname "/Outputs/")
 		(sheetfile "Outputs.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -161263,7 +161263,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85/b585b4b4-8ced-4393-8bc7-231a253d1161/3d25d7cd-e0e5-4ad2-97db-82f4eed2d20a")
 		(sheetname "/Outputs/ControlGroup_3/HSS_B/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
@@ -162666,7 +162666,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/e7e93044-e667-48a0-a360-458f6cb093c0/774c990e-27d9-4e98-b9bf-e5bb9c0872ff/3d25d7cd-e0e5-4ad2-97db-82f4eed2d20a")
 		(sheetname "/Outputs/ControlGroup_0/HSS_D/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -169625,7 +169625,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397/d25e0d2e-8298-4e91-b0e4-e22b212ef881/3d25d7cd-e0e5-4ad2-97db-82f4eed2d20a")
 		(sheetname "/Outputs/ControlGroup_1/HSS_A/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -171384,7 +171384,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/001c222b-76e5-4ba6-8deb-d2f135741f85/b585b4b4-8ced-4393-8bc7-231a253d1161/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_3/HSS_B/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -176787,7 +176787,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/af2d69c1-2920-4076-b35f-70b240a80656/0330ea0d-6cd8-4359-a7e5-114b58c65a5b/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_2/HSS_C/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
@@ -177048,7 +177048,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/ad7f9e65-fc49-4fd7-b9a4-832f82f64397/b585b4b4-8ced-4393-8bc7-231a253d1161/08b8c336-d4be-426b-b2d1-da66d29917ad")
 		(sheetname "/Outputs/ControlGroup_1/HSS_B/")
 		(sheetfile "HSS_TPS27SA08-Q1.kicad_sch")
-		(attr smd dnp)
+		(attr smd exclude_from_pos_files dnp)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
