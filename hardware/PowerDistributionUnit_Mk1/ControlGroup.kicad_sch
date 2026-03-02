@@ -18971,7 +18971,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitResistorLib:2.8k"
+		(symbol "PowerDistributionUnitResistorLib:10k"
 			(pin_numbers
 				(hide yes)
 			)
@@ -18990,7 +18990,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "2.8k"
+			(property "Value" "10k"
 				(at 2.54 -1.2699 0)
 				(effects
 					(font
@@ -19026,7 +19026,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "CRCW06032K80FKEA"
+			(property "P/N" "CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19035,7 +19035,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+			(property "Mouser P/N" "71-CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19044,7 +19044,7 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "541-2.80KHCT-ND"
+			(property "Digikey P/N" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -19053,7 +19053,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC P/N" "C844548"
+			(property "LCSC P/N" "C25804"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19080,7 +19080,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "2.8k_0_1"
+			(symbol "10k_0_1"
 				(rectangle
 					(start -1.016 -2.54)
 					(end 1.016 2.54)
@@ -19093,7 +19093,7 @@
 					)
 				)
 			)
-			(symbol "2.8k_1_1"
+			(symbol "10k_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -23189,7 +23189,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k")
+		(lib_id "PowerDistributionUnitResistorLib:10k")
 		(at 64.77 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23207,7 +23207,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
+		(property "Value" "10k"
 			(at 67.31 104.1399 0)
 			(effects
 				(font
@@ -23243,7 +23243,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 64.77 102.87 0)
 			(effects
 				(font
@@ -23252,7 +23252,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 64.77 102.87 0)
 			(effects
 				(font
@@ -23270,7 +23270,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC P/N" "C844548"
+		(property "LCSC P/N" "C25804"
 			(at 64.77 102.87 0)
 			(effects
 				(font
