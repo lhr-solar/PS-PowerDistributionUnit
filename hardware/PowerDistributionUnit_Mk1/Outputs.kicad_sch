@@ -20840,7 +20840,7 @@
 		)
 		(uuid "8ebe7071-8863-413b-8246-24b3badd6d02")
 	)
-	(text "see \"DIAGNOSTICS\" inside \nHSS_TPS27SA08-Q1.kicad_sch"
+	(text "see \"HSS DIAGNOSTICS\" inside \nHSS_TPS27SA08-Q1.kicad_sch"
 		(exclude_from_sim no)
 		(at 225.044 53.594 0)
 		(effects
@@ -25197,7 +25197,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3feb3aa4-b951-4334-975f-d60452eb5eb0")
 		(property "Reference" "R10"
@@ -26998,7 +26998,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e58ff180-9228-4442-9205-8a71c47db054")
 		(property "Reference" "R12"
