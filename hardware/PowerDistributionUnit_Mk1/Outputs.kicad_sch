@@ -21532,7 +21532,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 50.8) (xy 195.58 50.8)
+			(xy 185.42 50.8) (xy 196.85 50.8)
 		)
 		(stroke
 			(width 0)
@@ -23831,7 +23831,7 @@
 		(uuid "e5f8af1f-b4c4-4222-9f05-3453457560f5")
 	)
 	(label "HSS_DIA_EN"
-		(at 195.58 50.8 180)
+		(at 196.85 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -24272,7 +24272,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1580f790-113e-43ca-94b0-11c2f239aa05")
 		(property "Reference" "R8"
@@ -24378,7 +24378,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "17554e9f-54d6-4b80-b563-fddc367e473c")
 		(property "Reference" "R7"

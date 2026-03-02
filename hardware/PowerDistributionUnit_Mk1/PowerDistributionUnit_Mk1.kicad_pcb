@@ -135865,7 +135865,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/1580f790-113e-43ca-94b0-11c2f239aa05")
 		(sheetname "/Outputs/")
 		(sheetfile "Outputs.kicad_sch")
-		(attr smd dnp)
+		(attr smd)
 		(fp_line
 			(start -0.237258 -0.5225)
 			(end 0.237258 -0.5225)
@@ -169364,7 +169364,7 @@
 		(path "/f02ddfbb-2d9c-434a-b099-7db087cabcec/17554e9f-54d6-4b80-b563-fddc367e473c")
 		(sheetname "/Outputs/")
 		(sheetfile "Outputs.kicad_sch")
-		(attr smd)
+		(attr smd dnp)
 		(fp_line
 			(start -0.237258 0.5225)
 			(end 0.237258 0.5225)
