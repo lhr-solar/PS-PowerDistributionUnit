@@ -24266,7 +24266,7 @@
 		(uuid "fb0232da-9d10-484a-a41f-7be17f88a0c8")
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 185.42 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24311,7 +24311,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 185.42 54.61 0)
 			(effects
 				(font
@@ -24372,7 +24372,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 185.42 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24417,7 +24417,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 185.42 45.72 0)
 			(effects
 				(font
@@ -24740,7 +24740,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 199.39 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24785,7 +24785,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -25191,7 +25191,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 199.39 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25236,7 +25236,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 199.39 54.61 0)
 			(effects
 				(font
@@ -26886,7 +26886,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 212.09 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26931,7 +26931,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 212.09 45.72 0)
 			(effects
 				(font
@@ -26992,7 +26992,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:10k")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 212.09 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -27037,7 +27037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 212.09 54.61 0)
 			(effects
 				(font

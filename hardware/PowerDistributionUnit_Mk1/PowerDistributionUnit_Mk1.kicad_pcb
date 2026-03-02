@@ -637,13 +637,10 @@
 	(net 494 "/Monitoring/ADCIN-")
 	(net 495 "unconnected-(U1A-SPI2_NSS-Pad16)")
 	(net 496 "SRCLK_ENed")
-	(net 497 "unconnected-(R7-Pad2)")
-	(net 498 "unconnected-(R9-Pad2)")
-	(net 499 "unconnected-(R11-Pad2)")
-	(net 500 "unconnected-(H1-Pad1)")
-	(net 501 "unconnected-(H2-Pad1)")
-	(net 502 "unconnected-(H3-Pad1)")
-	(net 503 "unconnected-(H4-Pad1)")
+	(net 497 "unconnected-(H1-Pad1)")
+	(net 498 "unconnected-(H2-Pad1)")
+	(net 499 "unconnected-(H3-Pad1)")
+	(net 500 "unconnected-(H4-Pad1)")
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "00b688e9-d9bf-41da-b0bd-edabf7255774")
@@ -2148,7 +2145,7 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 501 "unconnected-(H2-Pad1)")
+			(net 498 "unconnected-(H2-Pad1)")
 			(pinfunction "1")
 			(pintype "input+no_connect")
 			(zone_connect 2)
@@ -11243,7 +11240,7 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 502 "unconnected-(H3-Pad1)")
+			(net 499 "unconnected-(H3-Pad1)")
 			(pinfunction "1")
 			(pintype "input+no_connect")
 			(zone_connect 2)
@@ -32684,7 +32681,7 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 503 "unconnected-(H4-Pad1)")
+			(net 500 "unconnected-(H4-Pad1)")
 			(pinfunction "1")
 			(pintype "input+no_connect")
 			(zone_connect 2)
@@ -103594,7 +103591,7 @@
 			(drill 3.2)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 500 "unconnected-(H1-Pad1)")
+			(net 497 "unconnected-(H1-Pad1)")
 			(pinfunction "1")
 			(pintype "input+no_connect")
 			(zone_connect 2)
@@ -135794,7 +135791,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -153632,7 +153629,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -159429,7 +159426,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -159629,7 +159626,7 @@
 			(size 0.8 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 498 "unconnected-(R9-Pad2)")
+			(net 137 "/HSS_SEL1")
 			(pintype "passive")
 			(uuid "a00fd85b-9d08-44d0-aa54-06995ec6b35b")
 		)
@@ -163116,7 +163113,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -169292,7 +169289,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -169492,7 +169489,7 @@
 			(size 0.8 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 497 "unconnected-(R7-Pad2)")
+			(net 136 "/HSS_DIA_EN")
 			(pintype "passive")
 			(uuid "419e5ec1-96ee-4dfe-a1f9-07bfccb70c56")
 		)
@@ -177941,7 +177938,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "Resistor, small symbol"
 			(at 0 0 90)
 			(layer "B.Fab")
 			(hide yes)
@@ -178141,7 +178138,7 @@
 			(size 0.8 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 499 "unconnected-(R11-Pad2)")
+			(net 138 "/HSS_SEL2")
 			(pintype "passive")
 			(uuid "eee45d57-f58a-40eb-89d7-a421ab8837aa")
 		)
