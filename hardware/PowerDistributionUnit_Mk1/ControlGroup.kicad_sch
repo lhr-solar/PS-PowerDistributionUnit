@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "HSS Control Group")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 	)
@@ -192,6 +193,15 @@
 				)
 			)
 			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C15849"
 				(at 0 0 0)
 				(effects
 					(font
@@ -13490,7 +13500,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitLib:74LVC594APW,118"
+		(symbol "PowerDistributionUnitLib:74LVC594AD,118"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13502,7 +13512,7 @@
 					)
 				)
 			)
-			(property "Value" "74LVC594APW,118"
+			(property "Value" "74LVC594AD,118"
 				(at 0 15.748 0)
 				(effects
 					(font
@@ -13537,7 +13547,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "74LVC594APW,118"
+			(property "P/N" "74LVC594AD,118"
 				(at 0 0 0)
 				(effects
 					(font
@@ -13546,7 +13556,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "771-LVC594APW118"
+			(property "Mouser P/N" "771-LVC594AD118"
 				(at 0 0 0)
 				(effects
 					(font
@@ -13555,7 +13565,7 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "1727-6687-1-ND"
+			(property "Digikey P/N" "1727-74LVC594AD,118CT-ND"
 				(at 0 0 0)
 				(effects
 					(font
@@ -13564,7 +13574,16 @@
 					(hide yes)
 				)
 			)
-			(symbol "74LVC594APW,118_1_0"
+			(property "LCSC P/N" "C548827"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "74LVC594AD,118_1_0"
 				(pin power_in line
 					(at -8.89 11.43 0)
 					(length 2.54)
@@ -13854,7 +13873,7 @@
 					)
 				)
 			)
-			(symbol "74LVC594APW,118_1_1"
+			(symbol "74LVC594AD,118_1_1"
 				(rectangle
 					(start -6.35 13.97)
 					(end 6.35 -13.97)
@@ -18952,7 +18971,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitResistorLib:2.8k"
+		(symbol "PowerDistributionUnitResistorLib:10k"
 			(pin_numbers
 				(hide yes)
 			)
@@ -18971,7 +18990,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "2.8k"
+			(property "Value" "10k"
 				(at 2.54 -1.2699 0)
 				(effects
 					(font
@@ -19007,7 +19026,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "CRCW06032K80FKEA"
+			(property "P/N" "CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19016,7 +19035,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+			(property "Mouser P/N" "71-CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19025,7 +19044,16 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "541-2.80KHCT-ND"
+			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C25804"
 				(at 0 0 0)
 				(effects
 					(font
@@ -19052,7 +19080,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "2.8k_0_1"
+			(symbol "10k_0_1"
 				(rectangle
 					(start -1.016 -2.54)
 					(end 1.016 2.54)
@@ -19065,7 +19093,7 @@
 					)
 				)
 			)
-			(symbol "2.8k_1_1"
+			(symbol "10k_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -23161,7 +23189,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k")
+		(lib_id "PowerDistributionUnitResistorLib:10k")
 		(at 64.77 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23179,7 +23207,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
+		(property "Value" "10k"
 			(at 67.31 104.1399 0)
 			(effects
 				(font
@@ -23215,7 +23243,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 64.77 102.87 0)
 			(effects
 				(font
@@ -23224,7 +23252,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 64.77 102.87 0)
 			(effects
 				(font
@@ -23234,6 +23262,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 64.77 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 64.77 102.87 0)
 			(effects
 				(font
@@ -23973,7 +24010,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitLib:74LVC594APW,118")
+		(lib_id "PowerDistributionUnitLib:74LVC594AD,118")
 		(at 90.17 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23989,7 +24026,7 @@
 				)
 			)
 		)
-		(property "Value" "74LVC594APW,118"
+		(property "Value" "74LVC594AD,118"
 			(at 90.17 64.77 0)
 			(effects
 				(font
@@ -24024,7 +24061,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "74LVC594APW,118"
+		(property "P/N" "74LVC594AD,118"
 			(at 90.17 81.28 0)
 			(effects
 				(font
@@ -24033,7 +24070,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "771-LVC594APW118"
+		(property "Mouser P/N" "771-LVC594AD118"
 			(at 90.17 81.28 0)
 			(effects
 				(font
@@ -24042,7 +24079,16 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey P/N" "1727-6687-1-ND"
+		(property "Digikey P/N" "1727-74LVC594AD,118CT-ND"
+			(at 90.17 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C548827"
 			(at 90.17 81.28 0)
 			(effects
 				(font
@@ -24741,6 +24787,15 @@
 			)
 		)
 		(property "Digikey P/N" ""
+			(at 52.07 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
 			(at 52.07 81.28 0)
 			(effects
 				(font

@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Big Brain Power Distribution Unit (Mk.1)")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 		(comment 4 "In Memory of Wataru Yasueda (2023-2025)")
@@ -114,6 +115,89 @@
 								(size 1.27 1.27)
 							)
 						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mechanical:MountingHole"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole"
+				(at 0 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole without connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_0_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 			)
@@ -53095,28 +53179,6 @@
 		)
 		(uuid "22346f79-d8b6-4bc2-b2af-08dfe1fbd480")
 	)
-	(text_box "Digital power monitor to LSOM and computer stuff?"
-		(exclude_from_sim no)
-		(at 27.94 62.23 0)
-		(size 27.94 3.81)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-			(color 255 0 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(effects
-			(font
-				(size 0.8 0.8)
-				(color 255 0 0 1)
-			)
-			(justify left top)
-		)
-		(uuid "80358154-5d9d-4ba7-983d-e3f62d1915d3")
-	)
 	(junction
 		(at 176.53 29.21)
 		(diameter 0)
@@ -53188,6 +53250,22 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa5d635f-f322-439a-aa9a-b14fd9869113")
+	)
+	(no_connect
+		(at 247.65 156.21)
+		(uuid "1f28639c-fecf-404e-836c-825d2d492f0f")
+	)
+	(no_connect
+		(at 252.73 156.21)
+		(uuid "4136328c-0bc3-4d98-805d-91bd9b265b5f")
+	)
+	(no_connect
+		(at 237.49 156.21)
+		(uuid "ce1bd779-d77f-4440-ad32-438da9284e7b")
+	)
+	(no_connect
+		(at 242.57 156.21)
+		(uuid "fa7c800c-a84d-4b47-b3df-e68c9bb45ce1")
 	)
 	(bus_entry
 		(at 177.8 67.31)
@@ -56568,71 +56646,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 251.46 156.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "36b1b78b-c0e6-4063-842a-5339d7c10553")
-		(property "Reference" "#PWR0481"
-			(at 251.46 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 251.46 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 251.46 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b64fa9b6-bd98-4064-97fb-d9d7b4c8160f")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0481")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 232.41 125.73 0)
 		(unit 1)
@@ -56857,16 +56870,34 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 256.54 156.21 0)
+		(lib_id "Mechanical:MountingHole")
+		(at 257.81 152.4 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "491bc3d0-d314-4802-854a-1bec76308562")
-		(property "Reference" "#PWR0482"
-			(at 256.54 162.56 0)
+		(uuid "576bbf19-5215-48dd-a8e3-24a3290d45c5")
+		(property "Reference" "H7"
+			(at 257.81 149.352 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 260.35 152.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 257.81 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56874,16 +56905,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "GND"
-			(at 256.54 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 256.54 156.21 0)
+		(property "Datasheet" "~"
+			(at 257.81 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56891,31 +56914,19 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 256.54 156.21 0)
+		(property "Description" "Mounting Hole without connection"
+			(at 257.81 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 256.54 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3c73ed60-86d6-408d-927c-3aded2f6c5b4")
 		)
 		(instances
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0482")
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -57564,71 +57575,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 261.62 156.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9b1fd130-cf28-4a11-b8da-51555dbec737")
-		(property "Reference" "#PWR0483"
-			(at 261.62 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 261.62 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 261.62 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 261.62 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 261.62 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e3d007af-e216-481c-8912-bd6aad76f2e2")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0483")
 					(unit 1)
 				)
 			)
@@ -58454,7 +58400,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 251.46 153.67 0)
+		(at 242.57 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -58462,7 +58408,7 @@
 		(dnp no)
 		(uuid "ce1d9376-3aa8-41c0-9446-30f0fe603636")
 		(property "Reference" "H2"
-			(at 251.46 149.352 0)
+			(at 242.57 149.352 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58470,7 +58416,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 254 153.6699 0)
+			(at 245.11 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58480,7 +58426,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 251.46 153.67 0)
+			(at 242.57 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58489,7 +58435,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 251.46 153.67 0)
+			(at 242.57 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58498,7 +58444,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 251.46 153.67 0)
+			(at 242.57 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59047,7 +58993,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 256.54 153.67 0)
+		(at 247.65 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -59055,7 +59001,7 @@
 		(dnp no)
 		(uuid "df3911be-0a7c-4d6e-9ce1-1a2e4b780a7f")
 		(property "Reference" "H3"
-			(at 256.54 149.352 0)
+			(at 247.65 149.352 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59063,7 +59009,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 259.08 153.6699 0)
+			(at 250.19 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59073,7 +59019,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 256.54 153.67 0)
+			(at 247.65 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59082,7 +59028,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 256.54 153.67 0)
+			(at 247.65 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59091,7 +59037,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 256.54 153.67 0)
+			(at 247.65 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59243,7 +59189,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 261.62 153.67 0)
+		(at 252.73 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -59251,7 +59197,7 @@
 		(dnp no)
 		(uuid "e58e57dd-58fa-4b26-9ad3-402ee52f0db3")
 		(property "Reference" "H4"
-			(at 261.62 149.352 0)
+			(at 252.73 149.352 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59259,7 +59205,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 264.16 153.6699 0)
+			(at 255.27 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59269,7 +59215,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 261.62 153.67 0)
+			(at 252.73 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59278,7 +59224,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 261.62 153.67 0)
+			(at 252.73 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59287,7 +59233,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 261.62 153.67 0)
+			(at 252.73 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59302,71 +59248,6 @@
 			(project "PowerDistributionUnit_Mk1"
 				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
 					(reference "H4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 246.38 156.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e830fd87-1f0b-4493-b3e2-4bf6a14aa15a")
-		(property "Reference" "#PWR0480"
-			(at 246.38 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 246.38 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 246.38 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "291ef2ef-0476-4005-bedc-f9778d7cd657")
-		)
-		(instances
-			(project "PowerDistributionUnit_Mk1"
-				(path "/6abaf095-8ba7-4306-8425-59a9eb37aa2b"
-					(reference "#PWR0480")
 					(unit 1)
 				)
 			)
@@ -59439,7 +59320,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 246.38 153.67 0)
+		(at 237.49 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -59447,7 +59328,7 @@
 		(dnp no)
 		(uuid "ea7f63f7-65e1-4d43-886b-306bac64cc7c")
 		(property "Reference" "H1"
-			(at 246.38 149.352 0)
+			(at 237.49 149.352 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59455,7 +59336,7 @@
 			)
 		)
 		(property "Value" "MountingHole_Pad"
-			(at 248.92 153.6699 0)
+			(at 240.03 153.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59465,7 +59346,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_Pad"
-			(at 246.38 153.67 0)
+			(at 237.49 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59474,7 +59355,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 246.38 153.67 0)
+			(at 237.49 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -59483,7 +59364,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 246.38 153.67 0)
+			(at 237.49 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -6,7 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "Outputs")
-		(rev "0")
+		(date "2026-02-28")
+		(rev "B")
 		(company "Longhorn Racing Solar")
 		(comment 1 "Changxu Liu")
 	)
@@ -192,6 +193,15 @@
 				)
 			)
 			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C15849"
 				(at 0 0 0)
 				(effects
 					(font
@@ -13564,6 +13574,15 @@
 					(hide yes)
 				)
 			)
+			(property "LCSC P/N" "C23078196"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
 			(property "ki_keywords" "Single Gate AND triple LVC CMOS"
 				(at 0 0 0)
 				(effects
@@ -15551,7 +15570,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitResistorLib:2.8k"
+		(symbol "PowerDistributionUnitResistorLib:10k"
 			(pin_numbers
 				(hide yes)
 			)
@@ -15570,7 +15589,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "2.8k"
+			(property "Value" "10k"
 				(at 2.54 -1.2699 0)
 				(effects
 					(font
@@ -15606,7 +15625,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "CRCW06032K80FKEA"
+			(property "P/N" "CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -15615,7 +15634,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+			(property "Mouser P/N" "71-CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -15624,7 +15643,16 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "541-2.80KHCT-ND"
+			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C25804"
 				(at 0 0 0)
 				(effects
 					(font
@@ -15651,7 +15679,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "2.8k_0_1"
+			(symbol "10k_0_1"
 				(rectangle
 					(start -1.016 -2.54)
 					(end 1.016 2.54)
@@ -15664,7 +15692,7 @@
 					)
 				)
 			)
-			(symbol "2.8k_1_1"
+			(symbol "10k_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -17939,7 +17967,7 @@
 				)
 			)
 		)
-		(symbol "PowerDistributionUnitResistorLib:2.8k_Small"
+		(symbol "PowerDistributionUnitResistorLib:10k_Small"
 			(pin_numbers
 				(hide yes)
 			)
@@ -17958,7 +17986,7 @@
 					)
 				)
 			)
-			(property "Value" "2.8k"
+			(property "Value" "10k"
 				(at 1.778 0 90)
 				(effects
 					(font
@@ -17993,7 +18021,7 @@
 					(hide yes)
 				)
 			)
-			(property "P/N" "CRCW06032K80FKEA"
+			(property "P/N" "CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -18002,7 +18030,7 @@
 					(hide yes)
 				)
 			)
-			(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+			(property "Mouser P/N" "71-CRCW060310K0FKEI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -18011,7 +18039,16 @@
 					(hide yes)
 				)
 			)
-			(property "Digikey P/N" "541-2.80KHCT-ND"
+			(property "Digikey P/N" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC P/N" "C25804"
 				(at 0 0 0)
 				(effects
 					(font
@@ -18038,7 +18075,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "2.8k_Small_0_1"
+			(symbol "10k_Small_0_1"
 				(rectangle
 					(start -0.762 1.778)
 					(end 0.762 -1.778)
@@ -18051,7 +18088,7 @@
 					)
 				)
 			)
-			(symbol "2.8k_Small_1_1"
+			(symbol "10k_Small_1_1"
 				(pin passive line
 					(at 0 2.54 270)
 					(length 0.762)
@@ -20692,7 +20729,7 @@
 	)
 	(rectangle
 		(start 20.32 45.72)
-		(end 90.17 78.74)
+		(end 104.14 78.74)
 		(stroke
 			(width 0)
 			(type default)
@@ -20803,7 +20840,7 @@
 		)
 		(uuid "8ebe7071-8863-413b-8246-24b3badd6d02")
 	)
-	(text "see \"DIAGNOSTICS\" inside \nHSS_TPS27SA08-Q1.kicad_sch"
+	(text "see \"HSS DIAGNOSTICS\" inside \nHSS_TPS27SA08-Q1.kicad_sch"
 		(exclude_from_sim no)
 		(at 225.044 53.594 0)
 		(effects
@@ -21495,7 +21532,7 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 50.8) (xy 195.58 50.8)
+			(xy 185.42 50.8) (xy 196.85 50.8)
 		)
 		(stroke
 			(width 0)
@@ -21905,7 +21942,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 64.77) (xy 78.74 66.04)
+			(xy 92.71 64.77) (xy 92.71 66.04)
 		)
 		(stroke
 			(width 0)
@@ -23065,7 +23102,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 55.88) (xy 78.74 57.15)
+			(xy 92.71 55.88) (xy 92.71 57.15)
 		)
 		(stroke
 			(width 0)
@@ -23075,7 +23112,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 62.23) (xy 72.39 62.23)
+			(xy 63.5 62.23) (xy 71.12 62.23)
 		)
 		(stroke
 			(width 0)
@@ -23593,16 +23630,6 @@
 		)
 		(uuid "8b1b8f9c-8391-4ff0-867a-65a495b46371")
 	)
-	(label "SRCLK_ENed"
-		(at 72.39 62.23 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "8ca01f6a-e3bc-4093-a57e-b0029e3ad6aa")
-	)
 	(label "~{ST}.1"
 		(at 74.93 130.81 0)
 		(effects
@@ -23804,7 +23831,7 @@
 		(uuid "e5f8af1f-b4c4-4222-9f05-3453457560f5")
 	)
 	(label "HSS_DIA_EN"
-		(at 195.58 50.8 180)
+		(at 196.85 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -23852,6 +23879,28 @@
 			(justify left bottom)
 		)
 		(uuid "ff69678b-f584-4a95-8d43-d8927cc86950")
+	)
+	(global_label "SRCLK_ENed"
+		(shape input)
+		(at 71.12 62.23 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2514aa96-c9a5-4c30-aecf-8a4a5dec91ef")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 85.8375 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "SNS.[0..15]"
 		(shape output)
@@ -24217,13 +24266,13 @@
 		(uuid "fb0232da-9d10-484a-a41f-7be17f88a0c8")
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 185.42 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1580f790-113e-43ca-94b0-11c2f239aa05")
 		(property "Reference" "R8"
@@ -24235,17 +24284,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 187.96 55.88 0)
+		(property "Value" "10k"
+			(at 187.96 55.8799 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 185.42 54.61 0)
+			(at 183.642 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24271,7 +24320,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 185.42 54.61 0)
 			(effects
 				(font
@@ -24280,7 +24329,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 185.42 54.61 0)
 			(effects
 				(font
@@ -24290,6 +24339,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 185.42 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 185.42 54.61 0)
 			(effects
 				(font
@@ -24314,13 +24372,13 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 185.42 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "17554e9f-54d6-4b80-b563-fddc367e473c")
 		(property "Reference" "R7"
@@ -24332,17 +24390,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 187.96 46.99 0)
+		(property "Value" "10k"
+			(at 187.96 46.9899 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 185.42 45.72 0)
+			(at 183.642 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24368,7 +24426,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 185.42 45.72 0)
 			(effects
 				(font
@@ -24377,7 +24435,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 185.42 45.72 0)
 			(effects
 				(font
@@ -24387,6 +24445,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 185.42 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 185.42 45.72 0)
 			(effects
 				(font
@@ -24673,7 +24740,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 199.39 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24691,17 +24758,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 201.93 46.99 0)
+		(property "Value" "10k"
+			(at 201.93 46.9899 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 199.39 45.72 0)
+			(at 197.612 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24727,7 +24794,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -24736,7 +24803,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -24746,6 +24813,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 199.39 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 199.39 45.72 0)
 			(effects
 				(font
@@ -24837,7 +24913,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k")
+		(lib_id "PowerDistributionUnitResistorLib:10k")
 		(at 165.1 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24855,7 +24931,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
+		(property "Value" "10k"
 			(at 167.64 43.1799 0)
 			(effects
 				(font
@@ -24891,7 +24967,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 165.1 41.91 0)
 			(effects
 				(font
@@ -24900,7 +24976,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 165.1 41.91 0)
 			(effects
 				(font
@@ -24910,6 +24986,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 165.1 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 165.1 41.91 0)
 			(effects
 				(font
@@ -24934,29 +25019,28 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 63.5 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3b91ab13-b974-4de4-ace2-03c7110f279a")
 		(property "Reference" "R223"
-			(at 66.04 64.7699 0)
+			(at 64.516 65.278 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 66.04 67.3099 0)
+		(property "Value" "10k"
+			(at 64.516 66.802 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 1 1)
 				)
 				(justify left)
 			)
@@ -24988,7 +25072,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 63.5 66.04 0)
 			(effects
 				(font
@@ -24997,7 +25081,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 63.5 66.04 0)
 			(effects
 				(font
@@ -25007,6 +25091,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 63.5 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 63.5 66.04 0)
 			(effects
 				(font
@@ -25098,13 +25191,13 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 199.39 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3feb3aa4-b951-4334-975f-d60452eb5eb0")
 		(property "Reference" "R10"
@@ -25116,17 +25209,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 201.93 55.88 0)
+		(property "Value" "10k"
+			(at 201.93 55.8799 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 199.39 54.61 0)
+			(at 197.612 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25152,7 +25245,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 199.39 54.61 0)
 			(effects
 				(font
@@ -25161,7 +25254,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 199.39 54.61 0)
 			(effects
 				(font
@@ -25171,6 +25264,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 199.39 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 199.39 54.61 0)
 			(effects
 				(font
@@ -25260,7 +25362,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k")
+		(lib_id "PowerDistributionUnitResistorLib:10k")
 		(at 165.1 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25278,7 +25380,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
+		(property "Value" "10k"
 			(at 167.64 53.3399 0)
 			(effects
 				(font
@@ -25314,7 +25416,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 165.1 52.07 0)
 			(effects
 				(font
@@ -25323,7 +25425,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 165.1 52.07 0)
 			(effects
 				(font
@@ -25333,6 +25435,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 165.1 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 165.1 52.07 0)
 			(effects
 				(font
@@ -25489,7 +25600,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 38.1 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25498,21 +25609,20 @@
 		(dnp no)
 		(uuid "54f3a2b3-7582-406a-af16-8714d8afcf9a")
 		(property "Reference" "R276"
-			(at 38.862 67.31 0)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2.8k"
-			(at 39.116 68.834 0)
+			(at 39.116 67.564 0)
 			(effects
 				(font
 					(size 1 1)
 				)
 				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 40.64 69.088 0)
+			(effects
+				(font
+					(size 1 1)
+				)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
@@ -25542,7 +25652,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 38.1 68.58 0)
 			(effects
 				(font
@@ -25551,7 +25661,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 38.1 68.58 0)
 			(effects
 				(font
@@ -25561,6 +25671,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 38.1 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 38.1 68.58 0)
 			(effects
 				(font
@@ -25783,7 +25902,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 78.74 55.88 0)
+		(at 92.71 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -25791,7 +25910,7 @@
 		(dnp no)
 		(uuid "6b5c23bd-b663-442e-8f3d-f081ce6af8ac")
 		(property "Reference" "#PWR016"
-			(at 78.74 59.69 0)
+			(at 92.71 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25800,7 +25919,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 78.74 52.07 0)
+			(at 92.71 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25808,7 +25927,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25817,7 +25936,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25826,7 +25945,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 78.74 55.88 0)
+			(at 92.71 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26057,6 +26176,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC P/N" "C23078196"
+			(at 52.07 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b971e402-b3d8-4f52-bf2e-d363cc0ddf28")
 		)
@@ -26086,7 +26214,7 @@
 	)
 	(symbol
 		(lib_id "PowerDistributionUnitCapacitorLib:1u")
-		(at 78.74 60.96 0)
+		(at 92.71 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26095,7 +26223,7 @@
 		(fields_autoplaced yes)
 		(uuid "7d3a2031-cc77-4641-b5d1-006a8ba1b993")
 		(property "Reference" "C102"
-			(at 82.55 59.6899 0)
+			(at 96.52 59.6899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26104,7 +26232,7 @@
 			)
 		)
 		(property "Value" "1u"
-			(at 82.55 62.2299 0)
+			(at 96.52 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26113,7 +26241,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 79.7052 64.77 0)
+			(at 93.6752 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26122,7 +26250,7 @@
 			)
 		)
 		(property "Datasheet" "kicad-embed://MLR01_e.pdf"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26131,7 +26259,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26140,7 +26268,7 @@
 			)
 		)
 		(property "P/N" "MLASU168SB5105KTNA01"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26149,7 +26277,7 @@
 			)
 		)
 		(property "Mouser P/N" "963-MLASU168SB5105KT"
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26158,7 +26286,16 @@
 			)
 		)
 		(property "Digikey P/N" ""
-			(at 78.74 60.96 0)
+			(at 92.71 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C15849"
+			(at 92.71 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26314,7 +26451,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k")
+		(lib_id "PowerDistributionUnitResistorLib:10k")
 		(at 138.43 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26332,7 +26469,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
+		(property "Value" "10k"
 			(at 140.97 49.5299 0)
 			(effects
 				(font
@@ -26368,7 +26505,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 138.43 48.26 0)
 			(effects
 				(font
@@ -26377,7 +26514,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 138.43 48.26 0)
 			(effects
 				(font
@@ -26387,6 +26524,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 138.43 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 138.43 48.26 0)
 			(effects
 				(font
@@ -26676,7 +26822,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 78.74 66.04 0)
+		(at 92.71 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -26684,7 +26830,7 @@
 		(dnp no)
 		(uuid "de1b4fb8-e968-4662-8417-eabb06cbcef9")
 		(property "Reference" "#PWR018"
-			(at 78.74 72.39 0)
+			(at 92.71 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26693,7 +26839,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 78.74 69.596 0)
+			(at 92.71 69.596 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26701,7 +26847,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26710,7 +26856,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26719,7 +26865,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 66.04 0)
+			(at 92.71 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26740,7 +26886,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 212.09 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26758,17 +26904,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 214.63 46.99 0)
+		(property "Value" "10k"
+			(at 214.63 46.9899 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 212.09 45.72 0)
+			(at 210.312 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26794,7 +26940,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 212.09 45.72 0)
 			(effects
 				(font
@@ -26803,7 +26949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 212.09 45.72 0)
 			(effects
 				(font
@@ -26813,6 +26959,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 212.09 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 212.09 45.72 0)
 			(effects
 				(font
@@ -26837,13 +26992,13 @@
 		)
 	)
 	(symbol
-		(lib_id "PowerDistributionUnitResistorLib:2.8k_Small")
+		(lib_id "PowerDistributionUnitResistorLib:10k_Small")
 		(at 212.09 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e58ff180-9228-4442-9205-8a71c47db054")
 		(property "Reference" "R12"
@@ -26855,17 +27010,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.8k"
-			(at 214.63 55.88 0)
+		(property "Value" "10k"
+			(at 214.63 55.8799 0)
 			(effects
 				(font
-					(size 1 1)
+					(size 1.27 1.27)
 				)
 				(justify left)
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 212.09 54.61 0)
+			(at 210.312 54.61 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26891,7 +27046,7 @@
 				(hide yes)
 			)
 		)
-		(property "P/N" "CRCW06032K80FKEA"
+		(property "P/N" "CRCW060310K0FKEI"
 			(at 212.09 54.61 0)
 			(effects
 				(font
@@ -26900,7 +27055,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser P/N" "71-CRCW0603-2.8K-E3"
+		(property "Mouser P/N" "71-CRCW060310K0FKEI"
 			(at 212.09 54.61 0)
 			(effects
 				(font
@@ -26910,6 +27065,15 @@
 			)
 		)
 		(property "Digikey P/N" "541-2.80KHCT-ND"
+			(at 212.09 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC P/N" "C25804"
 			(at 212.09 54.61 0)
 			(effects
 				(font
