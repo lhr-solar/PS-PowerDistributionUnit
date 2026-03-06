@@ -39,7 +39,7 @@
 typedef struct {
 	SPI_HandleTypeDef* spi;     // STM32 HAL I2C handle
 	GPIO_TypeDef* cs_port;
-	uint8_t cs_pin;
+	uint16_t cs_pin;
 	uint8_t addr;              // Convention: 7-bit address << 1
 								// if address is not used, set to 0
 } MCP23S17_HandleTypeDef;
@@ -165,7 +165,7 @@ void MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t
  * @param	int_pol Device INT pin polarity (MCP23S17_CONFIG_INT_ACTIVE_LOW: INT pin is active-low, MCP23S17_CONFIG_INT_ACTIVE_HIGH: INT pin is active-high)
  * @returns	true if successful, false otherwise
  */
-bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint8_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol);
+bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol);
 
 // GENERAL GPIO FUNCTIONS -----------------------------------------------------
 
