@@ -2,6 +2,9 @@
 
 #include "stm32xx_hal.h"
 
+// DRIVER FOR MCP23S17 SPI GPIO Expander
+// Datasheet: datasheets/MCP23017_MCP23S17.pdf (from repo root)
+
 // REGISTER DEFINES -----------------------------------------------------------
 
 #define MCP23S17_READ_OPCODE 0x41    // needs address if hardware addressing is enabled
