@@ -41,7 +41,7 @@ MADEFILE_DIR = ${MAKEFILE_DIR}
 # remove main and add test folders if running test
 ifneq ($(TEST), "main")
 	PROJECT_C_SOURCES := $(filter-out $(PROJECT_MAIN_DIR)/main.c, $(PROJECT_C_SOURCES))
-	PROJECT_C_SOURCES += $(wildcard test/src/${test}.c)
+	PROJECT_C_SOURCES += $(wildcard test/src/${TEST}.c)
 
 	PROJECT_C_INCLUDES += $(wildcard /test/inc)
 endif
@@ -101,7 +101,7 @@ ifeq ($(MADEFILE), true)
 endif
 
 ifneq ($(TEST), main)
-	@echo -e "Making ${PURPLE}$(PROJECT_TARGET)${NC}build for ${BLUE}TEST=${PURPLE} ${TEST}${NC}"
+	@echo -e "Making ${PURPLE}$(PROJECT_TARGET)${NC}build for ${BLUE}TEST=${PURPLE}${TEST}${NC}"
     ifeq ($(MADEFILE), true)
 		@echo -e "Making $(PROJECT_TARGET) build for TEST=${TEST}\n" >> ${MADEFILE_DIR}/Madefile
     endif
