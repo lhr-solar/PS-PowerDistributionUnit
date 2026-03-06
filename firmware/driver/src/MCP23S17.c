@@ -67,7 +67,7 @@ static inline bool MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg,
     return (reg_state >> pin) & 0x01;
 }
 
-bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint8_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol)
+bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol)
 {
     device->spi = spi;
     device->addr = address_en == MCP23S17_ADDRESSING_ENABLE ? addr << 1 : 0;
