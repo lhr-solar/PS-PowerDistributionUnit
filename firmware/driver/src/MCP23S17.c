@@ -131,7 +131,6 @@ bool MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_
     }
 }
 
-// is any checking of valid handle or initialization necessary?
 void MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Dir dir)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return;}
