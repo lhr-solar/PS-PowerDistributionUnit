@@ -34,6 +34,13 @@ void MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
 }
 
+/**
+ * @brief	Writes to a specific register bit (for a specific GPIO pin) on MCP23S17 in FRIENDLY manner (performs register read before write).
+ * @param	device MCP23S17 Device Handle
+ * @param	reg_addr Register Address
+ * @param	pin Device GPIO Pin
+ * @param	val Value to write in.
+ */
 static inline void MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool val)
 {
     uint8_t reg_state = 0;
@@ -51,6 +58,12 @@ static inline void MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uin
     MCP23S17_WriteRegs(device, reg, &reg_state, 1);
 }
 
+/**
+ * @brief	Reads a specific register bit on MCP23S17.
+ * @param	device MCP23S17 Device Handle
+ * @param	reg_addr Register Address
+ * @param	pin Device GPIO Pin
+ */
 static inline bool MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin)
 {
     uint8_t reg_state = 0;
