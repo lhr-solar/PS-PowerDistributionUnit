@@ -10,27 +10,28 @@
 #define MCP23S17_READ_OPCODE 0x41    // needs address if hardware addressing is enabled
 #define MCP23S17_WRITE_OPCODE 0x40   // needs address if hardware addressing is enabled
 
-#define MCP23S17_REG_IODIRA 0x00
+									// For each port (A, B)...
+#define MCP23S17_REG_IODIRA 0x00	// GPIO Direction Registers
 #define MCP23S17_REG_IODIRB 0x01
-#define MCP23S17_REG_IPOLA 0x02
+#define MCP23S17_REG_IPOLA 0x02		// GPIO Input Polarity Registers
 #define MCP23S17_REG_IPOLB 0x03
-#define MCP23S17_REG_GPINTENA 0x04
+#define MCP23S17_REG_GPINTENA 0x04	// GPIO Interrupt Enable Registers
 #define MCP23S17_REG_GPINTENB 0x05
-#define MCP23S17_REG_DEFVALA 0x06
+#define MCP23S17_REG_DEFVALA 0x06	// GPIO Default Value Registers (for interrupt use)
 #define MCP23S17_REG_DEFVALB 0x07
-#define MCP23S17_REG_INTCONA 0x08
+#define MCP23S17_REG_INTCONA 0x08	// GPIO Interrupt Mode Registers
 #define MCP23S17_REG_INTCONB 0x09
-#define MCP23S17_REG_IOCON 0x0A
+#define MCP23S17_REG_IOCON 0x0A		// Configuration Registers
 #define MCP23S17_REG_IOCON2 0x0B
-#define MCP23S17_REG_GPPUA 0x0C
+#define MCP23S17_REG_GPPUA 0x0C		// GPIO Pull-up Enable/Disable Registers
 #define MCP23S17_REG_GPPUB 0x0D
-#define MCP23S17_REG_INTFA 0x0E
+#define MCP23S17_REG_INTFA 0x0E		// Interrupt Flag Registers
 #define MCP23S17_REG_INTFB 0x0F
-#define MCP23S17_REG_INTCAPA 0x10
+#define MCP23S17_REG_INTCAPA 0x10	// Interrupt Captured GPIO State Registers
 #define MCP23S17_REG_INTCAPB 0x11
-#define MCP23S17_REG_GPIOA 0x12
+#define MCP23S17_REG_GPIOA 0x12		// GPIO Registers
 #define MCP23S17_REG_GPIOB 0x13
-#define MCP23S17_REG_OLATA 0x14
+#define MCP23S17_REG_OLATA 0x14		// Output Latch Registers
 #define MCP23S17_REG_OLATB 0x15
 #define MCP23S17_REG_INVALID 0x16
 
