@@ -1,13 +1,5 @@
 #include "MCP23S17.h"
 
-#define MCP23S17_IOCON_MIRROR_MASK 0x40
-#define MCP23S17_IOCON_HAEN_MASK 0x08
-#define MCP23S17_IOCON_ODR_MASK 0x04
-#define MCP23S17_IOCON_INTPOL_MASK 0x02
-
-#define MCP23S17_PORT_PIN_INVALID_CHECK port >= MCP23S17_PORT_INVALID || pin >= MCP23S17_PIN_INVALID
-#define MCP23S17_REG_INVALID_CHECK (reg_addr+num_regs-1) >= MCP23S17_REG_INVALID
-
 void MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return;}

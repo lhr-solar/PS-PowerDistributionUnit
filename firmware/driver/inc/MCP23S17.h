@@ -5,7 +5,7 @@
 // DRIVER FOR MCP23S17 SPI GPIO Expander
 // Datasheet: datasheets/MCP23017_MCP23S17.pdf (from repo root)
 
-// REGISTER DEFINES -----------------------------------------------------------
+// REGISTERS -----------------------------------------------------------
 
 #define MCP23S17_READ_OPCODE 0x41    // needs address if hardware addressing is enabled
 #define MCP23S17_WRITE_OPCODE 0x40   // needs address if hardware addressing is enabled
@@ -34,6 +34,13 @@
 #define MCP23S17_REG_OLATA 0x14		// Output Latch Registers
 #define MCP23S17_REG_OLATB 0x15
 #define MCP23S17_REG_INVALID 0x16
+
+#define MCP23S17_REG_INVALID_CHECK (reg_addr+num_regs-1) >= MCP23S17_REG_INVALID
+
+#define MCP23S17_IOCON_MIRROR_MASK 0x40
+#define MCP23S17_IOCON_HAEN_MASK 0x08
+#define MCP23S17_IOCON_ODR_MASK 0x04
+#define MCP23S17_IOCON_INTPOL_MASK 0x02
 
 // DEVICE HANDLE --------------------------------------------------------------
 
@@ -65,6 +72,8 @@ typedef enum {
 	MCP23S17_PIN7,
 	MCP23S17_PIN_INVALID,
 } MCP23S17_Pin;
+
+#define MCP23S17_PORT_PIN_INVALID_CHECK port >= MCP23S17_PORT_INVALID || pin >= MCP23S17_PIN_INVALID
 
 // DEVICE CONFIGURATION -------------------------------------------------------
 
