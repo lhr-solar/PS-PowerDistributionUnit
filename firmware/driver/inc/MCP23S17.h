@@ -244,7 +244,7 @@ MCP23S17_Status MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* 
  * @param	pin Device GPIO pin
  * @returns	GPIO pin state
  */
-bool MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin);
+MCP23S17_Status MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool* state);
 
 /**
  * @brief	Reads all GPIO pins.
@@ -295,7 +295,7 @@ MCP23S17_Status MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* de
  * @param	port GPIO port to read interrupt status of
  * @returns Interrupt status of GPIO port, from GPIOx7 (MSB) to GPIOx0 (LSB)
  */
-uint8_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port);
+MCP23S17_Status MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state);
 
 /**
  * @brief	Reads all GPIO pins' interrupt status.
@@ -308,9 +308,10 @@ MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device,
  * @brief	Read's one GPIO port's captured state when interrupt occured
  * @param	device MCP23S17 Device Handle
  * @param	port GPIO port to read interrupt status of
- * @returns Captured state of GPIO port during interrupt, from GPIOx7 (MSB) to GPIOx0 (LSB)
+ * @param	state Pointer to store captured state of GPIO port during interrupt, from GPIOx7 (MSB) to GPIOx0 (LSB)
+ * @returns MCP23S17 Status (MCP23S17_😢 or MCP23S17_🙂)
  */
-uint8_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port);
+MCP23S17_Status MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state);
 
 /**
  * @brief	Reads all GPIO pins' captured state when interrupt ocurred.

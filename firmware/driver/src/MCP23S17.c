@@ -70,12 +70,13 @@ static inline MCP23S17_Status MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* 
  * @param	reg_addr Register Address
  * @param	pin Device GPIO Pin
  */
-static inline bool MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin)
+static inline MCP23S17_Status MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool* state)
 {
     uint8_t reg_state = 0;
-    MCP23S17_ReadRegs(device, reg, &reg_state, 1);
+    if(MCP23S17_ReadRegs(device, reg, &reg_state, 1) != MCP23S17_🙂){return MCP23S17_😢;}
+    *state = (reg_state >> pin) & 0x01;
 
-    return (reg_state >> pin) & 0x01;
+    return MCP23S17_🙂;
 }
 
 MCP23S17_Status MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol)
@@ -175,17 +176,16 @@ MCP23S17_Status MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_
 
 MCP23S17_Status MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
 {
-    // check size of state?
     if(MCP23S17_WriteRegs(device, MCP23S17_REG_GPIOA, state, 2) != MCP23S17_🙂){return MCP23S17_😢;}
 
     return MCP23S17_🙂;
 }
 
-bool MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin)
+MCP23S17_Status MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool* state)
 {
-    if(MCP23S17_PORT_PIN_INVALID_CHECK){return false;}
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
-    return MCP23S17_ReadBit(device, (MCP23S17_REG_GPIOA+port), pin);
+    return MCP23S17_ReadBit(device, (MCP23S17_REG_GPIOA+port), pin, state);
 }
 
 MCP23S17_Status MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
@@ -216,16 +216,12 @@ MCP23S17_Status MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* de
 
 MCP23S17_Status MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval)
 {
-    // check size of state?
     return MCP23S17_WriteRegs(device, MCP23S17_REG_DEFVALA, defval, 2);
 }
 
-uint8_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port)
+MCP23S17_Status MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state)
 {
-    uint8_t reg_state = 0;
-    MCP23S17_ReadRegs(device, (MCP23S17_REG_INTFA+port), &reg_state, 1);
-
-    return reg_state;
+    return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTFA+port), state, 1);
 }
 
 MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
@@ -233,12 +229,9 @@ MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device,
     return MCP23S17_ReadRegs(device, MCP23S17_REG_INTFA, state, 2);
 }
 
-uint8_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port)
+MCP23S17_Status MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state)
 {
-    uint8_t reg_state = 0;
-    MCP23S17_ReadRegs(device, (MCP23S17_REG_INTCAPA+port), &reg_state, 1);
-
-    return reg_state;
+    return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTCAPA+port), state, 1);
 }
 
 MCP23S17_Status MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
