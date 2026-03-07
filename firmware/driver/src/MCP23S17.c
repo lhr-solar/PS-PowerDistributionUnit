@@ -59,7 +59,7 @@ static inline void MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uin
 }
 
 /**
- * @brief	Reads a specific register bit on MCP23S17.
+ * @brief	Reads a specific register bit (for a specific GPIO pin) on MCP23S17.
  * @param	device MCP23S17 Device Handle
  * @param	reg_addr Register Address
  * @param	pin Device GPIO Pin
