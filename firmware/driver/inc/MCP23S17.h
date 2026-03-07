@@ -41,8 +41,9 @@ typedef struct {
 	SPI_HandleTypeDef* spi;     // STM32 HAL I2C handle
 	GPIO_TypeDef* cs_port;
 	uint16_t cs_pin;
-	uint8_t addr;              	// Convention: 7-bit address << 1
+	uint8_t addr;              	// 3-bit address << 1
 								// if address is not used, set to 0
+								// (<< 1 is done by init function)
 } MCP23S17_HandleTypeDef;
 
 // PORTS/PINS -----------------------------------------------------------------
@@ -168,7 +169,7 @@ void MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t
  * @param	spi SPI handle
  * @param	cs_port CS port
  * @param	cs_pin CS pin
- * @param   addr Device hardware address (if hardware addressing is enabled, otherwise 000)
+ * @param   addr Device hardware address (if hardware addressing is enabled, otherwise 000) - do not left-shift, will be done by init function
  * @param	int_mirror Device INT pin mirroring configuration (MCP23S17_CONFIG_INT_SEPARATE: interrupt pins independent,  MCP23S17_CONFIG_INT_MIRRORED: Interrupt pins connected internally)
  * @param	address_en Device hardware addressing configuration (MCP23S17_ADDRESSING_DISABLE: hardware addressing disabled, MCP23S17_ADDRESSING_ENABLE: hardware addressing enabled)
  * @param	int_odr Device INT pin mode configuration (MCP23S17_CONFIG_INT_PP: INT pin is push-pull, MCP23S17_CONFIG_INT_OD: INT pin is open-drain)
