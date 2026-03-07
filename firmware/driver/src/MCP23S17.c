@@ -15,7 +15,7 @@ void MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     HAL_Delay(1);
 
-    uint8_t opcode = MCP23S17_WRITE_OPCODE | (device->addr << 1);
+    uint8_t opcode = MCP23S17_WRITE_OPCODE | (device->addr);
 
     HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY);
     HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY);
@@ -32,7 +32,7 @@ void MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     HAL_Delay(1);
 
-    uint8_t opcode = MCP23S17_READ_OPCODE | (device->addr << 1);    
+    uint8_t opcode = MCP23S17_READ_OPCODE | (device->addr);    
 
     HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY);
     HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY);
