@@ -41,7 +41,7 @@ typedef struct {
 	SPI_HandleTypeDef* spi;     // STM32 HAL I2C handle
 	GPIO_TypeDef* cs_port;
 	uint16_t cs_pin;
-	uint8_t addr;              // Convention: 7-bit address << 1
+	uint8_t addr;              	// Convention: 7-bit address << 1
 								// if address is not used, set to 0
 } MCP23S17_HandleTypeDef;
 
@@ -67,51 +67,60 @@ typedef enum {
 
 // DEVICE CONFIGURATION -------------------------------------------------------
 
+// Device Addressing Configuration
 typedef enum {
-	MCP23S17_CONFIG_INT_SEPARATE,
-	MCP23S17_CONFIG_INT_MIRRORED,
-} MCP23S17_Config_IntMirror;
-
-typedef enum {
-	MCP23S17_ADDRESSING_DISABLE,
-	MCP23S17_ADDRESSING_ENABLE,
+	MCP23S17_ADDRESSING_DISABLE,	// Device addressing disabled.
+	MCP23S17_ADDRESSING_ENABLE,		// Device addressing enabled.
 } MCP23S17_Config_Addressing;
 
+// INT Pins Mirroring
 typedef enum {
-	MCP23S17_CONFIG_INT_PP,
-	MCP23S17_CONFIG_INT_OD,
+	MCP23S17_CONFIG_INT_SEPARATE,	// INTA and INTB pins are separate.
+	MCP23S17_CONFIG_INT_MIRRORED,	// INTA and INTB pins are tied internally.
+} MCP23S17_Config_IntMirror;
+
+// INT Pins Operating Mode
+typedef enum {
+	MCP23S17_CONFIG_INT_PP,		// INT pins are push-pull.
+	MCP23S17_CONFIG_INT_OD,		// INT pins are open-drain.
 } MCP23S17_Config_IntDrive;
 
+// INT Pins Polarity (only applicable if configured as push-pull)
 typedef enum {
-	MCP23S17_CONFIG_INT_ACTIVE_LOW,
-	MCP23S17_CONFIG_INT_ACTIVE_HIGH,
+	MCP23S17_CONFIG_INT_ACTIVE_LOW,		// INT pins are active low.
+	MCP23S17_CONFIG_INT_ACTIVE_HIGH,	// INT pins are active high.
 } MCP23S17_Config_IntPol;
 
 // PIN CONFIGURATION ----------------------------------------------------------
 
+// GPIO Direction
 typedef enum {
-	MCP23S17_DIR_OUTPUT, 
-	MCP23S17_DIR_INPUT,
+	MCP23S17_DIR_OUTPUT,	// GPIO is configured as output.
+	MCP23S17_DIR_INPUT,		// GPIO is configured as input.
 } MCP23S17_Dir;
 
+// GPIO Pullup Enabled/Disabled
 typedef enum {
-	MCP23S17_PULLUP_DISABLED, 
-	MCP23S17_PULLUP_ENABLED,
+	MCP23S17_PULLUP_DISABLED, 	// Internal GPIO pullup disabled.
+	MCP23S17_PULLUP_ENABLED,	// Internal GPIO pullup enabled.
 } MCP23S17_Pullup;
 
+// GPIO Input Polarity (only affects inputs)
 typedef enum {
-	MCP23S17_POLARITY_SAME,
-	MCP23S17_POLARITY_INVERT,
+	MCP23S17_POLARITY_SAME,		// GPIO polarity as-is (active-high).
+	MCP23S17_POLARITY_INVERT,	// GPIO polarity inverted (active-low).
 } MCP23S17_InputPolarity;
 
+// GPIO Interrupt Enabled/Disabled
 typedef enum {
-	MCP23S17_INT_DISABLED,
-	MCP23S17_INT_ENABLED,
+	MCP23S17_INT_DISABLED,	// Interrupts disabled on GPIO pin.
+	MCP23S17_INT_ENABLED,	// Interrupts enabled on GPIO pin.
 } MCP23S17_InterruptEnable;
 
 typedef enum {
-	MCP23S17_INT_ON_CHANGE,
-	MCP23S17_INT_DEFVAL_COMPARE,
+	MCP23S17_INT_ON_CHANGE,			// Interrupt occurs on pin state change.
+	MCP23S17_INT_DEFVAL_COMPARE,	// Interrupt occurs on deviation from default pin state.
+									// Default pin state is set in DEFVAL register.
 } MCP23S17_InterruptMode;
 
 typedef struct {
