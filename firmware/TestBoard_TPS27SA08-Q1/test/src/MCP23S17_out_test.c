@@ -3,15 +3,11 @@
 
 // INCLUDES -------------------------------------------------------------------
 #include "stm32xx_hal.h"
+#include "TestBoard_TPS27SA08-Q1_Pins.h"
 
 #include "MCP23S17.h"
 
 // DEFINES --------------------------------------------------------------------
-#define LED_PIN GPIO_PIN_3
-#define LED_PORT GPIOB
-
-#define GPIOEXP_CS_PIN GPIO_PIN_3
-#define GPIOEXP_CS_PORT GPIOA
 
 // CONFIGURATION HANDLES/STRUCTS ----------------------------------------------
 SPI_HandleTypeDef hspi1;
