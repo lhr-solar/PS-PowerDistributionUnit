@@ -43,7 +43,8 @@ MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_ad
  * @param	device MCP23S17 Device Handle
  * @param	reg_addr Register Address
  * @param	pin Device GPIO Pin
- * @param	val Value to write in.
+ * @param	val Value to write in
+ * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
 static inline MCP23S17_Status MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool val)
 {
@@ -69,6 +70,8 @@ static inline MCP23S17_Status MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* 
  * @param	device MCP23S17 Device Handle
  * @param	reg_addr Register Address
  * @param	pin Device GPIO Pin
+ * @param   bool Pointer (bool) to store bit read
+ * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
 static inline MCP23S17_Status MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool* state)
 {
