@@ -5,6 +5,7 @@
 #include "stm32xx_hal.h"
 #include<stdio.h>
 #include<string.h>
+#include "Test_Utilities.h"
 
 #include "MCP23S17.h"
 
@@ -80,8 +81,6 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi);
 void MX_USART2_UART_Init(void);
 void HAL_UART_MspGPIOInit(UART_HandleTypeDef* huart);
 void HAL_UART_MspGPIODeInit(UART_HandleTypeDef* huart);
-
-static void uint8_to_binary_str(uint8_t val, char str[]);
 
 // GLOBAL VARIABLES -----------------------------------------------------------
 uint8_t gpio_state[2] = {0, 0};
@@ -388,17 +387,5 @@ void HAL_UART_MspGPIODeInit(UART_HandleTypeDef* huart)
 		PA15 (JTDI)     ------> USART2_RX
 		*/
 		HAL_GPIO_DeInit(GPIOA, VCP_TX_PIN|VCP_RX_PIN);
-	}
-}
-
-static void uint8_to_binary_str(uint8_t val, char str[])
-{
-	str += 7;
-
-	for(uint8_t i = 0; i < 8; i++)
-	{
-		*str = 48+(val & 0x01);
-		val = val >> 1;
-		str--;
 	}
 }
