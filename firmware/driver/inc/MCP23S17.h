@@ -189,7 +189,7 @@ MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_ad
  * @param	spi SPI Handle
  * @param	cs_port CS Port
  * @param	cs_pin CS Pin
- * @param   addr Device Hardware Address (if hardware addressing is enabled, otherwise 000) - do not left-shift, will be done by init function
+ * @param   addr Device Hardware Address [A2, A1, A0] (set on IC pins) if hardware addressing is enabled, otherwise 000 - do not left-shift, will be done by init function
  * @param	int_mirror Device INT pin mirroring configuration (MCP23S17_CONFIG_INT_SEPARATE: interrupt pins independent,  MCP23S17_CONFIG_INT_MIRRORED: Interrupt pins tied internally)
  * @param	address_en Device hardware addressing configuration (MCP23S17_ADDRESSING_DISABLE: hardware addressing disabled, MCP23S17_ADDRESSING_ENABLE: hardware addressing enabled)
  * @param	int_odr Device INT pin mode configuration (MCP23S17_CONFIG_INT_PP: INT pin is push-pull, MCP23S17_CONFIG_INT_OD: INT pin is open-drain)
