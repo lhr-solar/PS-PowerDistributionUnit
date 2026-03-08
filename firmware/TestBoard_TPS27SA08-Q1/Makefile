@@ -43,7 +43,7 @@ ifneq ($(TEST), "main")
 	PROJECT_C_SOURCES := $(filter-out $(PROJECT_MAIN_DIR)/main.c, $(PROJECT_C_SOURCES))
 	PROJECT_C_SOURCES += $(wildcard test/src/${TEST}.c)
 
-	PROJECT_C_INCLUDES += $(wildcard /test/inc)
+	PROJECT_C_INCLUDES += $(wildcard test/inc)
 endif
 
 # Convert relative paths to absolute paths for passing to Embedded-Sharepoint build
