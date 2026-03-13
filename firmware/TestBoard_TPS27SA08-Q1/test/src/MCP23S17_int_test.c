@@ -1,5 +1,12 @@
 // MCP23S17_int_test.c
-// Tests interrupt capability of MCP23S17 GPIO expander
+// Tests interrupt capability of MCP23S17 GPIO expander on TestBoard_TPS27SA08-Q1
+// ----------------------------------------------------------------------------
+// THIS IS A BAD TEST AND IN IT'S CURRENT STATE SHOULD NOT BE REFERENCED FOR FUTURE TEST PRACTICES.
+// Polls MCP23S17 GPIO Expander INTA pin state, with MCP23S17 GPIO A5 configured to interrupt-on-change.
+// (for ST pin connection on high side switch) every 100 ms. If INTA goes high, reads MCP23S17 interrupt 
+// state, current GPIO state, and captured GPIO state (when interrupt occured) in a *blocking* manner and
+// prints to serial monitor with baud rate 115200 bits/s. 
+// Format (for each): [A7] 10100000 [A0]    [B7] 00000011 [B0]
 
 // INCLUDES -------------------------------------------------------------------
 #include "stm32xx_hal.h"
@@ -66,10 +73,10 @@ uint8_t cap_state[2] = {0, 0};
 
 char dashed_line[] = "----------------\n";
 char newline[] = "\n";
-char interrupt_msg[] = "Interrupt happened!\n";
-char int_state_msg[] =  "INT State:  [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
-char gpio_state_msg[] = "GPIO State: [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
-char cap_state_msg[] =      "CAP State:  [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
+char interrupt_msg[] = 		"Interrupt happened!\n";
+char int_state_msg[] =  	"INT State:  [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
+char gpio_state_msg[] = 	"GPIO State: [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
+char cap_state_msg[] =  	"CAP State:  [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
 char interest_indicator[] = "                   ^\n";
 
 int main()

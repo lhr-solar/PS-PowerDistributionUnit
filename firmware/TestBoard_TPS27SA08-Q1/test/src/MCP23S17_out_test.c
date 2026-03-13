@@ -1,5 +1,10 @@
 // MCP23S17_out_test.c
-// Tests output capability of MCP23S17 GPIO expander
+// Tests output capability of MCP23S17 GPIO expander on TestBoard_TPS27SA08-Q1
+// ----------------------------------------------------------------------------
+// THIS IS A BAD TEST AND IN IT'S CURRENT STATE SHOULD NOT BE REFERENCED FOR FUTURE TEST PRACTICES.
+// Configures MCP23S17 GPIO A0, A1, and A2 as outputs. Initializes with all LEDs on, then cycling through 
+// each LED, before returning to all LEDs on (and repeating) with state change every 100 ms. All SPI 
+// communication with MCP23S17 is in a *blocking* manner. 
 
 // INCLUDES -------------------------------------------------------------------
 #include "stm32xx_hal.h"
@@ -56,7 +61,6 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi);
 // GLOBAL VARIABLES -----------------------------------------------------------
 const bool led_dance[4][3] = {{1, 1, 1}, {1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
 uint8_t led_dance_state = 0;
-
 
 int main()
 {
