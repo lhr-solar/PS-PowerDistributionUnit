@@ -1,5 +1,11 @@
 // MCP23S17_in_test.c
-// Tests input capability of MCP23S17 GPIO expander
+// Tests input capability of MCP23S17 GPIO expander on TestBoard TPS27SA08-Q1
+// ----------------------------------------------------------------------------
+// THIS IS A BAD TEST AND SHOULD NOT BE REFERENCED FOR FUTURE TEST PRACTICES.
+// Polls MCP23S17 GPIO Expander state every 100 ms in a *blocking* manner on TestBoard-TPS27SA08-Q1.
+// Prints out the GPIO state to serial monitor with baud rate 115200 bits/s. 
+// Format: [A7] 10100000 [A0]    [B7] 00000011 [B0]
+// Note that if LEDs are soldered on, can affect readings (specifically when testing internal pull-up resistors).
 
 // INCLUDES -------------------------------------------------------------------
 #include "stm32xx_hal.h"
@@ -79,7 +85,6 @@ uint8_t gpio_state[2] = {0, 0};
 char dashed_line[] = "----------------\n";
 char newline[] = "\n";
 char gpio_state_msg[] = "GPIO State: [A7] XXXXXXXX [A0]    [B7] XXXXXXXX [B0]\n";
-
 
 int main()
 {
