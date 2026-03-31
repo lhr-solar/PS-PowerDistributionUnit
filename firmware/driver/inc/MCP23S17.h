@@ -183,6 +183,7 @@ MCP23S17_Status MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_a
  */
 MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs);
 
+// move this down to general
 /**
  * @brief	Initializes MCP23S17 driver and device for use.
  * @param	device MCP23S17 Device Handle
