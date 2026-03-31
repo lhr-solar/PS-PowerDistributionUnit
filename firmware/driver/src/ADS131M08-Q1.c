@@ -1,0 +1,385 @@
+#include "ADS131M08-Q1.h"
+
+inline ADS131M08Q1_Status ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
+{
+    return ADS131M08Q1_FrameVar(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
+}
+
+ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
+{
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
+    HAL_Delay(1);
+
+    if(in_data == NULL)
+    {
+        // Transmit only
+        if(HAL_SPI_Transmit(device->spi, out_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+    else if(out_data == NULL)
+    {
+        // Clear data buffer so HAL_SPI_Receive only sends out zeros
+        for(uint8_t i = 0; i < ADS131M08Q1_WORD_LEN_8*num_words; i++)
+        {
+            in_data[i] = 0;
+        }
+
+        // Receive only
+        if(HAL_SPI_Receive(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+    else
+    {
+        // Transmit and receive simultaneously
+        if(HAL_SPI_TransmitReceive(device->spi, out_data, in_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+
+    HAL_Delay(1);
+    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
+    return ADS131M08Q1_🙂;
+}
+
+inline ADS131M08Q1_Status ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB)
+{
+    uint8_t cmd_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
+    cmd_frame[0] = cmd_MSB;
+    cmd_frame[1] = cmd_LSB;
+
+    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    // send ADS131M08-Q1 frame
+    if(ADS131M08Q1_Frame(device, cmd_frame, NULL) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // check for correct response
+    if(frame_response[0] == response_MSB && frame_response[1] == response_LSB)
+    {
+        return ADS131M08Q1_🙂;
+    }
+    else
+    {
+        return ADS131M08Q1_😢;
+    }
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
+{
+    if(ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_RESET_MSB, ADS131M08Q1_OPCODE_RESET_LSB, ADS131M08Q1_RESPONSE_RESET_MSB, ADS131M08Q1_RESPONSE_RESET_LSB) == ADS131M08Q1_🙂)
+    {
+        // Minimum wait 5 us after reset (t_{REGACQ}) before interacting with device again
+        HAL_Delay(1);   // RTOS: switch to vtaskdelay
+
+        return ADS131M08Q1_🙂;
+    }
+    else
+    {
+        return ADS131M08Q1_😢;
+    }
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_STANDBY_MSB, ADS131M08Q1_OPCODE_STANDBY_LSB, ADS131M08Q1_RESPONSE_STANDBY_MSB, ADS131M08Q1_RESPONSE_STANDBY_LSB);
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_WAKEUP_MSB, ADS131M08Q1_OPCODE_WAKEUP_LSB, ADS131M08Q1_RESPONSE_WAKEUP_MSB, ADS131M08Q1_RESPONSE_WAKEUP_LSB);
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_LOCK_MSB, ADS131M08Q1_OPCODE_LOCK_LSB, ADS131M08Q1_RESPONSE_LOCK_MSB, ADS131M08Q1_RESPONSE_LOCK_LSB);
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_UNLOCK_MSB, ADS131M08Q1_OPCODE_UNLOCK_LSB, ADS131M08Q1_RESPONSE_UNLOCK_MSB, ADS131M08Q1_RESPONSE_UNLOCK_LSB);
+}
+
+ADS131M08Q1_Status ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
+{
+    uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    if(ADS131M08Q1_Frame(device, null_frame, frame_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    {
+        uint32_t conversion = (__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1)))) >> 8);
+        results[ch] = (float) conversion * (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
+
+        if(conversion & 0x800000)
+        {
+            results[ch] -= 2*3.3;
+        }
+    }
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status)
+{
+    uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    if(ADS131M08Q1_Frame(device, null_frame, NULL) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    *status = __builtin_bswap16(*((uint16_t*) frame_response));
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status)
+{
+    uint16_t temp_status = 0;
+
+    if(ADS131M08Q1_ReadStatus(device, &temp_status) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    *status = temp_status & 0x00FF;
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin)
+{
+    device->spi = spi;
+    device->cs_port = cs_port;
+    device->cs_pin = cs_pin;
+
+    // validate SPI configured correctly
+    if(device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // read id value
+    uint16_t id_check = 0;
+
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_ID, &id_check, 0) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    if((id_check >> 8) != 0x28)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // SET CONFIGURATION
+    // --------------------------------
+    uint16_t global_configuration[4] = {0};
+
+    // MODE fields
+    global_configuration[0] = ADS131M08Q1_CONFIGTEMPLATE_MODE 
+                                | (device->config.drdy_source << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_SOURCE)
+                                | (device->config.drdy_idlepinstate << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_IDLEPINSTATE)
+                                | (device->config.drdy_format << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_FORMAT);
+    
+    // CLOCK fields
+    global_configuration[1] = ADS131M08Q1_CONFIGTEMPLATE_CLOCK
+                                | (device->config.reference_source << ADS131M08Q1_CLOCKCONFIG_LSHIFT_REFERENCE_SOURCE)
+                                | (device->config.powermode << ADS131M08Q1_CLOCKCONFIG_LSHIFT_POWERMODE);
+    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
+    {
+        global_configuration[i] |= (device->config.ch_configs[i].enable << ADS131M08Q1_CLOCKCONFIG_LSHIFT_CHx_ENABLE(i));
+    }
+    
+    // GAIN1 and GAIN2 fields
+    global_configuration[2] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
+                                | (device->config.ch_configs[0].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
+                                | (device->config.ch_configs[1].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
+                                | (device->config.ch_configs[2].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
+                                | (device->config.ch_configs[3].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
+    global_configuration[3] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
+                                | (device->config.ch_configs[4].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
+                                | (device->config.ch_configs[5].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
+                                | (device->config.ch_configs[6].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
+                                | (device->config.ch_configs[7].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
+    
+    if(ADS131M08Q1_WriteRegs(device, ADS131M08Q1_REG_MODE, global_configuration, 4) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    
+    uint16_t global_configuration_readback[4] = {0};
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_MODE, global_configuration_readback, 4) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    for(uint8_t i = 0; i < 4; i++)
+    {
+        if(global_configuration_readback[i] != global_configuration[i])
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+
+    if(device->config.reference_source == ADS131M08Q1_REFERENCE_SOURCE_INTERNAL)
+    {
+        device->config.fsr = 1.2;
+    }
+
+    // FOR FUTURE IMPLEMENTATION
+
+    // for each channel, set channel paramters
+
+    // perform configuration readback
+
+    // compute conversion factor?
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
+{
+    if(ADS131M08Q1_REG_INVALID_CHECK(reg_addr, num_regs)){return ADS131M08Q1_😢;}
+
+    uint8_t rreg_cmd[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    // RREG command format: 101a aaaa annn nnnn
+    // aaaaaa = starting address, nnnnnnn = number of regs - 1
+    rreg_cmd[0] = ADS131M08Q1_OPCODE_RREG_MSB | (reg_addr >> 1);
+    rreg_cmd[1] = ((reg_addr & 0x01) << 7) | (num_regs-1);
+
+    if(ADS131M08Q1_Frame(device, rreg_cmd, NULL) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(num_regs == 1)
+    {
+        // when reading one reg, the reg is read out on the response (first word) of the next frame
+        // no separate response is given
+
+        uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+        if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+        {
+            return ADS131M08Q1_😢;
+        }
+
+        *data = __builtin_bswap16(*((uint16_t*) frame_response));
+    }
+    else
+    {
+        // when reading more than one reg, the regs are read out after a response 
+        // (same as command, but starts with 111...)
+
+        // +2 words for RREG response word and for CRC word (unused but sent by IC)
+        uint8_t rreg_response[ADS131M08Q1_WORD_LEN_8*(num_regs+2)];
+        for(uint8_t i = 0; i < ADS131M08Q1_WORD_LEN_8*(num_regs+2); i++)
+        {
+            rreg_response[i] = 0;
+        }
+
+        if(ADS131M08Q1_FrameVar(device, NULL, rreg_response, num_regs+2) != ADS131M08Q1_🙂)
+        {
+            return ADS131M08Q1_😢;
+        }
+
+        // check RREG response
+        if(__builtin_bswap16(*((uint16_t*) rreg_response)) != ((ADS131M08Q1_RESPONSE_RREG_MSB << 8) | (reg_addr << 7) | (num_regs-1)))
+        {
+            return ADS131M08Q1_😢;
+        }
+
+        for(uint8_t i = 0; i < num_regs; i++)
+        {
+            data[i] = __builtin_bswap16(*((uint16_t*) (rreg_response+3*(i+1))));
+        }
+
+        // potentially more optimal way is to clock one frame, check reponse, then clock the register readouts
+        // (storing directly into data buffer passed in), then clock one word for crc to avoid extra frame_response
+        // buffer - don't want to deal with the extra complexity of a word function though right now
+    }
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
+{
+    if(ADS131M08Q1_REG_INVALID_CHECK(reg_addr, num_regs)){return ADS131M08Q1_😢;}
+
+    uint8_t frame_len_24 = 0;
+    // check if enough words to fill up an SPI frame
+    if(num_regs < (ADS131M08Q1_FRAME_LEN_24-1))
+    {
+        // need to clock at least ten frames (to maintain synchronization with ADC data readout)
+        frame_len_24 = ADS131M08Q1_FRAME_LEN_24;
+    }
+    else
+    {
+        // num_regs + 1 (command word)
+        frame_len_24 = num_regs+1;
+    }
+
+    uint8_t wreg_cmd[frame_len_24*ADS131M08Q1_WORD_LEN_8];
+    for(uint8_t i = 0; i < frame_len_24*ADS131M08Q1_WORD_LEN_8; i++)
+    {
+        wreg_cmd[i] = 0;
+    }
+
+    // WREG command format: 011a aaaa annn nnnn
+    // aaaaaa = starting address, nnnnnnn = number of regs - 1
+    wreg_cmd[0] = ADS131M08Q1_OPCODE_WREG_MSB | (reg_addr >> 1);
+    wreg_cmd[1] = ((reg_addr & 0x01) << 7) | (num_regs-1);
+
+    for(uint8_t i = 0; i < num_regs; i++)
+    {
+        *((uint16_t*) (wreg_cmd+(3*(i+1)))) = __builtin_bswap16(data[i]);
+    }
+
+    if(ADS131M08Q1_FrameVar(device, wreg_cmd, NULL, frame_len_24) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    uint8_t null_cmd[ADS131M08Q1_FRAME_LEN_8] = {0};
+    uint8_t wreg_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    // send another frame to get WREG response
+    if(ADS131M08Q1_Frame(device, null_cmd, wreg_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // check WREG response (same as WREG command, but starts with 010...)
+    if(__builtin_bswap16(*((uint16_t*) wreg_response)) != ((ADS131M08Q1_RESPONSE_WREG_MSB << 8) | (reg_addr << 7) | (num_regs-1)))
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    return ADS131M08Q1_🙂;
+}
