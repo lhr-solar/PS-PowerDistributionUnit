@@ -7,13 +7,19 @@ inline ADS131M08Q1_Status ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, u
 
 ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
 {
+    // get mutex and verify HAL_READY
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    HAL_Delay(1);
+    vTaskDelay(pdMS_TO_TICKS(1));
 
     if(in_data == NULL)
     {
         // Transmit only
-        if(HAL_SPI_Transmit(device->spi, out_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        if(HAL_SPI_Transmit_IT(device->spi, out_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
             return ADS131M08Q1_😢;
         }
@@ -27,7 +33,7 @@ ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8
         }
 
         // Receive only
-        if(HAL_SPI_Receive(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        if(HAL_SPI_Receive_IT(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
             return ADS131M08Q1_😢;
         }
@@ -35,14 +41,25 @@ ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8
     else
     {
         // Transmit and receive simultaneously
-        if(HAL_SPI_TransmitReceive(device->spi, out_data, in_data, ADS131M08Q1_WORD_LEN_8*num_words, HAL_MAX_DELAY) != HAL_OK)
+        if(HAL_SPI_TransmitReceive_IT(device->spi, out_data, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
             return ADS131M08Q1_😢;
         }
     }
 
-    HAL_Delay(1);
+    // take spi completion semaphore
+    if(xSemaphoreTake(device->spi_done_sem, ADS131M08Q1_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    {
+        HAL_SPI_Abort(device->spi);
+
+        return ADS131M08Q1_😢; // maybe add another different timed-out status
+    }
+
+    // HAL_Delay(1);   // remove delay
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
     return ADS131M08Q1_🙂;
 }
@@ -82,7 +99,8 @@ ADS131M08Q1_Status ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
     if(ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_RESET_MSB, ADS131M08Q1_OPCODE_RESET_LSB, ADS131M08Q1_RESPONSE_RESET_MSB, ADS131M08Q1_RESPONSE_RESET_LSB) == ADS131M08Q1_🙂)
     {
         // Minimum wait 5 us after reset (t_{REGACQ}) before interacting with device again
-        HAL_Delay(1);   // RTOS: switch to vtaskdelay
+        vTaskDelay(1);   // RTOS: switch to vtaskdelay
+        // this owuldn't be sufficient if another thread wants? - SPI mutex has already been given back (need ADC mutex?)
 
         return ADS131M08Q1_🙂;
     }
@@ -179,7 +197,12 @@ ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_Handl
     device->cs_pin = cs_pin;
 
     // validate SPI configured correctly
-    if(device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
+    if(device->spi == NULL || device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
     {
         return ADS131M08Q1_😢;
     }
@@ -210,7 +233,7 @@ ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_Handl
     global_configuration[1] = ADS131M08Q1_CONFIGTEMPLATE_CLOCK
                                 | (device->config.reference_source << ADS131M08Q1_CLOCKCONFIG_LSHIFT_REFERENCE_SOURCE)
                                 | (device->config.powermode << ADS131M08Q1_CLOCKCONFIG_LSHIFT_POWERMODE);
-    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
+    for(uint8_t i = 0; i < 4; i++)
     {
         global_configuration[i] |= (device->config.ch_configs[i].enable << ADS131M08Q1_CLOCKCONFIG_LSHIFT_CHx_ENABLE(i));
     }

@@ -12,12 +12,18 @@ extern SPI_HandleTypeDef hspi2;
 ADS131M08Q1_HandleTypeDef adc;
 float adc_results[8];
 
+SemaphoreHandle_t spi2_mutex;           // Mutex to prevent simultaneous SPI access
+StaticSemaphore_t spi2_mutex_buffer;    // Static buffer for mutex allocation
+
+SemaphoreHandle_t spi2_done_sem;        // Semaphore to signal SPI DMA/IT completion
+StaticSemaphore_t spi2_done_sem_buffer; // Static buffer for completion semaphore
+
 StaticTask_t initTaskBuffer;
 StackType_t initTaskStack[configMINIMAL_STACK_SIZE];
 StaticTask_t blinkTaskBuffer;
 StackType_t blinkTaskStack[configMINIMAL_STACK_SIZE];
-StaticTask_t adcRREGTaskBuffer;
-StackType_t adcRREGTaskStack[configMINIMAL_STACK_SIZE];
+StaticTask_t adcWREGTaskBuffer;
+StackType_t adcWREGTaskStack[configMINIMAL_STACK_SIZE];
 
 // Initialize clock for heartbeat LED port
 void Heartbeat_Clock_Init() {
@@ -37,6 +43,7 @@ void Heartbeat_Clock_Init() {
 // Initialize GPIO and UART
 void Init_Task(void *argument)
 {
+    printf("Starting Initialization...\n");
 
     GPIO_InitTypeDef led_config = {
         .Mode = GPIO_MODE_OUTPUT_PP,
@@ -70,11 +77,55 @@ void Init_Task(void *argument)
     printf_init(husart3);
 
     SPI2_ADC_Init();
-    uint8_t dummy_spi_send = 0;
-    HAL_SPI_Transmit(&hspi2, &dummy_spi_send, 1, HAL_MAX_DELAY);
-    vTaskDelay(1);
 
-    // printf("Starting SPI intialization...\n");
+    // create mutex (prevent simultaneous access to SPI2)
+    spi2_mutex = xSemaphoreCreateMutexStatic(&spi2_mutex_buffer);
+    //creates semaphore (tells when SPI2 hardware has finished transmission)
+    spi2_done_sem = xSemaphoreCreateBinaryStatic(&spi2_done_sem_buffer);
+
+    if(spi2_mutex == NULL || spi2_done_sem == NULL)
+    {
+        printf("FAIL:MUTEX_SEMAPHORE_NULL\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+    if(xSemaphoreTake(spi2_mutex, pdMS_TO_TICKS(100)) != pdTRUE)
+    {
+        printf("FAIL:SEMAPHORE_TAKE_INIT_SPI_DUMMY_SEND\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+    // SPI dummy send because CLK pin initializes high even when configured low for some reason
+    uint8_t dummy_spi_send = 0;
+    if(HAL_SPI_Transmit_IT(&hspi2, &dummy_spi_send, 1) != HAL_OK)
+    {
+        printf("FAIL:SPI_TRANSMIT_INIT_SPI_DUMMY_SEND\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+    if(xSemaphoreTake(spi2_done_sem, pdMS_TO_TICKS(100)) != pdTRUE)
+    {
+        printf("FAIL:SEMAPHORE_TAKE_INIT_SPI_DUMMY_SEND\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+    xSemaphoreGive(spi2_mutex);
 
     for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
     {
@@ -95,8 +146,12 @@ void Init_Task(void *argument)
     adc.cs_port = ADC_SNS1_CS_PORT;
     adc.cs_pin = ADC_SNS1_CS_PIN;
 
+    adc.spi_mutex = spi2_mutex;
+    adc.spi_done_sem = spi2_done_sem;
+
     if(ADS131M08Q1_Reset(&adc) != ADS131M08Q1_🙂)
     {
+        printf("FAIL:ADC_INIT_RESET\n");
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -114,29 +169,30 @@ void Blink_Task(void *argument)
 {
     for(;;)
     {
-        printf("Hello, I'm running1...\n");
+        printf("Blink_Task runs...\n");
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
 
         vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
 
-void ADC_RREG_Task(void *argument)
+void ADC_WREG_Task(void *argument)
 {
     vTaskDelay(10);
 
     for(;;)
     {
-        printf("Hello, I'm running2...\n");
+        printf("ADC_WREG_Task runs...\n");
 
         uint16_t wreg_buf[12] = {0x0000, 0x1234, 0x5600, 0x789A, 0xBC00, 0x0000, 0x2345, 0x6700, 0x89AB, 0xCD00, 0x0000, 0x3456};
         uint16_t rreg_results[12] = {0};
 
         // TEST SHORT WRITE (should still fill up a frame)
-        printf("Test short write...\n");
+        printf("\nTest short write...\n");
+        printf("-----\n");
         if(ADS131M08Q1_WriteRegs(&adc, ADS131M08Q1_REG_CHx_CFG(0), wreg_buf, 5) != ADS131M08Q1_🙂)
         {
-            printf("Fail0\n");
+            printf("FAIL:SPI_REG_WRITE_5\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -147,7 +203,7 @@ void ADC_RREG_Task(void *argument)
         // check readback
         if(ADS131M08Q1_ReadRegs(&adc, ADS131M08Q1_REG_CHx_CFG(0), rreg_results, 5) != ADS131M08Q1_🙂)
         {
-            printf("Fail1\n");
+            printf("FAIL:SPI_REG_READBACK_5\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -168,7 +224,7 @@ void ADC_RREG_Task(void *argument)
 
         if(!ok)
         {
-            printf("Fail2\n");
+            printf("FAIL:REG_VALUE_MISMATCH_5\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -177,10 +233,11 @@ void ADC_RREG_Task(void *argument)
         }
 
         // TEST LONG WRITE (should extend frame size)
-        printf("Test long write...\n");
+        printf("\nTest long write...\n");
+        printf("-----\n");
         if(ADS131M08Q1_WriteRegs(&adc, ADS131M08Q1_REG_CHx_CFG(0), wreg_buf, 12) != ADS131M08Q1_🙂)
         {
-            printf("Fail3\n");
+            printf("FAIL:SPI_REG_WRITE_12\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -191,7 +248,7 @@ void ADC_RREG_Task(void *argument)
         // check readback
         if(ADS131M08Q1_ReadRegs(&adc, ADS131M08Q1_REG_CHx_CFG(0), rreg_results, 12) != ADS131M08Q1_🙂)
         {
-            printf("Fail4\n");
+            printf("FAIL:SPI_REG_READBACK_12\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -212,7 +269,7 @@ void ADC_RREG_Task(void *argument)
 
         if(!ok)
         {
-            printf("Fail5\n");
+            printf("FAIL:REG_VALUE_MISMATCH_12\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
@@ -247,18 +304,56 @@ int main()
                     &blinkTaskBuffer
                 );
 
-    xTaskCreateStatic(ADC_RREG_Task,
-                    "ADC RREG Task",
+    xTaskCreateStatic(ADC_WREG_Task,
+                    "ADC WREG Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
                     tskIDLE_PRIORITY + 1,
-                    adcRREGTaskStack,
-                    &adcRREGTaskBuffer
+                    adcWREGTaskStack,
+                    &adcWREGTaskBuffer
                 );
 
     vTaskStartScheduler();
 
     while(1) {}
+}
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+/**
+  * @brief This function handles SPI2 global interrupt.
+  */
+void SPI2_IRQHandler(void)
+{
+    HAL_SPI_IRQHandler(&hspi2);
 }
 
 /**

@@ -7,6 +7,9 @@
 
 #include "stm32xx_hal.h"
 
+#define ADS131M08Q1_SPI_MUTEX_DELAY portMAX_DELAY
+#define ADS131M08Q1_SPI_TRANSMISSION_DELAY pdMS_TO_TICKS(100)
+
 #define ADS131M08Q1_NUM_CHANNELS 8
 #define ADS131M08Q1_NUM_BITS 24
 #define ADS131M08Q1_NUM_STEPS 8388608   // 2^23 (24 bits - 1 sign bit)
@@ -213,6 +216,10 @@ typedef struct {
 	SPI_HandleTypeDef* spi;     // STM32 HAL SPI handle
 	GPIO_TypeDef* cs_port;
 	uint16_t cs_pin;
+
+    SemaphoreHandle_t spi_mutex;        // Mutex to prevent simultaenous SPI access
+    SemaphoreHandle_t spi_done_sem;     // Semaphore to signal SPI transmission complete
+
     ADS131M08Q1_DeviceConfig config;
 } ADS131M08Q1_HandleTypeDef;
 
