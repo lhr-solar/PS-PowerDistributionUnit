@@ -131,6 +131,10 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
 	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
 	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+	/* SPI2 interrupt Init */
+    HAL_NVIC_SetPriority(SPI2_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY+1, 0);
+    HAL_NVIC_EnableIRQ(SPI2_IRQn);
 	}
 	else if(hspi->Instance==SPI3)
 	{
