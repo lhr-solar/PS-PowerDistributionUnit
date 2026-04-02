@@ -148,7 +148,7 @@ ADS131M08Q1_Status ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* 
 
         if(conversion & 0x800000)
         {
-            results[ch] -= 2*3.3;
+            results[ch] -= 2*device->config.fsr;
         }
     }
 
