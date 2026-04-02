@@ -210,7 +210,7 @@ ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_Handl
     // read id value
     uint16_t id_check = 0;
 
-    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_ID, &id_check, 0) != ADS131M08Q1_🙂)
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_ID, &id_check, 1) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
