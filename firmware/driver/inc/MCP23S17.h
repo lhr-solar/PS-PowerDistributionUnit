@@ -49,25 +49,13 @@
 #define MCP23S17_REG_INVALID 0x16
 #define MCP23S17_REG_INVALID_CHECK (reg_addr+num_regs-1) >= MCP23S17_REG_INVALID
 
-#define MCP23S17_IOCON_MIRROR_MASK 0x40
-#define MCP23S17_IOCON_HAEN_MASK 0x08
-#define MCP23S17_IOCON_ODR_MASK 0x04
-#define MCP23S17_IOCON_INTPOL_MASK 0x02
+#define MCP23S17_IOCON_TEMPLATE 0x00
+#define MCP23S17_IOCON_MIRROR_LSHIFT 6
+#define MCP23S17_IOCON_HAEN_LSHIFT 3
+#define MCP23S17_IOCON_ODR_LSHIFT 2
+#define MCP23S17_IOCON_INTPOL_LSHIFT 1
 
 // DEVICE ---------------------------------------------------------------------
-
-typedef struct {
-	SPI_HandleTypeDef* spi;     // STM32 HAL SPI handle
-	GPIO_TypeDef* cs_port;
-	uint16_t cs_pin;
-	uint8_t addr;              	// 3-bit hardware address << 1
-								// A2, A1, A0 (set on IC pins)
-								// If hardware addressing is disabled, set to 0.
-								// Value is left-shifted by the init function when used.
-
-	SemaphoreHandle_t spi_mutex;		// Mutex to prevent simultaenous SPI access
-	SemaphoreHandle_t spi_done_sem;		// Semaphore to signal SPI transmission complete
-} MCP23S17_HandleTypeDef;
 
 typedef enum {
 	MCP23S17_😢,				// MCP23S17 sad
@@ -102,8 +90,8 @@ typedef enum {
 
 // Device Addressing Configuration
 typedef enum {
-	MCP23S17_CONFIG_ADDRESSING_DISABLED,		// Device addressing disabled.
-	MCP23S17_CONFIG_ADDRESSING_ENABLED,			// Device addressing enabled.
+	MCP23S17_CONFIG_ADDRESSING_DISABLED,	// Device addressing disabled.
+	MCP23S17_CONFIG_ADDRESSING_ENABLED,		// Device addressing enabled.
 } MCP23S17_Config_Addressing_t;
 #define MCP23S17_CONFIG_ADDRESSING_DEFAULT MCP23S17_CONFIG_ADDRESSING_DISABLED
 
@@ -145,8 +133,8 @@ typedef enum {
 
 // GPIO Input Polarity (only affects inputs)
 typedef enum {
-	MCP23S17_INPUTPOLARITY_SAME,		// GPIO polarity as-is (active-high).
-	MCP23S17_INPUTPOLARITY_INVERT,		// GPIO polarity inverted (active-low).
+	MCP23S17_INPUTPOLARITY_SAME,	// GPIO polarity as-is (active-high).
+	MCP23S17_INPUTPOLARITY_INVERT,	// GPIO polarity inverted (active-low).
 } MCP23S17_InputPolarity_t;
 #define MCP23S17_INPUTPOLARITY_DEFAULT MCP23S17_INPUTPOLARITY_SAME
 
@@ -185,6 +173,26 @@ typedef struct {
 	bool default_value;
 } MCP23S17_PinConfigInput_t;
 
+// HANDLE ---------------------------------------------------------------------
+
+typedef struct {
+	SPI_HandleTypeDef* spi;     // STM32 HAL SPI handle
+	GPIO_TypeDef* cs_port;
+	uint16_t cs_pin;
+	uint8_t addr;              	// 3-bit hardware address << 1
+								// A2, A1, A0 (set on IC pins). 
+								// If hardware addressing is disabled, set to 0.
+								// Do not left-shift. Value is left-shifted by the init function when used.
+
+	SemaphoreHandle_t spi_mutex;		// Mutex to prevent simultaenous SPI access
+	SemaphoreHandle_t spi_done_sem;		// Semaphore to signal SPI transmission complete
+
+	MCP23S17_Config_Addressing_t address_en;	// Device hardware addressing configuration (MCP23S17_ADDRESSING_DISABLED: hardware addressing disabled, MCP23S17_ADDRESSING_ENABLED: hardware addressing enabled)
+	MCP23S17_Config_IntMirror_t int_mirror;		// Device INT pin mirroring configuration (MCP23S17_CONFIG_INT_SEPARATE: interrupt pins independent,  MCP23S17_CONFIG_INT_MIRRORED: Interrupt pins tied internally)
+	MCP23S17_Config_IntDrive_t int_drive;		// Device INT pin mode configuration (MCP23S17_CONFIG_INTDRIVE_PP: INT pin is push-pull, MCP23S17_CONFIG_INTDRIVE_OD: INT pin is open-drain)
+	MCP23S17_Config_IntPol_t int_pol;			// Device INT pin polarity (MCP23S17_CONFIG_INTPOL_ACTIVE_LOW: INT pin is active-low, MCP23S17_CONFIG_INTPOL_ACTIVE_HIGH: INT pin is active-high)
+} MCP23S17_HandleTypeDef;
+
 // DEVICE FUNCTIONS -----------------------------------------------------------
 // meant to be used interally, but exposed for outside use if CAREFUL
 
@@ -213,17 +221,9 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
 /**
  * @brief	Initializes MCP23S17 driver and device for use.
  * @param	device MCP23S17 Device Handle
- * @param	spi SPI Handle
- * @param	cs_port CS Port
- * @param	cs_pin CS Pin
- * @param   addr Device Hardware Address [A2, A1, A0] (set on IC pins) if hardware addressing is enabled, otherwise 000 - do not left-shift, will be done by init function
- * @param	int_mirror Device INT pin mirroring configuration (MCP23S17_CONFIG_INT_SEPARATE: interrupt pins independent,  MCP23S17_CONFIG_INT_MIRRORED: Interrupt pins tied internally)
- * @param	address_en Device hardware addressing configuration (MCP23S17_ADDRESSING_DISABLED: hardware addressing disabled, MCP23S17_ADDRESSING_ENABLED: hardware addressing enabled)
- * @param	int_odr Device INT pin mode configuration (MCP23S17_CONFIG_INTDRIVE_PP: INT pin is push-pull, MCP23S17_CONFIG_INTDRIVE_OD: INT pin is open-drain)
- * @param	int_pol Device INT pin polarity (MCP23S17_CONFIG_INTPOL_ACTIVE_LOW: INT pin is active-low, MCP23S17_CONFIG_INTPOL_ACTIVE_HIGH: INT pin is active-high)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful)
  */
-MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol);
+MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device);
 
 /**
  * @brief	Sets a GPIO pin's direction.

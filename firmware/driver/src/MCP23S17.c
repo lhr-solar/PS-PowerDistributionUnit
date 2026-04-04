@@ -1,16 +1,5 @@
 #include "MCP23S17.h"
 
-// (INTERNAL) ENUMS -----------------------------------------------------------
-
-typedef enum {
-    MCP23S17_REG_OP_WRITE,
-    MCP23S17_REG_OP_READ,
-} MCP23S17_RegOp_t;
-
-// (INTERNAL) FUNCTION DECLARATIONS -------------------------------------------
-
-MCP23S17_Status_t MCP23S17_RegOperationCommon(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs, MCP23S17_RegOp_t reg_op);
-
 // FUNCTION DEFINITIONS -------------------------------------------------------
 
 MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
@@ -145,12 +134,9 @@ static inline MCP23S17_Status_t MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device,
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol)
+MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device)
 {
-    device->spi = spi;
-    device->addr = address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED ? addr << 1 : 0;
-    device->cs_port = cs_port;
-    device->cs_pin = cs_pin;
+    device->addr = device->address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED ? device->addr << 1 : 0;
 
     // validate SPI configured correctly
     if(device->spi == NULL)
@@ -158,50 +144,26 @@ MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDe
         return MCP23S17_😢;
     }
 
+    // validate SPI mutex and semaphore configured correctly
     if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
     {
         return MCP23S17_😢;
     }
 
-    uint8_t configuration = 0;
+    // set up configuration
+    uint8_t configuration = MCP23S17_IOCON_TEMPLATE
+                                // IOCON.BANK = 0 | REGISTER ADDRESSING (This driver is designed ONLY for IOCON.BANK=0 register addresses.)
+                                | (device->int_mirror << MCP23S17_IOCON_MIRROR_LSHIFT)  // IOCON.MIRROR | INT PIN MIRRORING
+                                // IOCON.SEQOP = 0 | SEQUENTIAL OPERATION MODE (This driver is designed to utilize sequential operations.)
+                                // IOCON.DISSLW = 0 | SDA SLEW RATE CONTROL (I don't know why this is here or what it's for.)
+                                | (device->address_en << MCP23S17_IOCON_HAEN_LSHIFT)    // IOCON.HAEN | HARDWARE ADDRESS ENABLE
+                                | (device->int_drive << MCP23S17_IOCON_ODR_LSHIFT)      // IOCON.ODR | INT PIN OPEN-DRAIN
+                                | (device->int_pol << MCP23S17_IOCON_INTPOL_LSHIFT);    // IOCON.INTPOL | INT PIN POLARITY
 
-    // IOCON.BANK = 0 | REGISTER ADDRESSING
-    // This driver is designed ONLY for IOCON.BANK=0 register addresses.
-    
-    // IOCON.MIRROR | INT PIN MIRRORING
-    if(int_mirror)
-    {
-        configuration |= MCP23S17_IOCON_MIRROR_MASK;
-    }
-
-    // IOCON.SEQOP = 0 | SEQUENTIAL OPERATION MODE
-    // This driver is designed to utilize sequential operations. 
-
-    // IOCON.DISSLW = 0 | SDA SLEW RATE CONTROL
-    // I don't know why this is here or what it's for.
-
-    // IOCON.HAEN | HARDWARE ADDRESS ENABLE
-    if(address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED)
-    {
-        configuration |= MCP23S17_IOCON_HAEN_MASK;
-    }
-
-    // IOCON.ODR | INT PIN OPEN-DRAIN
-    if(int_odr == MCP23S17_CONFIG_INTDRIVE_OD)
-    {
-        configuration |= MCP23S17_IOCON_ODR_MASK;
-    }
-
-    // IOCON.INTPOL | INT PIN POLARITY
-    if(int_pol == MCP23S17_CONFIG_INTPOL_ACTIVE_HIGH)
-    {
-        configuration |= MCP23S17_IOCON_INTPOL_MASK;
-    }
-
-    // Write configuration
+    // write configuration
     if(MCP23S17_WriteRegs(device, MCP23S17_REG_IOCON, &configuration, 1) != MCP23S17_🙂){return MCP23S17_😢;}
 
-    // Verify configuration
+    // verify configuration via readback
     uint8_t configuration_readback = 0;
     if(MCP23S17_ReadRegs(device, MCP23S17_REG_IOCON, &configuration_readback, 1) != MCP23S17_🙂){return MCP23S17_😢;}
 
