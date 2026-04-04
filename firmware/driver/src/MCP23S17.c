@@ -23,6 +23,7 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
         return MCP23S17_🕷️;
     }
 
+    // bring CS pin low
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(1);
 
@@ -56,7 +57,6 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
 
 MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
-    // return MCP23S17_RegOperationCommon(device, reg_addr, data, num_regs, MCP23S17_REG_OP_READ);
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
@@ -65,6 +65,7 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
         return MCP23S17_🕷️;
     }
 
+    // bring CS pin low
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(1);
 
@@ -77,6 +78,7 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     msg[0] = MCP23S17_OPCODE_READ | (device->addr);         // command/device address
     msg[1] = reg_addr;                                      // starting register address
 
+    // SPI transmission
     if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
 
     // wait for SPI completion
@@ -146,7 +148,7 @@ static inline MCP23S17_Status_t MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device,
 MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol)
 {
     device->spi = spi;
-    device->addr = address_en == MCP23S17_CONFIG_ADDRESSING_ENABLE ? addr << 1 : 0;
+    device->addr = address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED ? addr << 1 : 0;
     device->cs_port = cs_port;
     device->cs_pin = cs_pin;
 
@@ -179,19 +181,19 @@ MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDe
     // I don't know why this is here or what it's for.
 
     // IOCON.HAEN | HARDWARE ADDRESS ENABLE
-    if(address_en == MCP23S17_CONFIG_ADDRESSING_ENABLE)
+    if(address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED)
     {
         configuration |= MCP23S17_IOCON_HAEN_MASK;
     }
 
     // IOCON.ODR | INT PIN OPEN-DRAIN
-    if(int_odr == MCP23S17_CONFIG_INT_OD)
+    if(int_odr == MCP23S17_CONFIG_INTDRIVE_OD)
     {
         configuration |= MCP23S17_IOCON_ODR_MASK;
     }
 
     // IOCON.INTPOL | INT PIN POLARITY
-    if(int_pol == MCP23S17_CONFIG_INT_ACTIVE_HIGH)
+    if(int_pol == MCP23S17_CONFIG_INTPOL_ACTIVE_HIGH)
     {
         configuration |= MCP23S17_IOCON_INTPOL_MASK;
     }
@@ -333,7 +335,7 @@ MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFuncti
     if(MCP23S17_SetInputPolarity_Pin(device, pin_config.port, pin_config.pin, pin_config.inpol) != MCP23S17_🙂){return MCP23S17_😢;}
 
     // interrupt setup
-    if(pin_config.inten == MCP23S17_INT_ENABLED)
+    if(pin_config.inten == MCP23S17_INTEN_ENABLED)
     {
         if(MCP23S17_SetInterruptEnable_Pin(device, pin_config.port, pin_config.pin, pin_config.inten) != MCP23S17_🙂){return MCP23S17_😢;}
         if(MCP23S17_SetInterruptMode_Pin(device, pin_config.port, pin_config.pin, pin_config.intmode) != MCP23S17_🙂){return MCP23S17_😢;}
