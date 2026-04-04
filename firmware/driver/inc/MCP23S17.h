@@ -57,7 +57,7 @@ typedef struct {
 typedef enum {
 	MCP23S17_😢,				// MCP23S17 sad
 	MCP23S17_🙂,				// MCP23S17 happy
-} MCP23S17_Status;
+} MCP23S17_Status_t;
 
 // PORTS/PINS -----------------------------------------------------------------
 
@@ -65,7 +65,7 @@ typedef enum {
 	MCP23S17_GPIOA,
 	MCP23S17_GPIOB,
 	MCP23S17_PORT_INVALID,
-} MCP23S17_Port;
+} MCP23S17_Port_t;
 
 typedef enum {
 	MCP23S17_PIN0,
@@ -77,7 +77,7 @@ typedef enum {
 	MCP23S17_PIN6,
 	MCP23S17_PIN7,
 	MCP23S17_PIN_INVALID,
-} MCP23S17_Pin;
+} MCP23S17_Pin_t;
 
 #define MCP23S17_PORT_PIN_INVALID_CHECK port >= MCP23S17_PORT_INVALID || pin >= MCP23S17_PIN_INVALID
 
@@ -87,25 +87,25 @@ typedef enum {
 typedef enum {
 	MCP23S17_ADDRESSING_DISABLE,		// Device addressing disabled.
 	MCP23S17_ADDRESSING_ENABLE,			// Device addressing enabled.
-} MCP23S17_Config_Addressing;
+} MCP23S17_Config_Addressing_t;
 
 // INT Pins Mirroring
 typedef enum {
 	MCP23S17_CONFIG_INT_SEPARATE,		// INTA and INTB pins are separate.
 	MCP23S17_CONFIG_INT_MIRRORED,		// INTA and INTB pins are tied internally.
-} MCP23S17_Config_IntMirror;
+} MCP23S17_Config_IntMirror_t;
 
 // INT Pins Operating Mode
 typedef enum {
 	MCP23S17_CONFIG_INT_PP,				// INT pins are push-pull.
 	MCP23S17_CONFIG_INT_OD,				// INT pins are open-drain.
-} MCP23S17_Config_IntDrive;
+} MCP23S17_Config_IntDrive_t;
 
 // INT Pins Polarity (only applicable if configured as push-pull)
 typedef enum {
 	MCP23S17_CONFIG_INT_ACTIVE_LOW,		// INT pins are active low.
 	MCP23S17_CONFIG_INT_ACTIVE_HIGH,	// INT pins are active high.
-} MCP23S17_Config_IntPol;
+} MCP23S17_Config_IntPol_t;
 
 // PIN CONFIGURATION ----------------------------------------------------------
 
@@ -113,52 +113,52 @@ typedef enum {
 typedef enum {
 	MCP23S17_DIR_OUTPUT,			// GPIO is configured as output.
 	MCP23S17_DIR_INPUT,				// GPIO is configured as input.
-} MCP23S17_Dir;
+} MCP23S17_Dir_t;
 
 // GPIO Pullup Enabled/Disabled
 typedef enum {
 	MCP23S17_PULLUP_DISABLED, 		// Internal GPIO pullup disabled.
 	MCP23S17_PULLUP_ENABLED,		// Internal GPIO pullup enabled.
-} MCP23S17_Pullup;
+} MCP23S17_Pullup_t;
 
 // GPIO Input Polarity (only affects inputs)
 typedef enum {
 	MCP23S17_POLARITY_SAME,			// GPIO polarity as-is (active-high).
 	MCP23S17_POLARITY_INVERT,		// GPIO polarity inverted (active-low).
-} MCP23S17_InputPolarity;
+} MCP23S17_InputPolarity_t;
 
 // GPIO Interrupt Enabled/Disabled
 typedef enum {
 	MCP23S17_INT_DISABLED,			// Interrupts disabled on GPIO pin.
 	MCP23S17_INT_ENABLED,			// Interrupts enabled on GPIO pin.
-} MCP23S17_InterruptEnable;
+} MCP23S17_InterruptEnable_t;
 
 typedef enum {
 	MCP23S17_INT_ON_CHANGE,			// Interrupt occurs on pin state change.
 	MCP23S17_INT_DEFVAL_COMPARE,	// Interrupt occurs on deviation from default pin state.
 									// Default pin state is set in DEFVAL register.
-} MCP23S17_InterruptMode;
+} MCP23S17_InterruptMode_t;
 
 // GPIO Output Pin Configuration Struct
 typedef struct {
 	// GPIO config
-	MCP23S17_Port port;
-	MCP23S17_Pin pin;
+	MCP23S17_Port_t port;
+	MCP23S17_Pin_t pin;
 	bool initial_state;
-} MCP23S17_PinConfigOutput;
+} MCP23S17_PinConfigOutput_t;
 
 // GPIO Input Pin Configuration Struct
 typedef struct {
 	// GPIO config
-	MCP23S17_Port port;
-	MCP23S17_Pin pin;
-	MCP23S17_Pullup pullup;
-	MCP23S17_InputPolarity inpol;
+	MCP23S17_Port_t port;
+	MCP23S17_Pin_t pin;
+	MCP23S17_Pullup_t pullup;
+	MCP23S17_InputPolarity_t inpol;
 	// If interrupts disabled (inten == MCP23S17_INT_DISABLED), intmode and default_value have no effect.
-	MCP23S17_InterruptEnable inten;
-	MCP23S17_InterruptMode intmode;
+	MCP23S17_InterruptEnable_t inten;
+	MCP23S17_InterruptMode_t intmode;
 	bool default_value;
-} MCP23S17_PinConfigInput;
+} MCP23S17_PinConfigInput_t;
 
 // DEVICE FUNCTIONS -----------------------------------------------------------
 // meant to be used interally
@@ -171,7 +171,7 @@ typedef struct {
  * @param	num_regs Number of sequential register(s) to write
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs);
+MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs);
 
 /**
  * @brief	Reads register(s) on MCP23S17 (primarily meant to be used internally).
@@ -181,7 +181,7 @@ MCP23S17_Status MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_a
  * @param	num_regs Number of sequential register(s) to read
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs);
+MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs);
 
 // move this down to general
 /**
@@ -197,7 +197,7 @@ MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_ad
  * @param	int_pol Device INT pin polarity (MCP23S17_CONFIG_INT_ACTIVE_LOW: INT pin is active-low, MCP23S17_CONFIG_INT_ACTIVE_HIGH: INT pin is active-high)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol);
+MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol);
 
 // GENERAL GPIO FUNCTIONS -----------------------------------------------------
 
@@ -209,7 +209,7 @@ MCP23S17_Status MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef*
  * @param	dir Pin direction: MCP23S17_DIR_OUTPUT or MCP23S17_DIR_INPUT
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Dir dir);
+MCP23S17_Status_t MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Dir_t dir);
 
 /**
  * @brief	Enables or disables a GPIO pin's pull-up resistor.
@@ -219,7 +219,7 @@ MCP23S17_Status MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S
  * @param	pu Pull up resistor configuration: MCP23S17_PULLUP_DISABLED or MCP23S17_PULLUP_ENABLED
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Pullup pu);
+MCP23S17_Status_t MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Pullup_t pu);
 
 /**
  * @brief	Sets a GPIO pin's input polarity.
@@ -229,7 +229,7 @@ MCP23S17_Status MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_
  * @param	pol GPIO input polarity: MCP23S17_POLARITY_SAME or MCP23S17_POLARITY_INVERT
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InputPolarity pol);
+MCP23S17_Status_t MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InputPolarity_t pol);
 
 /**
  * @brief	Writes to a GPIO pin. (friendly)
@@ -239,7 +239,7 @@ MCP23S17_Status MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MC
  * @param	state GPIO pin state
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool state);
+MCP23S17_Status_t MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool state);
 
 /**
  * @brief	Writes to all GPIO pins. (NON-friendly)
@@ -247,7 +247,7 @@ MCP23S17_Status MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_
  * @param	state Pointer (uint8_t array) to GPIO pin states (16 bits), from port A7 (MSB) to port B0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
+MCP23S17_Status_t MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
 
 /**
  * @brief	Reads a GPIO pin. 
@@ -257,7 +257,7 @@ MCP23S17_Status MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* 
  * @param	state Pointer (bool) to store GPIO pin state
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool* state);
+MCP23S17_Status_t MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool* state);
 
 /**
  * @brief	Reads all GPIO pins.
@@ -265,7 +265,7 @@ MCP23S17_Status MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_P
  * @param	state Pointer (uint8_t array) to store GPIO pin states (16 bits), from port A7 (MSB) to port B0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
+MCP23S17_Status_t MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
 
 // INTERRUPT FUNCTIONS --------------------------------------------------------
 
@@ -277,7 +277,7 @@ MCP23S17_Status MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* s
  * @param	inten GPIO interrupt configuration: MCP23S17_INT_DISABLED or MCP23S17_INT_ENABLED
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptEnable inten);
+MCP23S17_Status_t MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptEnable_t inten);
 
 /**
  * @brief	Sets a GPIO pin's interrupt mode
@@ -287,7 +287,7 @@ MCP23S17_Status MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, 
  * @param	intmode GPIO interrupt mode: MCP23S17_INT_ON_CHANGE (interrupt on-change) or MCP23S17_INT_DEFVAL_COMPARE (default value comparison)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptMode intmode);
+MCP23S17_Status_t MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptMode_t intmode);
 
 /**
  * @brief	Sets a GPIO pin's default value (for default value comparison interrupt mode)
@@ -297,7 +297,7 @@ MCP23S17_Status MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MC
  * @param	defval GPIO default state
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool defval);
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool defval);
 
 /**
  * @brief	Sets all GPIO pins' default value (for default value comparison interrupt mode)
@@ -305,7 +305,7 @@ MCP23S17_Status MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* de
  * @param	defval Pointer (uint8_t array) to store GPIO pin default states (16 bits), from port A7 (MSB) to port B0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval);
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval);
 
 /**
  * @brief	Reads one GPIO port's interrupt status
@@ -314,7 +314,7 @@ MCP23S17_Status MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* de
  * @param	state Pointer (uint8_t) to store interrupt status of GPIO port, from GPIOx7 (MSB) to GPIOx0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state);
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state);
 
 /**
  * @brief	Reads all GPIO pins' interrupt status.
@@ -322,7 +322,7 @@ MCP23S17_Status MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device
  * @param	state Pointer (uint8_t array) to store GPIO pin interrupt status' (16 bits), from port A7 (MSB) to port B0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
 
 /**
  * @brief	Reads one GPIO port's captured state when interrupt occurred
@@ -331,7 +331,7 @@ MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device,
  * @param	state Pointer (uint8_t) to store captured state of GPIO port during interrupt, from GPIOx7 (MSB) to GPIOx0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state);
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state);
 
 /**
  * @brief	Reads all GPIO pins' captured state when interrupt occurred.
@@ -339,7 +339,7 @@ MCP23S17_Status MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* dev
  * @param	state Pointer (uint8_t array) to store GPIO pin captured states' (16 bits), from port A7 (MSB) to port B0 (LSB)
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state);
 
 // SETUP COMBO FUNCTIONS ------------------------------------------------------
 
@@ -349,7 +349,7 @@ MCP23S17_Status MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* devi
  * @param	pin_config GPIO Output Pin Configuration Struct
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput pin_config);
+MCP23S17_Status_t MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput_t pin_config);
 
 /**
  * @brief	Setup function to quickly initialize an input GPIO pin's direction, pull-up resistor, polarity, and interrupts in one call.
@@ -357,4 +357,4 @@ MCP23S17_Status MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecifi
  * @param	state GPIO Input Pin Configuration Struct
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-MCP23S17_Status MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput pin_config);
+MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput_t pin_config);

@@ -31,19 +31,19 @@ GPIO_InitTypeDef gpioexp_cs_config = {
 
 MCP23S17_HandleTypeDef gpioexp;
 
-MCP23S17_PinConfigOutput gpioexp_A0 = {
+MCP23S17_PinConfigOutput_t gpioexp_A0 = {
 	.port = MCP23S17_GPIOA,
 	.pin = MCP23S17_PIN0,
 	.initial_state = 1,
 };
 
-MCP23S17_PinConfigOutput gpioexp_A1 = {
+MCP23S17_PinConfigOutput_t gpioexp_A1 = {
 	.port = MCP23S17_GPIOA,
 	.pin = MCP23S17_PIN1,
 	.initial_state = 1,
 };
 
-MCP23S17_PinConfigOutput gpioexp_A2 = {
+MCP23S17_PinConfigOutput_t gpioexp_A2 = {
 	.port = MCP23S17_GPIOA,
 	.pin = MCP23S17_PIN2,
 	.initial_state = 1,

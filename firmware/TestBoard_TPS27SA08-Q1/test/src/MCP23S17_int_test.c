@@ -43,7 +43,7 @@ GPIO_InitTypeDef gpioexp_intA_config = {
 
 MCP23S17_HandleTypeDef gpioexp;
 
-MCP23S17_PinConfigInput hss_st = {
+MCP23S17_PinConfigInput_t hss_st = {
 	.port = MCP23S17_GPIOA,
 	.pin = MCP23S17_PIN5,
 	.pullup = MCP23S17_PULLUP_DISABLED,

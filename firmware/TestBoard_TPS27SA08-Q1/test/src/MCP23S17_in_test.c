@@ -36,7 +36,7 @@ GPIO_InitTypeDef gpioexp_cs_config = {
 
 MCP23S17_HandleTypeDef gpioexp;
 
-MCP23S17_PinConfigInput gpioexp_B0 = {
+MCP23S17_PinConfigInput_t gpioexp_B0 = {
 	.port = MCP23S17_GPIOB,
 	.pin = MCP23S17_PIN0,
 	.pullup = MCP23S17_PULLUP_DISABLED,
@@ -46,7 +46,7 @@ MCP23S17_PinConfigInput gpioexp_B0 = {
 	.default_value = 0,
 };
 
-MCP23S17_PinConfigInput gpioexp_B1 = {
+MCP23S17_PinConfigInput_t gpioexp_B1 = {
 	.port = MCP23S17_GPIOB,
 	.pin = MCP23S17_PIN1,
 	.pullup = MCP23S17_PULLUP_ENABLED,
@@ -56,7 +56,7 @@ MCP23S17_PinConfigInput gpioexp_B1 = {
 	.default_value = 1,
 };
 
-MCP23S17_PinConfigInput gpioexp_B2 = {
+MCP23S17_PinConfigInput_t gpioexp_B2 = {
 	.port = MCP23S17_GPIOB,
 	.pin = MCP23S17_PIN2,
 	.pullup = MCP23S17_PULLUP_ENABLED,

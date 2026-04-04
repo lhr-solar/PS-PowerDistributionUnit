@@ -1,6 +1,6 @@
 #include "MCP23S17.h"
 
-MCP23S17_Status MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
@@ -19,7 +19,7 @@ MCP23S17_Status MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_a
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
@@ -46,7 +46,7 @@ MCP23S17_Status MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_ad
  * @param	val Value to write in
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-static inline MCP23S17_Status MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool val)
+static inline MCP23S17_Status_t MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin_t pin, bool val)
 {
     uint8_t reg_state = 0;
     if(MCP23S17_ReadRegs(device, reg, &reg_state, 1) != MCP23S17_🙂){return MCP23S17_😢;}
@@ -73,7 +73,7 @@ static inline MCP23S17_Status MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* 
  * @param   bool Pointer (bool) to store bit read
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
  */
-static inline MCP23S17_Status MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin pin, bool* state)
+static inline MCP23S17_Status_t MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin_t pin, bool* state)
 {
     uint8_t reg_state = 0;
     if(MCP23S17_ReadRegs(device, reg, &reg_state, 1) != MCP23S17_🙂){return MCP23S17_😢;}
@@ -82,7 +82,7 @@ static inline MCP23S17_Status MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, u
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror int_mirror, MCP23S17_Config_Addressing address_en, MCP23S17_Config_IntDrive int_odr, MCP23S17_Config_IntPol int_pol)
+MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol)
 {
     device->spi = spi;
     device->addr = address_en == MCP23S17_ADDRESSING_ENABLE ? addr << 1 : 0;
@@ -141,7 +141,7 @@ MCP23S17_Status MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef*
     }
 }
 
-MCP23S17_Status MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Dir dir)
+MCP23S17_Status_t MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Dir_t dir)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
@@ -150,7 +150,7 @@ MCP23S17_Status MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_Pullup pu)
+MCP23S17_Status_t MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Pullup_t pu)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
@@ -159,7 +159,7 @@ MCP23S17_Status MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InputPolarity pol)
+MCP23S17_Status_t MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InputPolarity_t pol)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
@@ -168,7 +168,7 @@ MCP23S17_Status MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MC
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool state)
+MCP23S17_Status_t MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool state)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
@@ -177,73 +177,73 @@ MCP23S17_Status MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+MCP23S17_Status_t MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
 {
     if(MCP23S17_WriteRegs(device, MCP23S17_REG_GPIOA, state, 2) != MCP23S17_🙂){return MCP23S17_😢;}
 
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool* state)
+MCP23S17_Status_t MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool* state)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
     return MCP23S17_ReadBit(device, (MCP23S17_REG_GPIOA+port), pin, state);
 }
 
-MCP23S17_Status MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+MCP23S17_Status_t MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
 {
     return MCP23S17_ReadRegs(device, MCP23S17_REG_GPIOA, state, 2);
 }
 
-MCP23S17_Status MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptEnable inten)
+MCP23S17_Status_t MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptEnable_t inten)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
     return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPINTENA+port), pin, inten);
 }
 
-MCP23S17_Status MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptMode intmode)
+MCP23S17_Status_t MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptMode_t intmode)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
     return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_INTCONA+port), pin, intmode);
 }
 
-MCP23S17_Status MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, bool defval)
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool defval)
 {
     if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
 
     return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_DEFVALA+port), pin, defval);
 }
 
-MCP23S17_Status MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval)
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval)
 {
     return MCP23S17_WriteRegs(device, MCP23S17_REG_DEFVALA, defval, 2);
 }
 
-MCP23S17_Status MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state)
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state)
 {
     return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTFA+port), state, 1);
 }
 
-MCP23S17_Status MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
 {
     return MCP23S17_ReadRegs(device, MCP23S17_REG_INTFA, state, 2);
 }
 
-MCP23S17_Status MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, uint8_t* state)
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state)
 {
     return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTCAPA+port), state, 1);
 }
 
-MCP23S17_Status MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
 {
     return MCP23S17_ReadRegs(device, MCP23S17_REG_INTCAPA, state, 2);
 }
 
 // set up struct for pin information instead?
-MCP23S17_Status MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput pin_config)
+MCP23S17_Status_t MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput_t pin_config)
 {
     // pin setup
     if(MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_OUTPUT) != MCP23S17_🙂){return MCP23S17_😢;}
@@ -253,7 +253,7 @@ MCP23S17_Status MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecifi
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput pin_config)
+MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput_t pin_config)
 {
     // pin setup
     if(MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_INPUT) != MCP23S17_🙂){return MCP23S17_😢;}
@@ -271,7 +271,7 @@ MCP23S17_Status MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunction
     return MCP23S17_🙂;
 }
 
-MCP23S17_Status MCP23S17_TheBestGPIOInterruptSetupThatYoullEverSeeAnywhereInTheSolarSystem_CallNowToSeeItHappen(MCP23S17_HandleTypeDef* device, MCP23S17_Port port, MCP23S17_Pin pin, MCP23S17_InterruptEnable inten, MCP23S17_InterruptMode intmode, bool defval)
+MCP23S17_Status_t MCP23S17_TheBestGPIOInterruptSetupThatYoullEverSeeAnywhereInTheSolarSystem_CallNowToSeeItHappen(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptEnable_t inten, MCP23S17_InterruptMode_t intmode, bool defval)
 {
     if(MCP23S17_SetInterruptEnable_Pin(device, port, pin, inten) != MCP23S17_🙂){return MCP23S17_😢;}
     if(MCP23S17_SetInterruptMode_Pin(device, port, pin, intmode) != MCP23S17_🙂){return MCP23S17_😢;}
