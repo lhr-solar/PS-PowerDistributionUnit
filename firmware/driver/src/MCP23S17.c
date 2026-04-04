@@ -1,39 +1,100 @@
 #include "MCP23S17.h"
 
+// (INTERNAL) ENUMS -----------------------------------------------------------
+
+typedef enum {
+    MCP23S17_REG_OP_WRITE,
+    MCP23S17_REG_OP_READ,
+} MCP23S17_RegOp_t;
+
+// (INTERNAL) FUNCTION DECLARATIONS -------------------------------------------
+
+MCP23S17_Status_t MCP23S17_RegOperationCommon(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs, MCP23S17_RegOp_t reg_op);
+
+// FUNCTION DEFINITIONS -------------------------------------------------------
+
 MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
+    // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY) != pdTRUE)
+    {
+        return MCP23S17_🕷️;
+    }
+
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    HAL_Delay(1);
+    vTaskDelay(1);
 
-    uint8_t opcode = MCP23S17_WRITE_OPCODE | (device->addr);
+    // command/device address word + starting register address word + num_regs
+    uint8_t msg[2+num_regs];
+    memset(msg, 0, 2+num_regs);
+    
+    msg[0] = MCP23S17_OPCODE_WRITE | (device->addr);        // command/device address
+    msg[1] = reg_addr;                                      // starting register address
+    memcpy(msg+2, data, num_regs);                          // register data to write
 
-    if(HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
-    if(HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
-    if(HAL_SPI_Transmit(device->spi, data, num_regs, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
+    // send SPI transmission
+    if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
 
-    HAL_Delay(5);
+    // wait for SPI completion
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    {
+        HAL_SPI_Abort(device->spi);
+
+        return MCP23S17_🕸️;
+    }
+
+    // bring CS pin high again
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
     return MCP23S17_🙂;
 }
 
 MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
+    // return MCP23S17_RegOperationCommon(device, reg_addr, data, num_regs, MCP23S17_REG_OP_READ);
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
+    // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY) != pdTRUE)
+    {
+        return MCP23S17_🕷️;
+    }
+
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    HAL_Delay(1);
+    vTaskDelay(1);
 
-    uint8_t opcode = MCP23S17_READ_OPCODE | (device->addr);    
+    // command/device address word + starting register address word + num_regs
+    // HAL_SPI_Receive_x will transmit prexisting data in buffer, which takes care
+    // of command / address words (while the rest are filled with data)
+    uint8_t msg[2+num_regs];
+    memset(msg, 0, 2+num_regs);
+    
+    msg[0] = MCP23S17_OPCODE_READ | (device->addr);         // command/device address
+    msg[1] = reg_addr;                                      // starting register address
 
-    if(HAL_SPI_Transmit(device->spi, &opcode, 1, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
-    if(HAL_SPI_Transmit(device->spi, &reg_addr, 1, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
-    if(HAL_SPI_Receive(device->spi, (uint8_t*) data, num_regs, HAL_MAX_DELAY) != HAL_OK){return MCP23S17_😢;}
+    if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
 
-    HAL_Delay(5);
+    // wait for SPI completion
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    {
+        HAL_SPI_Abort(device->spi);
+
+        return MCP23S17_🕸️;
+    }
+
+    // bring CS pin high again
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
+
+    // copy register data from msg buffer
+    memcpy(data, msg+2, num_regs);
 
     return MCP23S17_🙂;
 }
@@ -85,9 +146,20 @@ static inline MCP23S17_Status_t MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device,
 MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin, uint8_t addr, MCP23S17_Config_IntMirror_t int_mirror, MCP23S17_Config_Addressing_t address_en, MCP23S17_Config_IntDrive_t int_odr, MCP23S17_Config_IntPol_t int_pol)
 {
     device->spi = spi;
-    device->addr = address_en == MCP23S17_ADDRESSING_ENABLE ? addr << 1 : 0;
+    device->addr = address_en == MCP23S17_CONFIG_ADDRESSING_ENABLE ? addr << 1 : 0;
     device->cs_port = cs_port;
     device->cs_pin = cs_pin;
+
+    // validate SPI configured correctly
+    if(device->spi == NULL)
+    {
+        return MCP23S17_😢;
+    }
+
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
+    {
+        return MCP23S17_😢;
+    }
 
     uint8_t configuration = 0;
 
@@ -107,7 +179,7 @@ MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device, SPI_HandleTypeDe
     // I don't know why this is here or what it's for.
 
     // IOCON.HAEN | HARDWARE ADDRESS ENABLE
-    if(address_en == MCP23S17_ADDRESSING_ENABLE)
+    if(address_en == MCP23S17_CONFIG_ADDRESSING_ENABLE)
     {
         configuration |= MCP23S17_IOCON_HAEN_MASK;
     }

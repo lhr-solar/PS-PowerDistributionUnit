@@ -1,14 +1,22 @@
 #pragma once
 
 #include "stm32xx_hal.h"
+#include<string.h>
 
 // DRIVER FOR MCP23S17 SPI GPIO Expander
 // Datasheet: datasheets/MCP23017_MCP23S17.pdf (from repo root)
 
-// REGISTERS -----------------------------------------------------------
+#define MCP23S17_SPI_MUTEX_DELAY portMAX_DELAY				// ticks
+#define MCP23S17_SPI_TRANSMISSION_DELAY pdMS_TO_TICKS(100)	// ticks
 
-#define MCP23S17_READ_OPCODE 0x41   // needs address if hardware addressing is enabled
-#define MCP23S17_WRITE_OPCODE 0x40  // needs address if hardware addressing is enabled
+#define MCP23S17_NUM_PORTS 2
+#define MCP23S17_NUM_GPIO_PORT 8
+#define MCP23S17_NUM_GPIO_ALL 16	// MCP23S17_NUM_PORTS*MCP23S17_NUM_GPIO_PORT
+
+// REGISTERS ------------------------------------------------------------------
+
+#define MCP23S17_OPCODE_READ 0x41   // needs address if hardware addressing is enabled
+#define MCP23S17_OPCODE_WRITE 0x40  // needs address if hardware addressing is enabled
 
 									// For each port (A, B)...
 #define MCP23S17_REG_IODIRA 0x00	// GPIO Direction Registers
@@ -52,11 +60,16 @@ typedef struct {
 								// A2, A1, A0 (set on IC pins)
 								// If hardware addressing is disabled, set to 0.
 								// Value is left-shifted by the init function when used.
+
+	SemaphoreHandle_t spi_mutex;
+	SemaphoreHandle_t spi_done_sem;
 } MCP23S17_HandleTypeDef;
 
 typedef enum {
 	MCP23S17_😢,				// MCP23S17 sad
 	MCP23S17_🙂,				// MCP23S17 happy
+	MCP23S17_🕷️,    			// MCP23S17 SPI mutex timeout
+	MCP23S17_🕸️,				// MCP23S17 SPI done semaphore timeout
 } MCP23S17_Status_t;
 
 // PORTS/PINS -----------------------------------------------------------------
@@ -85,8 +98,8 @@ typedef enum {
 
 // Device Addressing Configuration
 typedef enum {
-	MCP23S17_ADDRESSING_DISABLE,		// Device addressing disabled.
-	MCP23S17_ADDRESSING_ENABLE,			// Device addressing enabled.
+	MCP23S17_CONFIG_ADDRESSING_DISABLE,		// Device addressing disabled.
+	MCP23S17_CONFIG_ADDRESSING_ENABLE,			// Device addressing enabled.
 } MCP23S17_Config_Addressing_t;
 
 // INT Pins Mirroring
