@@ -29,7 +29,7 @@ jobs:
 
       - name: Clean & Build tests
         run: |
-          nix develop /firmware/Embedded-Sharepoint --accept-flake-config --command bash -c "
+          nix develop ./firmware/Embedded-Sharepoint/ --accept-flake-config --command bash -c "
             cd firmware
             cd TestBoard_TPS27SA08-Q1
             make clean
