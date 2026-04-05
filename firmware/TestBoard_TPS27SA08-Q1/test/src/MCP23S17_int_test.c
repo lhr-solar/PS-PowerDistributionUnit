@@ -1,72 +1,51 @@
-// MCP23S17_int_test.c
-// Tests interrupt capability of MCP23S17 GPIO expander on TestBoard_TPS27SA08-Q1
+// MCP23S17_in_test.c
+// Tests input capability of MCP23S17 GPIO expander on TestBoard TPS27SA08-Q1
 // ----------------------------------------------------------------------------
-// THIS IS A BAD TEST AND IN IT'S CURRENT STATE SHOULD NOT BE REFERENCED FOR FUTURE TEST PRACTICES.
-// Polls MCP23S17 GPIO Expander INTA pin state, with MCP23S17 GPIO A5 configured to interrupt-on-change.
-// (for ST pin connection on high side switch) every 100 ms. If INTA goes high, reads MCP23S17 interrupt 
-// state, current GPIO state, and captured GPIO state (when interrupt occured) in a *blocking* manner and
-// prints to serial monitor with baud rate 115200 bits/s. 
-// Format (for each): [A7] 10100000 [A0]    [B7] 00000011 [B0]
+// Polls MCP23S17 GPIO Expander state every 100 ms.
+// Prints out the GPIO state to serial monitor with baud rate 115200 bits/s. 
+// Format: [A7] 10100000 [A0]    [B7] 00000011 [B0]
+// Note that if LEDs are soldered on, can affect readings (specifically when 
+// testing internal pull-up resistors).
 
-// INCLUDES -------------------------------------------------------------------
 #include "stm32xx_hal.h"
+// stm32xx_hal.h contains includes for RTOS stuff.
+// #include "printf.h"
 #include "TestBoard_TPS27SA08-Q1_Pins.h"
+#include "TestBoard_TPS27SA08-Q1_SPI.h"
+#include "TestBoard_TPS27SA08-Q1_UART.h"
+#include "Test_Utilities.h"
+#include "MCP23S17.h"
 #include<stdio.h>
 #include<string.h>
-#include "Test_Utilities.h"
 
-#include "MCP23S17.h"
+// DECLARATIONS ---------------------------------------------------------------
 
-// DEFINES --------------------------------------------------------------------
-
-// CONFIGURATION HANDLES/STRUCTS ----------------------------------------------
+// MCU Peripheral Handles
 SPI_HandleTypeDef hspi1;
 UART_HandleTypeDef huart2;
 
-GPIO_InitTypeDef led_config = {
-    .Mode = GPIO_MODE_OUTPUT_PP,
-    .Pull = GPIO_NOPULL,
-    .Pin = LED_PIN
-};
+// Tasks
+TaskHandle_t blink_task_handle;
+TaskHandle_t gpioexp_int_task_handle;
 
-GPIO_InitTypeDef gpioexp_cs_config = {
-	.Mode = GPIO_MODE_OUTPUT_PP,
-	.Pull = GPIO_NOPULL,
-	.Pin = GPIOEXP_CS_PIN
-};
+StaticTask_t initTaskBuffer;
+StackType_t initTaskStack[configMINIMAL_STACK_SIZE];
+StaticTask_t blinkTaskBuffer;
+StackType_t blinkTaskStack[configMINIMAL_STACK_SIZE];
+StaticTask_t gpioexpIntTaskBuffer;
+StackType_t gpioexpIntTaskStack[configMINIMAL_STACK_SIZE];
 
-GPIO_InitTypeDef gpioexp_intA_config = {
-	.Mode = GPIO_MODE_INPUT,
-	.Pull = GPIO_NOPULL,
-	.Pin = GPIOEXP_INTA_PIN
-};
+// RTOS crap
+SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
+StaticSemaphore_t spi1_mutex_buffer;    // Static buffer for mutex allocation
 
+SemaphoreHandle_t spi1_done_sem;        // Semaphore to signal SPI DMA/IT completion
+StaticSemaphore_t spi1_done_sem_buffer; // Static buffer for completion semaphore
+
+// Driver Handles
 MCP23S17_HandleTypeDef gpioexp;
 
-MCP23S17_PinConfigInput_t hss_st = {
-	.port = MCP23S17_GPIOA,
-	.pin = MCP23S17_PIN5,
-	.pullup = MCP23S17_PULLUP_DISABLED,
-	.inpol = MCP23S17_POLARITY_SAME,
-	.inten = MCP23S17_INT_ENABLED,
-	.intmode = MCP23S17_INT_ON_CHANGE,
-	.default_value = 1,
-};
-
-// FUNCTION DECLARATIONS ------------------------------------------------------
-void Error_Handler(void);
-
-void SystemClock_Config(void);
-
-void MX_SPI1_Init(void);
-void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi);
-void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi);
-
-void MX_USART2_UART_Init(void);
-void HAL_UART_MspGPIOInit(UART_HandleTypeDef* huart);
-void HAL_UART_MspGPIODeInit(UART_HandleTypeDef* huart);
-
-// GLOBAL VARIABLES -----------------------------------------------------------
+// Variables 
 uint8_t int_state[2] = {0, 0};
 uint8_t gpio_state[2] = {0, 0};
 uint8_t cap_state[2] = {0, 0};
@@ -79,45 +58,149 @@ char gpio_state_msg[] = 	"GPIO State: [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n"
 char cap_state_msg[] =  	"CAP State:  [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
 char interest_indicator[] = "                   ^\n";
 
-int main()
-{
-	HAL_Init();
-	SystemClock_Config();
-	MX_SPI1_Init();
-    MX_USART2_UART_Init();
+// TASKS ----------------------------------------------------------------------
 
-	// initialize on-board LED
-	__HAL_RCC_GPIOB_CLK_ENABLE();
-	HAL_GPIO_Init(LED_PORT, &led_config);
-	HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0);
+// Initialize MCU peripherals and external device drivers
+void Init_Task(void *argument)
+{
+    GPIO_InitTypeDef led_config = {
+        .Mode = GPIO_MODE_OUTPUT_PP,
+        .Pull = GPIO_NOPULL,
+        .Pin = LED_PIN
+    };
+
+	// initialize LED pin
+    LED_CLOCK_INIT();
+    HAL_GPIO_Init(LED_PORT, &led_config);
+    HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0);
+
+    GPIO_InitTypeDef gpioexp_cs = {
+        .Mode = GPIO_MODE_OUTPUT_PP,
+        .Pull = GPIO_NOPULL,
+        .Pin = GPIOEXP_CS_PIN
+    };
 
 	// initialize GPIO expander CS pin
-	__HAL_RCC_GPIOA_CLK_ENABLE();
-	HAL_GPIO_Init(GPIOEXP_CS_PORT, &gpioexp_cs_config);
-	HAL_GPIO_WritePin(GPIOEXP_CS_PORT, GPIOEXP_CS_PIN, 1);
+    __HAL_RCC_GPIOC_CLK_ENABLE();
+    HAL_GPIO_Init(GPIOEXP_CS_PORT, &gpioexp_cs);
+    HAL_GPIO_WritePin(GPIOEXP_CS_PORT, GPIOEXP_CS_PIN, 1);
 
-	// initialize GPIO expander INTA pin
-	__HAL_RCC_GPIOA_CLK_ENABLE();
-	HAL_GPIO_Init(GPIOEXP_INTA_PORT, &gpioexp_intA_config);
+	// UART2 init
+    MX_USART2_UART_Init();
 
-	// dummy SPI send because for some reason SCK idles high until an initial transmit
-	uint8_t dummy_send = 0x21;
-	HAL_SPI_Transmit(&hspi1, &dummy_send, 1, HAL_MAX_DELAY);
-	HAL_Delay(10);
+	// SPI1 init
+	MX_SPI1_Init();
 
-	// initialize GPIO expander with config
-	if(MCP23S17_Init(&gpioexp, &hspi1, GPIOEXP_CS_PORT, GPIOEXP_CS_PIN, 0x00, MCP23S17_CONFIG_INT_MIRRORED, MCP23S17_ADDRESSING_DISABLE, MCP23S17_CONFIG_INT_PP, MCP23S17_CONFIG_INT_ACTIVE_HIGH) != MCP23S17_🙂)
-	{
-		Error_Handler();
-	}
+    // create mutex (prevent simultaneous access to SPI1)
+    spi1_mutex = xSemaphoreCreateMutexStatic(&spi1_mutex_buffer);
+    //creates semaphore (tells when SPI1 hardware has finished transmission)
+    spi1_done_sem = xSemaphoreCreateBinaryStatic(&spi1_done_sem_buffer);
 
-	// initialize GPIO expander
-	MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(&gpioexp,  hss_st);
+	// check mutex and semaphore creation
+    if(spi1_mutex == NULL || spi1_done_sem == NULL)
+    {
+		char fail_spi_mutex_semaphore_init_msg[] = "FAIL:SPI_MUTEX_SEMAPHORE_INIT\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) fail_spi_mutex_semaphore_init_msg, strlen(fail_spi_mutex_semaphore_init_msg), HAL_MAX_DELAY);
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
 
-	HAL_Delay(1000);
+	// SPI dummy send because MCU starts with CLK idling high (despite configuration
+	// to idle low) until first transmission
+    if(SPI_Init_Dummy_Send(&hspi1, spi1_mutex, spi1_done_sem) != true)
+    {
+		char fail_spi_init_dummy_send_msg[] = "FAIL:SPI_INIT_DUMMY_SEND\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) fail_spi_init_dummy_send_msg, strlen(fail_spi_init_dummy_send_msg), HAL_MAX_DELAY);
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
 
-	while(1)
-	{
+	// GPIO expander configuration
+    gpioexp = (MCP23S17_HandleTypeDef) {
+        .spi = &hspi1,
+        .cs_port = GPIOEXP_CS_PORT,
+        .cs_pin = GPIOEXP_CS_PIN,
+        .spi_mutex = spi1_mutex,
+        .spi_done_sem = spi1_done_sem,
+
+        .address_en = MCP23S17_CONFIG_INT_MIRRORED,
+        .int_mirror = MCP23S17_CONFIG_ADDRESSING_DISABLED, 
+        .int_drive = MCP23S17_CONFIG_INTDRIVE_PP,
+        .int_pol = MCP23S17_CONFIG_INTPOL_ACTIVE_HIGH,
+    };
+
+    if(MCP23S17_Init(&gpioexp) != MCP23S17_🙂)
+    {
+		char fail_mcp23s17_init_msg[] = "FAIL:MCP23S17_INIT\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) fail_mcp23s17_init_msg, strlen(fail_mcp23s17_init_msg), HAL_MAX_DELAY);
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+	// GPIO expander pin configuration
+    MCP23S17_PinConfigInput_t hss_st = {
+        .port = MCP23S17_GPIOA,
+        .pin = MCP23S17_PIN5,
+        .pullup = MCP23S17_PULLUP_DISABLED,
+        .inpol = MCP23S17_INPUTPOLARITY_SAME,
+        .inten = MCP23S17_INTEN_ENABLED,
+        .intmode = MCP23S17_INTMODE_ON_CHANGE,
+        .default_value = 1,
+    };
+
+    if(MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(&gpioexp,  hss_st) != MCP23S17_🙂)
+    {
+        char fail_mcp23s17_pin_init_msg[] = "FAIL:MCP23S17_PIN_INIT\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) fail_mcp23s17_pin_init_msg, strlen(fail_mcp23s17_pin_init_msg), HAL_MAX_DELAY);
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            HAL_Delay(50);
+        }
+    }
+
+	// celebrate!
+	char initialization_complete_msg[] = "Initialization complete.\n";
+    HAL_UART_Transmit(&huart2, (uint8_t*) initialization_complete_msg, strlen(initialization_complete_msg), HAL_MAX_DELAY);
+	// let's get this party started...
+    vTaskResume(blink_task_handle);
+    vTaskResume(gpioexp_int_task_handle);
+
+    // Init task kills itself
+    vTaskDelete(NULL);
+}
+
+// Heartbeat LED
+void Blink_Task(void *argument)
+{
+    for(;;)
+    {
+        char blink_task_runs_msg[] = "Blink_Task runs...\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) blink_task_runs_msg, strlen(blink_task_runs_msg), HAL_MAX_DELAY);
+
+        HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+
+        vTaskDelay(pdMS_TO_TICKS(500));
+    }
+}
+
+// Poll GPIO expander inputs
+void GpioExp_Int_Task(void *argument)
+{
+    for(;;)
+    {
+		char gpioexp_int_task_runs_msg[] = "GpioExp_Int_Task runs...\n";
+    	HAL_UART_Transmit(&huart2, (uint8_t*) gpioexp_int_task_runs_msg, strlen(gpioexp_int_task_runs_msg), HAL_MAX_DELAY);
+
 		if(HAL_GPIO_ReadPin(GPIOEXP_INTA_PORT, GPIOEXP_INTA_PIN))
 		{
 			// get states and acknowledge interrupt
@@ -125,14 +208,18 @@ int main()
 			MCP23S17_ReadGPIO_All(&gpioexp, gpio_state);	
 			MCP23S17_ReadInterruptGPIOState_All(&gpioexp, cap_state);
 
+            // print notification to serial monitor
 			HAL_UART_Transmit(&huart2, (uint8_t*) &dashed_line, strlen(dashed_line), HAL_MAX_DELAY);			
-			HAL_UART_Transmit(&huart2, (uint8_t*) &interrupt_msg, strlen(interrupt_msg), HAL_MAX_DELAY);	
+			HAL_UART_Transmit(&huart2, (uint8_t*) &interrupt_msg, strlen(interrupt_msg), HAL_MAX_DELAY);
+
 			uint8_to_binary_str(int_state[0], int_state_msg+17);
 			uint8_to_binary_str(int_state[1], int_state_msg+38);
 			HAL_UART_Transmit(&huart2, (uint8_t*) &int_state_msg, strlen(int_state_msg), HAL_MAX_DELAY);
+
 			uint8_to_binary_str(gpio_state[0], gpio_state_msg+17);
 			uint8_to_binary_str(gpio_state[1], gpio_state_msg+38);
 			HAL_UART_Transmit(&huart2, (uint8_t*) &gpio_state_msg, strlen(gpio_state_msg), HAL_MAX_DELAY);
+
 			uint8_to_binary_str(cap_state[0], cap_state_msg+17);
 			uint8_to_binary_str(cap_state[1], cap_state_msg+38);
 			HAL_UART_Transmit(&huart2, (uint8_t*) &cap_state_msg, strlen(cap_state_msg), HAL_MAX_DELAY);
@@ -141,256 +228,88 @@ int main()
 			HAL_UART_Transmit(&huart2, (uint8_t*) &newline, strlen(newline), HAL_MAX_DELAY);
 		}
 
-		HAL_Delay(100);
-	}
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+}
 
-	return 0;
+// MAIN -----------------------------------------------------------------------
+
+int main()
+{
+    HAL_Init();
+    SystemClock_Config();
+
+    xTaskCreateStatic(Init_Task,
+                    "Init Task",
+                    configMINIMAL_STACK_SIZE,
+                    NULL,
+                    tskIDLE_PRIORITY + 2,
+                    initTaskStack,
+                    &initTaskBuffer
+                );
+
+    blink_task_handle = xTaskCreateStatic(Blink_Task,
+                                            "Blink Task",
+                                            configMINIMAL_STACK_SIZE,
+                                            NULL,
+                                            tskIDLE_PRIORITY + 1,
+                                            blinkTaskStack,
+                                            &blinkTaskBuffer
+                                        );
+
+    gpioexp_int_task_handle = xTaskCreateStatic(GpioExp_Int_Task,
+                                                "GPIO Exp Int Task",
+                                                configMINIMAL_STACK_SIZE,
+                                                NULL,
+                                                tskIDLE_PRIORITY + 1,
+                                                gpioexpIntTaskStack,
+                                                &gpioexpIntTaskBuffer
+                                            );
+
+    vTaskSuspend(blink_task_handle);
+    vTaskSuspend(gpioexp_int_task_handle);
+
+    vTaskStartScheduler();
+
+    while(1) {}
+}
+
+// INTERRUPT STUFF ------------------------------------------------------------
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
+  * @brief This function handles SPI1 global interrupt.
   */
-void Error_Handler(void)
+void SPI1_IRQHandler(void)
 {
-  /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-	// __disable_irq();
-	while (1)
-	{
-		HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-
-		HAL_Delay(50);
-	}
-	/* USER CODE END Error_Handler_Debug */
-}
-
-/**
-  * @brief System Clock Configuration
-  * @retval None
-  */
-void SystemClock_Config(void)
-{
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-
-  /** Configure the main internal regulator output voltage
-  */
-  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure LSE Drive Capability
-  */
-  HAL_PWR_EnableBkUpAccess();
-  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
-
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSE|RCC_OSCILLATORTYPE_MSI;
-  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
-  RCC_OscInitStruct.MSIState = RCC_MSI_ON;
-  RCC_OscInitStruct.MSICalibrationValue = 0;
-  RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
-  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_MSI;
-  RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 16;
-  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
-  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
-  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Enable MSI Auto calibration
-  */
-  HAL_RCCEx_EnableMSIPLLMode();
-}
-
-/**
-  * @brief SPI1 Initialization Function
-  * @param None
-  * @retval None
-  */
-void MX_SPI1_Init(void)
-{
-	/* SPI1 parameter configuration*/
-	hspi1.Instance = SPI1;
-	hspi1.Init.Mode = SPI_MODE_MASTER;
-	hspi1.Init.Direction = SPI_DIRECTION_2LINES;
-	hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-	hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-	hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
-	hspi1.Init.NSS = SPI_NSS_SOFT;
-	hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
-	hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
-	hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
-	hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
-	hspi1.Init.CRCPolynomial = 7;
-	hspi1.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-	hspi1.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
-	if (HAL_SPI_Init(&hspi1) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
-
-/**
-  * @brief SPI MSP Initialization
-  * This function configures the hardware resources used in this example
-  * @param hspi: SPI handle pointer
-  * @retval None
-  */
-void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
-{
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	if(hspi->Instance==SPI1)
-	{
-		/* USER CODE BEGIN SPI1_MspInit 0 */
-
-		/* USER CODE END SPI1_MspInit 0 */
-		/* Peripheral clock enable */
-		__HAL_RCC_SPI1_CLK_ENABLE();
-
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		/**SPI1 GPIO Configuration
-		PA1     ------> SPI1_SCK
-		PA11     ------> SPI1_MISO
-		PA12     ------> SPI1_MOSI
-		*/
-		GPIO_InitStruct.Pin = GPIO_PIN_1|GPIO_PIN_11|GPIO_PIN_12;
-		GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-		GPIO_InitStruct.Pull = GPIO_NOPULL;
-		GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-		GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
-		HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-	}
-}
-
-/**
-  * @brief SPI MSP De-Initialization
-  * This function freeze the hardware resources used in this example
-  * @param hspi: SPI handle pointer
-  * @retval None
-  */
-void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
-{
-	if(hspi->Instance==SPI1)
-	{
-		/* Peripheral clock disable */
-		__HAL_RCC_SPI1_CLK_DISABLE();
-
-		/**SPI1 GPIO Configuration
-		PA1     ------> SPI1_SCK
-		PA11     ------> SPI1_MISO
-		PA12     ------> SPI1_MOSI
-		*/
-		HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1|GPIO_PIN_11|GPIO_PIN_12);
-	}
-}
-
-/**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-void MX_USART2_UART_Init(void)
-{
-	huart2.Instance = USART2;
-	huart2.Init.BaudRate = 115200;
-	huart2.Init.WordLength = UART_WORDLENGTH_8B;
-	huart2.Init.StopBits = UART_STOPBITS_1;
-	huart2.Init.Parity = UART_PARITY_NONE;
-	huart2.Init.Mode = UART_MODE_TX_RX;
-	huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-	huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-	huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-	huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-	if (HAL_UART_Init(&huart2) != HAL_OK)
-	{
-		Error_Handler();
-	}
-}
-
-/**
-  * @brief UART MSP Initialization
-  * This function configures the hardware resources used in this example
-  * @param huart: UART handle pointer
-  * @retval None
-  */
-void HAL_UART_MspGPIOInit(UART_HandleTypeDef* huart)
-{
-	GPIO_InitTypeDef GPIO_InitStruct = {0};
-	RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-	if(huart->Instance==USART2)
-	{
-		/** Initializes the peripherals clock */
-		PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
-		PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
-		if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
-		{
-		Error_Handler();
-		}
-
-		/* Peripheral clock enable */
-		__HAL_RCC_USART2_CLK_ENABLE();
-
-		__HAL_RCC_GPIOA_CLK_ENABLE();
-		/**USART2 GPIO Configuration
-		PA2     ------> USART2_TX
-		PA15 (JTDI)     ------> USART2_RX
-		*/
-		GPIO_InitStruct.Pin = VCP_TX_PIN;
-		GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-		GPIO_InitStruct.Pull = GPIO_NOPULL;
-		GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-		GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
-		HAL_GPIO_Init(VCP_TX_PORT, &GPIO_InitStruct);
-
-		GPIO_InitStruct.Pin = VCP_RX_PIN;
-		GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-		GPIO_InitStruct.Pull = GPIO_NOPULL;
-		GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
-		GPIO_InitStruct.Alternate = GPIO_AF3_USART2;
-		HAL_GPIO_Init(VCP_RX_PORT, &GPIO_InitStruct);
-	}
-}
-
-/**
-  * @brief UART MSP De-Initialization
-  * This function freeze the hardware resources used in this example
-  * @param huart: UART handle pointer
-  * @retval None
-  */
-void HAL_UART_MspGPIODeInit(UART_HandleTypeDef* huart)
-{
-	if(huart->Instance==USART2)
-	{
-		/* Peripheral clock disable */
-		__HAL_RCC_USART2_CLK_DISABLE();
-
-		/**USART2 GPIO Configuration
-		PA2     ------> USART2_TX
-		PA15 (JTDI)     ------> USART2_RX
-		*/
-		HAL_GPIO_DeInit(GPIOA, VCP_TX_PIN|VCP_RX_PIN);
-	}
+    HAL_SPI_IRQHandler(&hspi1);
 }

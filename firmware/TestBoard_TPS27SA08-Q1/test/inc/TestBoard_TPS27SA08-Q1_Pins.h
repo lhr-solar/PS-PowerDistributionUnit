@@ -1,5 +1,6 @@
 #define LED_PIN GPIO_PIN_3
 #define LED_PORT GPIOB
+#define LED_CLOCK_INIT() __HAL_RCC_GPIOB_CLK_ENABLE();
 
 #define VCP_TX_PIN GPIO_PIN_2
 #define VCP_TX_PORT GPIOA
