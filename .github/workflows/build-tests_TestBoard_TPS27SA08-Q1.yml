@@ -1,0 +1,37 @@
+name: Build Tests (TestBoard_TPS27SA08-Q1)
+
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - "**/*.md"
+      - "**/*.dbc"
+      - "**/*.py"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Cache Nix
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/nix
+          key: nix-${{ runner.os }}-${{ hashFiles('flake.lock') }}
+          restore-keys: |
+            nix-${{ runner.os }}-
+
+      - name: Install Nix Action
+        uses: cachix/install-nix-action@v31
+
+      - name: Clean & Build tests
+        run: |
+          nix develop ./firmware/Embedded-Sharepoint --accept-flake-config --command bash -c "
+            cd firmware
+            cd TestBoard_TPS27SA08-Q1
+            make clean
+            python test/MakeAllTests_TestBoard_TPS27SA08-Q1.py
+          "
