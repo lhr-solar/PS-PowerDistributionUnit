@@ -69,7 +69,7 @@ void Init_Task(void *argument)
     };
 
 	// initialize GPIO expander CS pin
-    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
     HAL_GPIO_Init(GPIOEXP_CS_PORT, &gpioexp_cs);
     HAL_GPIO_WritePin(GPIOEXP_CS_PORT, GPIOEXP_CS_PIN, 1);
 

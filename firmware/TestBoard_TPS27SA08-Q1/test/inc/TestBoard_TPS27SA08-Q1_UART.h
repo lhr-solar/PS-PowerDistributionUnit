@@ -7,7 +7,7 @@ extern UART_HandleTypeDef huart2;
   * @param None
   * @retval None
   */
-static inline void MX_USART2_UART_Init(void)
+void MX_USART2_UART_Init(void)
 {
 	huart2.Instance = USART2;
 	huart2.Init.BaudRate = 115200;
@@ -31,7 +31,7 @@ static inline void MX_USART2_UART_Init(void)
   * @param huart: UART handle pointer
   * @retval None
   */
-static inline void HAL_UART_MspGPIOInit(UART_HandleTypeDef* huart)
+void HAL_UART_MspGPIOInit(UART_HandleTypeDef* huart)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
 	RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};

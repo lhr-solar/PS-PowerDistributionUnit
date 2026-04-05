@@ -48,6 +48,10 @@ MCP23S17_HandleTypeDef gpioexp;
 // Variables 
 uint8_t gpioexp_state[MCP23S17_NUM_PORTS] = {0};
 
+char dashed_line[] = "----------------\n";
+char newline[] = "\n";
+char gpio_state_msg[] = 	"GPIO State: [A7] XXXXXXXX [A0]   [B7] XXXXXXXX [B0]\n";
+
 // TASKS ----------------------------------------------------------------------
 
 // Initialize MCU peripherals and external device drivers
@@ -71,7 +75,7 @@ void Init_Task(void *argument)
     };
 
 	// initialize GPIO expander CS pin
-    __HAL_RCC_GPIOC_CLK_ENABLE();
+    __HAL_RCC_GPIOA_CLK_ENABLE();
     HAL_GPIO_Init(GPIOEXP_CS_PORT, &gpioexp_cs);
     HAL_GPIO_WritePin(GPIOEXP_CS_PORT, GPIOEXP_CS_PIN, 1);
 
@@ -343,17 +347,12 @@ void GpioExp_In_Task(void *argument)
             }
         }
 
-		// print status to serial monitor
-        char gpioexp_state_bin_a[9];
-        gpioexp_state_bin_a[8] = '\0';
-        char gpioexp_state_bin_b[9];
-        gpioexp_state_bin_b[8] = '\0';
-        uint8_to_binary_str(gpioexp_state[0], gpioexp_state_bin_a);
-        uint8_to_binary_str(gpioexp_state[1], gpioexp_state_bin_b);
-
-		char gpio_input_state_msg[100];
-        sprintf(gpio_input_state_msg, "\n\n-----\nGPIO Input State:\n [A7] %s [A0] [B7] %s [B0]\n-----\n\n", gpioexp_state_bin_a, gpioexp_state_bin_b);
-		HAL_UART_Transmit(&huart2, (uint8_t*) gpio_input_state_msg, strlen(gpio_input_state_msg), HAL_MAX_DELAY);
+        // print status
+        HAL_UART_Transmit(&huart2, (uint8_t*) &dashed_line, strlen(dashed_line), HAL_MAX_DELAY);
+        uint8_to_binary_str(gpioexp_state[0], gpio_state_msg+17);
+        uint8_to_binary_str(gpioexp_state[1], gpio_state_msg+38);
+        HAL_UART_Transmit(&huart2, (uint8_t*) &gpio_state_msg, strlen(gpio_state_msg), HAL_MAX_DELAY);
+        HAL_UART_Transmit(&huart2, (uint8_t*) &dashed_line, strlen(dashed_line), HAL_MAX_DELAY);
 
         vTaskDelay(pdMS_TO_TICKS(100));
     }
