@@ -52,7 +52,7 @@
 typedef enum {
 	ADS131M08Q1_😢,				// ADS131M08Q1 sad
 	ADS131M08Q1_🙂,				// ADS131M08Q1 happy
-} ADS131M08Q1_Status;
+} ADS131M08Q1_Status_t;
 
 // REGISTERS -----------------------------------------------------------
 
@@ -96,7 +96,7 @@ typedef enum {
 typedef enum {
     ADS131M08Q1_CH_DISABLE,
     ADS131M08Q1_CH_ENABLE,
-} ADS131M08Q1_Ch_Enable;
+} ADS131M08Q1_Ch_Enable_t;
 #define ADS131M08Q1_CH_ENABLE_DEFAULT 0b1
 // TODO: change default defines to use enum
 
@@ -109,7 +109,7 @@ typedef enum {
     ADS131M08Q1_CH_GAIN_32,
     ADS131M08Q1_CH_GAIN_64,
     ADS131M08Q1_CH_GAIN_128,
-} ADS131M08Q1_Ch_Gain;
+} ADS131M08Q1_Ch_Gain_t;
 #define ADS131M08Q1_CH_GAIN_DEFAULT 0b000
 
 #define ADS131M08Q1_CH_PHASE_DELAY_DEFAULT 0
@@ -118,39 +118,38 @@ typedef enum {
 
 // ADC Channel Configuration Struct
 typedef struct {
-    ADS131M08Q1_Ch_Enable enable;
-	ADS131M08Q1_Ch_Gain gain;
+    ADS131M08Q1_Ch_Enable_t enable;
+	ADS131M08Q1_Ch_Gain_t gain;
     int16_t phase_delay;            // in modulator clock cycles
     float offset_cal;               // range: -FSR to FSR (converted to same format as ADC data)
     float gain_cal;                 // range: 0 - 2
     // DC block filter and input mux settings not implemented.
-
-} ADS131M08Q1_ChannelConfig;
+} ADS131M08Q1_ChannelConfig_t;
 
 typedef enum {
     ADS131M08Q1_MOST_LAGGING_ENABLED_CHANNEL,
     ADS131M08Q1_LOGIC_OR_ALL_CHANNELS,
     ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL,
     ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL_2_ELECTRIC_BOOGALOO,
-} ADS131M08Q1_Config_DRDY_Source;
+} ADS131M08Q1_Config_DRDY_Source_t;
 #define ADS131M08Q1_CONFIG_DRDY_SOURCE_DEFAULT 0b00
 
 typedef enum {
     ADS131M08Q1_DRDY_LOGIC_HIGH,
     ADS131M08Q1_DRDY_OPEN_DRAIN,
-} ADS131M08Q1_Config_DRDY_IdlePinState;
+} ADS131M08Q1_Config_DRDY_IdlePinState_t;
 #define ADS131M08Q1_CONFIG_DRDY_IDLEPINSTATE_DEFAULT 0b0
 
 typedef enum {
     ADS131M08Q1_DRDY_LOGIC_LOW,
     ADS131M08Q1_DRDY_LOW_PULSE_FIXED_DURATION,
-} ADS131M08Q1_Config_DRDY_Format;
+} ADS131M08Q1_Config_DRDY_Format_t;
 #define ADS131M08Q1_CONFIG_DRDY_FORMAT_DEFAULT 0b0
 
 typedef enum {
     ADS131M08Q1_REFERENCE_SOURCE_INTERNAL,
     ADS131M08Q1_REFERENCE_SOURCE_EXTERNAL,
-} ADS131M08Q1_Config_ReferenceSource;
+} ADS131M08Q1_Config_ReferenceSource_t;
 #define ADS131M08Q1_CONFIG_REFERENCE_SOURCE_DEFAULT 0b0
 #define ADS131M08Q1_CONFIG_FSR_DEFAULT 1.2
 
@@ -159,7 +158,7 @@ typedef enum {
     ADS131M08Q1_LOW_POWER,
     ADS131M08Q1_HIGH_RESOLUTION,
     ADS131M08Q1_HIGH_RESOLUTION_2_THE_SEQUEL,
-} ADS131M08Q1_Config_PowerMode;
+} ADS131M08Q1_Config_PowerMode_t;
 #define ADS131M08Q1_CONFIG_POWERMODE_DEFAULT 0b10
 
 // FOR FUTURE IMPLEMENTATION
@@ -168,7 +167,7 @@ typedef enum {
 //     ADS131M08Q1_MODE_GLOBAL_CHOP,
 //     ADS131M08Q1_MODE_STANDBY,
 //     ADS131M08Q1_MODE_CURRENT_DETECT,
-// } ADS131M08Q1_Config_OperatingMode;
+// } ADS131M08Q1_Config_OperatingMode_t;
 
 // FOR FUTURE IMPLEMENTATION
 // typedef enum {
@@ -193,13 +192,13 @@ typedef enum {
 
 // ADC Device Init Config Struct
 typedef struct {
-	ADS131M08Q1_ChannelConfig ch_configs[8];
-    ADS131M08Q1_Config_DRDY_Source drdy_source;
-    ADS131M08Q1_Config_DRDY_IdlePinState drdy_idlepinstate;
-    ADS131M08Q1_Config_DRDY_Format drdy_format;
-    ADS131M08Q1_Config_ReferenceSource reference_source;
+	ADS131M08Q1_ChannelConfig_t ch_configs[8];
+    ADS131M08Q1_Config_DRDY_Source_t drdy_source;
+    ADS131M08Q1_Config_DRDY_IdlePinState_t drdy_idlepinstate;
+    ADS131M08Q1_Config_DRDY_Format_t drdy_format;
+    ADS131M08Q1_Config_ReferenceSource_t reference_source;
     float fsr;
-    ADS131M08Q1_Config_PowerMode powermode;
+    ADS131M08Q1_Config_PowerMode_t powermode;
 
     // FOR FUTURE IMPLEMENTATION
     // ADS131M08Q1_Config_OperatingMode mode;
@@ -208,7 +207,7 @@ typedef struct {
     // ADS131M08Q1_CurrentDetect_Threshold cd_threshold;
     // ADS131M08Q1_CurrentDetect_Chs cd_channels;
     // uint32_t current_detect_threshold;
-} ADS131M08Q1_DeviceConfig;
+} ADS131M08Q1_DeviceConfig_t;
 
 // DEVICE ---------------------------------------------------------------------
 
@@ -220,44 +219,44 @@ typedef struct {
     SemaphoreHandle_t spi_mutex;        // Mutex to prevent simultaenous SPI access
     SemaphoreHandle_t spi_done_sem;     // Semaphore to signal SPI transmission complete
 
-    ADS131M08Q1_DeviceConfig config;
+    ADS131M08Q1_DeviceConfig_t config;
 } ADS131M08Q1_HandleTypeDef;
 
 
 // DEVICE FUNCTIONS -----------------------------------------------------------
 // meant to be used interally
 
-ADS131M08Q1_Status ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data);
+ADS131M08Q1_Status_t ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data);
 
-ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words);
+ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words);
 
-ADS131M08Q1_Status ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB);
+ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB);
 /**
  * @brief	blah
  * @param	blah blah
  * @returns blah
  */
-ADS131M08Q1_Status ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
+ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
 
-ADS131M08Q1_Status ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
+ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
 
 // USER FUNCTIONS -----------------------------------------------------------
 
-ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin);
+ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin);
 
-ADS131M08Q1_Status ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results);
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results);
 
-ADS131M08Q1_Status ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status);
-ADS131M08Q1_Status ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status);
+ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status);
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status);
 
-ADS131M08Q1_Status ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device);
-ADS131M08Q1_Status ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device);
-ADS131M08Q1_Status ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device);
-ADS131M08Q1_Status ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device);
-ADS131M08Q1_Status ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
+ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device);
+ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device);
+ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device);
+ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device);
+ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
 
 // TODO
-// ADS131M08Q1_Status ADDS131M08Q1_SetPowerMode(ADS131M08Q1_Config_PowerMode powermode);
+// ADS131M08Q1_Status_t ADDS131M08Q1_SetPowerMode(ADS131M08Q1_Config_PowerMode powermode);
 // self calibration function
 // global chop? current detect?
 // global chop might not be usable due to lower negative voltage limits
