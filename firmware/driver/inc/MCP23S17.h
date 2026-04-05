@@ -8,8 +8,8 @@
 
 // RTOS PARAMETERS ------------------------------------------------------------
 
-#define MCP23S17_SPI_MUTEX_DELAY portMAX_DELAY				// ticks
-#define MCP23S17_SPI_TRANSMISSION_DELAY pdMS_TO_TICKS(100)	// ticks
+#define MCP23S17_SPI_MUTEX_DELAY_TICKS portMAX_DELAY				// ticks
+#define MCP23S17_SPI_TRANSMISSION_DELAY_TICKS pdMS_TO_TICKS(100)	// ticks
 
 // DEVICE PARAMETERS ----------------------------------------------------------
 

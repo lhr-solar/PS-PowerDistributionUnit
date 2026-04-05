@@ -7,7 +7,7 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
-    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return MCP23S17_🕷️;
     }
@@ -28,7 +28,7 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
 
     // wait for SPI completion
-    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
     {
         HAL_SPI_Abort(device->spi);
 
@@ -49,7 +49,7 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
 
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
-    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return MCP23S17_🕷️;
     }
@@ -71,7 +71,7 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
 
     // wait for SPI completion
-    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
     {
         HAL_SPI_Abort(device->spi);
 
