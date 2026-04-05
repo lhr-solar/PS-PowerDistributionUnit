@@ -1,13 +1,6 @@
-#include "stm32xx_hal.h"
+#include "TestBoard_TPS27SA08-Q1_SPI.h"
 
-extern SPI_HandleTypeDef hspi1;
-
-/**
-  * @brief SPI1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static inline void MX_SPI1_Init(void)
+void MX_SPI1_Init(void)
 {
 	/* SPI1 parameter configuration*/
 	hspi1.Instance = SPI1;
@@ -30,12 +23,6 @@ static inline void MX_SPI1_Init(void)
 	}
 }
 
-/**
-  * @brief SPI MSP Initialization
-  * This function configures the hardware resources used in this example
-  * @param hspi: SPI handle pointer
-  * @retval None
-  */
 void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -66,12 +53,6 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 	}
 }
 
-/**
-  * @brief SPI MSP De-Initialization
-  * This function freeze the hardware resources used in this example
-  * @param hspi: SPI handle pointer
-  * @retval None
-  */
 void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
 {
 	if(hspi->Instance==SPI1)
@@ -88,7 +69,7 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi)
 	}
 }
 
-static inline bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, SemaphoreHandle_t spi2_done_sem)
+bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, SemaphoreHandle_t spi2_done_sem)
 {
 	if(xSemaphoreTake(spi2_mutex, pdMS_TO_TICKS(100)) != pdTRUE)
     {
