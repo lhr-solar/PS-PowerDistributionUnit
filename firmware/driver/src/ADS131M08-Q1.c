@@ -1,11 +1,11 @@
 #include "ADS131M08-Q1.h"
 
-inline ADS131M08Q1_Status ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
+inline ADS131M08Q1_Status_t ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
 {
     return ADS131M08Q1_FrameVar(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
 }
 
-ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
+ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
 {
     // get mutex and verify HAL_READY
     if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY) != pdTRUE)
@@ -64,7 +64,7 @@ ADS131M08Q1_Status ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8
     return ADS131M08Q1_🙂;
 }
 
-inline ADS131M08Q1_Status ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB)
+inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB)
 {
     uint8_t cmd_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
     cmd_frame[0] = cmd_MSB;
@@ -94,7 +94,7 @@ inline ADS131M08Q1_Status ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* dev
     }
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
+ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
 {
     if(ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_RESET_MSB, ADS131M08Q1_OPCODE_RESET_LSB, ADS131M08Q1_RESPONSE_RESET_MSB, ADS131M08Q1_RESPONSE_RESET_LSB) == ADS131M08Q1_🙂)
     {
@@ -110,27 +110,27 @@ ADS131M08Q1_Status ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
     }
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device)
+ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device)
 {
     return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_STANDBY_MSB, ADS131M08Q1_OPCODE_STANDBY_LSB, ADS131M08Q1_RESPONSE_STANDBY_MSB, ADS131M08Q1_RESPONSE_STANDBY_LSB);
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device)
+ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device)
 {
     return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_WAKEUP_MSB, ADS131M08Q1_OPCODE_WAKEUP_LSB, ADS131M08Q1_RESPONSE_WAKEUP_MSB, ADS131M08Q1_RESPONSE_WAKEUP_LSB);
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
+ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
 {
     return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_LOCK_MSB, ADS131M08Q1_OPCODE_LOCK_LSB, ADS131M08Q1_RESPONSE_LOCK_MSB, ADS131M08Q1_RESPONSE_LOCK_LSB);
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
+ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
 {
     return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_UNLOCK_MSB, ADS131M08Q1_OPCODE_UNLOCK_LSB, ADS131M08Q1_RESPONSE_UNLOCK_MSB, ADS131M08Q1_RESPONSE_UNLOCK_LSB);
 }
 
-ADS131M08Q1_Status ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
 {
     uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
 
@@ -155,7 +155,7 @@ ADS131M08Q1_Status ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* 
     return ADS131M08Q1_🙂;
 }
 
-ADS131M08Q1_Status ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status)
+ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status)
 {
     uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
 
@@ -176,7 +176,7 @@ ADS131M08Q1_Status ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uin
     return ADS131M08Q1_🙂;
 }
 
-ADS131M08Q1_Status ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status)
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status)
 {
     uint16_t temp_status = 0;
 
@@ -190,7 +190,7 @@ ADS131M08Q1_Status ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* d
     return ADS131M08Q1_🙂;
 }
 
-ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin)
+ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_HandleTypeDef* spi, GPIO_TypeDef* cs_port, uint16_t cs_pin)
 {
     device->spi = spi;
     device->cs_port = cs_port;
@@ -285,7 +285,7 @@ ADS131M08Q1_Status ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device, SPI_Handl
     return ADS131M08Q1_🙂;
 }
 
-ADS131M08Q1_Status ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
+ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
 {
     if(ADS131M08Q1_REG_INVALID_CHECK(reg_addr, num_regs)){return ADS131M08Q1_😢;}
 
@@ -351,7 +351,7 @@ ADS131M08Q1_Status ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8
     return ADS131M08Q1_🙂;
 }
 
-ADS131M08Q1_Status ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
+ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
 {
     if(ADS131M08Q1_REG_INVALID_CHECK(reg_addr, num_regs)){return ADS131M08Q1_😢;}
 
