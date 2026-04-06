@@ -92,3 +92,54 @@ bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, S
 
 	return true;
 }
+
+// INTERRUPT STUFF ------------------------------------------------------------
+
+extern SemaphoreHandle_t spi1_done_sem;
+
+void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
+
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
+{
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
+    
+    // Context switch if a higher priority task was woken up
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
+
+/**
+  * @brief This function handles SPI1 global interrupt.
+  */
+void SPI1_IRQHandler(void)
+{
+    HAL_SPI_IRQHandler(&hspi1);
+}

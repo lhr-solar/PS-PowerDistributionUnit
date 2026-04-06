@@ -197,7 +197,7 @@ void GpioExp_Out_Task(void *argument)
 {
     for(;;)
     {
-		char gpioexp_in_task_runs_msg[] = "GpioExp_In_Task runs...\n";
+		char gpioexp_in_task_runs_msg[] = "GpioExp_Out_Task runs...\n";
     	HAL_UART_Transmit(&huart2, (uint8_t*) gpioexp_in_task_runs_msg, strlen(gpioexp_in_task_runs_msg), HAL_MAX_DELAY);
 
         // update LED outputs
@@ -256,53 +256,4 @@ int main()
     vTaskStartScheduler();
 
     while(1) {}
-}
-
-// INTERRUPT STUFF ------------------------------------------------------------
-
-void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
-{
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    if(spi1_done_sem != NULL)
-    {
-        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
-    }
-
-    // Context switch if a higher priority task was woken up
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
-void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
-{
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    if(spi1_done_sem != NULL)
-    {
-        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
-    }
-
-    // Context switch if a higher priority task was woken up
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
-void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
-{
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-
-    if(spi1_done_sem != NULL)
-    {
-        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
-    }
-
-    // Context switch if a higher priority task was woken up
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
-}
-
-/**
-  * @brief This function handles SPI1 global interrupt.
-  */
-void SPI1_IRQHandler(void)
-{
-    HAL_SPI_IRQHandler(&hspi1);
 }
