@@ -32,6 +32,12 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     {
         HAL_SPI_Abort(device->spi);
 
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return MCP23S17_🕸️;
     }
 
@@ -74,6 +80,12 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
     {
         HAL_SPI_Abort(device->spi);
+
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
 
         return MCP23S17_🕸️;
     }
