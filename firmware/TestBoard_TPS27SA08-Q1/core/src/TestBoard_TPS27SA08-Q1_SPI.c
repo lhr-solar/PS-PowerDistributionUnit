@@ -48,7 +48,7 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi)
 		HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
         /* SPI1 interrupt Init */
-        HAL_NVIC_SetPriority(SPI1_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY+1, 0);
+        HAL_NVIC_SetPriority(SPI1_IRQn, SPI1_INTERRUPT_PRIORITY, 0);
         HAL_NVIC_EnableIRQ(SPI1_IRQn);
 	}
 }

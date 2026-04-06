@@ -1,5 +1,7 @@
 #include "stm32xx_hal.h"
 
+#define SPI1_INTERRUPT_PRIORITY configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY+1
+
 extern SPI_HandleTypeDef hspi1;
 
 /**
