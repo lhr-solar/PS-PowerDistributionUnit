@@ -101,15 +101,10 @@ void Init_Task(void *argument)
 	// SPI1 init
 	MX_SPI1_Init();
 
-    // create mutex (prevent simultaneous access to SPI1)
-    spi1_mutex = xSemaphoreCreateMutexStatic(&spi1_mutex_buffer);
-    //creates semaphore (tells when SPI1 hardware has finished transmission)
-    spi1_done_sem = xSemaphoreCreateBinaryStatic(&spi1_done_sem_buffer);
-
-	// check mutex and semaphore creation
-    if(spi1_mutex == NULL || spi1_done_sem == NULL)
+    // set up SPI mutex and done semaphore
+    if(SPI_RTOS_Mutex_Semaphore_Setup(&spi1_mutex, &spi1_mutex_buffer, &spi1_done_sem, &spi1_done_sem_buffer) != true)
     {
-		char fail_spi_mutex_semaphore_init_msg[] = "FAIL:SPI_MUTEX_SEMAPHORE_INIT\n";
+        char fail_spi_mutex_semaphore_init_msg[] = "FAIL:SPI_MUTEX_SEMAPHORE_INIT\n";
     	HAL_UART_Transmit(&huart2, (uint8_t*) fail_spi_mutex_semaphore_init_msg, strlen(fail_spi_mutex_semaphore_init_msg), HAL_MAX_DELAY);
         while(1)
         {

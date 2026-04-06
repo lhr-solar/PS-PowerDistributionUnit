@@ -26,3 +26,5 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* hspi);
 void HAL_SPI_MspDeInit(SPI_HandleTypeDef* hspi);
 
 bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, SemaphoreHandle_t spi2_done_sem);
+
+bool SPI_RTOS_Mutex_Semaphore_Setup(SemaphoreHandle_t* SPIx_mutex, StaticSemaphore_t* SPIx_mutex_buffer, SemaphoreHandle_t* SPIx_done_sem, StaticSemaphore_t* SPIx_done_sem_buffer);

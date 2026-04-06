@@ -93,6 +93,24 @@ bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, S
 	return true;
 }
 
+bool SPI_RTOS_Mutex_Semaphore_Setup(SemaphoreHandle_t* SPIx_mutex, StaticSemaphore_t* SPIx_mutex_buffer, SemaphoreHandle_t* SPIx_done_sem, StaticSemaphore_t* SPIx_done_sem_buffer)
+{
+	// create mutex (prevent simultaneous access to SPIx)
+    *SPIx_mutex = xSemaphoreCreateMutexStatic(SPIx_mutex_buffer);
+    //creates semaphore (tells when SPIx hardware has finished transmission)
+    *SPIx_done_sem = xSemaphoreCreateBinaryStatic(SPIx_done_sem_buffer);
+
+	// check mutex and semaphore creation
+    if((*SPIx_mutex == NULL) || (*SPIx_done_sem == NULL))
+    {
+		return false;
+    }
+	else
+	{
+		return true;
+	}
+}
+
 // INTERRUPT STUFF ------------------------------------------------------------
 
 extern SemaphoreHandle_t spi1_done_sem;
