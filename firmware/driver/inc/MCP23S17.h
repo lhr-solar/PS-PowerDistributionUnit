@@ -15,7 +15,7 @@
 
 #define MCP23S17_NUM_PORTS 2
 #define MCP23S17_NUM_GPIO_PORT 8
-#define MCP23S17_NUM_GPIO_ALL 16	// MCP23S17_NUM_PORTS*MCP23S17_NUM_GPIO_PORT
+#define MCP23S17_NUM_GPIO_ALL MCP23S17_NUM_PORTS*MCP23S17_NUM_GPIO_PORT
 
 // REGISTERS ------------------------------------------------------------------
 
