@@ -6,6 +6,7 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
     if(device == NULL || data == NULL){return MCP23S17_😢;}
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL){return MCP23S17_😢;}
 
     // command/device address word + starting register address word + num_regs
     uint8_t msg_len = 2+num_regs;
@@ -64,6 +65,7 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
     if(device == NULL || data == NULL){return MCP23S17_😢;}
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL){return MCP23S17_😢;}
 
     // command/device address word + starting register address word + num_regs
     // HAL_SPI_Receive_x will transmit prexisting data in buffer, which takes care

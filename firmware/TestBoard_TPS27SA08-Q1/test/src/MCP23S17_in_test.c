@@ -406,7 +406,10 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
 
     // Context switch if a higher priority task was woken up
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -416,7 +419,10 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
 
     // Context switch if a higher priority task was woken up
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
@@ -426,8 +432,11 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-    xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
-
+    if(spi1_done_sem != NULL)
+    {
+        xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
+    }
+    
     // Context switch if a higher priority task was woken up
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
