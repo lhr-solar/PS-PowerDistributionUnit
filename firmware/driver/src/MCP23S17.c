@@ -5,6 +5,7 @@
 MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
+    if(device == NULL || data == NULL){return MCP23S17_😢;}
 
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
     if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
@@ -47,6 +48,7 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
 MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
 {
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
+    if(device == NULL || data == NULL){return MCP23S17_😢;}
 
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
     if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
