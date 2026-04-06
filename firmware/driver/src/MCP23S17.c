@@ -25,7 +25,16 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     MCP23S17_SPI_Select(device);
 
     // send SPI transmission
-    if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
+    if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK)
+    {
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return MCP23S17_😢;
+    }
 
     // wait for SPI completion
     if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
@@ -74,7 +83,16 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     MCP23S17_SPI_Select(device);
 
     // SPI transmission
-    if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
+    if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK)
+    {
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+        
+        return MCP23S17_😢;
+    }
 
     // wait for SPI completion
     if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
