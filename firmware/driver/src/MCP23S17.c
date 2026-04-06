@@ -21,9 +21,8 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
         return MCP23S17_🕷️;
     }
 
-    // bring CS pin low
-    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    vTaskDelay(1);
+    // select SPI device
+    MCP23S17_SPI_Select(device);
 
     // send SPI transmission
     if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
@@ -36,8 +35,8 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
         return MCP23S17_🕸️;
     }
 
-    // bring CS pin high again
-    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+    // deselect SPI device
+    MCP23S17_SPI_DeSelect(device);
 
     // release SPI mutex
     xSemaphoreGive(device->spi_mutex);
@@ -65,9 +64,8 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
         return MCP23S17_🕷️;
     }
 
-    // bring CS pin low
-    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    vTaskDelay(1);
+    // select SPI device
+    MCP23S17_SPI_Select(device);
 
     // SPI transmission
     if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
@@ -80,8 +78,8 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
         return MCP23S17_🕸️;
     }
 
-    // bring CS pin high again
-    HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+    // deselect SPI device
+    MCP23S17_SPI_DeSelect(device);
 
     // release SPI mutex
     xSemaphoreGive(device->spi_mutex);
