@@ -388,12 +388,12 @@ MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFuncti
 static inline void MCP23S17_SPI_Select(MCP23S17_HandleTypeDef* device)
 {
 	// bring CS pin low
-	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_RESET);
     vTaskDelay(1);
 }
 
 static inline void MCP23S17_SPI_DeSelect(MCP23S17_HandleTypeDef* device)
 {
 	// bring CS pin high
-	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_SET);
 }
