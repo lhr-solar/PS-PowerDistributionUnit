@@ -7,6 +7,14 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
     if(device == NULL || data == NULL){return MCP23S17_😢;}
 
+    // command/device address word + starting register address word + num_regs
+    uint8_t msg[2+num_regs];
+    memset(msg, 0, 2+num_regs);
+    
+    msg[0] = MCP23S17_OPCODE_WRITE | (device->addr);        // command/device address
+    msg[1] = reg_addr;                                      // starting register address
+    memcpy(msg+2, data, num_regs);                          // register data to write
+
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
     if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
@@ -16,14 +24,6 @@ MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg
     // bring CS pin low
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(1);
-
-    // command/device address word + starting register address word + num_regs
-    uint8_t msg[2+num_regs];
-    memset(msg, 0, 2+num_regs);
-    
-    msg[0] = MCP23S17_OPCODE_WRITE | (device->addr);        // command/device address
-    msg[1] = reg_addr;                                      // starting register address
-    memcpy(msg+2, data, num_regs);                          // register data to write
 
     // send SPI transmission
     if(HAL_SPI_Transmit_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
@@ -50,6 +50,15 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
     if(device == NULL || data == NULL){return MCP23S17_😢;}
 
+    // command/device address word + starting register address word + num_regs
+    // HAL_SPI_Receive_x will transmit prexisting data in buffer, which takes care
+    // of command / address words (while the rest are filled with data)
+    uint8_t msg[2+num_regs];
+    memset(msg, 0, 2+num_regs);
+    
+    msg[0] = MCP23S17_OPCODE_READ | (device->addr);         // command/device address
+    msg[1] = reg_addr;                                      // starting register address
+
     // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
     if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
@@ -59,15 +68,6 @@ MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_
     // bring CS pin low
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(1);
-
-    // command/device address word + starting register address word + num_regs
-    // HAL_SPI_Receive_x will transmit prexisting data in buffer, which takes care
-    // of command / address words (while the rest are filled with data)
-    uint8_t msg[2+num_regs];
-    memset(msg, 0, 2+num_regs);
-    
-    msg[0] = MCP23S17_OPCODE_READ | (device->addr);         // command/device address
-    msg[1] = reg_addr;                                      // starting register address
 
     // SPI transmission
     if(HAL_SPI_Receive_IT(device->spi, msg, 2+num_regs) != HAL_OK){return MCP23S17_😢;}
