@@ -8,7 +8,7 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device,
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
 {
     // get mutex and verify HAL_READY
-    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return ADS131M08Q1_😢; // maybe add different timed-out status
     }
@@ -48,7 +48,7 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uin
     }
 
     // take spi completion semaphore
-    if(xSemaphoreTake(device->spi_done_sem, ADS131M08Q1_SPI_TRANSMISSION_DELAY) != pdTRUE)
+    if(xSemaphoreTake(device->spi_done_sem, ADS131M08Q1_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
     {
         HAL_SPI_Abort(device->spi);
 
