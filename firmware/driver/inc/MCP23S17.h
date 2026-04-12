@@ -382,18 +382,3 @@ MCP23S17_Status_t MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpeci
  * @returns MCP23S17 Status (MCP23S17_🙂 if successful)
  */
 MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput_t pin_config);
-
-// (PRIVATE) HELPER FUNCTIONS -------------------------------------------------
-
-static inline void MCP23S17_SPI_Select(MCP23S17_HandleTypeDef* device)
-{
-	// bring CS pin low
-	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_RESET);
-    vTaskDelay(1);
-}
-
-static inline void MCP23S17_SPI_DeSelect(MCP23S17_HandleTypeDef* device)
-{
-	// bring CS pin high
-	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_SET);
-}

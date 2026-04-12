@@ -1,5 +1,20 @@
 #include "MCP23S17.h"
 
+// (PRIVATE) HELPER FUNCTIONS -------------------------------------------------
+
+static inline void MCP23S17_SPI_Select(MCP23S17_HandleTypeDef* device)
+{
+	// bring CS pin low
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_RESET);
+    vTaskDelay(1);
+}
+
+static inline void MCP23S17_SPI_DeSelect(MCP23S17_HandleTypeDef* device)
+{
+	// bring CS pin high
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_SET);
+}
+
 // FUNCTION DEFINITIONS -------------------------------------------------------
 
 MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
