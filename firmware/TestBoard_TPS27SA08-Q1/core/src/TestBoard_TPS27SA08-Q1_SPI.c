@@ -80,11 +80,19 @@ bool SPI_Init_Dummy_Send(SPI_HandleTypeDef* spi, SemaphoreHandle_t spi2_mutex, S
     uint8_t dummy_spi_send = 0;
     if(HAL_SPI_Transmit_IT(spi, &dummy_spi_send, 1) != HAL_OK)
     {
+		// release SPI mutex
+        xSemaphoreGive(spi2_mutex);
+
         return false;
     }
 
     if(xSemaphoreTake(spi2_done_sem, pdMS_TO_TICKS(100)) != pdTRUE)
     {
+		HAL_SPI_Abort(spi);
+
+        // release SPI mutex
+        xSemaphoreGive(spi2_mutex);
+
         return false;
     }
 
