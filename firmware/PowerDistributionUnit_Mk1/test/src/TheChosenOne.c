@@ -100,7 +100,7 @@ void Init_Task(void *argument)
     {
         adc.config.ch_configs[ch].enable = ADS131M08Q1_CH_ENABLE;
         adc.config.ch_configs[ch].gain = ADS131M08Q1_CH_GAIN_1;
-        adc.config.ch_configs[ch].phase_delay = ADS131M08Q1_CH_PHASE_DELAY_DEFAULT;
+        adc.config.ch_configs[ch].phase = ADS131M08Q1_CH_PHASE_DEFAULT;
         adc.config.ch_configs[ch].offset_cal = ADS131M08Q1_CH_OFFSET_CAL_DEFAULT;
         adc.config.ch_configs[ch].gain_cal = ADS131M08Q1_CH_GAIN_CAL_DEFAULT;
     }
@@ -118,15 +118,20 @@ void Init_Task(void *argument)
     adc.spi_mutex = spi2_mutex;
     adc.spi_done_sem = spi2_done_sem;
 
-    if(ADS131M08Q1_Reset(&adc) != ADS131M08Q1_🙂)
+    // channel 0 reads about 0.24 V high for some reason
+    adc.config.ch_configs[0].offset_cal = ADS131M08Q1_CalcOffsetCalRegValue(&adc, -0.24);
+
+    if(ADS131M08Q1_Init(&adc) != ADS131M08Q1_🙂)
     {
-        printf("FAIL:ADC_INIT_RESET\n");
+        printf("FAIL:ADC_INIT\n");
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
             HAL_Delay(50);
         }
     }
+
+    adc.config.fsr = 3.3;   // temp: BBPDU Mk1 Rev A ADC issue
 
     printf("Initialization complete.\n");
 
@@ -174,7 +179,7 @@ int main()
     HAL_Init();
     SystemClock_Config();
 
-    xTaskCreateStatic(Init_Task,
+    init_task = xTaskCreateStatic(Init_Task,
                     "Init Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
