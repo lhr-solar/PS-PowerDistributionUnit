@@ -1,0 +1,396 @@
+#include "MCP23S17.h"
+
+// (PRIVATE) HELPER FUNCTIONS -------------------------------------------------
+
+static inline void MCP23S17_SPI_Select(MCP23S17_HandleTypeDef* device)
+{
+	// bring CS pin low
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_RESET);
+    vTaskDelay(1);
+}
+
+static inline void MCP23S17_SPI_DeSelect(MCP23S17_HandleTypeDef* device)
+{
+	// bring CS pin high
+	HAL_GPIO_WritePin(device->cs_port, device->cs_pin, GPIO_PIN_SET);
+}
+
+// FUNCTION DEFINITIONS -------------------------------------------------------
+
+MCP23S17_Status_t MCP23S17_WriteRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+{
+    if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
+    if(device == NULL || data == NULL){return MCP23S17_😢;}
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL){return MCP23S17_😢;}
+
+    // command/device address word + starting register address word + num_regs
+    uint8_t msg_len = 2+num_regs;
+    uint8_t msg[msg_len];
+    memset(msg, 0, msg_len);
+    
+    msg[0] = MCP23S17_OPCODE_WRITE | (device->addr);        // command/device address
+    msg[1] = reg_addr;                                      // starting register address
+    memcpy(msg+2, data, num_regs);                          // register data to write
+
+    // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return MCP23S17_🕷️;
+    }
+
+    // select SPI device
+    MCP23S17_SPI_Select(device);
+
+    // send SPI transmission
+    if(HAL_SPI_Transmit_IT(device->spi, msg, msg_len) != HAL_OK)
+    {
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return MCP23S17_😢;
+    }
+
+    // wait for SPI completion
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
+    {
+        HAL_SPI_Abort(device->spi);
+
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return MCP23S17_🕸️;
+    }
+
+    // deselect SPI device
+    MCP23S17_SPI_DeSelect(device);
+
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
+
+    return MCP23S17_🙂;
+}
+
+MCP23S17_Status_t MCP23S17_ReadRegs(MCP23S17_HandleTypeDef* device, uint8_t reg_addr, uint8_t* data, uint16_t num_regs)
+{
+    if(MCP23S17_REG_INVALID_CHECK || num_regs == 0){return MCP23S17_😢;}
+    if(device == NULL || data == NULL){return MCP23S17_😢;}
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL){return MCP23S17_😢;}
+
+    // command/device address word + starting register address word + num_regs
+    // HAL_SPI_Receive_x will transmit prexisting data in buffer, which takes care
+    // of command / address words (while the rest are filled with data)
+    uint8_t msg_len = 2+num_regs;
+    uint8_t msg[msg_len];
+    memset(msg, 0, msg_len);
+    
+    msg[0] = MCP23S17_OPCODE_READ | (device->addr);         // command/device address
+    msg[1] = reg_addr;                                      // starting register address
+
+    // get SPI mutex / wait for SPI mutex to free (to prevent simulatenous SPI access)
+    if(xSemaphoreTake(device->spi_mutex, MCP23S17_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return MCP23S17_🕷️;
+    }
+
+    // select SPI device
+    MCP23S17_SPI_Select(device);
+
+    // SPI transmission
+    if(HAL_SPI_Receive_IT(device->spi, msg, msg_len) != HAL_OK)
+    {
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+        
+        return MCP23S17_😢;
+    }
+
+    // wait for SPI completion
+    if(xSemaphoreTake(device->spi_done_sem, MCP23S17_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
+    {
+        HAL_SPI_Abort(device->spi);
+
+        // deselect SPI device
+        MCP23S17_SPI_DeSelect(device);
+
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return MCP23S17_🕸️;
+    }
+
+    // deselect SPI device
+    MCP23S17_SPI_DeSelect(device);
+
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
+
+    // copy register data from msg buffer
+    memcpy(data, msg+2, num_regs);
+
+    return MCP23S17_🙂;
+}
+
+/**
+ * @brief	Writes to a specific register bit (for a specific GPIO pin) on MCP23S17 in FRIENDLY manner (performs register read before write).
+ * @param	device MCP23S17 Device Handle
+ * @param	reg_addr Register Address
+ * @param	pin Device GPIO Pin
+ * @param	val Value to write in
+ * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
+ */
+static inline MCP23S17_Status_t MCP23S17_WriteBitFriendly(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin_t pin, bool val)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+
+    uint8_t reg_state = 0;
+
+    status = MCP23S17_ReadRegs(device, reg, &reg_state, 1);
+    if(status != MCP23S17_🙂){return status;}
+
+    if(val)
+    {
+        reg_state |= (0x01 << pin);
+    }
+    else
+    {
+        reg_state &= ~(0x01 << pin);
+    }
+
+    status = MCP23S17_WriteRegs(device, reg, &reg_state, 1);
+    // skipping status 🙂 check for last part of function
+
+   return status;
+}
+
+/**
+ * @brief	Reads a specific register bit (for a specific GPIO pin) on MCP23S17.
+ * @param	device MCP23S17 Device Handle
+ * @param	reg_addr Register Address
+ * @param	pin Device GPIO Pin
+ * @param   bool Pointer (bool) to store bit read
+ * @returns MCP23S17 Status (MCP23S17_🙂 if successful, MCP23S17_😢 otherwise)
+ */
+static inline MCP23S17_Status_t MCP23S17_ReadBit(MCP23S17_HandleTypeDef* device, uint8_t reg, MCP23S17_Pin_t pin, bool* state)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+
+    uint8_t reg_state = 0;
+
+    status = MCP23S17_ReadRegs(device, reg, &reg_state, 1);
+    if(status != MCP23S17_🙂){return status;}
+    
+    *state = (reg_state >> pin) & 0x01;
+
+    return status;
+}
+
+MCP23S17_Status_t MCP23S17_Init(MCP23S17_HandleTypeDef* device)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+
+    device->addr = device->address_en == MCP23S17_CONFIG_ADDRESSING_ENABLED ? device->addr << 1 : 0;
+
+    // validate SPI configured correctly
+    if(device->spi == NULL)
+    {
+        return MCP23S17_😢;
+    }
+
+    // validate SPI mutex and semaphore configured correctly
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
+    {
+        return MCP23S17_😢;
+    }
+
+    // set up configuration
+    uint8_t configuration = MCP23S17_IOCON_TEMPLATE
+                                // IOCON.BANK = 0 | REGISTER ADDRESSING (This driver is designed ONLY for IOCON.BANK=0 register addresses.)
+                                | (device->int_mirror << MCP23S17_IOCON_MIRROR_LSHIFT)  // IOCON.MIRROR | INT PIN MIRRORING
+                                // IOCON.SEQOP = 0 | SEQUENTIAL OPERATION MODE (This driver is designed to utilize sequential operations.)
+                                // IOCON.DISSLW = 0 | SDA SLEW RATE CONTROL (I don't know why this is here or what it's for.)
+                                | (device->address_en << MCP23S17_IOCON_HAEN_LSHIFT)    // IOCON.HAEN | HARDWARE ADDRESS ENABLE
+                                | (device->int_drive << MCP23S17_IOCON_ODR_LSHIFT)      // IOCON.ODR | INT PIN OPEN-DRAIN
+                                | (device->int_pol << MCP23S17_IOCON_INTPOL_LSHIFT);    // IOCON.INTPOL | INT PIN POLARITY
+
+    // write configuration
+    status = MCP23S17_WriteRegs(device, MCP23S17_REG_IOCON, &configuration, 1);
+    if(status != MCP23S17_🙂){return status;}
+
+    // verify configuration via readback
+    uint8_t configuration_readback = 0;
+    status = MCP23S17_ReadRegs(device, MCP23S17_REG_IOCON, &configuration_readback, 1);
+    if(status != MCP23S17_🙂){return status;}
+
+    if(configuration == configuration_readback)
+    {
+       return MCP23S17_🙂;
+    }
+    else
+    {
+        return MCP23S17_😢;
+    }
+}
+
+MCP23S17_Status_t MCP23S17_SetDirection_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Dir_t dir)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_IODIRA+port), pin, dir);
+}
+
+MCP23S17_Status_t MCP23S17_SetPullup_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_Pullup_t pu)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPPUA+port), pin, pu);
+}
+
+MCP23S17_Status_t MCP23S17_SetInputPolarity_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InputPolarity_t pol)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_IPOLA+port), pin, pol);
+}
+
+MCP23S17_Status_t MCP23S17_WriteGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool state)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPIOA+port), pin, state);
+}
+
+MCP23S17_Status_t MCP23S17_WriteGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    return MCP23S17_WriteRegs(device, MCP23S17_REG_GPIOA, state, 2);
+}
+
+MCP23S17_Status_t MCP23S17_ReadGPIO_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool* state)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_ReadBit(device, (MCP23S17_REG_GPIOA+port), pin, state);
+}
+
+MCP23S17_Status_t MCP23S17_ReadGPIO_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    return MCP23S17_ReadRegs(device, MCP23S17_REG_GPIOA, state, 2);
+}
+
+MCP23S17_Status_t MCP23S17_SetInterruptEnable_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptEnable_t inten)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_GPINTENA+port), pin, inten);
+}
+
+MCP23S17_Status_t MCP23S17_SetInterruptMode_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptMode_t intmode)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_INTCONA+port), pin, intmode);
+}
+
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_Pin(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, bool defval)
+{
+    if(MCP23S17_PORT_PIN_INVALID_CHECK){return MCP23S17_😢;}
+
+    return MCP23S17_WriteBitFriendly(device, (MCP23S17_REG_DEFVALA+port), pin, defval);
+}
+
+MCP23S17_Status_t MCP23S17_SetInterruptDefaultValue_All(MCP23S17_HandleTypeDef* device, uint8_t* defval)
+{
+    return MCP23S17_WriteRegs(device, MCP23S17_REG_DEFVALA, defval, 2);
+}
+
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state)
+{
+    return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTFA+port), state, 1);
+}
+
+MCP23S17_Status_t MCP23S17_ReadInterruptStatus_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    return MCP23S17_ReadRegs(device, MCP23S17_REG_INTFA, state, 2);
+}
+
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_Port(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, uint8_t* state)
+{
+    return MCP23S17_ReadRegs(device, (MCP23S17_REG_INTCAPA+port), state, 1);
+}
+
+MCP23S17_Status_t MCP23S17_ReadInterruptGPIOState_All(MCP23S17_HandleTypeDef* device, uint8_t* state)
+{
+    return MCP23S17_ReadRegs(device, MCP23S17_REG_INTCAPA, state, 2);
+}
+
+// set up struct for pin information instead?
+MCP23S17_Status_t MCP23S17_TheOneStopShopForAllYourOutputGPIOInitNeedsOfOneSpecificPin_DoneInOneLineOrYourMoneyBack(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigOutput_t pin_config)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+
+    // pin setup
+    status = MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_OUTPUT);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_SetPullup_Pin(device, pin_config.port, pin_config.pin, MCP23S17_PULLUP_DISABLED);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_WriteGPIO_Pin(device, pin_config.port, pin_config.pin, pin_config.initial_state);
+    if(status != MCP23S17_🙂){return status;}
+
+    return status;
+}
+
+MCP23S17_Status_t MCP23S17_GetAllOfYourSingleInputGPIOInitSetUpWithThisOneFunctionCallThatDoesEverythingForYourInstantly(MCP23S17_HandleTypeDef* device, MCP23S17_PinConfigInput_t pin_config)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+
+    // pin setup
+    status = MCP23S17_SetDirection_Pin(device, pin_config.port, pin_config.pin, MCP23S17_DIR_INPUT);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_SetPullup_Pin(device, pin_config.port, pin_config.pin, pin_config.pullup);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_SetInputPolarity_Pin(device, pin_config.port, pin_config.pin, pin_config.inpol);
+    if(status != MCP23S17_🙂){return status;}
+
+    // interrupt setup
+    if(pin_config.inten == MCP23S17_INTEN_ENABLED)
+    {
+        status = MCP23S17_SetInterruptEnable_Pin(device, pin_config.port, pin_config.pin, pin_config.inten);
+        if(status != MCP23S17_🙂){return status;}
+
+        status = MCP23S17_SetInterruptMode_Pin(device, pin_config.port, pin_config.pin, pin_config.intmode);
+        if(status != MCP23S17_🙂){return status;}
+
+        status = MCP23S17_SetInterruptDefaultValue_Pin(device, pin_config.port, pin_config.pin, pin_config.default_value);
+        // skipping status 🙂 check for last part of function
+    }
+
+    return status;
+}
+
+MCP23S17_Status_t MCP23S17_TheBestGPIOInterruptSetupThatYoullEverSeeAnywhereInTheSolarSystem_CallNowToSeeItHappen(MCP23S17_HandleTypeDef* device, MCP23S17_Port_t port, MCP23S17_Pin_t pin, MCP23S17_InterruptEnable_t inten, MCP23S17_InterruptMode_t intmode, bool defval)
+{
+    MCP23S17_Status_t status = MCP23S17_🙂;
+    
+    status = MCP23S17_SetInterruptEnable_Pin(device, port, pin, inten);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_SetInterruptMode_Pin(device, port, pin, intmode);
+    if(status != MCP23S17_🙂){return status;}
+
+    status = MCP23S17_SetInterruptDefaultValue_Pin(device, port, pin, defval);
+    // skipping status 🙂 check for last part of function
+    
+    return status;
+}
