@@ -160,6 +160,7 @@ void ADC_Read_Task(void *argument)
     {
         if(ADS131M08Q1_ReadConversionResults(&adc, adc_results) != ADS131M08Q1_🙂)
         {
+            printf("FAIL:CONV_RESULTS\n");
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);

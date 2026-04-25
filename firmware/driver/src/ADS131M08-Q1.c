@@ -1,23 +1,42 @@
 #include "ADS131M08-Q1.h"
 
-inline ADS131M08Q1_Status_t ADS131M08Q1_Frame(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
+inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
 {
-    return ADS131M08Q1_FrameVar(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
+    return ADS131M08Q1_FrameVar_TransmitReceive(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
 }
 
-ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
+inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data)
 {
-    // get mutex and verify HAL_READY
-    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
-    {
-        return ADS131M08Q1_😢; // maybe add different timed-out status
-    }
+    return ADS131M08Q1_Frame_TransmitReceive(device, out_data, NULL);
+}
 
+inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* in_data)
+{
+    return ADS131M08Q1_Frame_TransmitReceive(device, NULL, in_data);
+}
+
+inline ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t num_words)
+{
+    return ADS131M08Q1_FrameVar_TransmitReceive(device, out_data, NULL, num_words);
+}
+
+inline ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* in_data, uint8_t num_words)
+{
+    return ADS131M08Q1_FrameVar_TransmitReceive(device, NULL, in_data, num_words);
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
+{
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(pdMS_TO_TICKS(1));
 
     if(in_data == NULL)
     {
+        if(out_data == NULL)
+        {
+            return ADS131M08Q1_😢;
+        }
+
         // Transmit only
         if(HAL_SPI_Transmit_IT(device->spi, out_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
@@ -26,11 +45,17 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uin
     }
     else if(out_data == NULL)
     {
-        // Clear data buffer so HAL_SPI_Receive only sends out zeros
-        for(uint8_t i = 0; i < ADS131M08Q1_WORD_LEN_8*num_words; i++)
+        if(in_data == NULL)
         {
-            in_data[i] = 0;
+            return ADS131M08Q1_😢;
         }
+
+        // Clear data buffer so HAL_SPI_Receive only sends out zeros
+        memset(in_data, 0, ADS131M08Q1_WORD_LEN_8*num_words);
+        // for(uint8_t i = 0; i < ADS131M08Q1_WORD_LEN_8*num_words; i++)
+        // {
+        //     in_data[i] = 0;
+        // }
 
         // Receive only
         if(HAL_SPI_Receive_IT(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
@@ -38,13 +63,17 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uin
             return ADS131M08Q1_😢;
         }
     }
-    else
+    else if(out_data != NULL && in_data != NULL)
     {
         // Transmit and receive simultaneously
         if(HAL_SPI_TransmitReceive_IT(device->spi, out_data, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
             return ADS131M08Q1_😢;
         }
+    }
+    else
+    {
+        return ADS131M08Q1_😢;
     }
 
     // take spi completion semaphore
@@ -55,11 +84,7 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar(ADS131M08Q1_HandleTypeDef* device, uin
         return ADS131M08Q1_😢; // maybe add another different timed-out status
     }
 
-    // HAL_Delay(1);   // remove delay
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
-    
-    // release SPI mutex
-    xSemaphoreGive(device->spi_mutex);
 
     return ADS131M08Q1_🙂;
 }
@@ -72,16 +97,24 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* d
 
     uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
 
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+
     // send ADS131M08-Q1 frame
-    if(ADS131M08Q1_Frame(device, cmd_frame, NULL) != ADS131M08Q1_🙂)
+    if(ADS131M08Q1_Frame_Transmit(device, cmd_frame) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
 
-    if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
     // check for correct response
     if(frame_response[0] == response_MSB && frame_response[1] == response_LSB)
@@ -132,15 +165,22 @@ ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
 
 ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
 {
-    uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
-
     uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
 
-    if(ADS131M08Q1_Frame(device, null_frame, frame_response) != ADS131M08Q1_🙂)
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+    
+    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
+    // compute results
     for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
     {
         uint32_t conversion = (__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1)))) >> 8);
@@ -161,15 +201,23 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, u
 
     uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
 
-    if(ADS131M08Q1_Frame(device, null_frame, NULL) != ADS131M08Q1_🙂)
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+
+    if(ADS131M08Q1_Frame_Transmit(device, null_frame) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
 
-    if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
     *status = __builtin_bswap16(*((uint16_t*) frame_response));
 
@@ -210,6 +258,8 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
     {
         return ADS131M08Q1_😢;
     }
+
+    return ADS131M08Q1_🙂;
 
     // ID CHECK
     // --------------------------------
@@ -339,7 +389,12 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
     rreg_cmd[0] = ADS131M08Q1_OPCODE_RREG_MSB | (reg_addr >> 1);
     rreg_cmd[1] = ((reg_addr & 0x01) << 7) | (num_regs-1);
 
-    if(ADS131M08Q1_Frame(device, rreg_cmd, NULL) != ADS131M08Q1_🙂)
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+    
+    if(ADS131M08Q1_Frame_Transmit(device, rreg_cmd) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
@@ -351,10 +406,13 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
 
         uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
 
-        if(ADS131M08Q1_Frame(device, NULL, frame_response) != ADS131M08Q1_🙂)
+        if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
         {
             return ADS131M08Q1_😢;
         }
+        
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
 
         *data = __builtin_bswap16(*((uint16_t*) frame_response));
     }
@@ -370,10 +428,13 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
             rreg_response[i] = 0;
         }
 
-        if(ADS131M08Q1_FrameVar(device, NULL, rreg_response, num_regs+2) != ADS131M08Q1_🙂)
+        if(ADS131M08Q1_FrameVar_Receive(device, rreg_response, num_regs+2) != ADS131M08Q1_🙂)
         {
             return ADS131M08Q1_😢;
         }
+        
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
 
         // check RREG response
         if(__builtin_bswap16(*((uint16_t*) rreg_response)) != ((ADS131M08Q1_RESPONSE_RREG_MSB << 8) | (reg_addr << 7) | (num_regs-1)))
@@ -427,19 +488,26 @@ ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, ui
         *((uint16_t*) (wreg_cmd+(3*(i+1)))) = __builtin_bswap16(data[i]);
     }
 
-    if(ADS131M08Q1_FrameVar(device, wreg_cmd, NULL, frame_len_24) != ADS131M08Q1_🙂)
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_😢; // maybe add different timed-out status
+    }
+
+    if(ADS131M08Q1_FrameVar_Transmit(device, wreg_cmd, frame_len_24) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
 
-    uint8_t null_cmd[ADS131M08Q1_FRAME_LEN_8] = {0};
-    uint8_t wreg_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+    uint8_t wreg_response[ADS131M08Q1_FRAME_LEN_8] = {0};   // TODO: move these to top
 
     // send another frame to get WREG response
-    if(ADS131M08Q1_Frame(device, null_cmd, wreg_response) != ADS131M08Q1_🙂)
+    if(ADS131M08Q1_Frame_Receive(device, wreg_response) != ADS131M08Q1_🙂)    // TODO: change this to just read
     {
         return ADS131M08Q1_😢;
     }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
 
     // check WREG response (same as WREG command, but starts with 010...)
     if(__builtin_bswap16(*((uint16_t*) wreg_response)) != ((ADS131M08Q1_RESPONSE_WREG_MSB << 8) | (reg_addr << 7) | (num_regs-1)))
