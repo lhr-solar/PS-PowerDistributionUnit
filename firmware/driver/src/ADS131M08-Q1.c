@@ -1,10 +1,5 @@
 #include "ADS131M08-Q1.h"
 
-inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
-{
-    return ADS131M08Q1_FrameVar_TransmitReceive(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
-}
-
 inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data)
 {
     return ADS131M08Q1_Frame_TransmitReceive(device, out_data, NULL);
@@ -13,6 +8,11 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Transmit(ADS131M08Q1_HandleTypeDef
 inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* in_data)
 {
     return ADS131M08Q1_Frame_TransmitReceive(device, NULL, in_data);
+}
+
+inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data)
+{
+    return ADS131M08Q1_FrameVar_TransmitReceive(device, out_data, in_data, ADS131M08Q1_FRAME_LEN_24);
 }
 
 inline ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t num_words)
@@ -123,242 +123,6 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* d
     {
         return ADS131M08Q1_😢;
     }
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
-{
-    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_RESET_MSB, ADS131M08Q1_OPCODE_RESET_LSB, ADS131M08Q1_RESPONSE_RESET_MSB, ADS131M08Q1_RESPONSE_RESET_LSB, 1);
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device)
-{
-    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_STANDBY_MSB, ADS131M08Q1_OPCODE_STANDBY_LSB, ADS131M08Q1_RESPONSE_STANDBY_MSB, ADS131M08Q1_RESPONSE_STANDBY_LSB, 0);
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device)
-{
-    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_WAKEUP_MSB, ADS131M08Q1_OPCODE_WAKEUP_LSB, ADS131M08Q1_RESPONSE_WAKEUP_MSB, ADS131M08Q1_RESPONSE_WAKEUP_LSB, 0);
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
-{
-    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_LOCK_MSB, ADS131M08Q1_OPCODE_LOCK_LSB, ADS131M08Q1_RESPONSE_LOCK_MSB, ADS131M08Q1_RESPONSE_LOCK_LSB, 0);
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
-{
-    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_UNLOCK_MSB, ADS131M08Q1_OPCODE_UNLOCK_LSB, ADS131M08Q1_RESPONSE_UNLOCK_MSB, ADS131M08Q1_RESPONSE_UNLOCK_LSB, 0);
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
-{
-    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
-
-    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
-    {
-        return ADS131M08Q1_🕷️;
-    }
-    
-    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-    
-    // release SPI mutex
-    xSemaphoreGive(device->spi_mutex);
-
-    // compute results
-    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
-    {
-        uint32_t conversion = (__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1)))) >> 8);
-        results[ch] = (float) conversion * (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
-
-        if(conversion & 0x800000)
-        {
-            results[ch] -= 2*device->config.fsr;
-        }
-    }
-
-    return ADS131M08Q1_🙂;
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status)
-{
-    uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
-
-    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
-
-    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
-    {
-        return ADS131M08Q1_🕷️;
-    }
-
-    if(ADS131M08Q1_Frame_Transmit(device, null_frame) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-    
-    // release SPI mutex
-    xSemaphoreGive(device->spi_mutex);
-
-    *status = __builtin_bswap16(*((uint16_t*) frame_response));
-
-    return ADS131M08Q1_🙂;
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status)
-{
-    uint16_t temp_status = 0;
-
-    if(ADS131M08Q1_ReadStatus(device, &temp_status) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    *status = temp_status & 0x00FF;
-
-    return ADS131M08Q1_🙂;
-}
-
-ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
-{
-    // validate SPI configured correctly
-    // SPI CLKPhase must be set to SPI_PHASE_2EDGE (data valid on clock TRAILING EDGE)!!!
-    if(device->spi == NULL || device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
-    {
-        return ADS131M08Q1_😢;
-    }
-    // validate SPI RTOS stuff initialized correctly
-    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    if(device->config.reference_source == ADS131M08Q1_REFERENCE_SOURCE_INTERNAL)
-    {
-        device->config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
-    }
-
-    // RESET DEVICE (ensure device regs in known state)
-    // --------------------------------
-    if(ADS131M08Q1_Reset(device) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    // ID CHECK
-    // --------------------------------
-    uint16_t id_check = 0;
-    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_ID, &id_check, 1) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-    if((id_check >> 8) != ADS131M08Q1_REG_ID_VAL)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    // WRITE CONFIGURATION
-    // --------------------------------
-    uint16_t global_configuration[4] = {0};
-
-    // MODE fields
-    global_configuration[0] = ADS131M08Q1_CONFIGTEMPLATE_MODE 
-                                | (device->config.drdy_source << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_SOURCE)
-                                | (device->config.drdy_idlepinstate << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_IDLEPINSTATE)
-                                | (device->config.drdy_format << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_FORMAT);
-    
-    // CLOCK fields
-    global_configuration[1] = ADS131M08Q1_CONFIGTEMPLATE_CLOCK
-                                | (device->config.reference_source << ADS131M08Q1_CLOCKCONFIG_LSHIFT_REFERENCE_SOURCE)
-                                | (device->config.powermode << ADS131M08Q1_CLOCKCONFIG_LSHIFT_POWERMODE);
-    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
-    {
-        global_configuration[1] |= (device->config.ch_configs[i].enable << ADS131M08Q1_CLOCKCONFIG_LSHIFT_CHx_ENABLE(i));
-    }
-    
-    // GAIN1 and GAIN2 fields
-    global_configuration[2] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
-                                | (device->config.ch_configs[0].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
-                                | (device->config.ch_configs[1].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
-                                | (device->config.ch_configs[2].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
-                                | (device->config.ch_configs[3].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
-    global_configuration[3] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
-                                | (device->config.ch_configs[4].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
-                                | (device->config.ch_configs[5].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
-                                | (device->config.ch_configs[6].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
-                                | (device->config.ch_configs[7].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
-    
-    if(ADS131M08Q1_WriteRegs(device, ADS131M08Q1_REG_MODE, global_configuration, 4) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-    
-    uint16_t global_configuration_readback[4] = {0};
-    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_MODE, global_configuration_readback, 4) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    for(uint8_t i = 0; i < 4; i++)
-    {
-        if(global_configuration_readback[i] != global_configuration[i])
-        {
-            return ADS131M08Q1_😢;
-        }
-    }
-
-    // WRITE CHANNEL CONFIGURATION
-    // --------------------------------
-    uint8_t ch_config_len = ADS131M08Q1_NUM_CHANNELS*5;
-    uint16_t channel_configuration[ch_config_len];
-    memset(channel_configuration, 0, sizeof(channel_configuration));
-
-    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
-    {
-        // CHx_CFG (phase)
-        channel_configuration[ch*5+0] = ADS131M08Q1_CONFIGTEMPLATE_CHx_CFG
-                                        | (device->config.ch_configs[ch].phase << ADS131M08Q1_CHCONFIG_CFG_LSHIFT_PHASE);
-        // CHx_OCAL (offset calibration)
-        channel_configuration[ch*5+1] = ((device->config.ch_configs[ch].offset_cal >> ADS131M08Q1_CHCONFIG_CAL_MSB_RSHIFT) & ADS131M08Q1_CHCONFIG_CAL_MSB_KEEPMASK);
-        channel_configuration[ch*5+2] = (device->config.ch_configs[ch].offset_cal << ADS131M08Q1_CHCONFIG_CAL_LSB_LSHIFT);
-        // CHx_GCAL (gain calibration)
-        channel_configuration[ch*5+3] = ((device->config.ch_configs[ch].gain_cal >> ADS131M08Q1_CHCONFIG_CAL_MSB_RSHIFT) & ADS131M08Q1_CHCONFIG_CAL_MSB_KEEPMASK);
-        channel_configuration[ch*5+4] = (device->config.ch_configs[ch].gain_cal << ADS131M08Q1_CHCONFIG_CAL_LSB_LSHIFT);
-    }
-
-    if(ADS131M08Q1_WriteRegs(device, ADS131M08Q1_REG_CHx_CFG(0), channel_configuration, ch_config_len) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-    
-    uint16_t channel_configuration_readback[ch_config_len];
-    memset(channel_configuration_readback, 0, sizeof(channel_configuration_readback));
-    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_CHx_CFG(0), channel_configuration_readback, ch_config_len) != ADS131M08Q1_🙂)
-    {
-        return ADS131M08Q1_😢;
-    }
-
-    for(uint8_t i = 0; i < ch_config_len; i++)
-    {
-        if(channel_configuration_readback[i] != channel_configuration[i])
-        {
-            return ADS131M08Q1_😢;
-        }
-    }
-
-    // precompute conversion factor
-    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
-    {
-        device->conversion_factor[ch] = (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
-    }
-
-    return ADS131M08Q1_🙂;
 }
 
 ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs)
@@ -499,6 +263,242 @@ ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, ui
     }
 
     return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
+{
+    // validate SPI configured correctly
+    // SPI CLKPhase must be set to SPI_PHASE_2EDGE (data valid on clock TRAILING EDGE)!!!
+    if(device->spi == NULL || device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
+    {
+        return ADS131M08Q1_😢;
+    }
+    // validate SPI RTOS stuff initialized correctly
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(device->config.reference_source == ADS131M08Q1_REFERENCE_SOURCE_INTERNAL)
+    {
+        device->config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
+    }
+
+    // RESET DEVICE (ensure device regs in known state)
+    // --------------------------------
+    if(ADS131M08Q1_Reset(device) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // ID CHECK
+    // --------------------------------
+    uint16_t id_check = 0;
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_ID, &id_check, 1) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    if((id_check >> 8) != ADS131M08Q1_REG_ID_VAL)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    // WRITE CONFIGURATION
+    // --------------------------------
+    uint16_t global_configuration[4] = {0};
+
+    // MODE fields
+    global_configuration[0] = ADS131M08Q1_CONFIGTEMPLATE_MODE 
+                                | (device->config.drdy_source << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_SOURCE)
+                                | (device->config.drdy_idlepinstate << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_IDLEPINSTATE)
+                                | (device->config.drdy_format << ADS131M08Q1_MODECONFIG_LSHIFT_DRDY_FORMAT);
+    
+    // CLOCK fields
+    global_configuration[1] = ADS131M08Q1_CONFIGTEMPLATE_CLOCK
+                                | (device->config.reference_source << ADS131M08Q1_CLOCKCONFIG_LSHIFT_REFERENCE_SOURCE)
+                                | (device->config.powermode << ADS131M08Q1_CLOCKCONFIG_LSHIFT_POWERMODE);
+    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
+    {
+        global_configuration[1] |= (device->config.ch_configs[i].enable << ADS131M08Q1_CLOCKCONFIG_LSHIFT_CHx_ENABLE(i));
+    }
+    
+    // GAIN1 and GAIN2 fields
+    global_configuration[2] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
+                                | (device->config.ch_configs[0].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
+                                | (device->config.ch_configs[1].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
+                                | (device->config.ch_configs[2].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
+                                | (device->config.ch_configs[3].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
+    global_configuration[3] = ADS131M08Q1_CONFIGTEMPLATE_GAIN
+                                | (device->config.ch_configs[4].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH0_CH4_GAIN)
+                                | (device->config.ch_configs[5].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH1_CH5_GAIN)
+                                | (device->config.ch_configs[6].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH2_CH6_GAIN)
+                                | (device->config.ch_configs[7].gain << ADS131M08Q1_GAINCONFIG_LSHIFT_CH3_CH7_GAIN);
+    
+    if(ADS131M08Q1_WriteRegs(device, ADS131M08Q1_REG_MODE, global_configuration, 4) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    
+    uint16_t global_configuration_readback[4] = {0};
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_MODE, global_configuration_readback, 4) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    for(uint8_t i = 0; i < 4; i++)
+    {
+        if(global_configuration_readback[i] != global_configuration[i])
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+
+    // WRITE CHANNEL CONFIGURATION
+    // --------------------------------
+    uint8_t ch_config_len = ADS131M08Q1_NUM_CHANNELS*5;
+    uint16_t channel_configuration[ch_config_len];
+    memset(channel_configuration, 0, sizeof(channel_configuration));
+
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    {
+        // CHx_CFG (phase)
+        channel_configuration[ch*5+0] = ADS131M08Q1_CONFIGTEMPLATE_CHx_CFG
+                                        | (device->config.ch_configs[ch].phase << ADS131M08Q1_CHCONFIG_CFG_LSHIFT_PHASE);
+        // CHx_OCAL (offset calibration)
+        channel_configuration[ch*5+1] = ((device->config.ch_configs[ch].offset_cal >> ADS131M08Q1_CHCONFIG_CAL_MSB_RSHIFT) & ADS131M08Q1_CHCONFIG_CAL_MSB_KEEPMASK);
+        channel_configuration[ch*5+2] = (device->config.ch_configs[ch].offset_cal << ADS131M08Q1_CHCONFIG_CAL_LSB_LSHIFT);
+        // CHx_GCAL (gain calibration)
+        channel_configuration[ch*5+3] = ((device->config.ch_configs[ch].gain_cal >> ADS131M08Q1_CHCONFIG_CAL_MSB_RSHIFT) & ADS131M08Q1_CHCONFIG_CAL_MSB_KEEPMASK);
+        channel_configuration[ch*5+4] = (device->config.ch_configs[ch].gain_cal << ADS131M08Q1_CHCONFIG_CAL_LSB_LSHIFT);
+    }
+
+    if(ADS131M08Q1_WriteRegs(device, ADS131M08Q1_REG_CHx_CFG(0), channel_configuration, ch_config_len) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    
+    uint16_t channel_configuration_readback[ch_config_len];
+    memset(channel_configuration_readback, 0, sizeof(channel_configuration_readback));
+    if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_CHx_CFG(0), channel_configuration_readback, ch_config_len) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    for(uint8_t i = 0; i < ch_config_len; i++)
+    {
+        if(channel_configuration_readback[i] != channel_configuration[i])
+        {
+            return ADS131M08Q1_😢;
+        }
+    }
+
+    // precompute conversion factor
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    {
+        device->conversion_factor[ch] = (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
+    }
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results)
+{
+    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_🕷️;
+    }
+    
+    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
+
+    // compute results
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    {
+        uint32_t conversion = (__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1)))) >> 8);
+        results[ch] = (float) conversion * (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
+
+        if(conversion & 0x800000)
+        {
+            results[ch] -= 2*device->config.fsr;
+        }
+    }
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status)
+{
+    uint8_t null_frame[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    uint8_t frame_response[ADS131M08Q1_FRAME_LEN_8] = {0};
+
+    if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
+    {
+        return ADS131M08Q1_🕷️;
+    }
+
+    if(ADS131M08Q1_Frame_Transmit(device, null_frame) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+    
+    // release SPI mutex
+    xSemaphoreGive(device->spi_mutex);
+
+    *status = __builtin_bswap16(*((uint16_t*) frame_response));
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status)
+{
+    uint16_t temp_status = 0;
+
+    if(ADS131M08Q1_ReadStatus(device, &temp_status) != ADS131M08Q1_🙂)
+    {
+        return ADS131M08Q1_😢;
+    }
+
+    *status = temp_status & 0x00FF;
+
+    return ADS131M08Q1_🙂;
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_RESET_MSB, ADS131M08Q1_OPCODE_RESET_LSB, ADS131M08Q1_RESPONSE_RESET_MSB, ADS131M08Q1_RESPONSE_RESET_LSB, 1);
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_STANDBY_MSB, ADS131M08Q1_OPCODE_STANDBY_LSB, ADS131M08Q1_RESPONSE_STANDBY_MSB, ADS131M08Q1_RESPONSE_STANDBY_LSB, 0);
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_WAKEUP_MSB, ADS131M08Q1_OPCODE_WAKEUP_LSB, ADS131M08Q1_RESPONSE_WAKEUP_MSB, ADS131M08Q1_RESPONSE_WAKEUP_LSB, 0);
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_LOCK_MSB, ADS131M08Q1_OPCODE_LOCK_LSB, ADS131M08Q1_RESPONSE_LOCK_MSB, ADS131M08Q1_RESPONSE_LOCK_LSB, 0);
+}
+
+ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
+{
+    return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_UNLOCK_MSB, ADS131M08Q1_OPCODE_UNLOCK_LSB, ADS131M08Q1_RESPONSE_UNLOCK_MSB, ADS131M08Q1_RESPONSE_UNLOCK_LSB, 0);
 }
 
 inline int32_t ADS131M08Q1_CalcOffsetCalRegValue(ADS131M08Q1_HandleTypeDef* device, float offset)
