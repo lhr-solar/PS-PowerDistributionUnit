@@ -52,10 +52,6 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
 
         // Clear data buffer so HAL_SPI_Receive only sends out zeros
         memset(in_data, 0, ADS131M08Q1_WORD_LEN_8*num_words);
-        // for(uint8_t i = 0; i < ADS131M08Q1_WORD_LEN_8*num_words; i++)
-        // {
-        //     in_data[i] = 0;
-        // }
 
         // Receive only
         if(HAL_SPI_Receive_IT(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
