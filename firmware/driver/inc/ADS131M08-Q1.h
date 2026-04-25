@@ -14,7 +14,8 @@
 
 #define ADS131M08Q1_NUM_CHANNELS 8
 #define ADS131M08Q1_NUM_BITS 24
-#define ADS131M08Q1_NUM_STEPS (8388608-1)   // 2^23 (24 bits - 1 sign bit) - 1
+#define ADS131M08Q1_NUM_STEPS (8388608-1)   	// 2^23 (24 bits - 1 sign bit) - 1
+#define ADS131M08Q1_INTERNAL_REFERENCE_V 3.3 	// change to 1.2 for rev B
 #define ADS131M08Q1_CH_VALID_CHECK(ch) (ch < ADS131M08Q1_NUM_CHANNELS && ch >= 0)
 #define ADS131M08Q1_CH_INVALID_CHECK(ch) (ch >= ADS131M08Q1_NUM_CHANNELS || ch < 0)
 
