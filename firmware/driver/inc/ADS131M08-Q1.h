@@ -1,7 +1,7 @@
 // ADS131M08-Q1.h
 // ----------------------------------------------------------------------------
 // Driver for ADS131M08-Q1 24-bit simultaneously-sampling sigma-delta ADC
-// Datasheet: datasheets/ADS131M08-Q1.pdf (from repo root)
+// Datasheet: datasheets/ADS131M08-Q1.pdf (from BBPDU repo root)
 
 # pragma once
 
@@ -110,8 +110,8 @@ typedef enum {
 // CONFIGURATION --------------------------------------------------------------
 
 typedef enum {
-	ADS131M08Q1_CH_DISABLE,
-	ADS131M08Q1_CH_ENABLE,
+	ADS131M08Q1_CH_DISABLE,		// enable channel for use
+	ADS131M08Q1_CH_ENABLE,		// disable channel
 } ADS131M08Q1_Ch_Enable_t;
 #define ADS131M08Q1_CH_ENABLE_DEFAULT 0b1
 // TODO: change default defines to use enum
@@ -142,38 +142,38 @@ typedef struct {
 	// DC block filter and input mux settings not implemented.
 } ADS131M08Q1_ChannelConfig_t;
 
-typedef enum {
-	ADS131M08Q1_MOST_LAGGING_ENABLED_CHANNEL,
-	ADS131M08Q1_LOGIC_OR_ALL_CHANNELS,
-	ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL,
-	ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL_2_ELECTRIC_BOOGALOO,
+typedef enum {														// ADC DRDY indicate on...
+	ADS131M08Q1_MOST_LAGGING_ENABLED_CHANNEL,						// most lagging enabled channel 
+	ADS131M08Q1_LOGIC_OR_ALL_CHANNELS,								// logic OR on all channels
+	ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL,						// most leading enabled channel
+	ADS131M08Q1_MOST_LEADING_ENABLED_CHANNEL_2_ELECTRIC_BOOGALOO,	// (same as last one)
 } ADS131M08Q1_Config_DRDY_Source_t;
 #define ADS131M08Q1_CONFIG_DRDY_SOURCE_DEFAULT 0b00
 
-typedef enum {
-	ADS131M08Q1_DRDY_LOGIC_HIGH,
-	ADS131M08Q1_DRDY_OPEN_DRAIN,
+typedef enum {														// ADC DRDY pin, when data not available, is...
+	ADS131M08Q1_DRDY_LOGIC_HIGH,									// logic high
+	ADS131M08Q1_DRDY_HIGH_Z,										// high-impedance (for open drain)
 } ADS131M08Q1_Config_DRDY_IdlePinState_t;
 #define ADS131M08Q1_CONFIG_DRDY_IDLEPINSTATE_DEFAULT 0b0
 
-typedef enum {
-	ADS131M08Q1_DRDY_LOGIC_LOW,
-	ADS131M08Q1_DRDY_LOW_PULSE_FIXED_DURATION,
+typedef enum {														// ADC DRDY pin, when data is available...
+	ADS131M08Q1_DRDY_LOGIC_LOW,										// stays logic low	
+	ADS131M08Q1_DRDY_LOW_PULSE_FIXED_DURATION,						// logic low for a fixed pulse duration
 } ADS131M08Q1_Config_DRDY_Format_t;
 #define ADS131M08Q1_CONFIG_DRDY_FORMAT_DEFAULT 0b0
 
 typedef enum {
-	ADS131M08Q1_REFERENCE_SOURCE_INTERNAL,
-	ADS131M08Q1_REFERENCE_SOURCE_EXTERNAL,
+	ADS131M08Q1_REFERENCE_SOURCE_INTERNAL,							// Use internal voltage reference
+	ADS131M08Q1_REFERENCE_SOURCE_EXTERNAL,							// Use external voltage reference
 } ADS131M08Q1_Config_ReferenceSource_t;
 #define ADS131M08Q1_CONFIG_REFERENCE_SOURCE_DEFAULT 0b0
 #define ADS131M08Q1_CONFIG_FSR_DEFAULT 1.2
 
-typedef enum {
-	ADS131M08Q1_VERY_LOW_POWER,
-	ADS131M08Q1_LOW_POWER,
-	ADS131M08Q1_HIGH_RESOLUTION,
-	ADS131M08Q1_HIGH_RESOLUTION_2_THE_SEQUEL,
+typedef enum {														// ADC power mode
+	ADS131M08Q1_VERY_LOW_POWER,										// very low power
+	ADS131M08Q1_LOW_POWER,											// low power
+	ADS131M08Q1_HIGH_RESOLUTION,									// high resolution
+	ADS131M08Q1_HIGH_RESOLUTION_2_THE_SEQUEL,						// (same as last one)
 } ADS131M08Q1_Config_PowerMode_t;
 #define ADS131M08Q1_CONFIG_POWERMODE_DEFAULT 0b10
 
@@ -241,54 +241,183 @@ typedef struct {
 
 
 // DEVICE FUNCTIONS -----------------------------------------------------------
-// meant to be used interally
+// meant to be used interally, but exposed for outside use if CAREFUL
 
-ADS131M08Q1_Status_t ADS131M08Q1_Frame_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data);
-
+/**
+ * @brief	Transmits for one 10-word SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	out_data Pointer (uint8_t array) to data to tramsit
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Frame_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data);
 
+/**
+ * @brief	Receives for one 10-word SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	in_data Pointer (uint8_t array) to store received data
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Frame_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* in_data);
 
-ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t num_words);
+/**
+ * @brief	Transmits and receives for one 10-word SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	out_data Pointer (uint8_t array) to data to tramsit
+ * @param	in_data Pointer (uint8_t array) to store received data
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
+ADS131M08Q1_Status_t ADS131M08Q1_Frame_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data);
 
+/**
+ * @brief	Transmits for a variable-size SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	out_data Pointer (uint8_t array) to data to tramsit
+ * @param	num_words Number of 24-bit words to include in SPI frame
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
+ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t num_words);
+
+/**
+ * @brief	Receives for a variable-size SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	in_data Pointer (uint8_t array) to store received data
+ * @param	num_words Number of 24-bit words to include in SPI frame
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeDef* device, uint8_t* in_data, uint8_t num_words);
 
+/**
+ * @brief	Transmits and receives for a variable-size SPI frame.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	out_data Pointer (uint8_t array) to data to tramsit
+ * @param	in_data Pointer (uint8_t array) to store received data
+ * @param	num_words Number of 24-bit words to include in SPI frame
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words);
 
-ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB, uint8_t response_delay_ms);
 /**
- * @brief	blah
- * @param	blah blah
- * @returns blah
+ * @brief	Sends an SPI command to the ADC.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	cmd_MSB MSB of command to send
+ * @param	cmd_LSB LSB of command to send
+ * @param	response_MSB MSB of expected response to command
+ * @param	response_LSB LSB of expected response to command
+ * @param	response_delay_ms Time to wait between sending command before trying to get reponse (zero for most, mainly for RESET command)
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
+ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB, uint8_t response_delay_ms);
+
+/**
+ * @brief	Reads register(s) on ADC.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	reg_addr Starting register address
+ * @param	data Pointer (uint16_t array) to store data read from register(s)
+ * @param	num_regs Number of sequential register(s) to read
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
  */
 ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
 
+/**
+ * @brief	Writes to register(s) on ADC.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	reg_addr Starting register address
+ * @param	data Pointer (uint16_t array) to data to write to regster(s)
+ * @param	num_regs Number of sequential register(s) to write
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, uint8_t reg_addr, uint16_t* data, uint8_t num_regs);
 
 // USER FUNCTIONS -----------------------------------------------------------
 
+/**
+ * @brief	Initializes ADS131M08Q1 driver and configures device for use. Configuration 
+ * 			should be written to config struct in device handle before calling.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device);
 
+/**
+ * @brief	Reads conversion results from ADC.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	results Pointer (float) to store conversion results
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results);
 
+/**
+ * @brief	Reads ADC STATUS register.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	results Pointer (uint16_t) to store STATUS register contents
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status);
 
+/**
+ * @brief	Reads ADC STATUS register and obtains conversion status for each channel.
+ * @param	device ADS131M08Q1 Device Handle
+ * @param	results Pointer (uint8_t) to store conversion statuses
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status);
 
+/**
+ * @brief	Resets ADC. All registers return to default value.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device);
 
+/**
+ * @brief	Puts ADC into standby. Device ceases conversions.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device);
 
+/**
+ * @brief	Pulls ADC out of standby. Device resumes conversions.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device);
 
+/**
+ * @brief	Locks ADC SPI interface (with exception to NULL (read conversion results), 
+ * 			UNLOCK, and read register commands).
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device);
 
+/**
+ * @brief	Unlocks ADC SPI interface.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+ */
 ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
 
 // HELPER FUNCTIONS -----------------------------------------------------------
 
+/**
+ * @brief	Calculates the offset calibration register value to apply a voltage offset 
+ * 			to a channel reading. This will need to be written into the offset calibration 
+ * 			register using a separate function.
+ * @param	device ADS131M08Q1 Device Handle (used to get FSR)
+ * @param	offset Desired gain
+ * @returns Offset calibration register value
+ */
 int32_t ADS131M08Q1_CalcOffsetCalRegValue(ADS131M08Q1_HandleTypeDef* device, float offset);
 
+/**
+ * @brief	Calculates the gain calibration register value to apply a voltage gain 
+ * 			to a channel reading. This will need to be written into the gain calibration 
+ * 			register using a separate function.
+ * @param	device ADS131M08Q1 Device Handle (used to get FSR)
+ * @param	offset Desired gain
+ * @returns Gain calibration register value
+ */
 uint32_t ADS131M08Q1_CalcGainCalRegValue(ADS131M08Q1_HandleTypeDef* device, float gain);
 
 // TODO
@@ -298,3 +427,4 @@ uint32_t ADS131M08Q1_CalcGainCalRegValue(ADS131M08Q1_HandleTypeDef* device, floa
 // global chop might not be usable due to lower negative voltage limits
 // resetHappened
 // SPI locked? Standby? 
+// function to write to offset/gain calibration registers outside of init
