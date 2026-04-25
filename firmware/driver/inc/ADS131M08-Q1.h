@@ -252,7 +252,7 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeDef* dev
 
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words);
 
-ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB);
+ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* device, uint8_t cmd_MSB, uint8_t cmd_LSB, uint8_t response_MSB, uint8_t response_LSB, uint8_t response_delay_ms);
 /**
  * @brief	blah
  * @param	blah blah
