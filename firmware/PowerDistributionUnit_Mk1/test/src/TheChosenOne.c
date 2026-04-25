@@ -188,7 +188,7 @@ int main()
 
     init_task = xTaskCreateStatic(Init_Task,
                     "Init Task",
-                    configMINIMAL_STACK_SIZE,
+                    configMINIMAL_STACK_SIZE+1500,
                     NULL,
                     TASKPRIORITY_INIT,
                     init_task_stack,
@@ -206,7 +206,7 @@ int main()
 
     adc_read_task = xTaskCreateStatic(ADC_Read_Task,
                     "ADC Read Task",
-                    configMINIMAL_STACK_SIZE,
+                    configMINIMAL_STACK_SIZE+256,
                     NULL,
                     TASKPRIORITY_ADC_READ,
                     adc_read_task_stack,
