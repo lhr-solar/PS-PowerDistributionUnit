@@ -319,11 +319,11 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
 
     // WRITE CHANNEL CONFIGURATION
     // --------------------------------
-    uint8_t ch_config_len = 1*5;
+    uint8_t ch_config_len = ADS131M08Q1_NUM_CHANNELS*5;
     uint16_t channel_configuration[ch_config_len];
-    memset(channel_configuration, 0, ch_config_len);
+    memset(channel_configuration, 0, sizeof(channel_configuration));
 
-    for(uint8_t ch = 0; ch < 1; ch++)
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
     {
         // CHx_CFG (phase)
         channel_configuration[ch*5+0] = ADS131M08Q1_CONFIGTEMPLATE_CHx_CFG
@@ -342,7 +342,7 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
     }
     
     uint16_t channel_configuration_readback[ch_config_len];
-    memset(channel_configuration_readback, 0, ch_config_len);
+    memset(channel_configuration_readback, 0, sizeof(channel_configuration_readback));
     if(ADS131M08Q1_ReadRegs(device, ADS131M08Q1_REG_CHx_CFG(0), channel_configuration_readback, ch_config_len) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
