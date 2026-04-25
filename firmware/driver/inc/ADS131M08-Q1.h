@@ -58,6 +58,8 @@
 typedef enum {
 	ADS131M08Q1_😢,				// ADS131M08Q1 sad
 	ADS131M08Q1_🙂,				// ADS131M08Q1 happy
+	ADS131M08Q1_🕷️,    		// ADS131M08Q1 SPI mutex timeout
+	ADS131M08Q1_🕸️,			// ADS131M08Q1 SPI done semaphore timeout
 } ADS131M08Q1_Status_t;
 
 // REGISTERS -----------------------------------------------------------
