@@ -11,8 +11,13 @@
 #include "ADS131M08-Q1.h"
 
 #define TASKPRIORITY_INIT tskIDLE_PRIORITY + 2
+#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1500
+
 #define TASKPRIORITY_BLINK tskIDLE_PRIORITY + 2
+#define TASKSTACKSIZE_BLINK configMINIMAL_STACK_SIZE
+
 #define TASKPRIORITY_ADC_READ tskIDLE_PRIORITY + 2
+#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+300
 
 #define INTERVAL_BLINK_MS 500
 #define INTERVAL_BLINK_ERROR_MS 50
@@ -45,15 +50,15 @@ StaticSemaphore_t spi3_done_sem_buffer; // Static buffer for completion semaphor
 
 TaskHandle_t init_task;
 StaticTask_t init_task_buffer;
-StackType_t init_task_stack[configMINIMAL_STACK_SIZE];
+StackType_t init_task_stack[TASKSTACKSIZE_INIT];
 
 TaskHandle_t blink_task;
 StaticTask_t blink_task_buffer;
-StackType_t blink_task_stack[configMINIMAL_STACK_SIZE];
+StackType_t blink_task_stack[TASKSTACKSIZE_BLINK];
 
 TaskHandle_t adc_read_task;
 StaticTask_t adc_read_task_buffer;
-StackType_t adc_read_task_stack[configMINIMAL_STACK_SIZE];
+StackType_t adc_read_task_stack[TASKSTACKSIZE_ADC_READ];
 
 
 // Initialize GPIO and UART
@@ -188,7 +193,7 @@ int main()
 
     init_task = xTaskCreateStatic(Init_Task,
                     "Init Task",
-                    configMINIMAL_STACK_SIZE+1500,
+                    TASKSTACKSIZE_INIT,
                     NULL,
                     TASKPRIORITY_INIT,
                     init_task_stack,
@@ -197,7 +202,7 @@ int main()
 
     blink_task = xTaskCreateStatic(Blink_Task,
                     "Blink Task",
-                    configMINIMAL_STACK_SIZE,
+                    TASKSTACKSIZE_BLINK,
                     NULL,
                     TASKPRIORITY_BLINK,
                     blink_task_stack,
@@ -206,7 +211,7 @@ int main()
 
     adc_read_task = xTaskCreateStatic(ADC_Read_Task,
                     "ADC Read Task",
-                    configMINIMAL_STACK_SIZE+256,
+                    TASKSTACKSIZE_ADC_READ,
                     NULL,
                     TASKPRIORITY_ADC_READ,
                     adc_read_task_stack,
