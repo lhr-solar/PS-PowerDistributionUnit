@@ -272,17 +272,23 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device);
 ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef* device, float* results);
 
 ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, uint16_t* status);
+
 ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionStatus(ADS131M08Q1_HandleTypeDef* device, uint8_t* status);
 
 ADS131M08Q1_Status_t ADS131M08Q1_Reset(ADS131M08Q1_HandleTypeDef* device);
+
 ADS131M08Q1_Status_t ADS131M08Q1_Standby(ADS131M08Q1_HandleTypeDef* device);
+
 ADS131M08Q1_Status_t ADS131M08Q1_Wakeup(ADS131M08Q1_HandleTypeDef* device);
+
 ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device);
+
 ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
 
 // HELPER FUNCTIONS -----------------------------------------------------------
 
 int32_t ADS131M08Q1_CalcOffsetCalRegValue(ADS131M08Q1_HandleTypeDef* device, float offset);
+
 uint32_t ADS131M08Q1_CalcGainCalRegValue(ADS131M08Q1_HandleTypeDef* device, float gain);
 
 // TODO
