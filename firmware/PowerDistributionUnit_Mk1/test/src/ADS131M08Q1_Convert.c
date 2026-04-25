@@ -1,14 +1,25 @@
+// ADS131M08Q1_Convert.c
+// ----------------------------------------------------------------------------
+// Reads ADC conversions in continuous-conversion mode every 500 ms. Prints
+// out results to serial monitor. 
+
+// INCLUDES -------------------------------------------------------------------
+
 #include "stm32xx_hal.h"
 // stm32xx_hal.h contains includes for RTOS stuff.
 #include<stdio.h>
 #include<string.h>
 
+// BBPDU Peripherals
 #include "PDU_Mk1_Pins.h"
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_GPIO.h"
 #include "PDU_Mk1_UART.h"
 
+// drivers
 #include "ADS131M08-Q1.h"
+
+// DEFINES --------------------------------------------------------------------
 
 #define TASKPRIORITY_INIT tskIDLE_PRIORITY + 2
 #define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1500
@@ -17,11 +28,13 @@
 #define TASKSTACKSIZE_BLINK configMINIMAL_STACK_SIZE
 
 #define TASKPRIORITY_ADC_READ tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+300
+#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+1000
 
 #define INTERVAL_BLINK_MS 500
 #define INTERVAL_BLINK_ERROR_MS 50
 #define INTERVAL_ADC_READ_MS 500
+
+// DECLARATIONS ---------------------------------------------------------------
 
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
@@ -60,8 +73,9 @@ TaskHandle_t adc_read_task;
 StaticTask_t adc_read_task_buffer;
 StackType_t adc_read_task_stack[TASKSTACKSIZE_ADC_READ];
 
+// TASKS ----------------------------------------------------------------------
 
-// Initialize GPIO and UART
+// initialize stuff
 void Init_Task(void *argument)
 {
     printf("Starting Initialization...\n");
@@ -71,42 +85,26 @@ void Init_Task(void *argument)
     if(PDU_Mk1_SPI2_ADC_Init() != true)
     {
         printf("FAIL:SPI_INIT\n");
-        while(1)
-        {
-            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-        }
+        Error_Handler();
     }
     
     if(PDU_Mk1_UART_Printf_Init() != true)
     {
         printf("FAIL:UART_PRINTF_INIT\n");
-        while(1)
-        {
-            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-        }
+        Error_Handler();
     }
 
     if(SPI_RTOS_Mutex_Semaphore_Setup(&spi2_mutex, &spi2_mutex_buffer, &spi2_done_sem, &spi2_done_sem_buffer) != true)
     {
         printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
-        while(1)
-        {
-            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-        }
+        Error_Handler();
     }
 
     // SPI dummy send because CLK pin initializes high even when configured low for some reason
     if(SPI_Init_Dummy_Send(&hspi2, spi2_mutex, spi2_done_sem) != true)
     {
         printf("FAIL:SPI_INIT_DUMMY_SEND\n");
-        while(1)
-        {
-            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-        }
+        Error_Handler();
     }
 
     for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
@@ -137,14 +135,8 @@ void Init_Task(void *argument)
     if(ADS131M08Q1_Init(&adc) != ADS131M08Q1_🙂)
     {
         printf("FAIL:ADC_INIT\n");
-        while(1)
-        {
-            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-        }
+        Error_Handler();
     }
-
-    adc.config.fsr = 3.3;   // temp: BBPDU Mk1 Rev A ADC issue
 
     printf("Initialization complete.\n");
 
@@ -155,6 +147,7 @@ void Init_Task(void *argument)
     vTaskDelete(NULL);
 }
 
+// blink LED
 void Blink_Task(void *argument)
 {
     for(;;)
@@ -165,6 +158,7 @@ void Blink_Task(void *argument)
     }
 }
 
+// read conversion from ADC and print to serial
 void ADC_Read_Task(void *argument)
 {
     for(;;)
@@ -172,19 +166,15 @@ void ADC_Read_Task(void *argument)
         if(ADS131M08Q1_ReadConversionResults(&adc, adc_results) != ADS131M08Q1_🙂)
         {
             printf("FAIL:CONV_RESULTS\n");
-            while(1)
-            {
-                HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-                vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
-            }
+            Error_Handler();
         }
 
-        printf("\nADC Conv Results\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\n", adc_results[0], adc_results[1], adc_results[2], adc_results[3], adc_results[4], adc_results[5]);
-
+        printf("\nADC Conv Results\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\nCH6: %.4f V\nCH7: %.4f V\n", adc_results[0], adc_results[1], adc_results[2], adc_results[3], adc_results[4], adc_results[5], adc_results[6], adc_results[7]);
         vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_READ_MS));
-
     }
 }
+
+// MAIN -----------------------------------------------------------------------
 
 int main()
 {
@@ -223,4 +213,16 @@ int main()
     vTaskStartScheduler();
 
     while(1) {}
+}
+
+// ERROR HANDLER --------------------------------------------------------------
+
+void Error_Handler(void)
+{
+    __disable_irq();
+    while(1)
+    {
+        HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+        vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
+    }
 }
