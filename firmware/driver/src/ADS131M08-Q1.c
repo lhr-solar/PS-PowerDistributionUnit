@@ -243,14 +243,17 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
         return ADS131M08Q1_😢;
     }
 
+    if(device->config.reference_source == ADS131M08Q1_REFERENCE_SOURCE_INTERNAL)
+    {
+        device->config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
+    }
+
     // RESET DEVICE (ensure device regs in known state)
     // --------------------------------
     if(ADS131M08Q1_Reset(device) != ADS131M08Q1_🙂)
     {
         return ADS131M08Q1_😢;
     }
-
-    return ADS131M08Q1_🙂;
 
     // ID CHECK
     // --------------------------------
@@ -352,13 +355,6 @@ ADS131M08Q1_Status_t ADS131M08Q1_Init(ADS131M08Q1_HandleTypeDef* device)
             return ADS131M08Q1_😢;
         }
     }
-
-    if(device->config.reference_source == ADS131M08Q1_REFERENCE_SOURCE_INTERNAL)
-    {
-        device->config.fsr = 1.2;
-    }
-
-    device->config.fsr = 3.3;  // temp: BBPDU Mk1 Rev A ADC issue
 
     // precompute conversion factor
     for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)

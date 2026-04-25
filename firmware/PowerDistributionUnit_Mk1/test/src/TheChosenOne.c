@@ -10,6 +10,14 @@
 
 #include "ADS131M08-Q1.h"
 
+#define TASKPRIORITY_INIT tskIDLE_PRIORITY + 2
+#define TASKPRIORITY_BLINK tskIDLE_PRIORITY + 2
+#define TASKPRIORITY_ADC_READ tskIDLE_PRIORITY + 2
+
+#define INTERVAL_BLINK_MS 500
+#define INTERVAL_BLINK_ERROR_MS 50
+#define INTERVAL_ADC_READ_MS 500
+
 SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
@@ -20,19 +28,19 @@ float adc_results[8];
 SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi1_mutex_buffer;    // Static buffer for mutex allocation
 
-SemaphoreHandle_t spi1_done_sem;        // Semaphore to signal SPI DMA/IT completion
+SemaphoreHandle_t spi1_done_sem;        // Semaphore to signal SPI IT completion
 StaticSemaphore_t spi1_done_sem_buffer; // Static buffer for completion semaphore
 
 SemaphoreHandle_t spi2_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi2_mutex_buffer;    // Static buffer for mutex allocation
 
-SemaphoreHandle_t spi2_done_sem;        // Semaphore to signal SPI DMA/IT completion
+SemaphoreHandle_t spi2_done_sem;        // Semaphore to signal SPI IT completion
 StaticSemaphore_t spi2_done_sem_buffer; // Static buffer for completion semaphore
 
 SemaphoreHandle_t spi3_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi3_mutex_buffer;    // Static buffer for mutex allocation
 
-SemaphoreHandle_t spi3_done_sem;        // Semaphore to signal SPI DMA/IT completion
+SemaphoreHandle_t spi3_done_sem;        // Semaphore to signal SPI IT completion
 StaticSemaphore_t spi3_done_sem_buffer; // Static buffer for completion semaphore
 
 TaskHandle_t init_task;
@@ -61,7 +69,7 @@ void Init_Task(void *argument)
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            HAL_Delay(50);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
     
@@ -71,7 +79,7 @@ void Init_Task(void *argument)
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            HAL_Delay(50);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
 
@@ -81,7 +89,7 @@ void Init_Task(void *argument)
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            HAL_Delay(50);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
 
@@ -92,7 +100,7 @@ void Init_Task(void *argument)
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            HAL_Delay(50);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
 
@@ -108,7 +116,7 @@ void Init_Task(void *argument)
     adc.config.drdy_idlepinstate = ADS131M08Q1_CONFIG_DRDY_IDLEPINSTATE_DEFAULT;
     adc.config.drdy_source = ADS131M08Q1_CONFIG_DRDY_SOURCE_DEFAULT;
     adc.config.reference_source = ADS131M08Q1_CONFIG_REFERENCE_SOURCE_DEFAULT;
-    adc.config.fsr = 3.3;
+    adc.config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
     adc.config.powermode = ADS131M08Q1_CONFIG_POWERMODE_DEFAULT;
 
     adc.spi = &hspi2;
@@ -127,7 +135,7 @@ void Init_Task(void *argument)
         while(1)
         {
             HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-            HAL_Delay(50);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
 
@@ -148,14 +156,12 @@ void Blink_Task(void *argument)
     {
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
 
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_MS));
     }
 }
 
 void ADC_Read_Task(void *argument)
 {
-    vTaskDelay(10);
-
     for(;;)
     {
         if(ADS131M08Q1_ReadConversionResults(&adc, adc_results) != ADS131M08Q1_🙂)
@@ -164,13 +170,13 @@ void ADC_Read_Task(void *argument)
             while(1)
             {
                 HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
-                HAL_Delay(50);
+                vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
             }
         }
 
         printf("\nADC Conv Results\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\n", adc_results[0], adc_results[1], adc_results[2], adc_results[3], adc_results[4], adc_results[5]);
 
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_READ_MS));
 
     }
 }
@@ -184,7 +190,7 @@ int main()
                     "Init Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
-                    tskIDLE_PRIORITY + 2,
+                    TASKPRIORITY_INIT,
                     init_task_stack,
                     &init_task_buffer
                 );
@@ -193,7 +199,7 @@ int main()
                     "Blink Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
-                    tskIDLE_PRIORITY + 1,
+                    TASKPRIORITY_BLINK,
                     blink_task_stack,
                     &blink_task_buffer
                 );
@@ -202,7 +208,7 @@ int main()
                     "ADC Read Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
-                    tskIDLE_PRIORITY + 1,
+                    TASKPRIORITY_ADC_READ,
                     adc_read_task_stack,
                     &adc_read_task_buffer
                 );
