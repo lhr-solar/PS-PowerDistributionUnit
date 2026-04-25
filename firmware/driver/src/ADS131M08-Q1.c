@@ -1,3 +1,5 @@
+// ADS131M08-Q1.c
+
 #include "ADS131M08-Q1.h"
 
 inline ADS131M08Q1_Status_t ADS131M08Q1_Frame_Transmit(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data)
