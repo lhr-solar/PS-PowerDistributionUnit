@@ -30,7 +30,7 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeD
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
 {
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
-    vTaskDelay(pdMS_TO_TICKS(1));
+    vTaskDelay(ADS131M08Q1_CS_DELAY_TICKS);
 
     if(in_data == NULL)
     {
@@ -496,7 +496,7 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, u
     {
         // release SPI mutex
         xSemaphoreGive(device->spi_mutex);
-        
+
         return ADS131M08Q1_😢;
     }
     
