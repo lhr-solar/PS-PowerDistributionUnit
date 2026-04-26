@@ -36,12 +36,16 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
     {
         if(out_data == NULL)
         {
+            HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
             return ADS131M08Q1_😢;
         }
 
         // Transmit only
         if(HAL_SPI_Transmit_IT(device->spi, out_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
+            HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
             return ADS131M08Q1_😢;
         }
     }
@@ -49,6 +53,8 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
     {
         if(in_data == NULL)
         {
+            HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
             return ADS131M08Q1_😢;
         }
 
@@ -58,6 +64,8 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
         // Receive only
         if(HAL_SPI_Receive_IT(device->spi, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
+            HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
             return ADS131M08Q1_😢;
         }
     }
@@ -66,11 +74,15 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
         // Transmit and receive simultaneously
         if(HAL_SPI_TransmitReceive_IT(device->spi, out_data, in_data, ADS131M08Q1_WORD_LEN_8*num_words) != HAL_OK)
         {
+            HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
             return ADS131M08Q1_😢;
         }
     }
     else
     {
+        HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
+
         return ADS131M08Q1_😢;
     }
 
@@ -78,6 +90,8 @@ ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleType
     if(xSemaphoreTake(device->spi_done_sem, ADS131M08Q1_SPI_TRANSMISSION_DELAY_TICKS) != pdTRUE)
     {
         HAL_SPI_Abort(device->spi);
+
+        HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 1);
 
         return ADS131M08Q1_🕸️;
     }
@@ -103,6 +117,9 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* d
     // send ADS131M08-Q1 frame
     if(ADS131M08Q1_Frame_Transmit(device, cmd_frame) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return ADS131M08Q1_😢;
     }
 
@@ -110,6 +127,9 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* d
 
     if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return ADS131M08Q1_😢;
     }
     
@@ -145,6 +165,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
     
     if(ADS131M08Q1_Frame_Transmit(device, rreg_cmd) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return ADS131M08Q1_😢;
     }
 
@@ -157,6 +180,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
 
         if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
         {
+            // release SPI mutex
+            xSemaphoreGive(device->spi_mutex);
+
             return ADS131M08Q1_😢;
         }
         
@@ -179,6 +205,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
 
         if(ADS131M08Q1_FrameVar_Receive(device, rreg_response, num_regs+2) != ADS131M08Q1_🙂)
         {
+            // release SPI mutex
+            xSemaphoreGive(device->spi_mutex);
+
             return ADS131M08Q1_😢;
         }
         
@@ -244,6 +273,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, ui
 
     if(ADS131M08Q1_FrameVar_Transmit(device, wreg_cmd, frame_len_24) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+        
         return ADS131M08Q1_😢;
     }
 
@@ -252,6 +284,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, ui
     // send another frame to get WREG response
     if(ADS131M08Q1_Frame_Receive(device, wreg_response) != ADS131M08Q1_🙂)    // TODO: change this to just read
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+        
         return ADS131M08Q1_😢;
     }
     
@@ -414,6 +449,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef
     
     if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return ADS131M08Q1_😢;
     }
     
@@ -448,11 +486,17 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, u
 
     if(ADS131M08Q1_Frame_Transmit(device, null_frame) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
         return ADS131M08Q1_😢;
     }
 
     if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+        
         return ADS131M08Q1_😢;
     }
     
