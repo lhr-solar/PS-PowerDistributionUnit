@@ -35,6 +35,8 @@
 #define INTERVAL_BLINK_ERROR_MS 50
 #define INTERVAL_ADC_LOCKUNLOCK_STATUS 500
 
+#define ADS131M08Q1_STATUS_LOCK_MASK 0x8000
+
 // DECLARATIONS ---------------------------------------------------------------
 
 SPI_HandleTypeDef hspi1;
@@ -174,7 +176,7 @@ void ADC_LockUnlock_Task(void *argument)
 
         ADS131M08Q1_ReadStatus(&adc, &status);
         // validate SPI interface locked using STATUS bit
-        if(!(status & 0x8000))
+        if(!(status & ADS131M08Q1_STATUS_LOCK_MASK))
         {
             printf("FAIL:LOCK_STATUS\n");
             Error_Handler();
@@ -191,7 +193,7 @@ void ADC_LockUnlock_Task(void *argument)
 
         ADS131M08Q1_ReadStatus(&adc, &status);
         // validate SPI interface unlocked using STATUS bit
-        if(status & 0x8000)
+        if(status & ADS131M08Q1_STATUS_LOCK_MASK)
         {
             printf("FAIL:UNLOCK_STATUS\n");
             Error_Handler();
