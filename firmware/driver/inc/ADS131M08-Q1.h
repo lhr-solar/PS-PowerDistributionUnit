@@ -9,8 +9,9 @@
 #include<math.h>
 #include<string.h>
 
-#define ADS131M08Q1_SPI_MUTEX_DELAY_TICKS portMAX_DELAY               // ticks
-#define ADS131M08Q1_SPI_TRANSMISSION_DELAY_TICKS pdMS_TO_TICKS(100)   // ticks
+#define ADS131M08Q1_SPI_MUTEX_DELAY_TICKS portMAX_DELAY               	// ticks
+#define ADS131M08Q1_SPI_TRANSMISSION_DELAY_TICKS pdMS_TO_TICKS(100)   	// ticks
+#define ADS131M08Q1_CS_DELAY_TICKS pdMS_TO_TICKS(1)						// ticks
 
 #define ADS131M08Q1_NUM_CHANNELS 8
 #define ADS131M08Q1_NUM_BITS 24
