@@ -1,4 +1,7 @@
-// PDU_Mk1_SPI.h
+// PDU_Mk1_UART.h
+// ----------------------------------------------------------------------------
+// BBPDU Mk1 UART configuration
+
 #pragma once
 
 #include "stm32xx_hal.h"

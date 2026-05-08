@@ -1,6 +1,6 @@
 // PDU_Mk1_Pins.h
 // ----------------------------------------------------------------------------
-// BBPDU pins
+// BBPDU pin assignments
 
 #pragma once
 

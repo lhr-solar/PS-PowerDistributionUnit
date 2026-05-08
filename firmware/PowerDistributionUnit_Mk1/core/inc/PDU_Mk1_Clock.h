@@ -1,3 +1,7 @@
+// PDU_Mk1_Clock.h
+// ----------------------------------------------------------------------------
+// BBPDU Mk1 clock configuration
+
 #include "stm32xx_hal.h"
 
 /**
