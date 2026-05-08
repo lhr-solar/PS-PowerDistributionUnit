@@ -1,6 +1,6 @@
-// LSOM_Pins.h
+// LSOM_S_Pins.h
 // ----------------------------------------------------------------------------
-// LSOM pin mappings
+// LSOM-S pin mappings
 
 #pragma once
 

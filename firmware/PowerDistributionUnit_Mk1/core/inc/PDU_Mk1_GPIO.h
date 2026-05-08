@@ -1,4 +1,7 @@
-// PDU_Mk1_SPI.h
+// PDU_Mk1_GPIO.h
+// ----------------------------------------------------------------------------
+// BBPDU Mk1 GPIO configuration
+
 #pragma once
 
 #include "stm32xx_hal.h"

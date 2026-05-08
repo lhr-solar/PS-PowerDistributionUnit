@@ -1,4 +1,7 @@
 // PDU_Mk1_SPI.h
+// ----------------------------------------------------------------------------
+// BBPDU Mk1 SPI configuration
+
 #pragma once
 
 #include "stm32xx_hal.h"
