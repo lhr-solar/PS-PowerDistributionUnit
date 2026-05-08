@@ -15,20 +15,21 @@
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_GPIO.h"
 #include "PDU_Mk1_UART.h"
+#include "PDU_Mk1_Current_Sensing.h"
 
 // drivers
 #include "ADS131M08-Q1.h"
 
 // DEFINES --------------------------------------------------------------------
 
-#define TASKPRIORITY_INIT tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1500
+#define TASKPRIORITY_INIT tskIDLE_PRIORITY + 3
+#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1800
 
 #define TASKPRIORITY_BLINK tskIDLE_PRIORITY + 2
 #define TASKSTACKSIZE_BLINK configMINIMAL_STACK_SIZE
 
 #define TASKPRIORITY_ADC_READ tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+1000
+#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+1200
 
 #define INTERVAL_BLINK_MS 500
 #define INTERVAL_BLINK_ERROR_MS 50
@@ -40,7 +41,7 @@ SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 
-ADS131M08Q1_HandleTypeDef adc;
+extern ADS131M08Q1_HandleTypeDef adc_sns1;
 float adc_results[8];
 
 SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
@@ -106,35 +107,10 @@ void Init_Task(void *argument)
         printf("FAIL:SPI_INIT_DUMMY_SEND\n");
         Error_Handler();
     }
-
-    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    
+    if(PDU_Mk1_Current_Sensing_Init() != true)
     {
-        adc.config.ch_configs[ch].enable = ADS131M08Q1_CH_ENABLE;
-        adc.config.ch_configs[ch].gain = ADS131M08Q1_CH_GAIN_1;
-        adc.config.ch_configs[ch].phase = ADS131M08Q1_CH_PHASE_DEFAULT;
-        adc.config.ch_configs[ch].offset_cal = ADS131M08Q1_CH_OFFSET_CAL_DEFAULT;
-        adc.config.ch_configs[ch].gain_cal = ADS131M08Q1_CH_GAIN_CAL_DEFAULT;
-    }
-    adc.config.drdy_format = ADS131M08Q1_CONFIG_DRDY_FORMAT_DEFAULT;
-    adc.config.drdy_idlepinstate = ADS131M08Q1_CONFIG_DRDY_IDLEPINSTATE_DEFAULT;
-    adc.config.drdy_source = ADS131M08Q1_CONFIG_DRDY_SOURCE_DEFAULT;
-    adc.config.reference_source = ADS131M08Q1_CONFIG_REFERENCE_SOURCE_DEFAULT;
-    adc.config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
-    adc.config.powermode = ADS131M08Q1_CONFIG_POWERMODE_DEFAULT;
-
-    adc.spi = &hspi2;
-    adc.cs_port = ADC_SNS1_CS_PORT;
-    adc.cs_pin = ADC_SNS1_CS_PIN;
-
-    adc.spi_mutex = spi2_mutex;
-    adc.spi_done_sem = spi2_done_sem;
-
-    // channel 0 reads about 0.24 V high for some reason
-    adc.config.ch_configs[0].offset_cal = ADS131M08Q1_CalcOffsetCalRegValue(&adc, -0.24);
-
-    if(ADS131M08Q1_Init(&adc) != ADS131M08Q1_🙂)
-    {
-        printf("FAIL:ADC_INIT\n");
+        printf("FAIL:ISENSE_INIT\n");
         Error_Handler();
     }
 
@@ -163,7 +139,7 @@ void ADC_Read_Task(void *argument)
 {
     for(;;)
     {
-        if(ADS131M08Q1_ReadConversionResults(&adc, adc_results) != ADS131M08Q1_🙂)
+        if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results) != ADS131M08Q1_🙂)
         {
             printf("FAIL:CONV_RESULTS\n");
             Error_Handler();
