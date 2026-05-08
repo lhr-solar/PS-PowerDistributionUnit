@@ -1,3 +1,11 @@
+// PDU_Mk1_Pins.h
+// ----------------------------------------------------------------------------
+// BBPDU pins
+
+#pragma once
+
+#include "LSOM_S_Pins.h"
+
 #define LED_PIN GPIO_PIN_3
 #define LED_PORT GPIOC
 #define LED_CLOCK_INIT() __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -16,3 +24,6 @@
 
 #define HSS_SR_OUT_CLK_PIN GPIO_PIN_8
 #define HSS_SR_OUT_CLK_PORT GPIOC
+
+#define HSS_SR_ALL_OFF_PORT LSOM_13_PORT
+#define HSS_SR_ALL_OFF_PIN LSOM_13_PIN

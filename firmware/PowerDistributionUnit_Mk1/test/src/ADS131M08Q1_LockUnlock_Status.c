@@ -16,6 +16,7 @@
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_GPIO.h"
 #include "PDU_Mk1_UART.h"
+#include "PDU_Mk1_Current_Sensing.h"
 
 // drivers
 #include "ADS131M08-Q1.h"
@@ -43,8 +44,7 @@ SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 
-ADS131M08Q1_HandleTypeDef adc;
-float adc_results[8];
+extern ADS131M08Q1_HandleTypeDef adc_sns1;
 
 SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi1_mutex_buffer;    // Static buffer for mutex allocation
@@ -110,34 +110,9 @@ void Init_Task(void *argument)
         Error_Handler();
     }
 
-    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
+    if(PDU_Mk1_Current_Sensing_Init() != true)
     {
-        adc.config.ch_configs[ch].enable = ADS131M08Q1_CH_ENABLE;
-        adc.config.ch_configs[ch].gain = ADS131M08Q1_CH_GAIN_1;
-        adc.config.ch_configs[ch].phase = ADS131M08Q1_CH_PHASE_DEFAULT;
-        adc.config.ch_configs[ch].offset_cal = ADS131M08Q1_CH_OFFSET_CAL_DEFAULT;
-        adc.config.ch_configs[ch].gain_cal = ADS131M08Q1_CH_GAIN_CAL_DEFAULT;
-    }
-    adc.config.drdy_format = ADS131M08Q1_CONFIG_DRDY_FORMAT_DEFAULT;
-    adc.config.drdy_idlepinstate = ADS131M08Q1_CONFIG_DRDY_IDLEPINSTATE_DEFAULT;
-    adc.config.drdy_source = ADS131M08Q1_CONFIG_DRDY_SOURCE_DEFAULT;
-    adc.config.reference_source = ADS131M08Q1_CONFIG_REFERENCE_SOURCE_DEFAULT;
-    adc.config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
-    adc.config.powermode = ADS131M08Q1_CONFIG_POWERMODE_DEFAULT;
-
-    adc.spi = &hspi2;
-    adc.cs_port = ADC_SNS1_CS_PORT;
-    adc.cs_pin = ADC_SNS1_CS_PIN;
-
-    adc.spi_mutex = spi2_mutex;
-    adc.spi_done_sem = spi2_done_sem;
-
-    // channel 0 reads about 0.24 V high for some reason
-    adc.config.ch_configs[0].offset_cal = ADS131M08Q1_CalcOffsetCalRegValue(&adc, -0.24);
-
-    if(ADS131M08Q1_Init(&adc) != ADS131M08Q1_🙂)
-    {
-        printf("FAIL:ADC_INIT\n");
+        printf("FAIL:ISENSE_INIT\n");
         Error_Handler();
     }
 
@@ -168,13 +143,13 @@ void ADC_LockUnlock_Task(void *argument)
     
     for(;;)
     {
-        if(ADS131M08Q1_Lock(&adc) == ADS131M08Q1_😢)
+        if(ADS131M08Q1_Lock(&adc_sns1) == ADS131M08Q1_😢)
         {
             printf("FAIL:LOCK_CMD\n");
             Error_Handler();
         }
 
-        ADS131M08Q1_ReadStatus(&adc, &status);
+        ADS131M08Q1_ReadStatus(&adc_sns1, &status);
         // validate SPI interface locked using STATUS bit
         if(!(status & ADS131M08Q1_STATUS_LOCK_MASK))
         {
@@ -185,13 +160,13 @@ void ADC_LockUnlock_Task(void *argument)
 
         vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_LOCKUNLOCK_STATUS));
 
-        if(ADS131M08Q1_Unlock(&adc) == ADS131M08Q1_😢)
+        if(ADS131M08Q1_Unlock(&adc_sns1) == ADS131M08Q1_😢)
         {
             printf("FAIL:UNLOCK_CMD\n");
             Error_Handler();
         }
 
-        ADS131M08Q1_ReadStatus(&adc, &status);
+        ADS131M08Q1_ReadStatus(&adc_sns1, &status);
         // validate SPI interface unlocked using STATUS bit
         if(status & ADS131M08Q1_STATUS_LOCK_MASK)
         {
