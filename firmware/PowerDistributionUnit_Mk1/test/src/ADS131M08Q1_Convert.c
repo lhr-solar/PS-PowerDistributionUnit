@@ -1,7 +1,8 @@
 // ADS131M08Q1_Convert.c
 // ----------------------------------------------------------------------------
-// Reads ADC conversions in continuous-conversion mode every 500 ms. Prints
-// out results to serial monitor. 
+// Reads ADC conversions for both ADCs on BBPDU Mk. 1 (ADC_SNS0 and ADC_SNS1) 
+// in continuous-conversion mode every 500 ms. Prints out results to serial 
+// monitor. 
 
 // INCLUDES -------------------------------------------------------------------
 
@@ -23,13 +24,13 @@
 // DEFINES --------------------------------------------------------------------
 
 #define TASKPRIORITY_INIT tskIDLE_PRIORITY + 3
-#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1800
+#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+5000
 
 #define TASKPRIORITY_BLINK tskIDLE_PRIORITY + 2
 #define TASKSTACKSIZE_BLINK configMINIMAL_STACK_SIZE
 
 #define TASKPRIORITY_ADC_READ tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+1200
+#define TASKSTACKSIZE_ADC_READ configMINIMAL_STACK_SIZE+3000
 
 #define INTERVAL_BLINK_MS 500
 #define INTERVAL_BLINK_ERROR_MS 50
@@ -41,8 +42,10 @@ SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 
+extern ADS131M08Q1_HandleTypeDef adc_sns0;
 extern ADS131M08Q1_HandleTypeDef adc_sns1;
-float adc_results[8];
+float adc_results_sns0[8];
+float adc_results_sns1[8];
 
 SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi1_mutex_buffer;    // Static buffer for mutex allocation
@@ -85,7 +88,13 @@ void Init_Task(void *argument)
     
     if(PDU_Mk1_SPI2_ADC_Init() != true)
     {
-        printf("FAIL:SPI_INIT\n");
+        printf("FAIL:SPI2_INIT\n");
+        Error_Handler();
+    }
+
+    if(PDU_Mk1_SPI3_ADC_Init() != true)
+    {
+        printf("FAIL:SPI3_INIT\n");
         Error_Handler();
     }
     
@@ -104,8 +113,25 @@ void Init_Task(void *argument)
     // SPI dummy send because CLK pin initializes high even when configured low for some reason
     if(SPI_Init_Dummy_Send(&hspi2, spi2_mutex, spi2_done_sem) != true)
     {
-        printf("FAIL:SPI_INIT_DUMMY_SEND\n");
+        printf("FAIL:SPI2_INIT_DUMMY_SEND\n");
         Error_Handler();
+    }
+
+    if(SPI_RTOS_Mutex_Semaphore_Setup(&spi3_mutex, &spi3_mutex_buffer, &spi3_done_sem, &spi3_done_sem_buffer) != true)
+    {
+        printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
+        Error_Handler();
+    }
+
+    // SPI dummy send because CLK pin initializes high even when configured low for some reason
+    if(SPI_Init_Dummy_Send(&hspi3, spi3_mutex, spi3_done_sem) != true)
+    {
+        printf("FAIL:SPI3_INIT_DUMMY_SEND\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
+        }
     }
     
     if(PDU_Mk1_Current_Sensing_Init() != true)
@@ -137,15 +163,28 @@ void Blink_Task(void *argument)
 // read conversion from ADC and print to serial
 void ADC_Read_Task(void *argument)
 {
+    // magic delay required to make things work for some reason
+    // otherwise FAIL:CONV_RESULTS_SNS1
+    vTaskDelay(pdMS_TO_TICKS(1));
+    
     for(;;)
     {
-        if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results) != ADS131M08Q1_🙂)
+        if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0) != ADS131M08Q1_🙂)
         {
-            printf("FAIL:CONV_RESULTS\n");
+            printf("FAIL:CONV_RESULTS_SNS0\n");
             Error_Handler();
         }
 
-        printf("\nADC Conv Results\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\nCH6: %.4f V\nCH7: %.4f V\n", adc_results[0], adc_results[1], adc_results[2], adc_results[3], adc_results[4], adc_results[5], adc_results[6], adc_results[7]);
+        printf("\nADC Conv Results (ADC_SNS0)\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\nCH6: %.4f V\nCH7: %.4f V\n", adc_results_sns0[0], adc_results_sns0[1], adc_results_sns0[2], adc_results_sns0[3], adc_results_sns0[4], adc_results_sns0[5], adc_results_sns0[6], adc_results_sns0[7]);
+
+        if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1) != ADS131M08Q1_🙂)
+        {
+            printf("FAIL:CONV_RESULTS_SNS1\n");
+            Error_Handler();
+        }
+
+        printf("\nADC Conv Results (ADC_SNS1)\n----------\nCH0: %.4f V\nCH1: %.4f V\nCH2: %.4f V\nCH3: %.4f V\nCH4: %.4f V\nCH5: %.4f V\nCH6: %.4f V\nCH7: %.4f V\n", adc_results_sns1[0], adc_results_sns1[1], adc_results_sns1[2], adc_results_sns1[3], adc_results_sns1[4], adc_results_sns1[5], adc_results_sns1[6], adc_results_sns1[7]);
+        
         vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_READ_MS));
     }
 }
@@ -195,7 +234,6 @@ int main()
 
 void Error_Handler(void)
 {
-    __disable_irq();
     while(1)
     {
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
