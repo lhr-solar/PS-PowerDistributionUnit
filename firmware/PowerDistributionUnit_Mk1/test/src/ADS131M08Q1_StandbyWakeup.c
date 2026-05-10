@@ -1,8 +1,8 @@
 // ADS131M08Q1_StandbyWakeup.c
 // ----------------------------------------------------------------------------
-// Puts the ADC in and out of standby. Verify this is successful by probing
-// the ~DRDY pin using a logic analyzer. ~DRDY should stay high when in
-// standby, and spend most of the time low otherwise. 
+// Puts ADC_SNS1 on BBPDU Mk. 1 in and out of standby. Verify this is 
+// successful by probing the ~DRDY pin using a logic analyzer. ~DRDY should 
+// stay high when in standby, and spend most of the time low otherwise. 
 
 // INCLUDES -------------------------------------------------------------------
 

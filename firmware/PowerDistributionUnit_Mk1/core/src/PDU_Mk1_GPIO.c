@@ -49,4 +49,12 @@ void PDU_Mk1_GPIO_Init(void)
     };
     HAL_GPIO_Init(HSS_SR_ALL_OFF_PORT, &hss_sr_all_off);
     HAL_GPIO_WritePin(HSS_SR_ALL_OFF_PORT, HSS_SR_ALL_OFF_PIN, 0);
+
+    GPIO_InitTypeDef adc_sns0_cs = {
+        .Mode = GPIO_MODE_OUTPUT_PP,
+        .Pull = GPIO_NOPULL,
+        .Pin = ADC_SNS0_CS_PIN
+    };
+    HAL_GPIO_Init(ADC_SNS0_CS_PORT, &adc_sns0_cs);
+    HAL_GPIO_WritePin(ADC_SNS0_CS_PORT, ADC_SNS0_CS_PIN, 1);
 }

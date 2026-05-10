@@ -16,6 +16,11 @@ extern SemaphoreHandle_t spi2_mutex;
 extern StaticSemaphore_t spi2_mutex_buffer;
 extern SemaphoreHandle_t spi2_done_sem;
 
+extern SPI_HandleTypeDef hspi3;
+extern SemaphoreHandle_t spi3_mutex;
+extern StaticSemaphore_t spi3_mutex_buffer;
+extern SemaphoreHandle_t spi3_done_sem;
+
 extern float currents[PDU_MK1_NUM_CHANNELS];
 extern float current_offset[PDU_MK1_NUM_CHANNELS];
 
@@ -26,6 +31,13 @@ extern float current_offset[PDU_MK1_NUM_CHANNELS];
 	* @retval bool: true if successful, false otherwise
 	*/
 bool PDU_Mk1_Current_Sensing_Init();
+
+/**
+	* @brief Initializes ADC_SNS1 for current sensing use. 
+	* @param None
+	* @retval ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+	*/
+ADS131M08Q1_Status_t PDU_Mk1_Init_ADC_SNS0();
 
 /**
 	* @brief Initializes ADC_SNS1 for current sensing use. 

@@ -1,8 +1,8 @@
 // ADS131M08Q1_LockUnlock_Status.c
 // ----------------------------------------------------------------------------
-// Locks and unlocks the ADC SPI interface using their respective commands. 
-// Checks the LOCK bit in the status register to verify (un)locking is 
-// successful. 
+// Locks and unlocks the ADC SPI interface for ADC_SNS1 on BBPDU Mk1. using 
+// their respective commands. Checks the LOCK bit in the status register to 
+// verify (un)locking is successful. 
 
 // INCLUDES -------------------------------------------------------------------
 
