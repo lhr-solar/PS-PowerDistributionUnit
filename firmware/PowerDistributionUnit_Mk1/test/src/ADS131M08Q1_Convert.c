@@ -82,8 +82,6 @@ StackType_t adc_read_task_stack[TASKSTACKSIZE_ADC_READ];
 // initialize stuff
 void Init_Task(void *argument)
 {
-    printf("Starting Initialization...\n");
-
     PDU_Mk1_GPIO_Init();
     
     if(PDU_Mk1_SPI2_ADC_Init() != true)
