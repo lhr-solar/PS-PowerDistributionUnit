@@ -29,7 +29,7 @@ extern StaticSemaphore_t spi3_mutex_buffer;
 extern SemaphoreHandle_t spi3_done_sem;
 
 extern float currents[PDU_MK1_NUM_CHANNELS];
-extern float current_offset[PDU_MK1_NUM_CHANNELS];
+extern float current_adc_v_offset[PDU_MK1_NUM_CHANNELS];
 
 // FUNCTIONS ------------------------------------------------------------------
 
@@ -56,9 +56,10 @@ ADS131M08Q1_Status_t PDU_Mk1_Init_ADC_SNS0();
 ADS131M08Q1_Status_t PDU_Mk1_Init_ADC_SNS1();
 
 /**
-	* @brief Initializes ADC_SNS1 for current sensing use. 
+	* @brief Reads current sensing ADCs under zero-current conditions to get offset. 
+	* Must only be run while all high-side switches are off.
 	* @param None
-	* @retval ADS131M08Q1 Status (ADS131M08Q1_🙂 if successful)
+	* @retval bool: true if successful, false otherwise
 	*/
 bool PDU_Mk1_CurrentSensing_CollectOffsets();
 
