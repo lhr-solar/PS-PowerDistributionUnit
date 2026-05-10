@@ -98,7 +98,7 @@ def main():
     if args.verbose:
         make_flags = ["-B"]
 
-    ports = ["stm32l432kcu"]
+    ports = ["stm32g473xx"]
 
     tests_dir = Path("firmware/PowerDistributionUnit_Mk1/test/src")
     tests = find_tests(git_dir / tests_dir)

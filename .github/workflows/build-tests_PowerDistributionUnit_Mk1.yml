@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build_pdu_mk1:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
