@@ -473,13 +473,8 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef
     // compute results
     for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
     {
-        uint32_t conversion = (__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1)))) >> 8);
-        results[ch] = (float) conversion * (device->config.fsr/ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
-
-        if(conversion & 0x800000)
-        {
-            results[ch] -= 2*device->config.fsr;
-        }
+        int32_t conversion = (int32_t)(__builtin_bswap32(*((uint32_t*) (frame_response+3*(ch+1))))) >> 8;
+        results[ch] = (float) conversion * (device->config.fsr / ADS131M08Q1_NUM_STEPS) / (1 << device->config.ch_configs[ch].gain);
     }
 
     return ADS131M08Q1_🙂;
