@@ -15,7 +15,7 @@ void PDU_Mk1_GPIO_Init(void)
     };
 
     LED_CLOCK_INIT();
-    HAL_GPIO_Init(LED_PORT, &led_config); // initialize GPIOA with led_config
+    HAL_GPIO_Init(LED_PORT, &led_config);
     HAL_GPIO_WritePin(LED_PORT, LED_PIN, 0);
 
     GPIO_InitTypeDef adc_sns1_cs = {
