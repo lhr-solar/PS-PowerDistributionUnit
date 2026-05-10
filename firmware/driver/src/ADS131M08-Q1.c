@@ -29,6 +29,18 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_Receive(ADS131M08Q1_HandleTypeD
 
 ADS131M08Q1_Status_t ADS131M08Q1_FrameVar_TransmitReceive(ADS131M08Q1_HandleTypeDef* device, uint8_t* out_data, uint8_t* in_data, uint8_t num_words)
 {
+    // validate SPI configured correctly
+    // SPI CLKPhase must be set to SPI_PHASE_2EDGE (data valid on clock TRAILING EDGE)!!!
+    if(device->spi == NULL || device->spi->Init.CLKPhase != SPI_PHASE_2EDGE)
+    {
+        return ADS131M08Q1_😢;
+    }
+    // validate SPI RTOS stuff initialized correctly
+    if(device->spi_mutex == NULL || device->spi_done_sem == NULL)
+    {
+        return ADS131M08Q1_😢;
+    }
+
     HAL_GPIO_WritePin(device->cs_port, device->cs_pin, 0);
     vTaskDelay(ADS131M08Q1_CS_DELAY_TICKS);
 
