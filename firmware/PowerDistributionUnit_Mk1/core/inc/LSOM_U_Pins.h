@@ -1,0 +1,104 @@
+// LSOM_U_Pins.h
+// ----------------------------------------------------------------------------
+// LSOM-U pin mappings
+
+#pragma once
+
+#define LSOM_5_PORT GPIOC
+#define LSOM_5_PIN GPIO_PIN_7
+
+#define LSOM_6_PORT GPIOA
+#define LSOM_6_PIN GPIO_PIN_11
+
+#define LSOM_7_PORT GPIOC
+#define LSOM_7_PIN GPIO_PIN_6
+
+#define LSOM_8_PORT GPIOA
+#define LSOM_8_PIN GPIO_PIN_12
+
+#define LSOM_9_PORT GPIOC
+#define LSOM_9_PIN GPIO_PIN_9
+
+#define LSOM_10_PORT GPIOB
+#define LSOM_10_PIN GPIO_PIN_2
+
+#define LSOM_11_PORT GPIOC
+#define LSOM_11_PIN GPIO_PIN_8
+
+#define LSOM_12_PORT GPIOB
+#define LSOM_12_PIN GPIO_PIN_12
+
+#define LSOM_13_PORT GPIOC
+#define LSOM_13_PIN GPIO_PIN_12
+
+#define LSOM_14_PORT GPIOB
+#define LSOM_14_PIN GPIO_PIN_14
+
+#define LSOM_15_PORT GPIOD
+#define LSOM_15_PIN GPIO_PIN_2
+
+#define LSOM_16_PORT GPIOB
+#define LSOM_16_PIN GPIO_PIN_9
+
+#define LSOM_17_PORT GPIOC
+#define LSOM_17_PIN GPIO_PIN_4
+
+#define LSOM_18_PORT GPIOB
+#define LSOM_18_PIN GPIO_PIN_15
+
+#define LSOM_19_PORT GPIOC
+#define LSOM_19_PIN GPIO_PIN_5
+
+#define LSOM_20_PORT GPIOB
+#define LSOM_20_PIN GPIO_PIN_13
+
+#define LSOM_30_PORT GPIOA
+#define LSOM_30_PIN GPIO_PIN_15
+
+#define LSOM_31_PORT GPIOB
+#define LSOM_31_PIN GPIO_PIN_1
+
+#define LSOM_32_PORT GPIOA
+#define LSOM_32_PIN GPIO_PIN_8
+
+#define LSOM_33_PORT GPIOB
+#define LSOM_33_PIN GPIO_PIN_0
+
+#define LSOM_34_PORT GPIOB
+#define LSOM_34_PIN GPIO_PIN_11
+
+#define LSOM_35_PORT GPIOA
+#define LSOM_35_PIN GPIO_PIN_3
+
+#define LSOM_36_PORT GPIOB
+#define LSOM_36_PIN GPIO_PIN_10
+
+#define LSOM_39_PORT GPIOA
+#define LSOM_39_PIN GPIO_PIN_2
+
+#define LSOM_40_PORT GPIOC
+#define LSOM_40_PIN GPIO_PIN_1
+
+#define LSOM_41_PORT GPIOA
+#define LSOM_41_PIN GPIO_PIN_1
+
+#define LSOM_42_PORT GPIOB
+#define LSOM_42_PIN GPIO_PIN_4
+
+#define LSOM_43_PORT GPIOA
+#define LSOM_43_PIN GPIO_PIN_0
+
+#define LSOM_44_PORT GPIOA
+#define LSOM_44_PIN GPIO_PIN_10
+
+#define LSOM_45_PORT GPIOC
+#define LSOM_45_PIN GPIO_PIN_2
+
+#define LSOM_46_PORT GPIOB
+#define LSOM_46_PIN GPIO_PIN_5
+
+#define LSOM_47_PORT GPIOC
+#define LSOM_47_PIN GPIO_PIN_0
+
+#define LSOM_48_PORT GPIOB
+#define LSOM_48_PIN GPIO_PIN_3
