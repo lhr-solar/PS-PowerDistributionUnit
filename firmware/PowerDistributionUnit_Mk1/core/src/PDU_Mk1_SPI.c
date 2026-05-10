@@ -267,7 +267,7 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi)
     {
         if(spi1_done_sem != NULL)
         {
-            xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+            xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
         }
     }
     else if(hspi == &hspi2)
@@ -300,7 +300,7 @@ void HAL_SPI_RxCpltCallback(SPI_HandleTypeDef* hspi)
     {
         if(spi1_done_sem != NULL)
         {
-            xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+            xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
         }
     }
     else if(hspi == &hspi2)
@@ -333,7 +333,7 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef* hspi)
     {
         if(spi1_done_sem != NULL)
         {
-            xSemaphoreGiveFromISR(spi2_done_sem, &xHigherPriorityTaskWoken);
+            xSemaphoreGiveFromISR(spi1_done_sem, &xHigherPriorityTaskWoken);
         }
     }
     else if(hspi == &hspi2)
@@ -372,7 +372,7 @@ void SPI2_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles SPI2 global interrupt.
+  * @brief This function handles SPI3 global interrupt.
   */
 void SPI3_IRQHandler(void)
 {
