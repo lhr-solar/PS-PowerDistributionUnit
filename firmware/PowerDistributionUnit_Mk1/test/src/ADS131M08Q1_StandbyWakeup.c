@@ -108,7 +108,7 @@ void Init_Task(void *argument)
         Error_Handler();
     }
 
-    if(PDU_Mk1_Current_Sensing_Init() != true)
+    if(PDU_Mk1_CurrentSensing_Init() != true)
     {
         printf("FAIL:ISENSE_INIT\n");
         Error_Handler();

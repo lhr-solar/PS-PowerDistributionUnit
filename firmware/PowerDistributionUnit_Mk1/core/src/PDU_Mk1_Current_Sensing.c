@@ -6,9 +6,9 @@ ADS131M08Q1_HandleTypeDef adc_sns1;
 ADS131M08Q1_HandleTypeDef adc_sns0;
 
 float currents[PDU_MK1_NUM_CHANNELS] = {0};
-float current_offset[PDU_MK1_NUM_CHANNELS] = {0};
+float current_adc_v_offset[PDU_MK1_NUM_CHANNELS] = {0};
 
-bool PDU_Mk1_Current_Sensing_Init()
+bool PDU_Mk1_CurrentSensing_Init()
 {
     if(PDU_Mk1_Init_ADC_SNS0() != ADS131M08Q1_🙂)
     {
@@ -16,6 +16,11 @@ bool PDU_Mk1_Current_Sensing_Init()
     }
 
     if(PDU_Mk1_Init_ADC_SNS1() != ADS131M08Q1_🙂)
+    {
+        return false;
+    }
+
+    if(PDU_Mk1_CurrentSensing_CollectOffsets() != true)
     {
         return false;
     }
@@ -74,8 +79,58 @@ ADS131M08Q1_Status_t PDU_Mk1_Init_ADC_SNS1()
     adc_sns1.config.fsr = ADS131M08Q1_INTERNAL_REFERENCE_V;
     adc_sns1.config.powermode = ADS131M08Q1_CONFIG_POWERMODE_DEFAULT;
 
-    // channel 0 reads about 0.24 V high for some reason (rev A only)
-    // adc_sns1.config.ch_configs[0].offset_cal = ADS131M08Q1_CalcOffsetCalRegValue(&adc_sns1, -0.24);
-
     return ADS131M08Q1_Init(&adc_sns1);
+}
+
+bool PDU_Mk1_CurrentSensing_CollectOffsets()
+{
+    float adc_results_sns0[ADS131M08Q1_NUM_CHANNELS] = {0};
+    float adc_results_sns1[ADS131M08Q1_NUM_CHANNELS] = {0};
+
+    if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0) != ADS131M08Q1_🙂)
+    {
+        return false;
+    }
+
+    if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1) != ADS131M08Q1_🙂)
+    {
+        return false;
+    }
+
+    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
+    {
+        current_adc_v_offset[i] = -1.0*adc_results_sns1[(ADS131M08Q1_NUM_CHANNELS-1)-i];
+        current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+i] = -1.0*adc_results_sns0[(ADS131M08Q1_NUM_CHANNELS-1)-i];
+    }
+
+    return true;
+}
+
+bool PDU_Mk1_CurrentSensing_ReadCurrents()
+{
+    float adc_results_sns0[ADS131M08Q1_NUM_CHANNELS] = {0};
+    float adc_results_sns1[ADS131M08Q1_NUM_CHANNELS] = {0};
+
+    if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0) != ADS131M08Q1_🙂)
+    {
+        return false;
+    }
+
+    if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1) != ADS131M08Q1_🙂)
+    {
+        return false;
+    }
+
+    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
+    {
+        currents[i] = ACS3704x_010B3_Current_Conversion_QVOCentered(adc_results_sns1[(ADS131M08Q1_NUM_CHANNELS-1)-i]+current_adc_v_offset[i]);
+        currents[ADS131M08Q1_NUM_CHANNELS+i] = ACS3704x_010B3_Current_Conversion_QVOCentered(adc_results_sns0[(ADS131M08Q1_NUM_CHANNELS-1)-i]+current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+i]);
+    }
+
+    return true;
+}
+
+float* PDU_Mk1_CurrentSensing_GetCurrentsPtr()
+{
+    return currents;
 }
