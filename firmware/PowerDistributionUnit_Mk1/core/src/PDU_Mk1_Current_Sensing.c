@@ -84,23 +84,37 @@ ADS131M08Q1_Status_t PDU_Mk1_Init_ADC_SNS1()
 
 bool PDU_Mk1_CurrentSensing_CollectOffsets()
 {
-    float adc_results_sns0[ADS131M08Q1_NUM_CHANNELS] = {0};
-    float adc_results_sns1[ADS131M08Q1_NUM_CHANNELS] = {0};
+    float adc_results_sns0[CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES][ADS131M08Q1_NUM_CHANNELS] = {0};
+    float adc_results_sns1[CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES][ADS131M08Q1_NUM_CHANNELS] = {0};
 
-    if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0) != ADS131M08Q1_🙂)
+    for(uint8_t sample = 0; sample < CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES; sample++)
     {
-        return false;
+        if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0[sample]) != ADS131M08Q1_🙂)
+        {
+            return false;
+        }
+
+        if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1[sample]) != ADS131M08Q1_🙂)
+        {
+            return false;
+        }
+
+        if(sample != CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES-1)
+        {
+            vTaskDelay(pdMS_TO_TICKS(CURRENT_SENSING_OFFSET_CALC_SAMPLE_DELAY_MS));
+        }
     }
 
-    if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1) != ADS131M08Q1_🙂)
+    for(uint8_t ch = 0; ch < ADS131M08Q1_NUM_CHANNELS; ch++)
     {
-        return false;
-    }
+        for(uint8_t sample = 0; sample < CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES; sample++)
+        {
+            current_adc_v_offset[ch] += -1.0*adc_results_sns1[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
+            current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+ch] += -1.0*adc_results_sns0[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
+        }
 
-    for(uint8_t i = 0; i < ADS131M08Q1_NUM_CHANNELS; i++)
-    {
-        current_adc_v_offset[i] = -1.0*adc_results_sns1[(ADS131M08Q1_NUM_CHANNELS-1)-i];
-        current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+i] = -1.0*adc_results_sns0[(ADS131M08Q1_NUM_CHANNELS-1)-i];
+        current_adc_v_offset[ch] /= (float) CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES;
+        current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+ch] /= (float) CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES;
     }
 
     return true;

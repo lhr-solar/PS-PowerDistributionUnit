@@ -16,6 +16,11 @@
 #include "ADS131M08-Q1.h"
 #include "ACS3704x-010B3.h"
 
+// DEFINES --------------------------------------------------------------------
+
+#define CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES 20			// number of samples used for calculating no-current offset
+#define CURRENT_SENSING_OFFSET_CALC_SAMPLE_DELAY_MS 100		// [ms] delay between samples for calculating no-current offset
+
 // VARIABLE DECLARATIONS ------------------------------------------------------
 
 extern SPI_HandleTypeDef hspi2;
