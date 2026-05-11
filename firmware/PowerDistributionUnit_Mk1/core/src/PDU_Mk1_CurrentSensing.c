@@ -1,6 +1,6 @@
-// PDU_Mk1_Current_Sensing.c
+// PDU_Mk1_CurrentSensing.c
 
-#include "PDU_Mk1_Current_Sensing.h"
+#include "PDU_Mk1_CurrentSensing.h"
 
 ADS131M08Q1_HandleTypeDef adc_sns1;
 ADS131M08Q1_HandleTypeDef adc_sns0;

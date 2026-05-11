@@ -1,4 +1,4 @@
-// PDU_Mk1_Current_Sensing.h
+// PDU_Mk1_CurrentSensing.h
 // ----------------------------------------------------------------------------
 // Stuff for output current sensing on BBPDU. 
 

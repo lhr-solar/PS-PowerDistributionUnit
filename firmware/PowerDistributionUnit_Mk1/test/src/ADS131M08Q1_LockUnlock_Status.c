@@ -16,7 +16,7 @@
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_GPIO.h"
 #include "PDU_Mk1_UART.h"
-#include "PDU_Mk1_Current_Sensing.h"
+#include "PDU_Mk1_CurrentSensing.h"
 
 // drivers
 #include "ADS131M08-Q1.h"
