@@ -28,8 +28,9 @@
 #define LSOM_12_PORT GPIOB
 #define LSOM_12_PIN GPIO_PIN_12
 
-#define LSOM_13_PORT GPIOD
-#define LSOM_13_PIN GPIO_PIN_2
+// differs from sheet?
+#define LSOM_13_PORT GPIOC
+#define LSOM_13_PIN GPIO_PIN_12
 
 #define LSOM_14_PORT GPIOB
 #define LSOM_14_PIN GPIO_PIN_14
