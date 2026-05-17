@@ -1,6 +1,8 @@
 // PDU_Mk1_HSSControl.h
 // ----------------------------------------------------------------------------
 // Stuff for controlling the high-side switches on BBPDU. 
+// WARNING: this is NOT thread-safe. This is not designed to be used in 
+// multiple threads.
 
 #pragma once
 
