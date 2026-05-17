@@ -1,7 +1,6 @@
 // PDU_Mk1_HSSControl.c
 
 #include "PDU_Mk1_HSSControl.h"
-#include "printf.h"
 
 ShiftRegister_SPI_HandleTypeDef hsscontrol_sr;
 
@@ -135,8 +134,6 @@ bool PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[])
 bool PDU_Mk1_HSSControl_AllOn()
 {
 	HSS_state |= HSSCONTROL_MASK_EN;
-	printf("HSS State\n");
-	printf("%ld\n\n", (uint32_t) HSS_state);
 
 	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
 
