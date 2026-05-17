@@ -109,8 +109,8 @@ bool PDU_Mk1_CurrentSensing_CollectOffsets()
     {
         for(uint8_t sample = 0; sample < CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES; sample++)
         {
-            current_adc_v_offset[ch] += -1.0*adc_results_sns1[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
-            current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+ch] += -1.0*adc_results_sns0[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
+            current_adc_v_offset[ch] += -1.0f*adc_results_sns1[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
+            current_adc_v_offset[ADS131M08Q1_NUM_CHANNELS+ch] += -1.0f*adc_results_sns0[sample][(ADS131M08Q1_NUM_CHANNELS-1)-ch];
         }
 
         current_adc_v_offset[ch] /= (float) CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES;

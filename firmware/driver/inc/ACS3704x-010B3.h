@@ -7,8 +7,8 @@
 
 // DEVICE PARAMETERS ----------------------------------------------------------
 
-#define ACS3704x_010B3_V_QVO 1.65               // V, quiescent output voltage (no current)
-#define ACS3704x_010B3_SENSITIVITY 0.132        // V/A, output voltage increase per amp
+#define ACS3704x_010B3_V_QVO 1.65f				// V, quiescent output voltage (no current)
+#define ACS3704x_010B3_SENSITIVITY 0.132f		// V/A, output voltage increase per amp
 
 // USER FUNCTIONS -----------------------------------------------------------
 
