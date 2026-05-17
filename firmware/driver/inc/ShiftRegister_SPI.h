@@ -1,5 +1,9 @@
 // ShiftRegister_SPI.h
 // ----------------------------------------------------------------------------
+// Driver for shift registers with shfit and output registers that make use
+// of shared active-low shift register reset and output register reset pins. 
+// Ex: 74LVC594A
+// Uses SPI for fast, non-blocking shifting (instead of bit-banging).
 
 #pragma once
 
