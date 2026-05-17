@@ -1,6 +1,6 @@
 // ShiftRegister_SPI.h
 // ----------------------------------------------------------------------------
-// Driver for shift registers with shfit and output registers that make use
+// Driver for shift register(s) with shift and output registers that make use
 // of shared active-low shift register reset and output register reset pins. 
 // Ex: 74LVC594A
 // Uses SPI for fast, non-blocking shifting (instead of bit-banging).
@@ -39,10 +39,34 @@ typedef struct {
     uint8_t num_bytes;
 } ShiftRegister_SPI_HandleTypeDef;
 
+/**
+ * @brief	Initializes shift register driver by checking handle values and
+ * 			clearing shift register. Hardware (SPI, pins in handle) should 
+ * 			be configured and initialized before calling. 
+ * @param	device Shift Register Device Handle
+ * @returns Shift Register Status (SR_SPI_🙂 if successful)
+ */
 ShiftRegister_SPI_Status_t SR_SPI_Init(ShiftRegister_SPI_HandleTypeDef* sr);
 
+/**
+ * @brief	Updates shift register(s). 
+ * @param	device Shift Register Device Handle
+ * @returns Shift Register Status (SR_SPI_🙂 if successful)
+ */
 ShiftRegister_SPI_Status_t SR_SPI_SetRegs(ShiftRegister_SPI_HandleTypeDef* sr);
 
+/**
+ * @brief	Assets All Off pin on shift registers - all register values and 
+ * 			outputs go low. 
+ * @param	device Shift Register Device Handle
+ * @returns None
+ */
 void SR_SPI_Assert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr);
 
+/**
+ * @brief	Deassets All Off pin on shift registers - data may now be shifted 
+ * 			in. 
+ * @param	device Shift Register Device Handle
+ * @returns None
+ */
 void SR_SPI_Deassert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr);
