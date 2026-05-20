@@ -21,6 +21,11 @@
 // DEFINES AND ENUMS ----------------------------------------------------------
 
 typedef enum {
+	HSSCONTROL_😢,				// HSS control sad
+	HSSCONTROL_🙂,				// HSS control happy
+} HSSControl_Status_t;
+
+typedef enum {
 	PDU_OUTPUT_0,
 	PDU_OUTPUT_1,
 	PDU_OUTPUT_2,
@@ -170,16 +175,16 @@ extern SemaphoreHandle_t spi2_done_sem;
  * @brief 	Initializes HSS control (including initializing ShiftRegister_SPI 
  * 				driver).
  * @param 	None
- * @returns bool: true if successful, false otherwise
+ * @returns HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_Init();
+HSSControl_Status_t PDU_Mk1_HSSControl_Init();
 
 /**
  * @brief 	Shifts the HSS_state into the hardware shift registers. 
  * @param 	None
- * @returns bool: true if successful, false otherwise
+ * @returns HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
+HSSControl_Status_t PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 
 // EN FUNCTIONS ---------------------------------------------------------------
 
@@ -192,9 +197,9 @@ bool PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
  * 				HSSCONTROL_EN_OFF (turns off output), 
  * 				HSSCONTROL_EN_ON (turns on output), and 
  * 				HSSCONTROL_EN_TOGGLE (toggles output)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnState_t action);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnState_t action);
 
 /**
  * @brief 	Turns on/off or toggles a particular output channel
@@ -204,9 +209,9 @@ bool PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnSt
  * 				HSSCONTROL_EN_OFF (turns off output), 
  * 				HSSCONTROL_EN_ON (turns on output), and 
  * 				HSSCONTROL_EN_TOGGLE (toggles output)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnState_t action);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnState_t action);
 
 /**
  * @brief	Performs specified turn-on/-off/ toggle actions for each output channel.
@@ -216,31 +221,31 @@ bool PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnS
  * 				HSSCONTROL_EN_OFF (turns off output), 
  * 				HSSCONTROL_EN_ON (turns on output), and 
  *				HSSCONTROL_EN_TOGGLE (toggles output)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[]);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[]);
 
 /**
  * @brief 	Turns on all outputs. 
  * @param 	None
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_AllOn();
+HSSControl_Status_t PDU_Mk1_HSSControl_AllOn();
 
 /**
  * @brief 	Turns off all outputs. 
  * @param 	None
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_AllOff();
+HSSControl_Status_t PDU_Mk1_HSSControl_AllOff();
 
 /**
  * @brief 	Turns on outputs marked as critical in PDU_Mk1_OutputConfigs.h, 
  * 				and turns off all other outputs. 
  * @param 	None
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_CritOnly();
+HSSControl_Status_t PDU_Mk1_HSSControl_CritOnly();
 
 // LATCH FUNCTIONS ------------------------------------------------------------
 
@@ -253,9 +258,9 @@ bool PDU_Mk1_HSSControl_CritOnly();
  * 				HSSCONTROL_UNLATCHFAULT_AUTORETRY (sets LATCH=0 for auto-retry), 
  * 				HSSCONTROL_LATCHFAULT_STAYOFF (sets LATCH=1 to disable 
  * 				auto-retry and latch fault - stays off)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch);
 
 /**
  * @brief 	Sets latch state for a particular output channel
@@ -265,9 +270,9 @@ bool PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_L
  * 				HSSCONTROL_UNLATCHFAULT_AUTORETRY (sets LATCH=0 for auto-retry), 
  * 				HSSCONTROL_LATCHFAULT_STAYOFF (sets LATCH=1 to disable 
  * 				auto-retry and latch fault - stays off)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HSSControl_LatchState_t latch);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HSSControl_LatchState_t latch);
 
 /**
  * @brief	Sets specified latch state for each output channel.
@@ -278,38 +283,38 @@ bool PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HSSControl_LatchS
  * 				HSSCONTROL_UNLATCHFAULT_AUTORETRY (sets LATCH=0 for auto-retry), 
  * 				HSSCONTROL_LATCHFAULT_STAYOFF (sets LATCH=1 to disable 
  * 				auto-retry and latch fault - stays off)
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_WriteLatch_All(HSSControl_LatchState_t states[]);
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_All(HSSControl_LatchState_t states[]);
 
 /**
  * @brief 	Unlatches (sets latch bit to 0) a particular channel to enable 
  * 				auto-retry on that high side switch. 
  * @param 	ch (HSSControl_Channel_t) channel to retry
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_OutputFaultRetry_Ch(HSSControl_Channel_t ch);
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_Ch(HSSControl_Channel_t ch);
 
 /**
  * @brief 	Unlatches (sets latch bit to 0) all faulted channels to enable 
  * 				auto-retry on those high side switches. 
  * @param 	None
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted();
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted();
 
 /**
  * @brief 	Relatches (sets latch bit to 1) a particular channel to disable 
  * 				auto-retry on that high side switch. 
  * @param 	ch (HSSControl_Channel_t) channel to retry
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_t ch);
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_t ch);
 
 /**
  * @brief 	Relatches (sets latch bit to 1) all faulted channels to disable 
 				auto-retry on those high side switches. 
  * @param 	None
- * @retval 	bool: true if successful, false otherwise
+ * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
-bool PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted();
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted();

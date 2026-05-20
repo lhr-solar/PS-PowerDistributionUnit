@@ -46,7 +46,7 @@ const uint32_t HSSCONTROL_LATCH_MASKS[PDU_MK1_NUM_CHANNELS] = {
     HSSCONTROL_MASK_15LA
 };
 
-bool PDU_Mk1_HSSControl_Init()
+HSSControl_Status_t PDU_Mk1_HSSControl_Init()
 {
 	hsscontrol_sr.spi = &hspi2;
     hsscontrol_sr.en_port = HSS_SR_EN_PORT;
@@ -67,16 +67,16 @@ bool PDU_Mk1_HSSControl_Init()
     return (SR_SPI_Init(&hsscontrol_sr) == SR_SPI_🙂);
 }
 
-inline bool PDU_Mk1_HSSControl_UpdateHSSShiftRegs()
+inline HSSControl_Status_t PDU_Mk1_HSSControl_UpdateHSSShiftRegs()
 {
 	return (SR_SPI_SetRegs(&hsscontrol_sr) == SR_SPI_🙂);	
 }
 
-bool PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnState_t action)
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnState_t action)
 {
 	if(ch >= PDU_OUTPUT_INVALID)
 	{
-		return false;
+		return HSSCONTROL_😢;
 	}
 
 	switch(action)
@@ -94,54 +94,54 @@ bool PDU_Mk1_HSSControl_WriteHSSEnField(HSSControl_Channel_t ch, HSSControl_EnSt
 			break;
 		default:
 			// invalid action
-			return false;
+			return HSSCONTROL_😢;
 	}
 
-	return true;
+	return HSSCONTROL_🙂;
 }
 
-bool PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnState_t action)
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnState_t action)
 {
-	if(PDU_Mk1_HSSControl_WriteHSSEnField(ch, action) != true)
+	if(PDU_Mk1_HSSControl_WriteHSSEnField(ch, action) != HSSCONTROL_🙂)
 	{
-		return false;
+		return HSSCONTROL_😢;
 	}
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[])
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[])
 {
 	uint32_t original_HSS_state = HSS_state;
 
 	for(uint8_t ch = 0; ch < PDU_MK1_NUM_CHANNELS; ch++)
 	{
-		if(PDU_Mk1_HSSControl_WriteHSSEnField(ch, actions[ch]) != true)
+		if(PDU_Mk1_HSSControl_WriteHSSEnField(ch, actions[ch]) != HSSCONTROL_🙂)
 		{
 			HSS_state = original_HSS_state;
 
-			return false;
+			return HSSCONTROL_😢;
 		}
 	}
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_AllOn()
+HSSControl_Status_t PDU_Mk1_HSSControl_AllOn()
 {
 	HSS_state |= HSSCONTROL_MASK_EN;
 
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_AllOff()
+HSSControl_Status_t PDU_Mk1_HSSControl_AllOff()
 {
 	HSS_state &= (~HSSCONTROL_MASK_EN);
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_CritOnly()
+HSSControl_Status_t PDU_Mk1_HSSControl_CritOnly()
 {
 	HSS_state &= (~HSSCONTROL_MASK_EN);
 	HSS_state |= HSSCONTROL_CRITICAL_MASK;
@@ -149,11 +149,11 @@ bool PDU_Mk1_HSSControl_CritOnly()
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
 {
 	if(ch >= PDU_OUTPUT_INVALID)
 	{
-		return false;
+		return HSSCONTROL_😢;
 	}
 
 	switch(latch)
@@ -168,45 +168,45 @@ bool PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_L
 			break;
 		default:
 			// invalid action
-			return false;
+			return HSSCONTROL_😢;
 	}
 
-	return true;
+	return HSSCONTROL_🙂;
 }
 
-bool PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
 {
-	if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, latch) != true)
+	if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, latch) != HSSCONTROL_🙂)
 	{
-		return false;
+		return HSSCONTROL_😢;
 	}
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-bool PDU_Mk1_HSSControl_WriteLatch_All(HSSControl_LatchState_t latch[])
+HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_All(HSSControl_LatchState_t latch[])
 {
 	uint32_t original_HSS_state = HSS_state;
 
 	for(uint8_t ch = 0; ch < PDU_MK1_NUM_CHANNELS; ch++)
 	{
-		if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, latch[ch]) != true)
+		if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, latch[ch]) != HSSCONTROL_🙂)
 		{
 			HSS_state = original_HSS_state;
 
-			return false;
+			return HSSCONTROL_😢;
 		}
 	}
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-inline bool PDU_Mk1_HSSControl_OutputFaultRetry_Ch(HSSControl_Channel_t ch)
+inline HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_Ch(HSSControl_Channel_t ch)
 {
 	return PDU_Mk1_HSSControl_WriteLatch_Ch(ch, HSSCONTROL_UNLATCHFAULT_AUTORETRY);
 }
 
-bool PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted()
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted()
 {
 	uint32_t original_HSS_state = HSS_state;
 
@@ -214,11 +214,11 @@ bool PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted()
 	{
 		if(HSS_fault_state[ch] != HSSCONTROL_NOFAULT)
 		{
-			if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, HSSCONTROL_UNLATCHFAULT_AUTORETRY) != true)
+			if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, HSSCONTROL_UNLATCHFAULT_AUTORETRY) != HSSCONTROL_🙂)
 			{
 				HSS_state = original_HSS_state;
 
-				return false;
+				return HSSCONTROL_😢;
 			}
 		}
 	}
@@ -226,12 +226,12 @@ bool PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted()
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
-inline bool PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_t ch)
+inline HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_t ch)
 {
 	return PDU_Mk1_HSSControl_WriteLatch_Ch(ch, HSSCONTROL_LATCHFAULT_STAYOFF);
 }
 
-bool PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted()
+HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted()
 {
 	uint32_t original_HSS_state = HSS_state;
 
@@ -239,11 +239,11 @@ bool PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted()
 	{
 		if(HSS_fault_state[ch] != HSSCONTROL_NOFAULT)
 		{
-			if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, HSSCONTROL_LATCHFAULT_STAYOFF) != true)
+			if(PDU_Mk1_HSSControl_WriteHSSLatchField(ch, HSSCONTROL_LATCHFAULT_STAYOFF) != HSSCONTROL_🙂)
 			{
 				HSS_state = original_HSS_state;
 
-				return false;
+				return HSSCONTROL_😢;
 			}
 		}
 	}
