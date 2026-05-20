@@ -242,13 +242,6 @@ bool PDU_Mk1_HSSControl_AllOff();
  */
 bool PDU_Mk1_HSSControl_CritOnly();
 
-/**
- * @brief 	Turns off output channels in HSS_states that are enabled but faulted.
- * @param 	None
- * @retval 	None
- */
-void PDU_Mk1_HSSControl_FilterFaultedOutputENs();
-
 // LATCH FUNCTIONS ------------------------------------------------------------
 
 /**

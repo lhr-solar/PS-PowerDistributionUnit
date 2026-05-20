@@ -106,8 +106,6 @@ bool PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch, HSSControl_EnS
 	{
 		return false;
 	}
-
-	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
@@ -125,8 +123,6 @@ bool PDU_Mk1_HSSControl_WriteOutputEN_All(HSSControl_EnState_t actions[])
 			return false;
 		}
 	}
-
-	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
@@ -135,16 +131,12 @@ bool PDU_Mk1_HSSControl_AllOn()
 {
 	HSS_state |= HSSCONTROL_MASK_EN;
 
-	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
-
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
 bool PDU_Mk1_HSSControl_AllOff()
 {
 	HSS_state &= (~HSSCONTROL_MASK_EN);
-
-	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
@@ -153,21 +145,8 @@ bool PDU_Mk1_HSSControl_CritOnly()
 {
 	HSS_state &= (~HSSCONTROL_MASK_EN);
 	HSS_state |= HSSCONTROL_CRITICAL_MASK;
-
-	PDU_Mk1_HSSControl_FilterFaultedOutputENs();
 	
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
-}
-
-inline void PDU_Mk1_HSSControl_FilterFaultedOutputENs()
-{
-	for(uint8_t ch = 0; ch < PDU_MK1_NUM_CHANNELS; ch++)
-	{
-		if(HSS_fault_state[ch] != HSSCONTROL_NOFAULT)
-		{
-			HSS_state &= ~(HSSCONTROL_EN_MASKS[ch]);
-		}
-	}
 }
 
 bool PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
