@@ -10,10 +10,12 @@ float current_adc_v_offset[PDU_MK1_NUM_CHANNELS] = {0};
 
 bool PDU_Mk1_CurrentSensing_Init()
 {
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
     if(PDU_Mk1_Init_ADC_SNS0() != ADS131M08Q1_🙂)
     {
         return false;
     }
+#endif
 
     if(PDU_Mk1_Init_ADC_SNS1() != ADS131M08Q1_🙂)
     {
@@ -89,10 +91,12 @@ bool PDU_Mk1_CurrentSensing_CollectOffsets()
 
     for(uint8_t sample = 0; sample < CURRENT_SENSING_OFFSET_CALC_NUMSAMPLES; sample++)
     {
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
         if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0[sample]) != ADS131M08Q1_🙂)
         {
             return false;
         }
+#endif
 
         if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1[sample]) != ADS131M08Q1_🙂)
         {
@@ -125,10 +129,12 @@ bool PDU_Mk1_CurrentSensing_ReadCurrents()
     float adc_results_sns0[ADS131M08Q1_NUM_CHANNELS] = {0};
     float adc_results_sns1[ADS131M08Q1_NUM_CHANNELS] = {0};
 
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
     if(ADS131M08Q1_ReadConversionResults(&adc_sns0, adc_results_sns0) != ADS131M08Q1_🙂)
     {
         return false;
     }
+#endif
 
     if(ADS131M08Q1_ReadConversionResults(&adc_sns1, adc_results_sns1) != ADS131M08Q1_🙂)
     {

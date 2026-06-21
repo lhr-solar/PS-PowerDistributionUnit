@@ -90,11 +90,13 @@ void Init_Task(void *argument)
         Error_Handler();
     }
 
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
     if(PDU_Mk1_SPI3_ADC_Init() != true)
     {
         printf("FAIL:SPI3_INIT\n");
         Error_Handler();
     }
+#endif
     
     if(PDU_Mk1_UART_Printf_Init() != true)
     {
@@ -115,6 +117,7 @@ void Init_Task(void *argument)
         Error_Handler();
     }
 
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
     if(SPI_RTOS_Mutex_Semaphore_Setup(&spi3_mutex, &spi3_mutex_buffer, &spi3_done_sem, &spi3_done_sem_buffer) != true)
     {
         printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
@@ -131,7 +134,8 @@ void Init_Task(void *argument)
             vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
         }
     }
-    
+#endif
+
     if(PDU_Mk1_CurrentSensing_Init() != true)
     {
         printf("FAIL:ISENSE_INIT\n");
