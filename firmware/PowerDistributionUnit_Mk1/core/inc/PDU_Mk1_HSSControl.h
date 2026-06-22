@@ -51,6 +51,7 @@ typedef enum {								// Desired action to output channel EN state...
 	HSSCONTROL_EN_OFF,						// turns off the output channel
 	HSSCONTROL_EN_ON,						// turns on the output channel
 	HSSCONTROL_EN_TOGGLE,					// toggles the output channel
+	HSSCONTROL_EN_INVALID,					// (used for errors when trying to read EN state)
 } HSSControl_EnState_t;
 
 typedef enum {								// Desired action to output channel LATCH state...
@@ -61,11 +62,14 @@ typedef enum {								// Desired action to output channel LATCH state...
 
 typedef enum {                              // Describes fault state of each output channel...
 	HSSCONTROL_NOFAULT,						// no fault, everything's dandy
+
 	HSSCONTROL_FAULT_HSS_TRIP,				// HSS tripped (detected via ST pin through GPIO expander)
 											// TPS27SA08-Q1 current limit is fixed at 20 A
 
 	HSSCONTROL_FAULT_SOFTWARE_TRIP,			// Current sensing detected current over limit
 											// Current limits to be set in PDU_Mk1_OutputConfig.h (TODO)
+
+	HSSCONTROL_FAULT_INVALID,				// (used for errors when trying to read fault state)
 } HSSControl_FaultState_t;
 
 #define HSSCONTROL_STATE_NUM_BYTES 4
@@ -248,6 +252,15 @@ HSSControl_Status_t PDU_Mk1_HSSControl_AllOff();
  */
 HSSControl_Status_t PDU_Mk1_HSSControl_CritOnly();
 
+/**
+ * @brief 	Gets EN state of an output channel.
+ * @param 	ch (HSSControl_Channel_t) PDU output channel
+ * @retval 	Output channel EN state
+ * 			(HSSControl_EnState_t, either HSSCONTROL_EN_OFF or HSSCONTROL_EN_ON -
+ * 			or HSSCONTROL_EN_INVALID if invalid channel)
+ */
+HSSControl_EnState_t PDU_Mk1_HSSControl_GetENState_Ch(HSSControl_Channel_t ch);
+
 // LATCH FUNCTIONS ------------------------------------------------------------
 
 /**
@@ -319,3 +332,14 @@ HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
 HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted();
+
+// FAULT FUNCTIONS ------------------------------------------------------------
+
+/**
+ * @brief 	Gets fault state of an output channel.
+ * @param 	ch (HSSControl_Channel_t) PDU output channel
+ * @retval 	Output channel fault state
+ * 			(HSSControl_FaultState_t, incl. HSSCONTROL_EN_NOCHANGE if invalid
+ * 			channel)
+ */
+HSSControl_FaultState_t PDU_Mk1_HSSControl_GetFaultState_Ch(HSSControl_Channel_t ch);

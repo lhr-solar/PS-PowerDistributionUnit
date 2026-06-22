@@ -149,6 +149,23 @@ HSSControl_Status_t PDU_Mk1_HSSControl_CritOnly()
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
 
+HSSControl_EnState_t PDU_Mk1_HSSControl_GetENState_Ch(HSSControl_Channel_t ch)
+{
+	if(ch >= PDU_OUTPUT_INVALID)
+	{
+		return HSSCONTROL_EN_INVALID;
+	}
+
+	if((HSS_state & HSSCONTROL_EN_MASKS[ch]) == 0)
+	{
+		return HSSCONTROL_EN_OFF;
+	}
+	else
+	{
+		return HSSCONTROL_EN_ON;
+	}
+}
+
 HSSControl_Status_t PDU_Mk1_HSSControl_WriteHSSLatchField(HSSControl_Channel_t ch, HSSControl_LatchState_t latch)
 {
 	if(ch >= PDU_OUTPUT_INVALID)
@@ -259,4 +276,14 @@ bool SR_SPI_ReconfigSPI(ShiftRegister_SPI_HandleTypeDef* device)
 	}
 
     return false;
+}
+
+HSSControl_FaultState_t PDU_Mk1_HSSControl_GetFaultState_Ch(HSSControl_Channel_t ch)
+{
+	if(ch >= PDU_OUTPUT_INVALID)
+	{
+		return HSSCONTROL_EN_INVALID;
+	}
+
+	return HSS_fault_state[ch];
 }
