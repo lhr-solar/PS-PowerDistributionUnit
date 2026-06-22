@@ -178,7 +178,7 @@ extern SemaphoreHandle_t spi2_done_sem;
 
 /**
  * @brief 	Initializes HSS control (including initializing ShiftRegister_SPI 
- * 				driver).
+ * 			driver).
  * @param 	None
  * @returns HSSControl Status (HSSCONTROL_🙂 if successful)
  */
@@ -195,7 +195,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 
 /**
  * @brief 	Updates HSS_states EN state for a particular channel in software 
- * 				without updating hardware shift register.
+ * 			without updating hardware shift register.
  * @param 	ch (HSSControl_Channel_t) PDU output channel
  * @param 	action (HSSControl_EnState_t) action to take, including 
  * 				HSSCONTROL_EN_NOCHANGE (no change is taken), 
@@ -221,7 +221,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_WriteOutputEN_Ch(HSSControl_Channel_t ch,
 /**
  * @brief	Performs specified turn-on/-off/ toggle actions for each output channel.
  * @param 	actions (HSSControl_EnState_t) array of actions to take, starting 
- * 				with output 0 and incrementing. Possibible values include 
+ * 			with output 0 and incrementing. Possibible values include 
  * 				HSSCONTROL_EN_NOCHANGE (no change is taken), 
  * 				HSSCONTROL_EN_OFF (turns off output), 
  * 				HSSCONTROL_EN_ON (turns on output), and 
@@ -246,7 +246,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_AllOff();
 
 /**
  * @brief 	Turns on outputs marked as critical in PDU_Mk1_OutputConfigs.h, 
- * 				and turns off all other outputs. 
+ * 			and turns off all other outputs.
  * @param 	None
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
@@ -265,7 +265,7 @@ HSSControl_EnState_t PDU_Mk1_HSSControl_GetENState_Ch(HSSControl_Channel_t ch);
 
 /**
  * @brief 	Updates HSS_states LATCH state for a particular channel in software 
- * 				without updating hardware shift register.
+ * 			without updating hardware shift register.
  * @param 	ch (HSSControl_Channel_t) PDU output channel
  * @param 	latch (HSSControl_LatchState_t) latch state to set, including 
  * 				HSSCONTROL_LATCH_NOCHANGE (no change is taken), 
@@ -291,8 +291,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_Ch(HSSControl_Channel_t ch, HS
 /**
  * @brief	Sets specified latch state for each output channel.
  * @param 	actions (HSSControl_EnState_t) array of latch states to set, 
- * 				starting with output 0 and incrementing. Possible 
- * 				values include 
+ * 			starting with output 0 and incrementing. Possible values include
  *				HSSCONTROL_LATCH_NOCHANGE (no change is taken), 
  * 				HSSCONTROL_UNLATCHFAULT_AUTORETRY (sets LATCH=0 for auto-retry), 
  * 				HSSCONTROL_LATCHFAULT_STAYOFF (sets LATCH=1 to disable 
@@ -303,7 +302,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_WriteLatch_All(HSSControl_LatchState_t st
 
 /**
  * @brief 	Unlatches (sets latch bit to 0) a particular channel to enable 
- * 				auto-retry on that high side switch. 
+ * 			auto-retry on that high side switch.
  * @param 	ch (HSSControl_Channel_t) channel to retry
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
@@ -311,7 +310,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_Ch(HSSControl_Channel_t 
 
 /**
  * @brief 	Unlatches (sets latch bit to 0) all faulted channels to enable 
- * 				auto-retry on those high side switches. 
+ * 			auto-retry on those high side switches.
  * @param 	None
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
@@ -319,7 +318,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRetry_AllFaulted();
 
 /**
  * @brief 	Relatches (sets latch bit to 1) a particular channel to disable 
- * 				auto-retry on that high side switch. 
+ * 			auto-retry on that high side switch. 
  * @param 	ch (HSSControl_Channel_t) channel to retry
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
@@ -327,7 +326,7 @@ HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_Ch(HSSControl_Channel_
 
 /**
  * @brief 	Relatches (sets latch bit to 1) all faulted channels to disable 
-				auto-retry on those high side switches. 
+			auto-retry on those high side switches. 
  * @param 	None
  * @retval 	HSSControl Status (HSSCONTROL_🙂 if successful)
  */
