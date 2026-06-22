@@ -250,3 +250,13 @@ HSSControl_Status_t PDU_Mk1_HSSControl_OutputFaultRelatch_AllFaulted()
 
 	return PDU_Mk1_HSSControl_UpdateHSSShiftRegs();
 }
+
+bool SR_SPI_ReconfigSPI(ShiftRegister_SPI_HandleTypeDef* device)
+{
+	if(device == &hsscontrol_sr)
+	{
+		return PDU_Mk1_SPI2_HSS_SR_Init();
+	}
+
+    return false;
+}

@@ -37,6 +37,13 @@ ShiftRegister_SPI_Status_t SR_SPI_SetRegs(ShiftRegister_SPI_HandleTypeDef* sr)
         return SR_SPI_🕷️;
     }
 
+    if(SR_SPI_ReconfigSPI(sr) != true)
+    {
+        xSemaphoreGive(sr->spi_mutex);
+
+        return SR_SPI_😢;
+    }
+
     // enable SPI CLK to reach SR
     HAL_GPIO_WritePin(sr->en_port, sr->en_pin, 1);
     vTaskDelay(pdMS_TO_TICKS(1));
@@ -81,4 +88,9 @@ inline void SR_SPI_Assert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr)
 inline void SR_SPI_Deassert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr)
 {
     HAL_GPIO_WritePin(sr->all_off_port, sr->all_off_pin, 1);
+}
+
+__weak bool SR_SPI_ReconfigSPI(ShiftRegister_SPI_HandleTypeDef* device)
+{
+    return true;
 }

@@ -70,3 +70,14 @@ void SR_SPI_Assert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr);
  * @returns None
  */
 void SR_SPI_Deassert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr);
+
+// SPI CONFIGURATION FUNCTIONS ------------------------------------------------
+
+/**
+ * @brief	Reconfigures SPI before communicating with device, for if multiple
+ * 			devices on the same SPI bus require different settings. Weakly
+ * 			defined.
+ * @param	device Shift Register Device Handle
+ * @returns bool (true if successful)
+ */
+bool SR_SPI_ReconfigSPI(ShiftRegister_SPI_HandleTypeDef* device);

@@ -14,6 +14,7 @@
 #include "PDU_Mk1.h"
 #include "PDU_Mk1_Pins.h"
 #include "PDU_Mk1_OutputConfig.h"
+#include "PDU_Mk1_SPI.h"
 
 // drivers
 #include "ShiftRegister_SPI.h"
