@@ -11,6 +11,7 @@
 // BBPDU peripherals
 #include "PDU_Mk1.h"
 #include "PDU_Mk1_Pins.h"
+#include "PDU_Mk1_SPI.h"
 
 // drivers
 #include "ADS131M08-Q1.h"

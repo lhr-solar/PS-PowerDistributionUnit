@@ -399,6 +399,17 @@ ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device);
  */
 ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
 
+// SPI CONFIGURATION FUNCTIONS ----------------------------------------------------
+
+/**
+ * @brief	Reconfigures SPI before communicating with device, for if multiple
+ * 			devices on the same SPI bus require different settings. Weakly
+ * 			defined.
+ * @param	device ADS131M08Q1 Device Handle
+ * @returns	bool (true if successful)
+ */
+bool ADS131M08Q1_ReconfigSPI(ADS131M08Q1_HandleTypeDef* device);
+
 // HELPER FUNCTIONS -----------------------------------------------------------
 
 /**

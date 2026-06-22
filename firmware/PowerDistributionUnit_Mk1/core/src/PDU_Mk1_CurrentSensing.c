@@ -154,3 +154,18 @@ float* PDU_Mk1_CurrentSensing_GetCurrentsPtr()
 {
     return currents;
 }
+
+// reconfigure SPI when communicating with ADC as ADS131M08-Q1 has CPHA=1
+bool ADS131M08Q1_ReconfigSPI(ADS131M08Q1_HandleTypeDef* device)
+{
+    if(device == &adc_sns0)
+    {
+        return PDU_Mk1_SPI3_ADC_Init();
+    }
+    else if(device == &adc_sns1)
+    {
+        return PDU_Mk1_SPI2_ADC_Init();
+    }
+
+    return false;
+}
