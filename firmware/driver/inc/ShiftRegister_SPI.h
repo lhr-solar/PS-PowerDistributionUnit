@@ -76,7 +76,9 @@ void SR_SPI_Deassert_AllOff(ShiftRegister_SPI_HandleTypeDef* sr);
 /**
  * @brief	Reconfigures SPI before communicating with device, for if multiple
  * 			devices on the same SPI bus require different settings. Weakly
- * 			defined.
+ * 			defined. Should NOT be called outside of driver or could disrupt
+ * 			communications with other devices. (Driver only calls once SPI
+ * 			mutex is taken.)
  * @param	device Shift Register Device Handle
  * @returns bool (true if successful)
  */
