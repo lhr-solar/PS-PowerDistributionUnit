@@ -404,7 +404,9 @@ ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device);
 /**
  * @brief	Reconfigures SPI before communicating with device, for if multiple
  * 			devices on the same SPI bus require different settings. Weakly
- * 			defined.
+ * 			defined. Should NOT be called outside of driver or could disrupt
+ * 			communications with other devices. (Driver only calls once SPI
+ * 			mutex is taken.)
  * @param	device ADS131M08Q1 Device Handle
  * @returns	bool (true if successful)
  */
