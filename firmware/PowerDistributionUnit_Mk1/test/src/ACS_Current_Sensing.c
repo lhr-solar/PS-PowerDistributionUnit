@@ -1,8 +1,7 @@
-// ADS131M08Q1_LockUnlock_Status.c
+// Current_Sensing.c
 // ----------------------------------------------------------------------------
-// Locks and unlocks the ADC SPI interface for ADC_SNS1 on BBPDU Mk1. using 
-// their respective commands. Checks the LOCK bit in the status register to 
-// verify (un)locking is successful. 
+// Senses current through each channel on BBPDU Mk1 using the hall-effect  
+// current sensor (not HSS one) and prints to the serial monitor. 
 
 // INCLUDES -------------------------------------------------------------------
 
@@ -20,23 +19,22 @@
 
 // drivers
 #include "ADS131M08-Q1.h"
+#include "ACS3704x-010B3.h"
 
 // DEFINES --------------------------------------------------------------------
 
-#define TASKPRIORITY_INIT tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+1500
+#define TASKPRIORITY_INIT tskIDLE_PRIORITY + 3
+#define TASKSTACKSIZE_INIT configMINIMAL_STACK_SIZE+5000
 
 #define TASKPRIORITY_BLINK tskIDLE_PRIORITY + 2
 #define TASKSTACKSIZE_BLINK configMINIMAL_STACK_SIZE
 
-#define TASKPRIORITY_ADC_LOCKUNLOCK_STATUS tskIDLE_PRIORITY + 2
-#define TASKSTACKSIZE_ADC_LOCKUNLOCK_STATUS configMINIMAL_STACK_SIZE+200
+#define TASKPRIORITY_CURRENT_SENSE tskIDLE_PRIORITY + 2
+#define TASKSTACKSIZE_CURRENT_SENSE configMINIMAL_STACK_SIZE+3000
 
 #define INTERVAL_BLINK_MS 500
 #define INTERVAL_BLINK_ERROR_MS 50
-#define INTERVAL_ADC_LOCKUNLOCK_STATUS 500
-
-#define ADS131M08Q1_STATUS_LOCK_MASK 0x8000
+#define INTERVAL_CURRENT_SENSE_MS 500
 
 // DECLARATIONS ---------------------------------------------------------------
 
@@ -44,7 +42,10 @@ SPI_HandleTypeDef hspi1;
 SPI_HandleTypeDef hspi2;
 SPI_HandleTypeDef hspi3;
 
+extern ADS131M08Q1_HandleTypeDef adc_sns0;
 extern ADS131M08Q1_HandleTypeDef adc_sns1;
+float adc_results_sns0[8];
+float adc_results_sns1[8];
 
 SemaphoreHandle_t spi1_mutex;           // Mutex to prevent simultaneous SPI access
 StaticSemaphore_t spi1_mutex_buffer;    // Static buffer for mutex allocation
@@ -72,24 +73,30 @@ TaskHandle_t blink_task;
 StaticTask_t blink_task_buffer;
 StackType_t blink_task_stack[TASKSTACKSIZE_BLINK];
 
-TaskHandle_t adc_lock_unlock_status_task;
-StaticTask_t adc_lock_unlock_status_task_buffer;
-StackType_t adc_lock_unlock_status_task_stack[TASKSTACKSIZE_ADC_LOCKUNLOCK_STATUS];
+TaskHandle_t current_sense_task;
+StaticTask_t current_sense_task_buffer;
+StackType_t current_sense_task_stack[TASKSTACKSIZE_CURRENT_SENSE];
 
 // TASKS ----------------------------------------------------------------------
 
 // initialize stuff
 void Init_Task(void *argument)
 {
-    printf("Starting Initialization...\n");
-
     PDU_Mk1_GPIO_Init();
     
     if(PDU_Mk1_SPI2_ADC_Init() != true)
     {
-        printf("FAIL:SPI_INIT\n");
+        printf("FAIL:SPI2_INIT\n");
         Error_Handler();
     }
+
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
+    if(PDU_Mk1_SPI3_ADC_Init() != true)
+    {
+        printf("FAIL:SPI3_INIT\n");
+        Error_Handler();
+    }
+#endif
     
     if(PDU_Mk1_UART_Printf_Init() != true)
     {
@@ -106,9 +113,28 @@ void Init_Task(void *argument)
     // SPI dummy send because CLK pin initializes high even when configured low for some reason
     if(SPI_Init_Dummy_Send(&hspi2, spi2_mutex, spi2_done_sem) != true)
     {
-        printf("FAIL:SPI_INIT_DUMMY_SEND\n");
+        printf("FAIL:SPI2_INIT_DUMMY_SEND\n");
         Error_Handler();
     }
+
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
+    if(SPI_RTOS_Mutex_Semaphore_Setup(&spi3_mutex, &spi3_mutex_buffer, &spi3_done_sem, &spi3_done_sem_buffer) != true)
+    {
+        printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
+        Error_Handler();
+    }
+
+    // SPI dummy send because CLK pin initializes high even when configured low for some reason
+    if(SPI_Init_Dummy_Send(&hspi3, spi3_mutex, spi3_done_sem) != true)
+    {
+        printf("FAIL:SPI3_INIT_DUMMY_SEND\n");
+        while(1)
+        {
+            HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+            vTaskDelay(pdMS_TO_TICKS(INTERVAL_BLINK_ERROR_MS));
+        }
+    }
+#endif
 
     if(PDU_Mk1_CurrentSensing_Init() != true)
     {
@@ -120,7 +146,7 @@ void Init_Task(void *argument)
 
     // get this party started
     vTaskResume(blink_task);
-    vTaskResume(adc_lock_unlock_status_task);
+    vTaskResume(current_sense_task);
     // task kills itself
     vTaskDelete(NULL);
 }
@@ -136,46 +162,57 @@ void Blink_Task(void *argument)
     }
 }
 
-// lock and unlock ADC SPI interface, checking if successful by bit on STATUS register
-void ADC_LockUnlock_Task(void *argument)
+// read currents and print to serial
+void Current_Sense_Task(void *argument)
 {
-    uint16_t status = 0;
+    // magic delay required to make things work for some reason
+    vTaskDelay(pdMS_TO_TICKS(1));
     
     for(;;)
     {
-        if(ADS131M08Q1_Lock(&adc_sns1) == ADS131M08Q1_😢)
+        if(PDU_Mk1_CurrentSensing_ReadCurrents() != true)
         {
-            printf("FAIL:LOCK_CMD\n");
+            printf("FAIL:CURRENT_SAMPLING\n");
             Error_Handler();
         }
 
-        ADS131M08Q1_ReadStatus(&adc_sns1, &status);
-        // validate SPI interface locked using STATUS bit
-        if(!(status & ADS131M08Q1_STATUS_LOCK_MASK))
-        {
-            printf("FAIL:LOCK_STATUS\n");
-            Error_Handler();
-        }
-        printf("Lock successful.\n");
+        float* currents = PDU_Mk1_CurrentSensing_GetCurrentsPtr();
 
-        vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_LOCKUNLOCK_STATUS));
-
-        if(ADS131M08Q1_Unlock(&adc_sns1) == ADS131M08Q1_😢)
-        {
-            printf("FAIL:UNLOCK_CMD\n");
-            Error_Handler();
-        }
-
-        ADS131M08Q1_ReadStatus(&adc_sns1, &status);
-        // validate SPI interface unlocked using STATUS bit
-        if(status & ADS131M08Q1_STATUS_LOCK_MASK)
-        {
-            printf("FAIL:UNLOCK_STATUS\n");
-            Error_Handler();
-        }
-        printf("Unlock successful.\n");
-
-        vTaskDelay(pdMS_TO_TICKS(INTERVAL_ADC_LOCKUNLOCK_STATUS));
+        printf("\nCurrents\n----------\n"
+                "CH0: %.4f A\n"
+                "CH1: %.4f A\n"
+                "CH2: %.4f A\n"
+                "CH3: %.4f A\n"
+                "CH4: %.4f A\n"
+                "CH5: %.4f A\n"
+                "CH6: %.4f A\n"
+                "CH7: %.4f A\n" 
+                "CH8: %.4f A\n"
+                "CH9: %.4f A\n"
+                "CH10: %.4f A\n"
+                "CH11: %.4f A\n"
+                "CH12: %.4f A\n"
+                "CH13: %.4f A\n"
+                "CH14: %.4f A\n"
+                "CH15: %.4f A\n", 
+                currents[0], 
+                currents[1], 
+                currents[2], 
+                currents[3], 
+                currents[4], 
+                currents[5], 
+                currents[6], 
+                currents[7], 
+                currents[8], 
+                currents[9], 
+                currents[10], 
+                currents[11], 
+                currents[12], 
+                currents[13], 
+                currents[14],
+                currents[15]);
+        
+        vTaskDelay(pdMS_TO_TICKS(INTERVAL_CURRENT_SENSE_MS));
     }
 }
 
@@ -204,17 +241,17 @@ int main()
                     &blink_task_buffer
                 );
 
-    adc_lock_unlock_status_task = xTaskCreateStatic(ADC_LockUnlock_Task,
-                    "ADC Standby Wakeup Task",
-                    TASKSTACKSIZE_ADC_LOCKUNLOCK_STATUS,
+    current_sense_task = xTaskCreateStatic(Current_Sense_Task,
+                    "Current Sense Task",
+                    TASKSTACKSIZE_CURRENT_SENSE,
                     NULL,
-                    TASKPRIORITY_ADC_LOCKUNLOCK_STATUS,
-                    adc_lock_unlock_status_task_stack,
-                    &adc_lock_unlock_status_task_buffer
+                    TASKPRIORITY_CURRENT_SENSE,
+                    current_sense_task_stack,
+                    &current_sense_task_buffer
                 );
 
     vTaskSuspend(blink_task);
-    vTaskSuspend(adc_lock_unlock_status_task);
+    vTaskSuspend(current_sense_task);
     vTaskStartScheduler();
 
     while(1) {}
@@ -224,7 +261,6 @@ int main()
 
 void Error_Handler(void)
 {
-    __disable_irq();
     while(1)
     {
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);

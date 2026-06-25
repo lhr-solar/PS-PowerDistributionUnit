@@ -126,6 +126,14 @@ inline ADS131M08Q1_Status_t ADS131M08Q1_SendCommand(ADS131M08Q1_HandleTypeDef* d
         return ADS131M08Q1_🕷️;
     }
 
+    if(ADS131M08Q1_ReconfigSPI(device) != true)
+    {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return ADS131M08Q1_😢;
+    }
+
     // send ADS131M08-Q1 frame
     if(ADS131M08Q1_Frame_Transmit(device, cmd_frame) != ADS131M08Q1_🙂)
     {
@@ -173,6 +181,14 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadRegs(ADS131M08Q1_HandleTypeDef* device, uin
     if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return ADS131M08Q1_🕷️;
+    }
+
+    if(ADS131M08Q1_ReconfigSPI(device) != true)
+    {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return ADS131M08Q1_😢;
     }
     
     if(ADS131M08Q1_Frame_Transmit(device, rreg_cmd) != ADS131M08Q1_🙂)
@@ -281,6 +297,14 @@ ADS131M08Q1_Status_t ADS131M08Q1_WriteRegs(ADS131M08Q1_HandleTypeDef* device, ui
     if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return ADS131M08Q1_🕷️;
+    }
+
+    if(ADS131M08Q1_ReconfigSPI(device) != true)
+    {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return ADS131M08Q1_😢;
     }
 
     if(ADS131M08Q1_FrameVar_Transmit(device, wreg_cmd, frame_len_24) != ADS131M08Q1_🙂)
@@ -459,6 +483,14 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadConversionResults(ADS131M08Q1_HandleTypeDef
         return ADS131M08Q1_🕷️;
     }
     
+    if(ADS131M08Q1_ReconfigSPI(device) != true)
+    {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return ADS131M08Q1_😢;
+    }
+
     if(ADS131M08Q1_Frame_Receive(device, frame_response) != ADS131M08Q1_🙂)
     {
         // release SPI mutex
@@ -489,6 +521,14 @@ ADS131M08Q1_Status_t ADS131M08Q1_ReadStatus(ADS131M08Q1_HandleTypeDef* device, u
     if(xSemaphoreTake(device->spi_mutex, ADS131M08Q1_SPI_MUTEX_DELAY_TICKS) != pdTRUE)
     {
         return ADS131M08Q1_🕷️;
+    }
+
+    if(ADS131M08Q1_ReconfigSPI(device) != true)
+    {
+        // release SPI mutex
+        xSemaphoreGive(device->spi_mutex);
+
+        return ADS131M08Q1_😢;
     }
 
     if(ADS131M08Q1_Frame_Transmit(device, null_frame) != ADS131M08Q1_🙂)
@@ -552,6 +592,11 @@ ADS131M08Q1_Status_t ADS131M08Q1_Lock(ADS131M08Q1_HandleTypeDef* device)
 ADS131M08Q1_Status_t ADS131M08Q1_Unlock(ADS131M08Q1_HandleTypeDef* device)
 {
     return ADS131M08Q1_SendCommand(device, ADS131M08Q1_OPCODE_UNLOCK_MSB, ADS131M08Q1_OPCODE_UNLOCK_LSB, ADS131M08Q1_RESPONSE_UNLOCK_MSB, ADS131M08Q1_RESPONSE_UNLOCK_LSB, 0);
+}
+
+__weak bool ADS131M08Q1_ReconfigSPI(ADS131M08Q1_HandleTypeDef* device)
+{
+    return true;
 }
 
 inline int32_t ADS131M08Q1_CalcOffsetCalRegValue(ADS131M08Q1_HandleTypeDef* device, float offset)
