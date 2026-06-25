@@ -25,8 +25,8 @@ TEST ?= main
 PROJECT_TARGET ?= stm32g473xx
 
 # SOURCE AND INCLUDE DIRECTORIES
-PROJECT_C_INCLUDES = $(wildcard core/inc) $(wildcard ../driver/inc)
-PROJECT_C_SOURCES = $(wildcard core/src/*.c) $(wildcard ../driver/src/*.c)
+PROJECT_C_INCLUDES = $(wildcard core/inc) $(wildcard ../driver/inc) $(wildcard tasks/inc)
+PROJECT_C_SOURCES = $(wildcard core/src/*.c) $(wildcard ../driver/src/*.c) $(wildcard tasks/src/*.c)
 PROJECT_MAIN_DIR ?= core/src
 
 # BUILD DIRECTORIES
@@ -41,7 +41,7 @@ MADEFILE_DIR = ${MAKEFILE_DIR}
 # remove main and add test folders if running test
 ifneq ($(TEST), "main")
 	PROJECT_C_SOURCES := $(filter-out $(PROJECT_MAIN_DIR)/main.c, $(PROJECT_C_SOURCES))
-	PROJECT_C_SOURCES += $(wildcard test/src/${TEST}.c)
+	PROJECT_C_SOURCES += $(wildcard test/src/Test_${TEST}.c)
 
 	PROJECT_C_INCLUDES += $(wildcard test/inc)
 endif
