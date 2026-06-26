@@ -11,5 +11,3 @@ void Task_Blink(void *argument)
         vTaskDelay(pdMS_TO_TICKS(TASK_BLINK_INTERVAL_MS));
     }
 }
-
-
