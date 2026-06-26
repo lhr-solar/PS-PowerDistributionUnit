@@ -25,4 +25,4 @@
 
 // FUNCTIONS ------------------------------------------------------------------
 
-void Task_ReadCurrents();
+void Task_ReadCurrents(void *argument);

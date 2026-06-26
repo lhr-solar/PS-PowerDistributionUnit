@@ -2,7 +2,7 @@
 
 #include "Task_CanSendStatus.h"
 
-void Task_CanSendStatus()
+void Task_CanSendStatus(void *argument)
 {
 	// CAN peripheral must be ready before running task. 
 

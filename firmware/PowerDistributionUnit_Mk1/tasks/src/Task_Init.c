@@ -2,7 +2,7 @@
 
 #include "Task_Init.h"
 
-void Task_Init()
+void Task_Init(void *argument)
 {
     PDU_Mk1_GPIO_Init();
 

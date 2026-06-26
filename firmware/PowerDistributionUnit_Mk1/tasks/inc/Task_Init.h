@@ -47,4 +47,4 @@ extern StaticSemaphore_t spi3_done_sem_buffer; // Static buffer for completion s
 
 void PDU_Mk1_StartTasks();
 
-void Task_Init();
+void Task_Init(void *argument);

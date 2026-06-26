@@ -23,4 +23,4 @@
 
 // FUNCTIONS ------------------------------------------------------------------
 
-void Task_HSSControl();
+void Task_HSSControl(void *argument);

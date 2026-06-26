@@ -21,4 +21,4 @@
 
 // FUNCTIONS ------------------------------------------------------------------
 
-void Task_Blink();
+void Task_Blink(void *argument);

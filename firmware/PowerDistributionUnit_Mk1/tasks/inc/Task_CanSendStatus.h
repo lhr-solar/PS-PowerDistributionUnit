@@ -27,4 +27,4 @@
 
 // FUNCTIONS ------------------------------------------------------------------
 
-void Task_CanSendStatus();
+void Task_CanSendStatus(void *argument);

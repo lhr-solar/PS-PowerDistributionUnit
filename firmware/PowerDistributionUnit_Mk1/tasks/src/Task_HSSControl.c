@@ -2,7 +2,7 @@
 
 #include "Task_HSSControl.h"
 
-void Task_HSSControl()
+void Task_HSSControl(void *argument)
 {
     for(;;)
     {
