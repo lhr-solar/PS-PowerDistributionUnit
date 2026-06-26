@@ -82,7 +82,7 @@ int main()
                 );
 
     task_hsscontrol = xTaskCreateStatic(Task_HSSControl,
-                    "Current Sense Task",
+                    "HSS Control Task",
                     TASK_HSSCONTROL_STACK_SIZE,
                     NULL,
                     TASK_HSSCONTROL_PRIORITY,
