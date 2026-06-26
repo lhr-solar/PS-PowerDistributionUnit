@@ -19,7 +19,7 @@
 
 // DEFINES --------------------------------------------------------------------
 
-#define TASK_INIT_STACK_SIZE configMINIMAL_STACK_SIZE+5000
+#define TASK_INIT_STACK_SIZE configMINIMAL_STACK_SIZE+1000
 #define TASK_INIT_PRIORITY tskIDLE_PRIORITY + 3
 
 // VARIABLE DECLARATIONS ------------------------------------------------------
