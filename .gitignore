@@ -36,6 +36,10 @@ fp-info-cache
 *.xml
 *.csv
 
+# Whitelist production files directory
+!**/jlcpcb/production_files/
+!**/jlcpcb/production_files/**
+
 # Archived Backups (KiCad 6.0)
 **/*-backups/*.zip
 
