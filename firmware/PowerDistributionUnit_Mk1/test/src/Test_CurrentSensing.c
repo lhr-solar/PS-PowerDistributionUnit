@@ -12,12 +12,19 @@
 #include<stdio.h>
 #include<string.h>
 
+// BBPDU peripherals
+#include "PDU_Mk1_GPIO.h"
+#include "PDU_Mk1_UART.h"
+#include "PDU_Mk1_SPI.h"
+
 // Tasks
-#include "Task_Init.h"
 #include "Task_Blink.h"
 #include "Task_ReadCurrents.h"
 
 // DEFINES --------------------------------------------------------------------
+
+#define TASK_INIT_STACK_SIZE configMINIMAL_STACK_SIZE+1000
+#define TASK_INIT_PRIORITY tskIDLE_PRIORITY + 3
 
 #define INTERVAL_BLINK_ERROR_MS 50
 
@@ -45,37 +52,81 @@ SemaphoreHandle_t spi3_done_sem;
 StaticSemaphore_t spi3_done_sem_buffer;
 
 // Task: Init
-TaskHandle_t init_task;
-StaticTask_t init_task_buffer;                      // Task buffer
-StackType_t init_task_stack[TASK_INIT_STACK_SIZE];    // Task stack
+StaticTask_t init_task_buffer;                          // Task buffer
+StackType_t init_task_stack[TASK_INIT_STACK_SIZE];      // Task stack
 
 // Task: Blink
-TaskHandle_t task_blink;
 StaticTask_t task_blink_buffer;
 StackType_t task_blink_stack[TASK_BLINK_STACK_SIZE];
 
 // Task: Read Currents
-TaskHandle_t task_readcurrents;
 StaticTask_t task_readcurrents_buffer;
 StackType_t task_readcurrents_stack[TASK_READCURRENTS_STACK_SIZE];
 
-// MAIN -----------------------------------------------------------------------
+// INIT TASK ------------------------------------------------------------------
 
-int main()
+void Task_Init(void *argument)
 {
-    HAL_Init();
-    SystemClock_Config();
+    PDU_Mk1_GPIO_Init();
 
-    init_task = xTaskCreateStatic(Task_Init,
-                    "Init Task",
-                    TASK_INIT_STACK_SIZE,
-                    NULL,
-                    TASK_INIT_PRIORITY,
-                    init_task_stack,
-                    &init_task_buffer
-                );
+    if(PDU_Mk1_UART_Printf_Init() != true)
+    {
+        printf("FAIL:UART_PRINTF_INIT\n");
+        Error_Handler();
+    }
 
-    task_blink = xTaskCreateStatic(Task_Blink,
+    if(PDU_Mk1_SPI2_ADC_Init() != true)
+    {
+        printf("FAIL:SPI2_INIT\n");
+        Error_Handler();
+    }
+
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
+    if(PDU_Mk1_SPI3_ADC_Init() != true)
+    {
+        printf("FAIL:SPI3_INIT\n");
+        Error_Handler();
+    }
+#endif
+
+    if(SPI_RTOS_Mutex_Semaphore_Setup(&spi2_mutex, &spi2_mutex_buffer, &spi2_done_sem, &spi2_done_sem_buffer) != true)
+    {
+        printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
+        Error_Handler();
+    }
+
+    // SPI dummy send because CLK pin initializes high even when configured low for some reason
+    if(SPI_Init_Dummy_Send(&hspi2, spi2_mutex, spi2_done_sem) != true)
+    {
+        printf("FAIL:SPI2_INIT_DUMMY_SEND\n");
+        Error_Handler();
+    }
+
+#if (PDU_MK1_REV_A == false)    // PDU_Mk1_REV_A has SPI pinout issue
+    if(SPI_RTOS_Mutex_Semaphore_Setup(&spi3_mutex, &spi3_mutex_buffer, &spi3_done_sem, &spi3_done_sem_buffer) != true)
+    {
+        printf("FAIL:MUTEX_SEMAPHORE_INIT\n");
+        Error_Handler();
+    }
+
+    // SPI dummy send because CLK pin initializes high even when configured low for some reason
+    if(SPI_Init_Dummy_Send(&hspi3, spi3_mutex, spi3_done_sem) != true)
+    {
+        printf("FAIL:SPI3_INIT_DUMMY_SEND\n");
+        Error_Handler();
+    }
+#endif
+
+    if(PDU_Mk1_CurrentSensing_Init() != true)
+    {
+        printf("FAIL:ISENSE_INIT\n");
+        Error_Handler();
+    }
+
+    printf("Initialization complete.\n");
+
+    // get this party started
+    xTaskCreateStatic(Task_Blink,
                     "Blink Task",
                     TASK_BLINK_STACK_SIZE,
                     NULL,
@@ -84,7 +135,7 @@ int main()
                     &task_blink_buffer
                 );
 
-    task_readcurrents = xTaskCreateStatic(Task_ReadCurrents,
+    xTaskCreateStatic(Task_ReadCurrents,
                     "Current Sense Task",
                     TASK_READCURRENTS_STACK_SIZE,
                     NULL,
@@ -93,17 +144,29 @@ int main()
                     &task_readcurrents_buffer
                 );
 
-    vTaskSuspend(task_blink);
-    vTaskSuspend(task_readcurrents);
+    // task kills itself
+    vTaskDelete(NULL);
+}
+
+// MAIN -----------------------------------------------------------------------
+
+int main()
+{
+    HAL_Init();
+    SystemClock_Config();
+
+    xTaskCreateStatic(Task_Init,
+                    "Init Task",
+                    TASK_INIT_STACK_SIZE,
+                    NULL,
+                    TASK_INIT_PRIORITY,
+                    init_task_stack,
+                    &init_task_buffer
+                );
+
     vTaskStartScheduler();
 
     while(1) {}
-}
-
-void PDU_Mk1_StartTasks()
-{
-    vTaskResume(task_blink);
-    vTaskResume(task_readcurrents);
 }
 
 // ERROR HANDLER --------------------------------------------------------------
