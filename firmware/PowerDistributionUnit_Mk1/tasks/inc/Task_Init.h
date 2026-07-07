@@ -8,7 +8,6 @@
 
 #include "stm32xx_hal.h"
 
-#include "PDU_Mk1_Pins.h"
 #include "PDU_Mk1_GPIO.h"
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_UART.h"
@@ -44,7 +43,5 @@ extern SemaphoreHandle_t spi3_done_sem;        // Semaphore to signal SPI IT com
 extern StaticSemaphore_t spi3_done_sem_buffer; // Static buffer for completion semaphore
 
 // FUNCTIONS ------------------------------------------------------------------
-
-void PDU_Mk1_StartTasks();
 
 void Task_Init(void *argument);

@@ -41,6 +41,7 @@ MADEFILE_DIR = ${MAKEFILE_DIR}
 # remove main and add test folders if running test
 ifneq ($(TEST), "main")
 	PROJECT_C_SOURCES := $(filter-out $(PROJECT_MAIN_DIR)/main.c, $(PROJECT_C_SOURCES))
+	PROJECT_C_SOURCES := $(filter-out tasks/src/Task_Init.c, $(PROJECT_C_SOURCES))
 	PROJECT_C_SOURCES += $(wildcard test/src/Test_${TEST}.c)
 
 	PROJECT_C_INCLUDES += $(wildcard test/inc)
