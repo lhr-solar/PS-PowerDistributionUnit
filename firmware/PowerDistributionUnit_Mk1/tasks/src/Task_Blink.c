@@ -4,7 +4,7 @@
 
 void Task_Blink(void *argument)
 {
-    for(;;)
+    while(1)
     {
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
 

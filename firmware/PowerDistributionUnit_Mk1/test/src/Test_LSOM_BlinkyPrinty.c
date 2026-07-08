@@ -56,7 +56,7 @@ void Init_Task(void *argument)
 // blinks...
 void Blink_Task(void *argument)
 {
-    for(;;)
+    while(1)
     {
         HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
 
@@ -67,7 +67,7 @@ void Blink_Task(void *argument)
 // prints...
 void Print_Task(void *argument)
 {
-    for(;;)
+    while(1)
     {
         printf("Hello, I'm running...\n");
 

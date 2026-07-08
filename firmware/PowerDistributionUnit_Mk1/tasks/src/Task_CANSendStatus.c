@@ -24,7 +24,7 @@ void Task_CanSendStatus(void *argument)
 	// spam all channels
 	// uint8_t data[PDU_MK1_NUM_CHANNELS][PDU_MK1_CAN_MSGLEN_PDUSTATUS] = {0};
 
-	for(;;)
+	while(1)
 	{
 		// SINGLE CHANNEL
 		for(uint8_t i = 0; i < PDU_MK1_CAN_MSGLEN_PDUSTATUS; i++)
