@@ -54,11 +54,7 @@ void Task_CanSendStatus(void *argument)
 			Error_Handler();
 		}
 
-		ch_to_send++;
-		if(ch_to_send >= PDU_MK1_NUM_CHANNELS)
-		{
-			ch_to_send = 0;
-		}
+		ch_to_send = (ch_to_send + 1) % PDU_MK1_NUM_CHANNELS;
 
 		vTaskDelay(pdMS_TO_TICKS(TASK_CANSENDSTATUS_CH_INTERVAL_MS));
 
