@@ -1,6 +1,6 @@
-// Test_HSSControl.c
+// Test_AllOutputsOn.c
 // ----------------------------------------------------------------------------
-// Runs HSSControl task (which just turns all outputs on for now).
+// Turns on all BBPDU output channels.
 
 // INCLUDES -------------------------------------------------------------------
 
@@ -15,14 +15,19 @@
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_CAN.h"
 
+#include "PDU_Mk1_HSSControl.h"
+
 // Tasks
 #include "Task_Blink.h"
-#include "Task_HSSControl.h"
 
 // DEFINES --------------------------------------------------------------------
 
 #define TASK_INIT_STACK_SIZE configMINIMAL_STACK_SIZE+1000
 #define TASK_INIT_PRIORITY tskIDLE_PRIORITY + 3
+
+#define TASK_ALLOUTPUTSON_STACK_SIZE configMINIMAL_STACK_SIZE+200
+#define TASK_ALLOUTPUTSON_PRIORITY tskIDLE_PRIORITY + 2
+#define TASK_ALLOUTPUTSON_INTERVAL_MS 1000
 
 #define INTERVAL_BLINK_ERROR_MS 50
 
@@ -58,8 +63,24 @@ StaticTask_t task_blink_buffer;
 StackType_t task_blink_stack[TASK_BLINK_STACK_SIZE];
 
 // Task: HSS Output Control
-StaticTask_t task_hsscontrol_buffer;
-StackType_t task_hsscontrol_stack[TASK_HSSCONTROL_STACK_SIZE];
+StaticTask_t task_alloutputson_buffer;
+StackType_t task_alloutputson_stack[TASK_ALLOUTPUTSON_STACK_SIZE];
+
+// TASKS ------------------------------------------------------------------
+
+void Task_AllOutputsOn(void *argument)
+{
+    while(1)
+    {
+        if(PDU_Mk1_HSSControl_AllOn() != HSSCONTROL_🙂)
+        {
+            printf("FAIL:HSSCONTROL_ALLON");
+            Error_Handler();
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(TASK_ALLOUTPUTSON_INTERVAL_MS));
+    }
+}
 
 // INIT TASK ------------------------------------------------------------------
 
@@ -110,13 +131,13 @@ void Task_Init(void *argument)
                     &task_blink_buffer
                 );
 
-    xTaskCreateStatic(Task_HSSControl,
-                    "HSS Control Task",
-                    TASK_HSSCONTROL_STACK_SIZE,
+    xTaskCreateStatic(Task_AllOutputsOn,
+                    "HSS Control Task (turn all outputs on)",
+                    TASK_ALLOUTPUTSON_STACK_SIZE,
                     NULL,
-                    TASK_HSSCONTROL_PRIORITY,
-                    task_hsscontrol_stack,
-                    &task_hsscontrol_buffer
+                    TASK_ALLOUTPUTSON_PRIORITY,
+                    task_alloutputson_stack,
+                    &task_alloutputson_buffer
                 );
 
     // task kills itself
