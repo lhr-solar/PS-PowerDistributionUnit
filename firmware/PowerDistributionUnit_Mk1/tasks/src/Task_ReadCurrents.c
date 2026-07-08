@@ -4,10 +4,6 @@
 
 void Task_ReadCurrents(void *argument)
 {
-    // magic delay required to make things work for some reason
-    // TODO: see if still required? add delay to init function instead?
-    vTaskDelay(pdMS_TO_TICKS(1));
-    
     while(1)
     {
         if(PDU_Mk1_CurrentSensing_ReadCurrents() != true)
