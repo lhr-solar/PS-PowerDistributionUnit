@@ -2,6 +2,8 @@
 
 #include "Task_CanSendStatus.h"
 
+static uint16_t can_send_failures = 0;
+
 void Task_CanSendStatus(void *argument)
 {
 	// CAN peripheral must be ready before running task. 
@@ -50,11 +52,13 @@ void Task_CanSendStatus(void *argument)
 		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_CURRENT_INDEX)) = ((uint16_t) (PDU_Mk1_CurrentSensing_GetCurrentsPtr()[ch_to_send]*PDU_MK1_CAN_PDUSTATUS_CURRENT_INVFACTOR));
 
 		if (can_fd_send(hfdcan3, &tx_header, ch_data, portMAX_DELAY) != CAN_OK){
-			printf("ERROR:CAN_SEND_PDUSTATUS\n");
-			Error_Handler();
+			can_send_failures++;
+			printf("ERROR:CAN_SEND_PDUSTATUS_%d\n", can_send_failures);
 		}
-
-		ch_to_send = (ch_to_send + 1) % PDU_MK1_NUM_CHANNELS;
+		else
+		{
+			ch_to_send = (ch_to_send + 1) % PDU_MK1_NUM_CHANNELS;
+		}
 
 		vTaskDelay(pdMS_TO_TICKS(TASK_CANSENDSTATUS_CH_INTERVAL_MS));
 
