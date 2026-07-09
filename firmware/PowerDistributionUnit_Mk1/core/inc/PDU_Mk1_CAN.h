@@ -6,6 +6,8 @@
 
 #include "stm32xx_hal.h"
 
+#include "PDU_Mk1.h"
+
 // drivers
 #include "CAN_FD.h"
 

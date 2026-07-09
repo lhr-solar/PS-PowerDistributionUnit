@@ -9,3 +9,7 @@
 #define PDU_MK1_REV_A
 
 #define PDU_MK1_PRINT_STATUS_VIA_UART true
+
+// enables external loopback mode for solo CAN development (bypass ACK requirement)
+// should not be defined for final in-car use
+#define PDU_MK1_CAN_DEV_EXTLOOPBACK

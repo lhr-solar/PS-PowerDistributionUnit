@@ -12,7 +12,7 @@ void Task_CanSendStatus(void *argument)
 	tx_header.Identifier = PDU_MK1_CAN_ID_PDUSTATUS;
 	tx_header.IdType = FDCAN_STANDARD_ID;
 	tx_header.TxFrameType = FDCAN_DATA_FRAME;
-	tx_header.DataLength = FDCAN_DLC_BYTES_5;
+	tx_header.DataLength = PDU_MK1_CAN_MSGLEN_PDUSTATUS;
 	tx_header.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
 	tx_header.BitRateSwitch = FDCAN_BRS_OFF;
 	tx_header.FDFormat = FDCAN_CLASSIC_CAN;

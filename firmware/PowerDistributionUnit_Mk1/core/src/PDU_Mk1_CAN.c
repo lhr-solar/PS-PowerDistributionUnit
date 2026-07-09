@@ -13,8 +13,12 @@ can_status_t PDU_Mk1_CAN_Init()
 	hfdcan3->Instance = FDCAN3;
 	hfdcan3->Init.ClockDivider = FDCAN_CLOCK_DIV1;
 	hfdcan3->Init.FrameFormat = FDCAN_FRAME_CLASSIC;
+#ifdef PDU_MK1_CAN_DEV_EXTLOOPBACK
 	hfdcan3->Init.Mode = FDCAN_MODE_EXTERNAL_LOOPBACK;
-	hfdcan3->Init.AutoRetransmission = DISABLE;
+#else
+	hfdcan3->Init.Mode = FDCAN_MODE_NORMAL;
+#endif
+	hfdcan3->Init.AutoRetransmission = ENABLE;
 	hfdcan3->Init.TransmitPause = DISABLE;
 	hfdcan3->Init.ProtocolException = DISABLE;
 	hfdcan3->Init.NominalPrescaler = 20;
