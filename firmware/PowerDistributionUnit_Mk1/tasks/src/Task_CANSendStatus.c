@@ -51,7 +51,7 @@ void Task_CanSendStatus(void *argument)
 		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_VOLTAGE_INDEX)) = ((uint16_t) (0));     // no voltage data yet
 		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_CURRENT_INDEX)) = ((uint16_t) (PDU_Mk1_CurrentSensing_GetCurrentsPtr()[ch_to_send]*PDU_MK1_CAN_PDUSTATUS_CURRENT_INVFACTOR));
 
-		if (can_fd_send(hfdcan3, &tx_header, ch_data, portMAX_DELAY) != CAN_OK){
+		if (can_fd_send(hfdcan3, &tx_header, ch_data, pdMS_TO_TICKS(PDU_MK1_CAN_SEND_TIMEOUT_MS)) != CAN_OK){
 			can_send_failures++;
 			printf("ERROR:CAN_SEND_PDUSTATUS_%d\n", can_send_failures);
 		}

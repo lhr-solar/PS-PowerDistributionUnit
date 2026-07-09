@@ -11,6 +11,8 @@
 
 // DEFINES --------------------------------------------------------------------
 
+#define PDU_MK1_CAN_SEND_TIMEOUT_MS 100						// ticks
+
 #define PDU_MK1_CAN_ID_PDUSTATUS 0x350
 #define PDU_MK1_CAN_MSGLEN_PDUSTATUS 5
 #define PDU_MK1_CAN_PDUSTATUS_FAULT_LSHIFT 4
