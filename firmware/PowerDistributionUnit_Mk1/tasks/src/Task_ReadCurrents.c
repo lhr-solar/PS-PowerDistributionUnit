@@ -2,14 +2,16 @@
 
 #include "Task_ReadCurrents.h"
 
+static uint16_t current_read_failures = 0;
+
 void Task_ReadCurrents(void *argument)
 {
     for(;;)
     {
         if(PDU_Mk1_CurrentSensing_ReadCurrents() != true)
         {
-            printf("FAIL:READ_CURRENTS\n");
-            Error_Handler();
+            current_read_failures++;
+            printf("FAIL:READ_CURRENTS_%d\n", current_read_failures);
         }
 
 #if (PDU_MK1_PRINT_STATUS_VIA_UART)
