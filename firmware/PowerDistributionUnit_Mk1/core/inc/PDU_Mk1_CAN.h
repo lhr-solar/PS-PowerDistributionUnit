@@ -29,7 +29,9 @@
 // FUNCTIONS ------------------------------------------------------------------
 
 /**
-	* @brief Initializes CAN stuff.
+	* @brief Initializes CAN stuff. Things that may cause this to fail include
+	* lack of LSOM, lack of electricity, flooding, nuclear war, alien invasion, 
+	* heavy ion radiation, bad code, heat death of the universe, fattyness...
 	* @param None
 	* @retval bool: true if successful, false otherwise
 	*/
