@@ -4,7 +4,7 @@
 
 void Task_ReadCurrents(void *argument)
 {
-    while(1)
+    for(;;)
     {
         if(PDU_Mk1_CurrentSensing_ReadCurrents() != true)
         {

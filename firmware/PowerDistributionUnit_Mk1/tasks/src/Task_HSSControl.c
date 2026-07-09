@@ -4,7 +4,7 @@
 
 void Task_HSSControl(void *argument)
 {
-    while(1)
+    for(;;)
     {
         if(PDU_Mk1_HSSControl_AllOn() != HSSCONTROL_🙂)
         {
