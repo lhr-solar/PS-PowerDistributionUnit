@@ -4,7 +4,15 @@
 
 #pragma once
 
-#include "LSOM_S_Pins.h"
+#include "PDU_Mk1.h"
+
+#if defined(LSOM_U)
+ #include "LSOM_U_Pins.h"
+#elif defined(LSOM_S)
+ #include "LSOM_S_Pins.h"
+#else
+ #error "LSOM type not defined."
+#endif
 
 #define LED_PIN GPIO_PIN_3
 #define LED_PORT GPIOC
