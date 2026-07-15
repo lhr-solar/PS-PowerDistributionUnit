@@ -12,6 +12,9 @@
 // BBPDU peripherals
 #include "PDU_Mk1.h"
 #include "PDU_Mk1_CurrentSensing.h"
+#ifdef PDU_MK1_SDLOG_ERRORS
+ #include "PDU_Mk1_SDCard.h"
+#endif
 
 // DEFINES --------------------------------------------------------------------
 

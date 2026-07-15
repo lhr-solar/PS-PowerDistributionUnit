@@ -54,6 +54,10 @@ void Task_CanSendStatus(void *argument)
 		if (can_fd_send(hfdcan3, &tx_header, ch_data, pdMS_TO_TICKS(PDU_MK1_CAN_SEND_TIMEOUT_MS)) != CAN_OK){
 			can_send_failures++;
 			printf("ERROR:CAN_SEND_PDUSTATUS_%d\n", can_send_failures);
+
+#ifdef PDU_MK1_SDLOG_ERRORS
+        PDU_Mk1_SDCard_LogError(PDU_MK1_SDLOG_ERRORID_CAN_SEND_STATUS, can_send_failures);
+#endif
 		}
 		else
 		{

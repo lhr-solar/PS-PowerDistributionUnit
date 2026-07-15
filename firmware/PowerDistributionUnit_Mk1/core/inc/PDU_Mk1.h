@@ -24,6 +24,10 @@
 // prints channel currents
 #define PDU_MK1_PRINT_STATUS_VIA_UART true
 
+// log failures to SD card
+// if enabled for a test, make sure it actually initializes SD card stuff
+#define PDU_MK1_SDLOG_ERRORS
+
 // enables external loopback mode for solo CAN development (bypass ACK requirement)
 // should not be defined for final in-car use
 // #define PDU_MK1_CAN_DEV_EXTLOOPBACK
