@@ -33,7 +33,7 @@
 // Error Log IDs
 #define PDU_MK1_SDLOG_ERRORID_READ_CURRENTS 1
 #define PDU_MK1_SDLOG_ERRORID_HSSCONTROL 2
-#define PDU_MK1_SDLOG_ERRORID_CAN_SEND_STATUS 2
+#define PDU_MK1_SDLOG_ERRORID_CAN_SEND_STATUS 3
 
 // VARIABLE DECLARATIONS ------------------------------------------------------
 
