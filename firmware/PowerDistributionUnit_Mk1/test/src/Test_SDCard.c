@@ -1,9 +1,7 @@
-// Test_CurrentSensing.c
+// Test_SDCard.c
 // ----------------------------------------------------------------------------
-// Tests current sensing thorugh ADCs and hall-effect current sensors. Prints
-// to UART. (Make sure PDU_MK1_PRINT_STATUS_VIA_UART is set to true in 
-// PDU_Mk1.h) 
-// Prerequisites: ACS_Current_Sensing
+// Tests logging current and HSS state to SD card on LSOM.
+// Prerequisites: CurrentSensing, HSSControl
 
 // INCLUDES -------------------------------------------------------------------
 
