@@ -28,7 +28,16 @@
 #define PDU_MK1_SDLOG_STRBUFFERSIZE 64  // note that the SD card driver
                                         // internally has a 64 limit
 
-#define PDU_MK1_SDLOG_V_INDEX 16
+#define PDU_MK1_SDLOG_INDEX_I_CH0_7 0
+#define PDU_MK1_SDLOG_INDEX_I_CH8_15 1
+#define PDU_MK1_SDLOG_INDEX_V_HSSCONTROL_STATE 2
+
+#define PDU_MK1_SDLOG_MIN_WRITABLE_CURRENT 0.0001f	// minimum current limit to
+													// "negative zero" that
+													// risk str buffer overflow
+
+// Error Logging
+#define PDU_MK1_SDLOG_ERROR_STRBUFFERSIZE 16
 
 // Error Log IDs
 #define PDU_MK1_SDLOG_ERRORID_READ_CURRENTS 1
