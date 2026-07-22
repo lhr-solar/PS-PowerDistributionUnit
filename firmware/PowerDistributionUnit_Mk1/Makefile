@@ -15,7 +15,7 @@ NC=\033[0m # No Color
 MAKEFILE_DIR = $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 # PROJECT CONFIGURATION -------------------------------------------------------
-TEST ?= main
+TEST ?= "main"
 
 # COMMON TARGETS
 # LSOM: stm32g473xx
@@ -27,7 +27,7 @@ PROJECT_TARGET ?= stm32g473xx
 # SOURCE AND INCLUDE DIRECTORIES
 PROJECT_C_INCLUDES = $(wildcard core/inc) $(wildcard ../driver/inc) $(wildcard tasks/inc)
 PROJECT_C_SOURCES = $(wildcard core/src/*.c) $(wildcard ../driver/src/*.c) $(wildcard tasks/src/*.c)
-PROJECT_MAIN_DIR ?= core/src
+PROJECT_MAIN_DIR ?= core/src/
 
 # BUILD DIRECTORIES
 PROJECT_BUILD_DIR = build
