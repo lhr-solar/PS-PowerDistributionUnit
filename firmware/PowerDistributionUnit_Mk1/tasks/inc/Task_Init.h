@@ -12,9 +12,17 @@
 #include "PDU_Mk1_SPI.h"
 #include "PDU_Mk1_UART.h"
 #include "PDU_Mk1_CAN.h"
+#include "PDU_Mk1_SDCard.h"
 
 #include "PDU_Mk1_CurrentSensing.h"
 #include "PDU_Mk1_HSSControl.h"
+
+// Tasks
+#include "Task_Blink.h"
+#include "Task_ReadCurrents.h"
+#include "Task_HSSControl.h"
+#include "Task_CanSendStatus.h"
+#include "Task_SDCard.h"
 
 // DEFINES --------------------------------------------------------------------
 

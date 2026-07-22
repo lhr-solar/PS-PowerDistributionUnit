@@ -2,6 +2,26 @@
 
 #include "Task_Init.h"
 
+// Task: Blink
+StaticTask_t task_blink_buffer;
+StackType_t task_blink_stack[TASK_BLINK_STACK_SIZE];
+
+// Task: Read Currents
+StaticTask_t task_readcurrents_buffer;
+StackType_t task_readcurrents_stack[TASK_READCURRENTS_STACK_SIZE];
+
+// Task: HSS Output Control
+StaticTask_t task_hsscontrol_buffer;
+StackType_t task_hsscontrol_stack[TASK_HSSCONTROL_STACK_SIZE];
+
+// Task: Send CAN Status
+StaticTask_t task_cansendstatus_buffer;
+StackType_t task_cansendstatus_stack[TASK_CANSENDSTATUS_STACK_SIZE];
+
+// Task: SD Card Logging
+StaticTask_t task_sdcard_buffer;
+StackType_t task_sdcard_stack[TASK_SDCARD_STACK_SIZE];
+
 void Task_Init(void *argument)
 {
     PDU_Mk1_GPIO_Init();
@@ -65,7 +85,7 @@ void Task_Init(void *argument)
         Error_Handler();
     }
 #endif
-    
+
     if(PDU_Mk1_CurrentSensing_Init() != true)
     {
         printf("FAIL:ISENSE_INIT\n");
@@ -87,7 +107,51 @@ void Task_Init(void *argument)
     printf("Initialization complete.\n");
 
     // get this party started
-    PDU_Mk1_StartTasks();
+    xTaskCreateStatic(Task_Blink,
+                    "Blink Task",
+                    TASK_BLINK_STACK_SIZE,
+                    NULL,
+                    TASK_BLINK_PRIORITY,
+                    task_blink_stack,
+                    &task_blink_buffer
+                );
+
+    xTaskCreateStatic(Task_ReadCurrents,
+                    "Current Sense Task",
+                    TASK_READCURRENTS_STACK_SIZE,
+                    NULL,
+                    TASK_READCURRENTS_PRIORITY,
+                    task_readcurrents_stack,
+                    &task_readcurrents_buffer
+                );
+
+    xTaskCreateStatic(Task_HSSControl,
+                    "HSS Control Task",
+                    TASK_HSSCONTROL_STACK_SIZE,
+                    NULL,
+                    TASK_HSSCONTROL_PRIORITY,
+                    task_hsscontrol_stack,
+                    &task_hsscontrol_buffer
+                );
+
+    xTaskCreateStatic(Task_CanSendStatus,
+                    "CAN Send Status task",
+                    TASK_CANSENDSTATUS_STACK_SIZE,
+                    NULL,
+                    TASK_CANSENDSTATUS_PRIORITY,
+                    task_cansendstatus_stack,
+                    &task_cansendstatus_buffer
+                );
+
+    xTaskCreateStatic(Task_SDCard,
+                    "SD Card Logging Task",
+                    TASK_SDCARD_STACK_SIZE,
+                    NULL,
+                    TASK_SDCARD_PRIORITY,
+                    task_sdcard_stack,
+                    &task_sdcard_buffer
+                );
+
     // task kills itself
     vTaskDelete(NULL);
 }
