@@ -80,7 +80,7 @@ void Task_SDCard(void *argument)
 
         for(uint8_t i = 0; i < PDU_MK1_SDLOG_NUMLOGITEMS; i++)
         {
-            if(uxQueueMessagesWaiting(sd.job_queue) < SD_QUEUE_LENGTH - 1)
+            if(uxQueueMessagesWaiting(sd.job_queue) < SD_QUEUE_LENGTH - SD_QUEUE_RESERVE_FAULT_LOG_RESERVE_SIZE)
             {
                 if(USER_SD_Card_Write_Async(&sd, PDU_MK1_SDLOG_FILENAME, log_buffer[i], pdMS_TO_TICKS(PDU_MK1_SDLOG_TIMEOUT_MS)) != SD_OK)
                 {
