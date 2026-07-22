@@ -22,6 +22,7 @@
 
 #define PDU_MK1_SDLOG_FILENAME "PDU_LOG.TXT"
 
+#define PDU_MK1_SDLOG_FAULTLOG_TIMEOUT_MS 1
 #define PDU_MK1_SDLOG_TIMEOUT_MS 20
 
 #define PDU_MK1_SDLOG_NUMLOGITEMS 3
@@ -38,6 +39,10 @@
 
 // Error Logging
 #define PDU_MK1_SDLOG_ERROR_STRBUFFERSIZE 16
+#define SD_QUEUE_RESERVE_FAULT_LOG_RESERVE_SIZE 1 	// amount of space to leave
+													// in queue in case a fault
+													// log comes by
+													// (data logging is skipped)
 
 // Error Log IDs
 #define PDU_MK1_SDLOG_ERRORID_READ_CURRENTS 1

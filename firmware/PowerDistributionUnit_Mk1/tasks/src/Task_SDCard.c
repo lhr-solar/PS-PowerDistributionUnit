@@ -78,12 +78,15 @@ void Task_SDCard(void *argument)
             (PDU_Mk1_HSSControl_GetFaultState_Ch(15) != HSSCONTROL_NOFAULT)
         );
 
-        for(uint8_t i=0; i < PDU_MK1_SDLOG_NUMLOGITEMS; i++)
+        for(uint8_t i = 0; i < PDU_MK1_SDLOG_NUMLOGITEMS; i++)
         {
-            if(USER_SD_Card_Write_Async(&sd, PDU_MK1_SDLOG_FILENAME, log_buffer[i], pdMS_TO_TICKS(PDU_MK1_SDLOG_TIMEOUT_MS)) != SD_OK)
+            if(uxQueueMessagesWaiting(sd.job_queue) < SD_QUEUE_LENGTH - 1)
             {
-                sdcard_write_failures++;
-                printf("FAIL:SDCARDWRITE_%d\n", sdcard_write_failures);
+                if(USER_SD_Card_Write_Async(&sd, PDU_MK1_SDLOG_FILENAME, log_buffer[i], pdMS_TO_TICKS(PDU_MK1_SDLOG_TIMEOUT_MS)) != SD_OK)
+                {
+                    sdcard_write_failures++;
+                    printf("FAIL:SDCARDWRITE_%d\n", sdcard_write_failures);
+                }
             }
         }
         
