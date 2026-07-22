@@ -39,7 +39,7 @@ def find_tests(tests_dir: Path):
 
     tests = []
     for cfile in tests_dir.glob("*.c"):
-        tests.append(cfile.stem)
+        tests.append(cfile.stem.replace("Test_", ""))
 
     if not tests:
         error("Something is horribly wrong. No test files found in the tests directory.")
