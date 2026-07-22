@@ -18,6 +18,12 @@ void Task_Init(void *argument)
         Error_Handler();
     }
 
+    if(PDU_Mk1_SPI1_SDCard_Init() != true)
+    {
+        printf("FAIL:SPI1_INIT\n");
+        Error_Handler();
+    }
+
     if(PDU_Mk1_SPI2_ADC_Init() != true)
     {
         printf("FAIL:SPI2_INIT\n");
@@ -63,6 +69,12 @@ void Task_Init(void *argument)
     if(PDU_Mk1_CurrentSensing_Init() != true)
     {
         printf("FAIL:ISENSE_INIT\n");
+        Error_Handler();
+    }
+
+    if(PDU_Mk1_SDCard_Init() != true)
+    {
+        printf("FAIL:SDCARD_INIT\n");
         Error_Handler();
     }
 

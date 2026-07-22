@@ -11,6 +11,10 @@ void Task_ReadCurrents(void* argument) {
         {
             current_read_failures++;
             printf("FAIL:READ_CURRENTS_%d\n", current_read_failures);
+
+#ifdef PDU_MK1_SDLOG_ERRORS
+            PDU_Mk1_SDCard_LogError(PDU_MK1_SDLOG_ERRORID_READ_CURRENTS, current_read_failures);
+#endif
         }
 
 #if (PDU_MK1_PRINT_STATUS_VIA_UART)

@@ -11,6 +11,9 @@
 
 // BBPDU peripherals
 #include "PDU_Mk1_HSSControl.h"
+#ifdef PDU_MK1_SDLOG_ERRORS
+ #include "PDU_Mk1_SDCard.h"
+#endif
 
 // DEFINES --------------------------------------------------------------------
 

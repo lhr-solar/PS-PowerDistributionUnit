@@ -12,6 +12,10 @@ void Task_HSSControl(void *argument)
         {
             hsscontrol_send_failures++;
             printf("FAIL:HSSCONTROL_ALLON_%d", hsscontrol_send_failures);
+
+#ifdef PDU_MK1_SDLOG_ERRORS
+        PDU_Mk1_SDCard_LogError(PDU_MK1_SDLOG_ERRORID_HSSCONTROL, hsscontrol_send_failures);
+#endif
         }
 
         vTaskDelay(pdMS_TO_TICKS(TASK_HSSCONTROL_INTERVAL_MS));

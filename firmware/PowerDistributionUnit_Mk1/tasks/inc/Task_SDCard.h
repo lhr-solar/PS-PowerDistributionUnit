@@ -1,33 +1,39 @@
-// Task_ReadCurrents.h
+// Task_SDCard.h
 // ----------------------------------------------------------------------------
-// Task sends PDU status on CAN. 
+// Task logs data to SD card.
 
 #pragma once
 
 // INCLUDES -------------------------------------------------------------------
 
+#include<stdio.h>
+
 #include "stm32xx_hal.h"
 #include "printf.h"
 
+// BBPDU peripherals
 #include "PDU_Mk1.h"
-#include "PDU_Mk1_CAN.h"
+#include "PDU_Mk1_SDCard.h"
 #include "PDU_Mk1_CurrentSensing.h"
 #include "PDU_Mk1_HSSControl.h"
-#ifdef PDU_MK1_SDLOG_ERRORS
- #include "PDU_Mk1_SDCard.h"
-#endif
+
+// drivers
+#include "sdcard.h"
 
 // DEFINES --------------------------------------------------------------------
 
-#define TASK_CANSENDSTATUS_STACK_SIZE configMINIMAL_STACK_SIZE+200
-#define TASK_CANSENDSTATUS_PRIORITY tskIDLE_PRIORITY + 2
+#define TASK_SDCARD_STACK_SIZE configMINIMAL_STACK_SIZE+200
+#define TASK_SDCARD_PRIORITY tskIDLE_PRIORITY + 2
 
-// sets how often the CAN status is sent
-#define TASK_CANSENDSTATUS_CH_INTERVAL_MS 100		// single channel mode
-// #define TASK_CANSENDSTATUS_INTERVAL_MS 1000		// spam all channels (doesn't work)
+// sets how often the SD card is written to
+#define TASK_SDCARD_INTERVAL_MS 100
 
 // VARIABLE DECLARATIONS ------------------------------------------------------
 
+extern sd_handle_t sd;
+
+extern uint16_t sdcard_write_failures;
+
 // FUNCTIONS ------------------------------------------------------------------
 
-void Task_CanSendStatus(void *argument);
+void Task_SDCard(void *argument);
