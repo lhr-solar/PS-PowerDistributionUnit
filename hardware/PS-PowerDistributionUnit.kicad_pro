@@ -537,6 +537,10 @@
     [
       "36c8df72-7ede-452e-a2ec-09fdaf0ef78b",
       "48PinMCU"
+    ],
+    [
+      "ac45b9fd-4ce8-4391-9e98-0dd18286737f",
+      "Pair1"
     ]
   ],
   "text_variables": {}
