@@ -453,7 +453,6 @@
 				)
 			)
 			(embedded_fonts no)
-			(embedded_files)
 		)
 		(symbol "PowerDistributionUnitLib:Molex_NanoFit_1x2"
 			(pin_names
@@ -623,7 +622,6 @@
 				)
 			)
 			(embedded_fonts no)
-			(embedded_files)
 		)
 		(symbol "power:+24V"
 			(power)
@@ -2380,7 +2378,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1f95961-aa1d-435a-917b-0155503aea05")
+			(uuid "b1f95961-aa1d-435a-917b-0155503aea06")
 		)
 		(instances
 			(project ""
@@ -2835,7 +2833,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1f95961-aa1d-435a-917b-0155503aea05")
+			(uuid "b1f95961-aa1d-435a-917b-0155503aea07")
 		)
 		(instances
 			(project ""
