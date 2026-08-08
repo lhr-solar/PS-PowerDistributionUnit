@@ -1113,7 +1113,6 @@
 				)
 			)
 			(embedded_fonts no)
-			(embedded_files)
 		)
 		(symbol "power:+3V3"
 			(power)
@@ -2854,10 +2853,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481a")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb0")
 		)
 		(instances
 			(project ""
@@ -5819,10 +5818,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481b")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb1")
 		)
 		(instances
 			(project ""
@@ -6235,10 +6234,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481c")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb2")
 		)
 		(instances
 			(project ""
@@ -6805,10 +6804,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481d")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb3")
 		)
 		(instances
 			(project ""
@@ -6875,10 +6874,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481e")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb4")
 		)
 		(instances
 			(project ""
@@ -6945,10 +6944,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b9481f")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb5")
 		)
 		(instances
 			(project ""
@@ -7081,10 +7080,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94819")
+			(uuid "3b298cfa-ffda-4e00-a564-2ec0c9b94820")
 		)
 		(pin "1"
-			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0faf")
+			(uuid "44779f31-bc7e-4ea0-89e6-7be932cc0fb6")
 		)
 		(instances
 			(project ""
