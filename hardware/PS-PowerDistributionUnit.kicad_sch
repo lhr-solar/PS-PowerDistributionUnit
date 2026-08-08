@@ -873,6 +873,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:+5V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers
@@ -1280,6 +1405,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 118.11) (xy 25.4 120.015)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "304e33ce-0364-445c-b0dd-c538d0fe8c17")
+	)
+	(wire
+		(pts
 			(xy 77.47 20.955) (xy 77.47 22.225)
 		)
 		(stroke
@@ -1287,6 +1422,16 @@
 			(type default)
 		)
 		(uuid "354f6251-3c85-49f0-80f1-c021ba8b9c97")
+	)
+	(wire
+		(pts
+			(xy 53.34 123.19) (xy 57.785 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ad31d24-87fd-438d-83a5-c5c2638ac2ec")
 	)
 	(wire
 		(pts
@@ -1347,6 +1492,16 @@
 			(type default)
 		)
 		(uuid "53059ff9-1fe9-4f9f-bb3d-8959215d4b46")
+	)
+	(wire
+		(pts
+			(xy 25.4 123.825) (xy 33.02 123.825)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5520739a-f9be-4895-b261-785a677fc66a")
 	)
 	(wire
 		(pts
@@ -1437,6 +1592,16 @@
 			(type default)
 		)
 		(uuid "7c5d9324-39a4-4307-b6f2-fba5f3edb892")
+	)
+	(wire
+		(pts
+			(xy 25.4 120.015) (xy 33.02 120.015)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f03d421-9293-4185-988a-cc726a324cf9")
 	)
 	(wire
 		(pts
@@ -1577,6 +1742,16 @@
 			(type default)
 		)
 		(uuid "ac1b6d2c-5469-4829-a736-afeb0b5a4f81")
+	)
+	(wire
+		(pts
+			(xy 25.4 125.095) (xy 25.4 123.825)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac9d5178-60c6-4b0a-b971-975b79b32351")
 	)
 	(wire
 		(pts
@@ -1737,6 +1912,16 @@
 			(type default)
 		)
 		(uuid "eda9f3c0-1d11-408d-9179-9970bb24ded2")
+	)
+	(wire
+		(pts
+			(xy 57.785 123.19) (xy 57.785 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef9d3e7e-061e-4730-aa03-172da5a85169")
 	)
 	(wire
 		(pts
@@ -2337,6 +2522,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+24V")
+		(at 25.4 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4f841b37-ddb0-4d48-ab3e-e7e95892ed2d")
+		(property "Reference" "#PWR0126"
+			(at 25.4 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+24V"
+			(at 25.4 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+24V\""
+			(at 25.4 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a22b540-1bd4-4d79-aedb-0d4d598c734b")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "#PWR0126")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 79.375 96.52 0)
 		(unit 1)
@@ -2727,6 +2978,72 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
 					(reference "#PWR011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 57.785 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "93f26ce9-59e0-4a56-91f9-4a2149a26b42")
+		(property "Reference" "#PWR0128"
+			(at 57.785 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 57.785 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.785 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.785 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 57.785 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a09e525a-14a5-4615-8255-94dec0e8e2dc")
+		)
+		(instances
+			(project ""
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
@@ -3347,6 +3664,72 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
 					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 25.4 125.095 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e02c0b7e-d34f-4ea7-9a44-912c9c96d089")
+		(property "Reference" "#PWR0127"
+			(at 25.4 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 25.4 130.175 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 25.4 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 25.4 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 25.4 125.095 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0ee6fa75-97b0-43ce-914e-a02379a052be")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "#PWR0127")
 					(unit 1)
 				)
 			)
@@ -4657,6 +5040,78 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
 					(page "13")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 33.02 116.84)
+		(size 20.32 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ed2d1a41-bb36-4dea-9776-a72024efc9f4")
+		(property "Sheetname" "5VBuck"
+			(at 33.02 116.1284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "5VBuck.kicad_sch"
+			(at 33.02 127.5846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" input
+			(at 33.02 123.825 180)
+			(uuid "3c994313-b5d6-419a-af87-71749f78b741")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "V_in_24V" input
+			(at 33.02 120.015 180)
+			(uuid "eb5f62ae-aaa9-401a-8a66-b57238338a01")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "V_out_5V" output
+			(at 53.34 123.19 0)
+			(uuid "1c0603e1-6290-4958-9b61-42f1cf5a6451")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(page "15")
 				)
 			)
 		)
