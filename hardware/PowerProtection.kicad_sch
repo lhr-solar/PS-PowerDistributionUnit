@@ -46298,7 +46298,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "042b9804-47b9-407a-87bf-5006a6aed699")
-		(property "Reference" "C3"
+		(property "Reference" "C18"
 			(at 57.785 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46399,6 +46399,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "C18")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46413,7 +46419,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c45fc8a-bcc4-4313-aeca-374a3cb5e0de")
-		(property "Reference" "R1"
+		(property "Reference" "R9"
 			(at 45.72 60.9599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46514,6 +46520,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R9")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46527,7 +46539,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4200c9c3-4407-484d-bd03-607c0325b9b3")
-		(property "Reference" "R7"
+		(property "Reference" "R13"
 			(at 125.73 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46615,6 +46627,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R13")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46628,7 +46646,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "554c6273-4c35-418e-b9d9-5d7b3feeab64")
-		(property "Reference" "C1"
+		(property "Reference" "C16"
 			(at 38.1 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46718,6 +46736,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "C16")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46731,7 +46755,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "567d7981-59ef-48a7-b328-3993477ab495")
-		(property "Reference" "R6"
+		(property "Reference" "R14"
 			(at 125.984 87.63 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46819,6 +46843,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R14")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46832,7 +46862,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5f8c95be-4bec-4715-b67b-6a9afc6a3131")
-		(property "Reference" "R3"
+		(property "Reference" "R10"
 			(at 67.31 54.61 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46931,6 +46961,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R10")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -46944,7 +46980,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "73dcf30c-1114-4b7f-9b6d-e8e575b19d22")
-		(property "Reference" "IC1"
+		(property "Reference" "IC2"
 			(at 75.184 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47112,6 +47148,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "IC2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47126,7 +47168,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7a75ea5c-b19c-45c9-b368-38aa6fafdb44")
-		(property "Reference" "D2"
+		(property "Reference" "D21"
 			(at 17.272 51.054 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47213,6 +47255,12 @@
 			(project "PowerProtection"
 				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "D21")
 					(unit 1)
 				)
 			)
@@ -47359,6 +47407,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47372,7 +47426,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9b1ddc4f-24aa-46be-8d1e-e07bf585137f")
-		(property "Reference" "C4"
+		(property "Reference" "C19"
 			(at 54.864 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47462,6 +47516,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "C19")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47475,7 +47535,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a4deae88-7df1-4411-8ab3-b2332c17194a")
-		(property "Reference" "C5"
+		(property "Reference" "C20"
 			(at 112.395 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47562,6 +47622,12 @@
 			(project "PowerProtection"
 				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -47709,6 +47775,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47722,7 +47794,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "be94d869-90f2-4669-bef8-7f9b9e85a653")
-		(property "Reference" "R5"
+		(property "Reference" "R12"
 			(at 114.808 87.884 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47810,6 +47882,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R12")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47823,7 +47901,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c14b4f59-05e7-4bf5-84a0-5fbb5a89a522")
-		(property "Reference" "D1"
+		(property "Reference" "D22"
 			(at 46.228 84.074 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47946,6 +48024,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "D22")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -47960,7 +48044,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c99346f3-cf25-4b2b-b50c-e7e063bd40c1")
-		(property "Reference" "C2"
+		(property "Reference" "C17"
 			(at 33.02 80.0099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48050,6 +48134,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "C17")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -48063,7 +48153,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dc50b215-6e88-4055-b18d-dec3d913aa62")
-		(property "Reference" "R4"
+		(property "Reference" "R11"
 			(at 114.3 79.248 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48153,12 +48243,12 @@
 					(unit 1)
 				)
 			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/57719e66-c5b1-466c-b4ff-7913976ad99e"
+					(reference "R11")
+					(unit 1)
+				)
+			)
 		)
 	)
-	(sheet_instances
-		(path "/"
-			(page "1")
-		)
-	)
-	(embedded_fonts no)
 )
