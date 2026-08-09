@@ -1294,7 +1294,7 @@
 		)
 		(uuid "5ea4ab9a-b1bb-4f7c-b323-7315c98430ee")
 	)
-	(text "TODO:\n-add powerprotection design block (make sure more than 2.2A)\n-fix datasheet and P/N\n-output caps on buck are NRND/EOL, change to newer\n-gamer LED"
+	(text "TODO:\n-add powerprotection design block (make sure more than 2.2A)\n-fix datasheet and P/N\n-output caps on buck are NRND/EOL, change to newer\n"
 		(exclude_from_sim no)
 		(at 17.526 184.15 0)
 		(effects
@@ -1392,16 +1392,6 @@
 			(type default)
 		)
 		(uuid "20e575a8-11ed-42c2-8a71-6c6ebc888237")
-	)
-	(wire
-		(pts
-			(xy 132.08 54.61) (xy 145.415 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "237c74dd-75a6-49d5-bec2-4f680a10f323")
 	)
 	(wire
 		(pts
@@ -1672,16 +1662,6 @@
 			(type default)
 		)
 		(uuid "91630a92-3390-4d87-98c7-e43069e9b1f3")
-	)
-	(wire
-		(pts
-			(xy 132.08 58.42) (xy 145.415 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "956a22e5-5cb4-4975-819c-b04a689cbf51")
 	)
 	(wire
 		(pts
@@ -2033,28 +2013,6 @@
 		)
 		(uuid "8d4ccaf0-5996-45e0-8c7c-8b218116a4b5")
 	)
-	(global_label "LED_SCLK"
-		(shape bidirectional)
-		(at 145.415 54.61 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1c7c3e43-4278-4946-b8b7-5a4bf5eb7b58")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 158.7038 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "DI_MODE"
 		(shape bidirectional)
 		(at 145.415 43.18 0)
@@ -2121,7 +2079,7 @@
 			)
 		)
 	)
-	(global_label "LED_CS"
+	(global_label "LED_DIN"
 		(shape bidirectional)
 		(at 145.415 50.8 0)
 		(fields_autoplaced yes)
@@ -2133,29 +2091,7 @@
 		)
 		(uuid "9a0c0114-eda9-44bf-ba64-99c021fb836f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.4057 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "LED_MOSI"
-		(shape bidirectional)
-		(at 145.415 58.42 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c5372ba9-a27f-4003-a375-2777f0c89f9e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 158.5224 58.42 0)
+			(at 157.1315 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4116,7 +4052,7 @@
 			)
 		)
 		(pin "PB13" bidirectional
-			(at 132.08 54.61 0)
+			(at 132.08 120.65 0)
 			(uuid "dfbeda18-36c6-4177-90cd-153091e0a4f6")
 			(effects
 				(font
@@ -4136,7 +4072,7 @@
 			)
 		)
 		(pin "PB15" bidirectional
-			(at 132.08 58.42 0)
+			(at 132.08 124.46 0)
 			(uuid "62e6129f-d178-4431-840f-4b46af9f2da3")
 			(effects
 				(font
@@ -4430,7 +4366,7 @@
 		)
 	)
 	(sheet
-		(at 162.56 51.435)
+		(at 166.37 48.895)
 		(size 12.7 5.08)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4446,7 +4382,7 @@
 		)
 		(uuid "9558d30f-15cc-469d-b921-6b74808d7dd0")
 		(property "Sheetname" "Indicators"
-			(at 162.56 50.7234 0)
+			(at 166.37 48.1834 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4455,7 +4391,7 @@
 			)
 		)
 		(property "Sheetfile" "Indicators.kicad_sch"
-			(at 162.56 57.0996 0)
+			(at 166.37 54.5596 0)
 			(effects
 				(font
 					(size 1.27 1.27)
