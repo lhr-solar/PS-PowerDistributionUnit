@@ -523,14 +523,6 @@
       "Root"
     ],
     [
-      "2e22e59d-f8d2-4d45-88fd-02f3a44d7f91",
-      "PowerProtection"
-    ],
-    [
-      "bf74a586-cb4a-4ae5-9c2d-204be6a4ff19",
-      "3V3Buck"
-    ],
-    [
       "9cd8cb49-32eb-4950-9e07-61b751a85545",
       "CAN_Transceiver"
     ],
@@ -571,12 +563,16 @@
       "Pair8"
     ],
     [
-      "9558d30f-15cc-469d-b921-6b74808d7dd0",
-      "Indicators"
+      "5dad52f3-6f13-4043-9864-0ec1f6c2175f",
+      "3V3Buck"
     ],
     [
-      "ed2d1a41-bb36-4dea-9776-a72024efc9f4",
+      "c1ab43bd-83f5-4478-8cd1-f36b80c9eb92",
       "5VBuck"
+    ],
+    [
+      "9558d30f-15cc-469d-b921-6b74808d7dd0",
+      "Indicators"
     ]
   ],
   "text_variables": {}
