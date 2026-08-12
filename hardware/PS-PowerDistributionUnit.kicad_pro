@@ -546,7 +546,7 @@
         "uuid": "eb16378f-e371-46a9-bfab-b0d9404d0362"
       }
     ],
-    "used_designators": "C16-20,#PWR46-47,D21-22,R9-14,IC2,Q1-2",
+    "used_designators": "C1-54,#PWR1-122,D1-47,J1-19,J22-25,#FLG1-2,R1-33,R52-55,IC1-10,Q1-2,F1-16,JP1,FB1-2,L1,SW1-2,TP1-5,TP_3.3V1,U1-3,Y1",
     "variants": []
   },
   "sheets": [
@@ -555,15 +555,19 @@
       "PS-PowerDistributionUnit"
     ],
     [
+      "57719e66-c5b1-466c-b4ff-7913976ad99e",
+      "PowerProtection"
+    ],
+    [
       "c1ab43bd-83f5-4478-8cd1-f36b80c9eb92",
       "5VBuck"
     ],
     [
-      "9558d30f-15cc-469d-b921-6b74808d7dd0",
-      "Indicators"
+      "9972f14e-5d42-4456-afd0-16b3fab031b0",
+      "3V3 LDO"
     ],
     [
-      "9cd8cb49-32eb-4950-9e07-61b751a85545",
+      "c3c07a99-aad4-4609-b9c8-47e591430794",
       "CAN_Transceiver"
     ],
     [
@@ -575,40 +579,36 @@
       "Pair1"
     ],
     [
-      "2ec3f318-3079-4626-abb5-d7dbcd23d1ed",
+      "cfb74921-f3e0-4ec3-a6c0-b34a33eeabc4",
       "Pair2"
     ],
     [
-      "ae589b1c-3a06-4f33-a386-c73c0d3a10c3",
+      "dd389b5a-4607-4e6b-be9d-736f137f5762",
       "Pair3"
     ],
     [
-      "b660808c-3250-4abc-abd1-92a18ffca9d2",
+      "84bb30b8-36c3-4e94-a361-c09a24686c06",
       "Pair4"
     ],
     [
-      "8802f028-f7fd-4b7f-859a-767e0a41a4bd",
+      "e1e2e281-4cf3-4ee5-911d-25170898a943",
       "Pair5"
     ],
     [
-      "0fe73295-c59f-4b79-87b9-e03d9afe7f6b",
+      "b95f008d-e6c5-4598-bdf1-0f9e36bb8a8c",
       "Pair6"
     ],
     [
-      "84ecfa45-7937-4451-af55-5861b5c36554",
+      "420caca5-8440-4add-9b29-4aa05dc85644",
       "Pair7"
     ],
     [
-      "d4226532-f972-49c6-b796-472606c1f3e5",
+      "20977ddb-3a37-4cc1-949b-8908519a9a21",
       "Pair8"
     ],
     [
-      "5dad52f3-6f13-4043-9864-0ec1f6c2175f",
-      "3V3Buck"
-    ],
-    [
-      "57719e66-c5b1-466c-b4ff-7913976ad99e",
-      "PowerProtection"
+      "9558d30f-15cc-469d-b921-6b74808d7dd0",
+      "Indicators"
     ]
   ],
   "text_variables": {},
