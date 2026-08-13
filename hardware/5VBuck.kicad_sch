@@ -4061,26 +4061,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "202d2c2c-3777-44de-9e7a-03ac405cef2a")
+			(uuid "ecb8e1a7-5e2f-45bf-9f8c-63e21a9440ff")
 		)
 		(pin "2"
-			(uuid "7d12297f-1c4c-4128-b9b3-cdd23ce8c403")
+			(uuid "75b93a3c-7bb9-4076-8657-10d16793a9cc")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "L1")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "L2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "L1")
 					(unit 1)
 				)
@@ -4177,26 +4165,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "71b2dc9b-e2c4-4b40-a97b-e85223483b9d")
+			(uuid "43e37e79-b993-48a6-8d64-6d2fcb570bdd")
 		)
 		(pin "2"
-			(uuid "11b4fb93-1497-44cc-895b-b5c2b8669f38")
+			(uuid "25824cd0-a95c-4740-945b-86af2fc72c30")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "R2")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "R3")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "R4")
 					(unit 1)
 				)
@@ -4293,26 +4269,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "6ec9a8d7-a721-4dd3-a4fc-aff18dbdbb19")
+			(uuid "168ec0e4-7c8b-4c6c-9d33-98ec09686c11")
 		)
 		(pin "2"
-			(uuid "8a925bf9-fd9d-4f8e-8d95-f26a7ad3945f")
+			(uuid "4a2f686b-7e85-42a1-bb41-20b162295f0f")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "C1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "C1")
 					(unit 1)
 				)
@@ -4387,23 +4351,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "16b24b4e-ea22-4704-a0b4-5ebfda8280e5")
+			(uuid "88f8d203-e154-428d-b05e-5554df46c872")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "TP?")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/ae63f0a9-78b8-4efb-b2ee-a2699a24d705"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "TP4")
 					(unit 1)
 				)
@@ -4499,26 +4451,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f492e05-dc85-4cd9-b07a-90470567f276")
+			(uuid "2f3ec16e-da28-475f-a91f-dda8fb108dce")
 		)
 		(pin "2"
-			(uuid "f2d282fd-9946-4637-8cd6-dfb9210a4c38")
+			(uuid "84680e7e-ebdc-4b22-950d-26cc39a64945")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "C2")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "C2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "C2")
 					(unit 1)
 				)
@@ -4615,38 +4555,26 @@
 			)
 		)
 		(pin "2"
-			(uuid "3e74be9d-8368-4c50-a14f-2bc5e7399fa2")
+			(uuid "fe3d5d0f-2757-4f58-a153-e4fcfa943e28")
 		)
 		(pin "6"
-			(uuid "dd114386-65bc-435a-b9b6-5cb438a2d684")
+			(uuid "a857a9ca-8237-48ac-a4cf-268471ecef61")
 		)
 		(pin "5"
-			(uuid "22235881-db74-4d9c-91ec-9bb724db3412")
+			(uuid "1d732a6a-b9e6-418d-b838-a35469867aee")
 		)
 		(pin "1"
-			(uuid "161f3207-4b82-485e-b891-11b0e04c3101")
+			(uuid "3952a582-1e01-4d47-be13-0dc4c89e55ab")
 		)
 		(pin "4"
-			(uuid "f95d36c2-62a2-4b25-938d-3ba6fd6c05fe")
+			(uuid "fa7257ba-e05a-4bb7-a82a-f38e133070c1")
 		)
 		(pin "3"
-			(uuid "40ba364e-b238-42df-96c0-190ec84014ea")
+			(uuid "6f0d98b5-0ebc-449f-82c3-2d7d392c0846")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "U1")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "U2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "U1")
 					(unit 1)
 				)
@@ -4721,23 +4649,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "604139f8-1aea-448d-9051-15364e895672")
+			(uuid "fa0206ba-153c-42dd-a380-a53e6f8c3bcb")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "TP?")
-					(unit 1)
-				)
-			)
-			(project ""
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/ae63f0a9-78b8-4efb-b2ee-a2699a24d705"
-					(reference "TP13")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "TP2")
 					(unit 1)
 				)
@@ -4812,23 +4728,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "deb4a48a-6b2d-47ca-a2dd-a2295f685465")
+			(uuid "857c1e9d-360f-4011-8640-8de83a86a443")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "#FLG08")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "#FLG01")
 					(unit 1)
 				)
@@ -4903,23 +4807,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7ce99e8c-679a-436d-a98f-ffbb8a741835")
+			(uuid "eb6cdd1e-8052-4854-9587-a9ea20d0e46a")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "TP?")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/ae63f0a9-78b8-4efb-b2ee-a2699a24d705"
-					(reference "TP16")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "TP5")
 					(unit 1)
 				)
@@ -5016,26 +4908,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "cefa0e5c-bc6f-4c80-8f4b-8426e614b555")
+			(uuid "c756d482-f03c-408a-8000-4c4ec8c9852c")
 		)
 		(pin "2"
-			(uuid "5d5e65c7-2189-4395-92c6-ce10ec9d0f25")
+			(uuid "972c5110-3645-42d3-afae-b30e8a53fdb2")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "C4")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "C8")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "C4")
 					(unit 1)
 				)
@@ -5109,23 +4989,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "962e20b5-9a05-43b4-8feb-42a653d66b6e")
+			(uuid "de3e1d9c-5e67-4bd9-9e85-37dd60c6d390")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "#FLG02")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "#FLG09")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "#FLG02")
 					(unit 1)
 				)
@@ -5222,26 +5090,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "0d147276-2971-40ca-93a9-7ef99e786087")
+			(uuid "ff21dd1e-1198-4d96-9a4e-a31d742601b9")
 		)
 		(pin "2"
-			(uuid "94a4c3ff-a922-438f-9d6c-9e71e7d273c5")
+			(uuid "1141b283-ea3f-46ab-b47e-38523508eaa6")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "R2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "R3")
 					(unit 1)
 				)
@@ -5338,26 +5194,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f7eb9894-e1ca-4d33-9f51-c30ab9795138")
+			(uuid "cf06c32f-a7c7-4bf7-98b0-b80d2605a41f")
 		)
 		(pin "2"
-			(uuid "cd0c61c0-04ee-4a71-9cfc-ac673663e574")
+			(uuid "9200ae52-e4ad-4560-8c1f-80c8918fc9ea")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-			(project "PS-Buck"
-				(path "/331f457b-ed4e-4d4a-ad6d-c8acb2febfed/fd0ad9ec-55a0-4daf-b550-9a7f2436753f"
-					(reference "C5")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "C3")
 					(unit 1)
 				)
@@ -5432,23 +5276,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "a2f5ef80-5291-4d20-9e27-e8670f780ccf")
+			(uuid "355654d2-bd2f-4a4c-a516-c1425f3ba0de")
 		)
 		(instances
-			(project "5VBuck"
-				(path "/1a7db697-3478-4f8f-a838-af5608c43196"
-					(reference "TP?")
-					(unit 1)
-				)
-			)
-			(project "PowerPath"
-				(path "/ad6c7df0-eb90-4670-9aa8-3e2007aefc2d/ae63f0a9-78b8-4efb-b2ee-a2699a24d705"
-					(reference "TP14")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c1ab43bd-83f5-4478-8cd1-f36b80c9eb92"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/e1446a70-7bd0-4041-85fa-90922de295c9"
 					(reference "TP3")
 					(unit 1)
 				)

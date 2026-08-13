@@ -33675,7 +33675,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "11fc3897-418c-456a-8fd5-75858f7bdad9")
-		(property "Reference" "C6"
+		(property "Reference" "C51"
 			(at 76.2 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33753,27 +33753,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "62490040-1afe-4ec9-9fdd-5ae650351c74")
+			(uuid "68d40503-aab8-45f0-ae7a-b952b0b9e178")
 		)
 		(pin "2"
-			(uuid "cfbcadea-96cf-424c-ad91-890e544e6363")
+			(uuid "7bfc104f-1d16-4cf7-9cc6-a0a442e6349c")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "C2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "C6")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "C51")
 					(unit 1)
 				)
 			)
@@ -33790,7 +33778,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "269c1b14-22dd-4a9f-bc64-46d9c4d23a1e")
-		(property "Reference" "C8"
+		(property "Reference" "C53"
 			(at 194.564 88.646 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33866,27 +33854,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "3b0d596f-f884-4807-ad90-b5139a0a7756")
+			(uuid "353fb981-2531-49a3-ba55-c55387a77bf9")
 		)
 		(pin "2"
-			(uuid "0f0b5e97-daad-483c-a5d0-5d662ddb8640")
+			(uuid "5d388b9d-614d-4ebd-9451-744446313913")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "C8")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "C4")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "C8")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "C53")
 					(unit 1)
 				)
 			)
@@ -33904,7 +33880,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "418918ed-79a5-4844-a068-77984ff1998e")
-		(property "Reference" "JP1"
+		(property "Reference" "JP2"
 			(at 215.9 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33958,33 +33934,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "f1ec1902-e105-4b87-9a53-3c130be47f4d")
+			(uuid "5e735678-13fd-4f26-9c6f-7f0136f7c66a")
 		)
 		(pin "2"
-			(uuid "3d0c2ea2-acd1-49f7-986a-b378f6b430a0")
+			(uuid "ac689939-e1e2-4954-9cea-9f584b24c0ed")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "JP2")
-					(unit 1)
-				)
-			)
-			(project ""
-				(path "/81d906df-a099-480a-8398-28a8e913d125"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "JP1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "JP1")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "JP2")
 					(unit 1)
 				)
 			)
@@ -34001,7 +33959,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7484bcdc-1ddf-4a31-9ac2-deff0b8d2fc5")
-		(property "Reference" "C7"
+		(property "Reference" "C52"
 			(at 88.138 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34079,27 +34037,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "85aa2bda-d2f7-4634-9149-c3a03f575c6e")
+			(uuid "5ae3cd35-9caf-4b16-a02f-41892da996a4")
 		)
 		(pin "2"
-			(uuid "1e6d57eb-788f-4ab6-9e32-f0227f9fcce7")
+			(uuid "39f94b2c-e983-402a-bcbb-a680fa642fc0")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "C7")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "C3")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "C7")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "C52")
 					(unit 1)
 				)
 			)
@@ -34116,7 +34062,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8bc6d0f8-90a9-4a3e-bd4c-4f1d37db40e4")
-		(property "Reference" "C5"
+		(property "Reference" "C50"
 			(at 65.278 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34194,33 +34140,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "931d7d00-34c0-432f-b957-5973964ff07a")
+			(uuid "a272ad97-1a38-46b0-8f92-369858f760af")
 		)
 		(pin "2"
-			(uuid "a68fbfcf-27e7-4ded-8e8c-d9afa05a2b87")
+			(uuid "f4834a42-7ffb-428f-99b9-da1a0de2cb3e")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-			(project ""
-				(path "/81d906df-a099-480a-8398-28a8e913d125"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "C1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "C5")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "C50")
 					(unit 1)
 				)
 			)
@@ -34237,7 +34165,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d3dc1093-5927-44fd-b183-035a11ec5677")
-		(property "Reference" "R6"
+		(property "Reference" "R20"
 			(at 201.93 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34313,27 +34241,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "9bcdf47c-1070-4824-954d-f11fc9f517da")
+			(uuid "fe4a84a0-3a2d-4eda-a2f4-bf8379cbe339")
 		)
 		(pin "2"
-			(uuid "eadbc9ef-015e-416b-b429-cb310da85012")
+			(uuid "12a425f2-bea3-40e3-83f7-ea1941b89b67")
 		)
 		(instances
-			(project "kk36984"
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "R23")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "R2")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "R6")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -34351,7 +34267,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d7bbf058-1019-472a-b210-c9dc6eda02c8")
-		(property "Reference" "D18"
+		(property "Reference" "D46"
 			(at 196.85 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34478,30 +34394,18 @@
 			)
 		)
 		(pin "1"
-			(uuid "13cdd691-ca15-475a-aa4d-4c989ce45527")
+			(uuid "cd46becd-0a67-4638-8474-d2dc7f8aae59")
 		)
 		(pin "2"
-			(uuid "87f00ac4-f9fd-4b58-b326-8eb61cbae89e")
+			(uuid "92b90115-f1ae-4116-9440-02c458a860d3")
 		)
 		(pin "3"
-			(uuid "b0e2adf7-a02b-4ad8-a0aa-e181c8c6489b")
+			(uuid "b5fc860e-5435-4947-9b35-2fdafdb2b339")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "D8")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "D1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "D18")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "D46")
 					(unit 1)
 				)
 			)
@@ -34519,7 +34423,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f525b581-e914-48f3-856d-b707a04117a7")
-		(property "Reference" "IC1"
+		(property "Reference" "IC10"
 			(at 128.27 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34646,45 +34550,33 @@
 			)
 		)
 		(pin "1"
-			(uuid "222d85c9-7fcd-4631-a28f-08cf613da8b8")
+			(uuid "86f194e5-0760-47a6-9be5-d7d93f334337")
 		)
 		(pin "4"
-			(uuid "23dd2ff9-d2a4-4860-b6f6-3dcaf68d823a")
+			(uuid "0c0e6430-1e4e-4a72-848e-6092afeec979")
 		)
 		(pin "7"
-			(uuid "ae1a45f4-8169-47eb-ab20-7f3a12cc0739")
+			(uuid "93e556eb-6d92-416a-a9ba-12dee54b2226")
 		)
 		(pin "6"
-			(uuid "28c00350-192e-488d-8eed-1e221a850e3a")
+			(uuid "e37ecb32-bc59-478a-805e-6b619701d58a")
 		)
 		(pin "2"
-			(uuid "37691bbb-c337-4983-bc9a-05ac6e0366bd")
+			(uuid "07c14e24-d15e-4993-a23d-715f0392730e")
 		)
 		(pin "3"
-			(uuid "3c87ecf4-bb35-4a81-80a2-c831e1b99868")
+			(uuid "745bbf3a-c6c4-49f9-93e9-7b31b070f433")
 		)
 		(pin "5"
-			(uuid "6abcd12c-fa9b-4e47-ae0c-626bedaab829")
+			(uuid "d48dab44-acb8-419e-8769-155c8c79a57b")
 		)
 		(pin "8"
-			(uuid "bda5a424-c010-4a72-ba4f-0982ceea7b46")
+			(uuid "b675b9fb-e2a5-47c2-a667-3046c57899a2")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "IC1")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "IC1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "IC1")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "IC10")
 					(unit 1)
 				)
 			)
@@ -34701,7 +34593,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f905bbd5-25e3-4518-9a89-c3e959777327")
-		(property "Reference" "R5"
+		(property "Reference" "R18"
 			(at 176.53 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34777,33 +34669,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "86d33648-15d7-4302-99c9-26ba60e42db7")
+			(uuid "1fb13d64-6a75-4520-abd2-b43ffe9ac743")
 		)
 		(pin "2"
-			(uuid "c60f6f6c-5e75-4ba9-87cd-a842ff79f089")
+			(uuid "da51c8f8-866f-47aa-8e24-2ec19711bd42")
 		)
 		(instances
-			(project ""
-				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb/9d9eae1e-c713-4323-9845-a569cff8d5d3"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-			(project ""
-				(path "/81d906df-a099-480a-8398-28a8e913d125"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-			(project "CAN_Transceiver"
-				(path "/a09f9696-80ee-4697-8aaa-225f287b667b"
-					(reference "R1")
-					(unit 1)
-				)
-			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/c3c07a99-aad4-4609-b9c8-47e591430794"
-					(reference "R5")
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
+					(reference "R18")
 					(unit 1)
 				)
 			)

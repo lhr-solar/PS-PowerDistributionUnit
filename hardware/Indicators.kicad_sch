@@ -1065,29 +1065,16 @@
 		)
 		(uuid "f3e66e29-7f90-4401-ad98-234a5932b166")
 	)
-	(global_label "LED_DIN"
-		(shape bidirectional)
+	(hierarchical_label "LED_DIN"
+		(shape input)
 		(at 27.94 33.655 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "fa8b0988-0fa5-4ec3-a93a-738ae510256a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.2235 33.655 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
+		(uuid "611916e3-224c-4673-95fd-c48d74756f9c")
 	)
 	(symbol
 		(lib_id "LED:WS2812B-2020")

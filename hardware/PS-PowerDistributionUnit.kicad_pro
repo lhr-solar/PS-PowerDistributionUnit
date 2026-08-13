@@ -546,7 +546,7 @@
         "uuid": "eb16378f-e371-46a9-bfab-b0d9404d0362"
       }
     ],
-    "used_designators": "C1-54,#PWR1-122,D1-47,J1-19,J22-25,#FLG1-2,R1-33,R52-55,IC1-10,Q1-2,F1-16,JP1,FB1-2,L1,SW1-2,TP1-5,TP_3.3V1,U1-3,Y1",
+    "used_designators": "C1-66,D1-54,#PWR1-129,#PWR131-135,IC1-11,#FLG1-2,R1-33,R35-81,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
     "variants": []
   },
   "sheets": [
@@ -555,19 +555,27 @@
       "PS-PowerDistributionUnit"
     ],
     [
-      "57719e66-c5b1-466c-b4ff-7913976ad99e",
-      "PowerProtection"
+      "e5e6ee2e-1d09-4fff-9eef-bc055f220fc3",
+      "Power"
     ],
     [
-      "c1ab43bd-83f5-4478-8cd1-f36b80c9eb92",
-      "5VBuck"
-    ],
-    [
-      "9972f14e-5d42-4456-afd0-16b3fab031b0",
+      "b3ece65c-a1bc-4529-9ff0-e7f39b9d1f6a",
       "3V3 LDO"
     ],
     [
-      "c3c07a99-aad4-4609-b9c8-47e591430794",
+      "e1446a70-7bd0-4041-85fa-90922de295c9",
+      "5VBuck"
+    ],
+    [
+      "b0246900-e267-4919-ada7-b46927cdce75",
+      "PowerProtection"
+    ],
+    [
+      "2ee5fe6f-603f-4929-8596-ad2cbd26bff6",
+      "CAN"
+    ],
+    [
+      "94c71f3c-d4af-48d6-8a1b-560875efeb40",
       "CAN_Transceiver"
     ],
     [
@@ -579,32 +587,24 @@
       "Pair1"
     ],
     [
-      "cfb74921-f3e0-4ec3-a6c0-b34a33eeabc4",
+      "cb13da7e-067a-493c-b3b5-481ca6e5952d",
       "Pair2"
     ],
     [
-      "dd389b5a-4607-4e6b-be9d-736f137f5762",
+      "95650361-8e3d-4fb9-aeae-766234533dc0",
       "Pair3"
     ],
     [
-      "84bb30b8-36c3-4e94-a361-c09a24686c06",
+      "deedd56c-6817-40a7-b528-032192f149d8",
       "Pair4"
     ],
     [
-      "e1e2e281-4cf3-4ee5-911d-25170898a943",
+      "91ab2e5b-361c-4f6e-96f4-249ed894cf88",
       "Pair5"
     ],
     [
-      "b95f008d-e6c5-4598-bdf1-0f9e36bb8a8c",
+      "3909f681-ed21-4f6c-997f-d0f5d9a50140",
       "Pair6"
-    ],
-    [
-      "420caca5-8440-4add-9b29-4aa05dc85644",
-      "Pair7"
-    ],
-    [
-      "20977ddb-3a37-4cc1-949b-8908519a9a21",
-      "Pair8"
     ],
     [
       "9558d30f-15cc-469d-b921-6b74808d7dd0",
