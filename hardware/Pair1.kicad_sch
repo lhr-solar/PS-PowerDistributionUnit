@@ -1271,146 +1271,6 @@
 				)
 			)
 			(embedded_fonts no)
-			(embedded_files)
-		)
-		(symbol "power:+24V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+24V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+24V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+24V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+24V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
 		)
 		(symbol "power:+3V3"
 			(power global)
@@ -2089,7 +1949,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.745 84.455) (xy 125.095 84.455)
+			(xy 119.38 84.455) (xy 125.095 84.455)
 		)
 		(stroke
 			(width 0)
@@ -2126,16 +1986,6 @@
 			(type default)
 		)
 		(uuid "598b684c-aaeb-4dd6-aac0-9ac6e50a7549")
-	)
-	(wire
-		(pts
-			(xy 118.745 81.915) (xy 118.745 84.455)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d08ba0c-91ec-4a6a-976d-f58a367ae2d4")
 	)
 	(wire
 		(pts
@@ -2319,7 +2169,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 86.995) (xy 125.095 86.995)
+			(xy 120.015 86.995) (xy 125.095 86.995)
 		)
 		(stroke
 			(width 0)
@@ -6646,7 +6496,7 @@
 		(uuid "4a83dc35-ff78-48e0-9fcd-dcc104815cd4")
 	)
 	(label "VDD"
-		(at 115.57 86.995 0)
+		(at 120.015 86.995 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6739,6 +6589,17 @@
 		)
 		(uuid "6b486972-b0be-4c5e-9d57-2a11e75ff355")
 	)
+	(hierarchical_label "+24V_HSS"
+		(shape input)
+		(at 119.38 84.455 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8c044295-51cf-49d5-84e4-a9629c1d1ca2")
+	)
 	(hierarchical_label "OUTPUT2"
 		(shape output)
 		(at 245.745 66.675 0)
@@ -6793,104 +6654,6 @@
 			(justify left)
 		)
 		(uuid "cf12eb17-4714-4b46-9c68-90d9f2ca3c38")
-	)
-	(symbol
-		(lib_id "power:+24V")
-		(at 118.745 81.915 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "043b290f-7063-4b71-a4e6-ab0ecd2a0323")
-		(property "Reference" "#PWR052"
-			(at 118.745 85.725 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+24V"
-			(at 118.745 77.47 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 118.745 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 118.745 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+24V\""
-			(at 118.745 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1bc011a3-f095-44e0-9d57-806cc965e044")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/3909f681-ed21-4f6c-997f-d0f5d9a50140"
-					(reference "#PWR087")
-					(unit 1)
-				)
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/91ab2e5b-361c-4f6e-96f4-249ed894cf88"
-					(reference "#PWR080")
-					(unit 1)
-				)
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/95650361-8e3d-4fb9-aeae-766234533dc0"
-					(reference "#PWR066")
-					(unit 1)
-				)
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/ac45b9fd-4ce8-4391-9e98-0dd18286737f"
-					(reference "#PWR052")
-					(unit 1)
-				)
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/cb13da7e-067a-493c-b3b5-481ca6e5952d"
-					(reference "#PWR059")
-					(unit 1)
-				)
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/deedd56c-6817-40a7-b528-032192f149d8"
-					(reference "#PWR073")
-					(unit 1)
-				)
-			)
-		)
 	)
 	(symbol
 		(lib_id "lhrs_power:Fuse_3557_2")
