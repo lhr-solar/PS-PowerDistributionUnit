@@ -294,14 +294,7 @@
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "/48PinMCU/SWCLK": [
-        "Default"
-      ],
-      "/48PinMCU/SWDIO": [
-        "Default"
-      ]
-    },
+    "netclass_assignments": null,
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -546,7 +539,7 @@
         "uuid": "eb16378f-e371-46a9-bfab-b0d9404d0362"
       }
     ],
-    "used_designators": "C1-66,D1-59,#PWR1-129,#PWR131-135,IC1-11,#FLG1-2,R1-90,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
+    "used_designators": "C1-66,D1-60,#PWR1-129,#PWR131-135,IC1-11,#FLG1-2,R1-93,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
     "variants": []
   },
   "sheets": [
@@ -579,7 +572,7 @@
       "CAN_Transceiver"
     ],
     [
-      "36c8df72-7ede-452e-a2ec-09fdaf0ef78b",
+      "293adb11-be79-4700-a618-5d6ae719b8c4",
       "48PinMCU"
     ],
     [

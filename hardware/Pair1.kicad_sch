@@ -7022,7 +7022,7 @@
 				)
 			)
 		)
-		(property "Value" "7.5A"
+		(property "Value" "5A"
 			(at 201.93 63.5 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7772,7 +7772,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1000n"
+		(property "Value" "1u"
 			(at 142.24 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9183,7 +9183,7 @@
 				)
 			)
 		)
-		(property "Value" "7.5A"
+		(property "Value" "5A"
 			(at 201.93 36.83 90)
 			(show_name no)
 			(do_not_autoplace no)
