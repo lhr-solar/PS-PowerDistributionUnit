@@ -1121,7 +1121,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 267.97 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -1209,7 +1209,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 110.49 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -1375,7 +1375,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 78.105 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2168,7 +2168,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 202.565 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2256,7 +2256,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 264.795 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -2345,7 +2345,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 151.765 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -2434,7 +2434,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 123.825 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -2914,7 +2914,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 170.815 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -3238,7 +3238,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 45.085 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -3720,7 +3720,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 34.29 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -4280,7 +4280,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 141.605 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -4526,7 +4526,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 233.045 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -4694,7 +4694,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 208.28 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -4940,7 +4940,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 238.125 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -5029,7 +5029,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 179.705 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -5118,7 +5118,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 94.615 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -5207,7 +5207,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
 			(at 65.405 83.82 0)
 			(hide yes)
 			(show_name no)

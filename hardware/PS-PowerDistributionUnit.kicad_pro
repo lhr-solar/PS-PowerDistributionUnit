@@ -243,7 +243,7 @@
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
@@ -480,6 +480,54 @@
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MANUFACTURER",
+          "name": "MANUFACTURER",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Type",
+          "name": "Sim.Type",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC MFG P/N",
+          "name": "LCSC MFG P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet Embed",
+          "name": "Datasheet Embed",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Old LCSC P/N",
+          "name": "Old LCSC P/N",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Old P/N",
+          "name": "Old P/N",
           "show": false
         }
       ],
