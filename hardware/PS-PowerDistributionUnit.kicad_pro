@@ -539,7 +539,7 @@
         "uuid": "eb16378f-e371-46a9-bfab-b0d9404d0362"
       }
     ],
-    "used_designators": "C1-66,D1-60,#PWR1-129,#PWR131-135,IC1-11,#FLG1-2,R1-93,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
+    "used_designators": "C1-67,D1-61,#PWR1-135,IC1-11,#FLG1-2,R1-112,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
     "variants": []
   },
   "sheets": [
@@ -576,7 +576,7 @@
       "48PinMCU"
     ],
     [
-      "ac45b9fd-4ce8-4391-9e98-0dd18286737f",
+      "3e1dda67-cc99-4912-9b53-77c688c0b444",
       "Pair1"
     ],
     [
@@ -584,19 +584,19 @@
       "Pair2"
     ],
     [
-      "ce8b9886-124a-45ba-b9f6-d04e00444ee7",
+      "f049cb97-6c2f-4e01-8423-444bbc87d61a",
       "Pair3"
     ],
     [
-      "60764568-6b2d-4375-8460-b218a8e49d1b",
+      "53365b96-c149-417b-90ec-6e035e31057b",
       "Pair4"
     ],
     [
-      "bce2a068-4b9e-4753-b253-0e7c43ce23ac",
+      "f71ee43b-e688-4bfa-b76e-f58d00620f22",
       "Pair5"
     ],
     [
-      "30fb71d5-a4af-4f58-8bfe-34475e998dc7",
+      "1cffd5c3-2945-4a6a-b5f1-839ac15031ae",
       "Pair6"
     ],
     [

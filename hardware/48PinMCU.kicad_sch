@@ -50587,16 +50587,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 36.83) (xy 121.92 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8bc95c87-91ce-469f-b055-5c83e615c8d2")
-	)
-	(wire
-		(pts
 			(xy 172.72 41.148) (xy 182.372 41.148)
 		)
 		(stroke
@@ -50684,6 +50674,16 @@
 			(type default)
 		)
 		(uuid "97c78a6e-5799-4ff4-8c48-d444d28d7699")
+	)
+	(wire
+		(pts
+			(xy 121.92 36.83) (xy 125.73 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9895f969-e3cb-425f-af84-0a941d9b5bd3")
 	)
 	(wire
 		(pts
@@ -54001,16 +54001,6 @@
 		)
 		(uuid "01127a02-9106-40c3-a987-a60a43f07f1b")
 	)
-	(label "PA0"
-		(at 132.08 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3bb00ad9-4879-4ca0-a0a8-13d2d3e2645d")
-	)
 	(label "SWCLK"
 		(at 130.81 72.39 0)
 		(effects
@@ -54618,6 +54608,17 @@
 			(justify right)
 		)
 		(uuid "dade7359-f65e-4d87-a3bb-eeb772e75c00")
+	)
+	(hierarchical_label "PA0"
+		(shape bidirectional)
+		(at 125.73 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e0513bdd-7625-4787-a7d3-f254097851ed")
 	)
 	(hierarchical_label "PB6"
 		(shape bidirectional)
