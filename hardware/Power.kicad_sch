@@ -468,7 +468,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0855b5ca-873d-4ab0-b78d-2d950dddd8fa")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR028"
 			(at 102.87 85.09 0)
 			(hide yes)
 			(show_name no)
@@ -528,7 +528,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(reference "#PWR02")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -545,7 +545,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7b7c12ef-c951-4b21-8c0c-afc0df94b2ec")
-		(property "Reference" "TP6"
+		(property "Reference" "TP1"
 			(at 59.182 64.262 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -606,7 +606,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(reference "TP6")
+					(reference "TP1")
 					(unit 1)
 				)
 			)
@@ -624,7 +624,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b5ce62f2-77c4-42d0-be2c-828536110dc0")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR029"
 			(at 143.51 84.455 0)
 			(hide yes)
 			(show_name no)
@@ -684,7 +684,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(reference "#PWR08")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -701,7 +701,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c348315f-25a1-4e82-9c17-a754bd330861")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR027"
 			(at 64.135 84.455 0)
 			(hide yes)
 			(show_name no)
@@ -761,7 +761,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(reference "#PWR0133")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)

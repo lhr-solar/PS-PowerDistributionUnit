@@ -372,13 +372,13 @@
           "group_by": true,
           "label": "Footprint",
           "name": "Footprint",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -402,7 +402,7 @@
           "group_by": false,
           "label": "LCSC P/N",
           "name": "LCSC P/N",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -450,7 +450,7 @@
           "group_by": false,
           "label": "P/N",
           "name": "P/N",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,
@@ -587,7 +587,7 @@
         "uuid": "eb16378f-e371-46a9-bfab-b0d9404d0362"
       }
     ],
-    "used_designators": "C1-67,D1-61,#PWR1-135,IC1-11,#FLG1-2,R1-112,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1",
+    "used_designators": "C1-67,D1-61,#PWR1-135,IC1-11,#FLG1-2,R1-112,J1-25,Q1-4,F1-16,JP1-2,FB1-2,L1,SW1-2,TP1-6,TP_3.3V1,U1-3,Y1,H1-4",
     "variants": []
   },
   "sheets": [
