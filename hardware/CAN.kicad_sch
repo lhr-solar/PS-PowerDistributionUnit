@@ -1209,7 +1209,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2505cb06-2c7b-4a17-bfab-efe2e68f63c2")
-		(property "Reference" "R25"
+		(property "Reference" "R33"
 			(at 87.63 72.3899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1284,7 +1284,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "R25")
+					(reference "R33")
 					(unit 1)
 				)
 			)

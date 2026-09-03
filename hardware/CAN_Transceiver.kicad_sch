@@ -34165,7 +34165,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d3dc1093-5927-44fd-b183-035a11ec5677")
-		(property "Reference" "R27"
+		(property "Reference" "R35"
 			(at 201.93 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34249,7 +34249,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "R27")
+					(reference "R35")
 					(unit 1)
 				)
 			)
@@ -34593,7 +34593,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f905bbd5-25e3-4518-9a89-c3e959777327")
-		(property "Reference" "R26"
+		(property "Reference" "R34"
 			(at 176.53 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34677,7 +34677,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "R26")
+					(reference "R34")
 					(unit 1)
 				)
 			)
