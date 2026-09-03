@@ -245,6 +245,12 @@
 		)
 	)
 	(junction
+		(at 88.265 74.295)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "05da4206-bb61-4c8d-bb02-c3b36fae9812")
+	)
+	(junction
 		(at 60.96 73.025)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -274,7 +280,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 74.295) (xy 95.25 74.295)
+			(xy 82.55 74.295) (xy 88.265 74.295)
 		)
 		(stroke
 			(width 0)
@@ -411,6 +417,16 @@
 			(type default)
 		)
 		(uuid "dd0b5f81-f837-4956-a0a1-fdd9fc916641")
+	)
+	(wire
+		(pts
+			(xy 88.265 74.295) (xy 95.25 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e66125c6-a8f7-454f-83c3-4537d090dd9e")
 	)
 	(hierarchical_label "24V_INPUT"
 		(shape input)
@@ -607,6 +623,84 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
 					(reference "TP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 88.265 74.295 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b26a8cf3-a1bd-49a6-8a48-c2fe2e7e2f14")
+		(property "Reference" "TP10"
+			(at 86.36 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 84.328 68.326 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.345 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.345 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 88.265 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "86e46525-8ef0-4d82-9299-cea34eafb9fb")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
+					(reference "TP10")
 					(unit 1)
 				)
 			)

@@ -1176,7 +1176,7 @@
 		(uuid "f4c128f7-3df2-4e5c-a8b5-13af643d0159")
 	)
 	(hierarchical_label "CAN_RX"
-		(shape input)
+		(shape output)
 		(at 139.7 68.58 0)
 		(effects
 			(font
@@ -1187,7 +1187,7 @@
 		(uuid "5dc30136-daf3-49e8-b705-6e359ee328da")
 	)
 	(hierarchical_label "CAN_TX"
-		(shape output)
+		(shape input)
 		(at 139.7 71.755 0)
 		(effects
 			(font
@@ -1206,7 +1206,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2505cb06-2c7b-4a17-bfab-efe2e68f63c2")
 		(property "Reference" "R33"
