@@ -251,6 +251,12 @@
 		(uuid "05da4206-bb61-4c8d-bb02-c3b36fae9812")
 	)
 	(junction
+		(at 165.735 74.295)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0e5b3eed-d196-4c58-96bb-9e0665d44bac")
+	)
+	(junction
 		(at 60.96 73.025)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -261,6 +267,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b2b429f4-a188-47dd-9bb3-eafb0d9829ca")
+	)
+	(junction
+		(at 135.89 74.295)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c31da849-2325-45b9-80ed-fe24ef832993")
 	)
 	(junction
 		(at 139.7 74.295)
@@ -290,6 +302,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.735 74.295) (xy 163.195 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27ebc168-f444-414c-8632-d33c528deeda")
+	)
+	(wire
+		(pts
 			(xy 95.25 67.31) (xy 95.25 74.295)
 		)
 		(stroke
@@ -300,7 +322,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.005 74.295) (xy 163.195 74.295)
+			(xy 168.275 74.295) (xy 165.735 74.295)
 		)
 		(stroke
 			(width 0)
@@ -400,7 +422,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 74.295) (xy 139.7 74.295)
+			(xy 133.35 74.295) (xy 135.89 74.295)
 		)
 		(stroke
 			(width 0)
@@ -428,6 +450,16 @@
 		)
 		(uuid "e66125c6-a8f7-454f-83c3-4537d090dd9e")
 	)
+	(wire
+		(pts
+			(xy 135.89 74.295) (xy 139.7 74.295)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1d24f84-3495-446f-a404-1e070511c90f")
+	)
 	(hierarchical_label "24V_INPUT"
 		(shape input)
 		(at 54.61 73.025 180)
@@ -441,7 +473,7 @@
 	)
 	(hierarchical_label "3V3_OUTPUT"
 		(shape output)
-		(at 167.005 74.295 0)
+		(at 168.275 74.295 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -552,6 +584,84 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
+		(at 165.735 74.295 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2c6327ec-5fe8-444b-8f46-60b6880a97d6")
+		(property "Reference" "TP31"
+			(at 163.83 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3V"
+			(at 164.719 68.326 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
+			(at 170.815 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.815 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 165.735 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40df214f-3b11-4884-a7c3-196a33f66dde")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
+					(reference "TP31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
 		(at 60.96 73.025 0)
 		(unit 1)
 		(body_style 1)
@@ -572,7 +682,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "LV_IN_RAW"
 			(at 59.182 66.802 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -630,6 +740,84 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
+		(at 135.89 74.295 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "95e06579-6dae-40ce-9acc-2dd66b81544e")
+		(property "Reference" "TP30"
+			(at 133.985 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "5V"
+			(at 134.874 68.326 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
+			(at 140.97 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 140.97 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 135.89 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "232c7c4c-5ff1-4882-9a86-10b177e09cd6")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
+					(reference "TP30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
 		(at 88.265 74.295 0)
 		(unit 1)
 		(body_style 1)
@@ -650,7 +838,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "LV_IN_PP"
 			(at 84.328 68.326 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -661,7 +849,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
 			(at 93.345 74.295 0)
 			(hide yes)
 			(show_name no)

@@ -1826,6 +1826,18 @@
 		(uuid "b807b0d1-d717-44bd-bfb6-1ddcb66a4187")
 	)
 	(junction
+		(at 177.165 84.455)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "017143d4-cbce-4a1a-b39b-e1359a0f92af")
+	)
+	(junction
+		(at 173.99 84.455)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "09d58bf6-cd81-467c-b67d-dafa1f7c7dae")
+	)
+	(junction
 		(at 35.56 163.195)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1874,10 +1886,22 @@
 		(uuid "583d1f73-5b58-4fcd-ba13-860cd6130b30")
 	)
 	(junction
+		(at 177.165 92.075)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "76799fab-d3ae-4321-8b53-f55a54d7c8b4")
+	)
+	(junction
 		(at 138.43 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a2163107-e4b9-43b7-a929-15c6077bc572")
+	)
+	(junction
+		(at 173.99 92.075)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aa62e5b9-cd37-43d5-bc23-4ac2e9cdc7bb")
 	)
 	(junction
 		(at 139.7 41.275)
@@ -1910,12 +1934,6 @@
 		(uuid "d06e26a8-7ad8-45f5-b1c0-d0b9afca04cc")
 	)
 	(junction
-		(at 173.99 84.455)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d29d093d-6e70-43dc-bf26-5980cce7b12c")
-	)
-	(junction
 		(at 193.04 99.695)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1944,12 +1962,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f6c55d50-fefd-4076-bf78-e12c43cf18f3")
-	)
-	(junction
-		(at 173.99 92.075)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fad8286e-fab2-4b82-bd38-2f3e67061976")
 	)
 	(bus_entry
 		(at 89.535 102.235)
@@ -2088,6 +2100,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.165 84.455) (xy 173.99 84.455)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21075f42-f89a-4cbd-ba50-75166ae559dc")
+	)
+	(wire
+		(pts
 			(xy 71.755 137.16) (xy 60.96 137.16)
 		)
 		(stroke
@@ -2208,7 +2230,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 84.455) (xy 173.99 84.455)
+			(xy 186.055 84.455) (xy 177.165 84.455)
 		)
 		(stroke
 			(width 0)
@@ -2728,6 +2750,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.165 92.075) (xy 173.99 92.075)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b865515e-14aa-41a1-8402-b9247ea518e0")
+	)
+	(wire
+		(pts
 			(xy 173.99 86.995) (xy 170.815 86.995)
 		)
 		(stroke
@@ -2788,7 +2820,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 92.075) (xy 173.99 92.075)
+			(xy 186.055 92.075) (xy 177.165 92.075)
 		)
 		(stroke
 			(width 0)
@@ -6816,7 +6848,7 @@
 		)
 	)
 	(label "VOUT1"
-		(at 182.88 84.455 180)
+		(at 186.055 84.455 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6856,7 +6888,7 @@
 		(uuid "38314607-3f46-407b-931e-81ced6ba1892")
 	)
 	(label "VOUT2"
-		(at 182.88 92.075 180)
+		(at 186.055 92.075 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7248,6 +7280,104 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 177.165 92.075 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0d29a28a-05dd-4881-adc9-a4b4dc067e22")
+		(property "Reference" "TP39"
+			(at 178.054 93.98 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "24VOUT"
+			(at 176.022 96.266 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
+			(at 182.245 92.075 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.245 92.075 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 177.165 92.075 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "85be6291-2c38-4a01-936f-bf1ee06a4c97")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ab77bb0-369b-4fa2-b5e4-9072d062af22"
+					(reference "TP43")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/3e1dda67-cc99-4912-9b53-77c688c0b444"
+					(reference "TP39")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/4e29a9cd-f4f8-4556-90cc-d0fc24ec852e"
+					(reference "TP44")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/581c2176-fcdd-45dc-ac95-481314f75eaa"
+					(reference "TP41")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/7fd95c3c-7bef-4d5e-8058-7407405c1287"
+					(reference "TP40")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/ceeb953c-7a8e-4ff4-89fb-4a85a671b5e4"
+					(reference "TP42")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 64.77 53.34 0)
 		(unit 1)
@@ -7624,7 +7754,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TestPoint"
+		(property "Value" "24V_VBB"
 			(at 109.728 78.486 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7635,7 +7765,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
 			(at 118.745 84.455 0)
 			(hide yes)
 			(show_name no)
@@ -8245,6 +8375,104 @@
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/ceeb953c-7a8e-4ff4-89fb-4a85a671b5e4"
 					(reference "R62")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 177.165 84.455 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "508c1efb-fa35-4ac0-bc15-675f76b6c57e")
+		(property "Reference" "TP33"
+			(at 175.26 76.2 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "24VOUT"
+			(at 173.228 78.486 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
+			(at 182.245 84.455 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.245 84.455 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 177.165 84.455 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "78efa8c9-bbdb-4cbf-bc11-2969125d75a7")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ab77bb0-369b-4fa2-b5e4-9072d062af22"
+					(reference "TP37")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/3e1dda67-cc99-4912-9b53-77c688c0b444"
+					(reference "TP33")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/4e29a9cd-f4f8-4556-90cc-d0fc24ec852e"
+					(reference "TP38")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/581c2176-fcdd-45dc-ac95-481314f75eaa"
+					(reference "TP35")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/7fd95c3c-7bef-4d5e-8058-7407405c1287"
+					(reference "TP34")
+					(unit 1)
+				)
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/ceeb953c-7a8e-4ff4-89fb-4a85a671b5e4"
+					(reference "TP36")
 					(unit 1)
 				)
 			)
