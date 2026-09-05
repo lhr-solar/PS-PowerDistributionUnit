@@ -47438,7 +47438,18 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "MSASH168SB5103KTNA01"
+		(property "LCSC P/N" "C6600162"
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "MSASH168SB5103KTNA01"
 			(at 60.96 63.5 0)
 			(hide yes)
 			(show_name no)

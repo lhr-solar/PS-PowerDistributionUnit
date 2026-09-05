@@ -33933,6 +33933,28 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C492401"
+			(at 215.9 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "PZ254V-11-02P"
+			(at 215.9 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "5e735678-13fd-4f26-9c6f-7f0136f7c66a")
 		)

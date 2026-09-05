@@ -2011,6 +2011,17 @@
 				)
 			)
 		)
+		(property "P/N" "GRM21BR61H106KE43K"
+			(at 165.1 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "9a411c55-ac37-4149-84dd-a1a39a24fb8d")
 		)
@@ -2472,6 +2483,17 @@
 			)
 		)
 		(property "LCSC P/N" "C440198"
+			(at 139.7 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "GRM21BR61H106KE43K"
 			(at 139.7 69.85 0)
 			(hide yes)
 			(show_name no)

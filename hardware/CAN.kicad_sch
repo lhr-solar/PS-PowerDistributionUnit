@@ -1444,6 +1444,17 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C17504794"
+			(at 96.52 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "77efebee-d849-4fd5-8207-49ae186bf2c4")
 		)
@@ -1850,6 +1861,17 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C17504794"
+			(at 129.54 92.075 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e9c307b9-5d9c-438d-a48f-8629df48d5b7")
 		)
@@ -1936,6 +1958,17 @@
 			)
 		)
 		(property "P/N" "1053091104"
+			(at 173.99 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C586230"
 			(at 173.99 90.17 0)
 			(hide yes)
 			(show_name no)

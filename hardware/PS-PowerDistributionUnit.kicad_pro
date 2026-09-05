@@ -376,6 +376,18 @@
         },
         {
           "group_by": false,
+          "label": "LCSC P/N",
+          "name": "LCSC P/N",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "P/N",
+          "name": "P/N",
+          "show": true
+        },
+        {
+          "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
@@ -394,21 +406,9 @@
         },
         {
           "group_by": false,
-          "label": "LCSC P/N",
-          "name": "LCSC P/N",
-          "show": true
-        },
-        {
-          "group_by": false,
           "label": "Mouser P/N",
           "name": "Mouser P/N",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "P/N",
-          "name": "P/N",
-          "show": true
         },
         {
           "group_by": false,

@@ -1155,6 +1155,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 270.51 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "9e7d69ed-a34e-4866-bdeb-c2b44a4e5576")
 		)
@@ -1244,6 +1255,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 107.95 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 107.95 33.655 0)
 			(hide yes)
 			(show_name no)
@@ -1421,6 +1443,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 75.565 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 75.565 33.655 0)
 			(hide yes)
 			(show_name no)
@@ -2235,6 +2268,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 200.025 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "a706e02e-d761-4766-9392-3b792f4ead01")
 		)
@@ -2324,6 +2368,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 262.255 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 262.255 33.655 0)
 			(hide yes)
 			(show_name no)
@@ -2434,6 +2489,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 154.305 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "11de155d-9286-4244-8dc3-9d8ae2802abd")
 		)
@@ -2524,6 +2590,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 126.365 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 126.365 74.295 0)
 			(hide yes)
 			(show_name no)
@@ -3025,6 +3102,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 168.275 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "483994e6-bc48-4e78-95cf-9c7c90c3ae5c")
 		)
@@ -3350,6 +3438,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 42.545 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 42.545 33.655 0)
 			(hide yes)
 			(show_name no)
@@ -3843,6 +3942,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 36.83 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 36.83 74.295 0)
 			(hide yes)
 			(show_name no)
@@ -4424,6 +4534,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 139.065 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "50163ef7-f982-4c20-9e30-ee5cf03f66db")
 		)
@@ -4681,6 +4802,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 230.505 33.655 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "b11c8bd1-1e36-47ce-af49-075bd6d73b72")
 		)
@@ -4850,6 +4982,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 210.82 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 210.82 74.295 0)
 			(hide yes)
 			(show_name no)
@@ -5117,6 +5260,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 240.665 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "393f62b4-0a70-468b-a76b-7d44b8f07727")
 		)
@@ -5207,6 +5361,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 182.245 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 182.245 74.295 0)
 			(hide yes)
 			(show_name no)
@@ -5317,6 +5482,17 @@
 				)
 			)
 		)
+		(property "P/N" "WS2812B-2020"
+			(at 97.155 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "3"
 			(uuid "bfc6c12e-c31f-42ff-9fd2-5428c8b7172c")
 		)
@@ -5407,6 +5583,17 @@
 			)
 		)
 		(property "LCSC P/N" "C965555"
+			(at 67.945 74.295 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "WS2812B-2020"
 			(at 67.945 74.295 0)
 			(hide yes)
 			(show_name no)

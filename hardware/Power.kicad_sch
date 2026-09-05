@@ -726,6 +726,28 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C41426955"
+			(at 60.96 73.025 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "A254N01-0B1P51-H25A60"
+			(at 60.96 73.025 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "12257ed6-c9bb-4396-912b-c0d4d1be7c07")
 		)
