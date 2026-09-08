@@ -6,6 +6,6 @@
 	(lib (name "LHRS_Passives") (type "KiCad") (uri "${KIPRJMOD}/KiCAD-Sharepoint/LHRS_Passives.pretty") (options "") (descr ""))
 	(lib (name "LHRS_Power") (type "KiCad") (uri "${KIPRJMOD}/KiCAD-Sharepoint/LHRS_Power.pretty") (options "") (descr ""))
 	(lib (name "LHRS_Special") (type "KiCad") (uri "${KIPRJMOD}/KiCAD-Sharepoint/LHRS_Special.pretty") (options "") (descr ""))
-	(lib (name "PDU_75LVC1G17GW,125") (type "KiCad") (uri "${KIPRJMOD}/KiCAD-Sharepoint/LIB_75LVC1G17GW,125") (options "") (descr ""))
-	(lib (name "PDU_TPS2HCS08AQPWPRQ1") (type "KiCad") (uri "${KIPRJMOD}/KiCAD-Sharepoint/LIB_TPS2HCS08AQPWPRQ1") (options "") (descr ""))
+	(lib (name "PDU_75LVC1G17GW,125") (type "KiCad") (uri "${KIPRJMOD}/external_part/75LVC1G17GW,125/footprints.pretty") (options "") (descr ""))
+	(lib (name "PDU_TPS2HCS08AQPWPRQ1") (type "KiCad") (uri "${KIPRJMOD}/external_part/TPS2HCS08AQPWPRQ1/footprints.pretty") (options "") (descr ""))
 )
