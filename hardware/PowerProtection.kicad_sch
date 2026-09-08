@@ -5356,6 +5356,28 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C14663"
+			(at 129.54 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "MLASH168SB7104KTNA01"
+			(at 129.54 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "6ba7675f-70e1-4383-b79d-d0a5bbe78a63")
 		)
@@ -6216,6 +6238,28 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C14663"
+			(at 110.49 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "MLASH168SB7104KTNA01"
+			(at 110.49 90.17 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "e2966b97-a24f-4d20-92a4-c931fbb1b711")
 		)
@@ -6650,7 +6694,18 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "MSASH168SB5103KTNA01"
+		(property "LCSC P/N" "C6600162"
+			(at 60.96 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "MSASH168SB5103KTNA01"
 			(at 60.96 63.5 0)
 			(hide yes)
 			(show_name no)

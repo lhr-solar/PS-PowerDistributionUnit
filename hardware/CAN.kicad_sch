@@ -1209,7 +1209,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2505cb06-2c7b-4a17-bfab-efe2e68f63c2")
-		(property "Reference" "R17"
+		(property "Reference" "R16"
 			(at 87.63 72.3899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1284,7 +1284,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "R17")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -1301,7 +1301,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c2b987d-13c4-4100-ae66-98c022def67f")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR032"
 			(at 107.315 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -1361,7 +1361,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "#PWR030")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -1379,7 +1379,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46398c9d-7148-4d4b-8672-21520d29b6ca")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR033"
 			(at 168.91 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -1439,7 +1439,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "#PWR031")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -1562,7 +1562,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "92c10326-0122-497b-aa38-2e3d2ea5d4b6")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR030"
 			(at 85.725 86.36 0)
 			(hide yes)
 			(show_name no)
@@ -1622,7 +1622,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "#PWR028")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -1640,7 +1640,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92e820e4-9177-4530-9389-2df9d67fb421")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR034"
 			(at 168.91 115.57 0)
 			(hide yes)
 			(show_name no)
@@ -1700,7 +1700,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "#PWR032")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -1718,7 +1718,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9c516ec3-5c0f-492f-aecb-4529641e6740")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR031"
 			(at 106.045 69.85 0)
 			(hide yes)
 			(show_name no)
@@ -1778,7 +1778,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6"
-					(reference "#PWR029")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -1924,7 +1924,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "LHRS_Connectors:Molex_Nano-Fit_105309-xx05_1x04_P2.50mm_Vertical"
+		(property "Footprint" "LHRS_Connectors:Molex_Nano-Fit_105309-xx04_1x04_P2.50mm_Vertical"
 			(at 173.99 90.17 0)
 			(hide yes)
 			(show_name no)

@@ -2955,7 +2955,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "11fc3897-418c-456a-8fd5-75858f7bdad9")
-		(property "Reference" "C13"
+		(property "Reference" "C15"
 			(at 76.2 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3041,7 +3041,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "C13")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -3058,7 +3058,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "269c1b14-22dd-4a9f-bc64-46d9c4d23a1e")
-		(property "Reference" "C15"
+		(property "Reference" "C17"
 			(at 194.564 88.646 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3142,7 +3142,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "C15")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -3261,7 +3261,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7484bcdc-1ddf-4a31-9ac2-deff0b8d2fc5")
-		(property "Reference" "C14"
+		(property "Reference" "C16"
 			(at 88.138 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3347,7 +3347,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "C14")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -3364,7 +3364,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8bc6d0f8-90a9-4a3e-bd4c-4f1d37db40e4")
-		(property "Reference" "C12"
+		(property "Reference" "C14"
 			(at 65.278 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3450,7 +3450,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "C12")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -3467,7 +3467,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d3dc1093-5927-44fd-b183-035a11ec5677")
-		(property "Reference" "R19"
+		(property "Reference" "R18"
 			(at 201.93 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3551,7 +3551,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "R19")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -3895,7 +3895,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f905bbd5-25e3-4518-9a89-c3e959777327")
-		(property "Reference" "R18"
+		(property "Reference" "R17"
 			(at 176.53 80.01 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3979,7 +3979,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/2ee5fe6f-603f-4929-8596-ad2cbd26bff6/94c71f3c-d4af-48d6-8a1b-560875efeb40"
-					(reference "R18")
+					(reference "R17")
 					(unit 1)
 				)
 			)
