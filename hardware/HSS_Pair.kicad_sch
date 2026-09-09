@@ -2730,7 +2730,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 89.535) (xy 125.095 89.535)
+			(xy 121.285 89.535) (xy 125.095 89.535)
 		)
 		(stroke
 			(width 0)
@@ -2900,7 +2900,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.075 89.535) (xy 109.22 89.535)
+			(xy 92.075 89.535) (xy 113.665 89.535)
 		)
 		(stroke
 			(width 0)
@@ -11324,7 +11324,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 113.03 89.535 90)
+		(at 117.475 89.535 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11334,7 +11334,7 @@
 		(dnp no)
 		(uuid "f00217d4-6054-416f-8cd3-e6f72b049f62")
 		(property "Reference" "R32"
-			(at 113.03 86.868 90)
+			(at 117.475 86.868 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11344,7 +11344,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 118.364 88.646 90)
+			(at 122.809 88.646 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11354,7 +11354,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 113.03 91.313 90)
+			(at 117.475 91.313 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11365,7 +11365,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 89.535 0)
+			(at 117.475 89.535 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11376,7 +11376,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 113.03 89.535 0)
+			(at 117.475 89.535 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11387,7 +11387,7 @@
 			)
 		)
 		(property "LCSC P/N" "C25804"
-			(at 113.03 89.535 90)
+			(at 117.475 89.535 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11398,7 +11398,7 @@
 			)
 		)
 		(property "P/N" "CRCW060310K0FKEI "
-			(at 113.03 89.535 90)
+			(at 117.475 89.535 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
