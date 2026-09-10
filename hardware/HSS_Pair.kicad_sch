@@ -9130,7 +9130,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
 			(at 53.975 173.355 0)
 			(hide yes)
 			(show_name no)
@@ -10873,7 +10873,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_0201_0603Metric"
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
 			(at 54.61 147.32 0)
 			(hide yes)
 			(show_name no)

@@ -793,7 +793,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "${DNP}"
+      "sort_field": "Footprint"
     },
     "bus_aliases": {
       "HSS": [
@@ -921,8 +921,8 @@
       "Indicators"
     ],
     [
-      "327cca63-c9b6-4c56-8c6f-1a607730f7cc",
-      "12V to 5V Buck"
+      "77a6ec5c-8e09-4a13-82a9-b08f1d53f7e4",
+      "12VBuck"
     ],
     [
       "f81579d2-7db1-4332-bf6b-3f69d0bc1a0d",

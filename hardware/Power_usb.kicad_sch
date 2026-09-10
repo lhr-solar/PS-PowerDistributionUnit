@@ -316,10 +316,10 @@
 		(at 125.095 55.245)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b2b429f4-a188-47dd-9bb3-eafb0d9829ca")
+		(uuid "2f153923-a40b-4367-ae07-32a1a0498e2e")
 	)
 	(junction
-		(at 164.465 55.245)
+		(at 168.275 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b8ec8866-5897-4c74-b648-0ac666771c87")
@@ -412,16 +412,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.925 55.245) (xy 164.465 55.245)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56531b93-6810-4a16-a2b8-684aa141cc31")
-	)
-	(wire
-		(pts
 			(xy 125.095 48.26) (xy 125.095 55.245)
 		)
 		(stroke
@@ -472,7 +462,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.715 59.69) (xy 132.715 59.055)
+			(xy 136.525 64.135) (xy 136.525 63.5)
 		)
 		(stroke
 			(width 0)
@@ -482,7 +472,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.715 59.055) (xy 140.335 59.055)
+			(xy 136.525 63.5) (xy 144.145 63.5)
 		)
 		(stroke
 			(width 0)
@@ -562,7 +552,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.095 55.245) (xy 140.335 55.245)
+			(xy 125.095 55.245) (xy 144.145 55.245)
 		)
 		(stroke
 			(width 0)
@@ -572,7 +562,7 @@
 	)
 	(wire
 		(pts
-			(xy 164.465 55.245) (xy 173.99 55.245)
+			(xy 168.275 59.69) (xy 177.8 59.69)
 		)
 		(stroke
 			(width 0)
@@ -589,6 +579,16 @@
 			(type default)
 		)
 		(uuid "abbda033-bb75-45a3-814b-f86941715a8f")
+	)
+	(wire
+		(pts
+			(xy 164.465 59.69) (xy 168.275 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d39b63a3-b173-4e6b-9d84-0c34d613c005")
 	)
 	(wire
 		(pts
@@ -631,7 +631,7 @@
 		(uuid "f8a2abc9-dd06-4458-ad32-c6380e1118d5")
 	)
 	(label "Buck_5V"
-		(at 173.99 55.245 180)
+		(at 177.8 59.69 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -729,7 +729,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.715 59.69 0)
+		(at 136.525 64.135 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -740,7 +740,7 @@
 		(fields_autoplaced yes)
 		(uuid "0855b5ca-873d-4ab0-b78d-2d950dddd8fa")
 		(property "Reference" "#PWR027"
-			(at 132.715 66.04 0)
+			(at 136.525 70.485 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -751,7 +751,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.715 64.77 0)
+			(at 136.525 69.215 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -761,7 +761,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.715 59.69 0)
+			(at 136.525 64.135 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -772,7 +772,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.715 59.69 0)
+			(at 136.525 64.135 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -783,7 +783,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.715 59.69 0)
+			(at 136.525 64.135 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1301,7 +1301,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 164.465 55.245 0)
+		(at 168.275 59.69 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1311,7 +1311,7 @@
 		(dnp no)
 		(uuid "7c92027b-3137-4603-bf31-8624a5387c0c")
 		(property "Reference" "TP28"
-			(at 162.56 46.99 0)
+			(at 166.37 51.435 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1322,7 +1322,7 @@
 			)
 		)
 		(property "Value" "5V"
-			(at 163.449 49.276 0)
+			(at 167.259 53.721 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1333,7 +1333,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 169.545 55.245 0)
+			(at 173.355 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1344,7 +1344,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 169.545 55.245 0)
+			(at 173.355 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1355,7 +1355,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 164.465 55.245 0)
+			(at 168.275 59.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1691,82 +1691,6 @@
 		)
 	)
 	(sheet
-		(at 140.335 51.435)
-		(size 21.59 10.795)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "327cca63-c9b6-4c56-8c6f-1a607730f7cc")
-		(property "Sheetname" "12V to 5V Buck"
-			(at 140.335 50.7234 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "12VBuck.kicad_sch"
-			(at 140.335 62.8146 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "GND" bidirectional
-			(at 140.335 59.055 180)
-			(uuid "58e45043-0029-45eb-b9b9-0e7e8a4560ae")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "V_in_12V" input
-			(at 140.335 55.245 180)
-			(uuid "879f27c8-018a-425d-a34c-bbf1551fdf51")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "V_out_5V" output
-			(at 161.925 55.245 0)
-			(uuid "f7907a2c-b7a7-48c1-953f-44ecf666913b")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(page "16")
-				)
-			)
-		)
-	)
-	(sheet
 		(at 97.155 52.07)
 		(size 13.97 10.16)
 		(exclude_from_sim no)
@@ -1838,6 +1762,82 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 144.145 50.8)
+		(size 20.32 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "77a6ec5c-8e09-4a13-82a9-b08f1d53f7e4")
+		(property "Sheetname" "12VBuck"
+			(at 144.145 50.0884 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "12VBuck.kicad_sch"
+			(at 144.145 71.7046 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" bidirectional
+			(at 144.145 63.5 180)
+			(uuid "43ca1e62-353f-44fe-af3a-052bb931ef07")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "V_in_12V" input
+			(at 144.145 55.245 180)
+			(uuid "10ca92ee-b71e-4000-bed7-9ae106fc29e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "V_out_5V" output
+			(at 164.465 59.69 0)
+			(uuid "d1f79051-c566-48c2-b2c6-d3cfacbcb158")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
+					(page "16")
 				)
 			)
 		)
