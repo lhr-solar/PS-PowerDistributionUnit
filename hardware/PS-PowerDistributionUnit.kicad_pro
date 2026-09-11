@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 3.302,
-          "width": 2.7686
+          "height": 0.95,
+          "width": 0.975
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -212,6 +212,7 @@
       "track_widths": [
         0.0,
         0.2,
+        0.35,
         0.7,
         1.0
       ],
@@ -794,7 +795,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Footprint"
+      "sort_field": "Reference"
     },
     "bus_aliases": {
       "HSS": [
