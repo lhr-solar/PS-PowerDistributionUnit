@@ -2270,7 +2270,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1333329-f4e2-40f5-9812-35a41f66040e")
-		(property "Reference" "J14"
+		(property "Reference" "J8"
 			(at 35.56 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2386,7 +2386,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/f81579d2-7db1-4332-bf6b-3f69d0bc1a0d"
-					(reference "J14")
+					(reference "J8")
 					(unit 1)
 				)
 			)
@@ -2583,7 +2583,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f4c3dd7f-84ec-4dcb-899f-0b4a41d3690f")
-		(property "Reference" "C73"
+		(property "Reference" "C75"
 			(at 64.3128 37.9984 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2669,7 +2669,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/f81579d2-7db1-4332-bf6b-3f69d0bc1a0d"
-					(reference "C73")
+					(reference "C75")
 					(unit 1)
 				)
 			)

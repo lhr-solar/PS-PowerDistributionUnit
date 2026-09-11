@@ -8866,7 +8866,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "66d0d7d3-3614-45ef-a73e-358ee39a478f")
-		(property "Reference" "R33"
+		(property "Reference" "R32"
 			(at 108.458 98.552 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8950,27 +8950,27 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/1d57fdee-2418-4435-ae97-d28030158467"
-					(reference "R63")
+					(reference "R62")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/3e1dda67-cc99-4912-9b53-77c688c0b444"
-					(reference "R33")
+					(reference "R32")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/83a4b0dc-4f87-423f-8cff-81ec7b69755b"
-					(reference "R53")
+					(reference "R52")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9a4fed0a-9cad-414c-a2d7-99084feee164"
-					(reference "R83")
+					(reference "R82")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/b569e97f-7cae-4639-b563-894389ffb9b1"
-					(reference "R73")
+					(reference "R72")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e1779edd-9750-42d0-8bd9-b7615dff1a3e"
-					(reference "R43")
+					(reference "R42")
 					(unit 1)
 				)
 			)
@@ -11333,7 +11333,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f00217d4-6054-416f-8cd3-e6f72b049f62")
-		(property "Reference" "R32"
+		(property "Reference" "R33"
 			(at 117.475 86.868 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11417,27 +11417,27 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/1d57fdee-2418-4435-ae97-d28030158467"
-					(reference "R62")
+					(reference "R63")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/3e1dda67-cc99-4912-9b53-77c688c0b444"
-					(reference "R32")
+					(reference "R33")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/83a4b0dc-4f87-423f-8cff-81ec7b69755b"
-					(reference "R52")
+					(reference "R53")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9a4fed0a-9cad-414c-a2d7-99084feee164"
-					(reference "R82")
+					(reference "R83")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/b569e97f-7cae-4639-b563-894389ffb9b1"
-					(reference "R72")
+					(reference "R73")
 					(unit 1)
 				)
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e1779edd-9750-42d0-8bd9-b7615dff1a3e"
-					(reference "R42")
+					(reference "R43")
 					(unit 1)
 				)
 			)

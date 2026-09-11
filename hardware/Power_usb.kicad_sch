@@ -307,12 +307,6 @@
 		(uuid "05da4206-bb61-4c8d-bb02-c3b36fae9812")
 	)
 	(junction
-		(at 211.455 54.61)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0e5b3eed-d196-4c58-96bb-9e0665d44bac")
-	)
-	(junction
 		(at 125.095 55.245)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -382,7 +376,7 @@
 	)
 	(wire
 		(pts
-			(xy 211.455 54.61) (xy 208.915 54.61)
+			(xy 208.915 54.61) (xy 213.995 54.61)
 		)
 		(stroke
 			(width 0)
@@ -439,16 +433,6 @@
 			(type default)
 		)
 		(uuid "72830abc-476e-49f4-97eb-3f6b8c7b9046")
-	)
-	(wire
-		(pts
-			(xy 213.995 54.61) (xy 211.455 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d184865-a4df-4ba6-b09a-4019e5985698")
 	)
 	(wire
 		(pts
@@ -880,84 +864,6 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
 					(reference "TP27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 211.455 54.61 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2c6327ec-5fe8-444b-8f46-60b6880a97d6")
-		(property "Reference" "TP29"
-			(at 209.55 46.355 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "3V3"
-			(at 210.439 48.641 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 216.535 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 216.535 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 211.455 54.61 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "40df214f-3b11-4884-a7c3-196a33f66dde")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(reference "TP29")
 					(unit 1)
 				)
 			)

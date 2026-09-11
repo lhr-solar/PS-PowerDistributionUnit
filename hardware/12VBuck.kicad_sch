@@ -9200,7 +9200,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "83c8aacc-7033-4c5e-a893-15cad2be6288")
-		(property "Reference" "C75"
+		(property "Reference" "C74"
 			(at 189.992 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9292,7 +9292,7 @@
 			)
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/77a6ec5c-8e09-4a13-82a9-b08f1d53f7e4"
-					(reference "C75")
+					(reference "C74")
 					(unit 1)
 				)
 			)
@@ -9910,7 +9910,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cbf0021f-2456-410b-af7a-f5090fbf6009")
-		(property "Reference" "C74"
+		(property "Reference" "C73"
 			(at 173.482 94.234 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10002,7 +10002,7 @@
 			)
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/77a6ec5c-8e09-4a13-82a9-b08f1d53f7e4"
-					(reference "C74")
+					(reference "C73")
 					(unit 1)
 				)
 			)
