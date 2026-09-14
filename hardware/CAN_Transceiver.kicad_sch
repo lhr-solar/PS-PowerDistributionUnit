@@ -3010,7 +3010,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C14663"
+		(property "LCSC P/N" "C1591"
 			(at 73.66 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -3021,7 +3021,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 73.66 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -3111,7 +3111,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C14663"
+		(property "LCSC P/N" "C1591"
 			(at 189.23 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -3122,7 +3122,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 189.23 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -3316,7 +3316,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C14663"
+		(property "LCSC P/N" "C1591"
 			(at 85.09 74.93 0)
 			(hide yes)
 			(show_name no)
@@ -3327,7 +3327,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 85.09 74.93 0)
 			(hide yes)
 			(show_name no)

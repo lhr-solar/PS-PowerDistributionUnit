@@ -1850,7 +1850,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -1862,6 +1862,17 @@
 			)
 		)
 		(property "Mfg" "MLASH168SB7104KTNA01"
+			(at 88.9 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
 			(at 88.9 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -1951,8 +1962,19 @@
 				)
 			)
 		)
-		(property "P/N" "CRCW060310K0FKEI "
+		(property "P/N" "0603WAF1002T5E"
 			(at 76.2 68.58 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C25804"
+			(at 76.2 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2043,7 +2065,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 21.59 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -2055,6 +2077,17 @@
 			)
 		)
 		(property "Mfg" "MLASH168SB7104KTNA01"
+			(at 21.59 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
 			(at 21.59 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -2204,6 +2237,17 @@
 				)
 			)
 		)
+		(property "LCSC P/N" "C22399676"
+			(at 60.96 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "6"
 			(uuid "cd394c7b-541b-4689-a991-7aef1c866859")
 		)
@@ -2303,7 +2347,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 39.37 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2315,6 +2359,17 @@
 			)
 		)
 		(property "Mfg" "MLASH168SB7104KTNA01"
+			(at 39.37 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
 			(at 39.37 68.58 0)
 			(hide yes)
 			(show_name no)
@@ -2406,7 +2461,7 @@
 				)
 			)
 		)
-		(property "P/N" "MLASH168SB7104KTNA01"
+		(property "P/N" "CL10B104KB8NNNC"
 			(at 35.56 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -2418,6 +2473,17 @@
 			)
 		)
 		(property "Mfg" "MLASH168SB7104KTNA01"
+			(at 35.56 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
 			(at 35.56 45.72 0)
 			(hide yes)
 			(show_name no)

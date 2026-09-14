@@ -1924,6 +1924,26 @@
 		)
 		(uuid "2a48ed1f-dc7d-4c38-bbcc-b1417c5f4741")
 	)
+	(label "D-"
+		(at 52.07 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "44dbcaff-3cdf-494d-b858-d881edf3ea9b")
+	)
+	(label "D+"
+		(at 52.07 49.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5985cec6-9f36-42ec-8a15-dcbaa1907120")
+	)
 	(hierarchical_label "USB_DP"
 		(shape bidirectional)
 		(at 55.88 49.53 0)
@@ -2153,17 +2173,6 @@
 				)
 			)
 		)
-		(property "P/N" "CRCW06035K10FKEC"
-			(at 90.17 48.26 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "843fb686-0852-421a-83ee-5c526114c907")
 		)
@@ -2244,17 +2253,6 @@
 			)
 		)
 		(property "LCSC P/N" "C23186"
-			(at 97.79 48.26 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "CRCW06035K10FKEC"
 			(at 97.79 48.26 90)
 			(hide yes)
 			(show_name no)
@@ -2660,7 +2658,7 @@
 				)
 			)
 		)
-		(property "P/N" "GRM21BR61H106KE43K"
+		(property "P/N" "TMK212BBJ106MGHT"
 			(at 67.31 36.83 0)
 			(hide yes)
 			(show_name no)
