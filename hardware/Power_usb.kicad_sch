@@ -634,6 +634,26 @@
 		)
 		(uuid "4c67adf8-2127-4bf7-b657-9c85a6f5fda4")
 	)
+	(label "D-"
+		(at 135.255 136.525 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "611ced9f-ff77-43cc-bb80-9ad22fdacdca")
+	)
+	(label "D+"
+		(at 135.255 131.445 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aecde23c-750e-49ba-86dd-f61f6738a10b")
+	)
 	(hierarchical_label "12V_INPUT"
 		(shape input)
 		(at 80.645 55.245 180)
