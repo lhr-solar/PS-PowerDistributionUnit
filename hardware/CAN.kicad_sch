@@ -1275,6 +1275,17 @@
 				)
 			)
 		)
+		(property "P/N" "CRCW06030000Z0EE"
+			(at 85.725 73.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "01b4e124-f7be-463c-bcac-6619b4f91530")
 		)
