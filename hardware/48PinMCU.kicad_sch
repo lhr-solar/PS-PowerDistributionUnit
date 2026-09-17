@@ -50687,7 +50687,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 36.83) (xy 125.73 36.83)
+			(xy 121.92 36.83) (xy 132.08 36.83)
 		)
 		(stroke
 			(width 0)
@@ -55290,6 +55290,16 @@
 		)
 		(uuid "01127a02-9106-40c3-a987-a60a43f07f1b")
 	)
+	(label "PA0"
+		(at 132.08 36.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f9f53bf-5b35-46fa-8ccc-e9924e5d96f5")
+	)
 	(label "SWCLK"
 		(at 130.81 72.39 0)
 		(effects
@@ -55897,17 +55907,6 @@
 			(justify right)
 		)
 		(uuid "dade7359-f65e-4d87-a3bb-eeb772e75c00")
-	)
-	(hierarchical_label "PA0"
-		(shape bidirectional)
-		(at 125.73 36.83 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e0513bdd-7625-4787-a7d3-f254097851ed")
 	)
 	(hierarchical_label "PB6"
 		(shape bidirectional)
