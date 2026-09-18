@@ -1010,7 +1010,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "19b8b932-44d9-4e5d-bf6a-75a2a59d8d0d")
 		(property "Reference" "R91"

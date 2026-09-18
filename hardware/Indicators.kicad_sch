@@ -532,8 +532,8 @@
 		)
 	)
 	(no_connect
-		(at 29.21 74.295)
-		(uuid "214c75d8-fa95-4830-a741-4f2de0672be6")
+		(at 174.625 74.295)
+		(uuid "ad404f11-ef37-4968-965b-e3b437e2fad7")
 	)
 	(wire
 		(pts
@@ -567,16 +567,6 @@
 	)
 	(wire
 		(pts
-			(xy 97.155 64.135) (xy 97.155 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "21676eb4-83f0-48c0-812b-2ac8f83dfc33")
-	)
-	(wire
-		(pts
 			(xy 210.82 81.915) (xy 210.82 86.36)
 		)
 		(stroke
@@ -607,16 +597,6 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 74.295) (xy 60.325 74.295)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3b5b30b4-69fe-4f24-a2f7-ec00cca0e898")
-	)
-	(wire
-		(pts
 			(xy 139.065 22.86) (xy 139.065 26.035)
 		)
 		(stroke
@@ -637,26 +617,6 @@
 	)
 	(wire
 		(pts
-			(xy 126.365 63.5) (xy 126.365 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3e63fa9d-93d5-4ea8-b8df-ad9c5ed077e3")
-	)
-	(wire
-		(pts
-			(xy 97.155 81.915) (xy 97.155 86.995)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3eb39bf3-4dcd-4ecb-8034-a3551b998f58")
-	)
-	(wire
-		(pts
 			(xy 262.255 41.275) (xy 262.255 45.72)
 		)
 		(stroke
@@ -674,46 +634,6 @@
 			(type default)
 		)
 		(uuid "42d09464-7c75-4407-b09f-2a542403cda0")
-	)
-	(wire
-		(pts
-			(xy 154.305 81.915) (xy 154.305 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4464d0fc-018b-4fa3-b476-ab3832acb123")
-	)
-	(wire
-		(pts
-			(xy 126.365 81.915) (xy 126.365 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "490c89da-9e92-41da-b97f-270ff1296de2")
-	)
-	(wire
-		(pts
-			(xy 161.925 74.295) (xy 174.625 74.295)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49baf3fd-f530-4bbc-a66e-cbb1b9ed5b06")
-	)
-	(wire
-		(pts
-			(xy 36.83 81.915) (xy 36.83 86.995)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4e7d4bfc-9dc0-420c-9c60-22b644794488")
 	)
 	(wire
 		(pts
@@ -747,16 +667,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.945 64.135) (xy 67.945 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "642fd991-29b8-4688-b8af-22786ad6df4d")
-	)
-	(wire
-		(pts
 			(xy 75.565 41.275) (xy 75.565 45.72)
 		)
 		(stroke
@@ -784,46 +694,6 @@
 			(type default)
 		)
 		(uuid "71e9537a-82bc-42f1-84cf-89b3ed606474")
-	)
-	(wire
-		(pts
-			(xy 133.985 74.295) (xy 146.685 74.295)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "720d7009-bcb3-4d55-a14e-62bc6659a3a2")
-	)
-	(wire
-		(pts
-			(xy 104.775 74.295) (xy 118.745 74.295)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "723accf0-ea17-4524-b0d4-3aaff7e4c179")
-	)
-	(wire
-		(pts
-			(xy 154.305 63.5) (xy 154.305 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7d172617-3fc5-4c0c-8662-f097d771388a")
-	)
-	(wire
-		(pts
-			(xy 67.945 81.915) (xy 67.945 86.995)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8660f202-6933-4580-98b6-2ba8b20b9b3a")
 	)
 	(wire
 		(pts
@@ -897,16 +767,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 64.135) (xy 36.83 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a976042c-80f0-4d9d-bddc-3f38f5c43976")
-	)
-	(wire
-		(pts
 			(xy 168.275 41.275) (xy 168.275 46.355)
 		)
 		(stroke
@@ -924,16 +784,6 @@
 			(type default)
 		)
 		(uuid "ac3bc7e9-b691-4fcc-b412-7f1315244227")
-	)
-	(wire
-		(pts
-			(xy 75.565 74.295) (xy 89.535 74.295)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac71d080-35ac-4871-88bb-18d1bc710b09")
 	)
 	(wire
 		(pts
@@ -1089,7 +939,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0883d168-fd05-4624-86f8-49f6c092b8e3")
-		(property "Reference" "D54"
+		(property "Reference" "D49"
 			(at 256.54 67.8748 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1181,7 +1031,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D54")
+					(reference "D49")
 					(unit 1)
 				)
 			)
@@ -1199,7 +1049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08b274a6-1419-4881-9707-3a146c19657e")
-		(property "Reference" "D43"
+		(property "Reference" "D40"
 			(at 121.92 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1291,7 +1141,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D43")
+					(reference "D40")
 					(unit 1)
 				)
 			)
@@ -1309,7 +1159,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0dee9cdd-cc04-497d-8e3d-3d7b6ab2380a")
-		(property "Reference" "#PWR0117"
+		(property "Reference" "#PWR0111"
 			(at 107.95 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -1369,7 +1219,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0117")
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -1387,7 +1237,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10f4b9be-7323-40fc-aa4f-54cf2ddf73c1")
-		(property "Reference" "D41"
+		(property "Reference" "D39"
 			(at 89.535 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1479,7 +1329,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D41")
+					(reference "D39")
 					(unit 1)
 				)
 			)
@@ -1497,7 +1347,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "192fdaa5-faf2-4a91-8d13-a741b8f0f16c")
-		(property "Reference" "#PWR0122"
+		(property "Reference" "#PWR0114"
 			(at 139.065 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1557,7 +1407,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0122")
+					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -1575,7 +1425,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c309a5c-33af-4049-85a3-70e48feaf198")
-		(property "Reference" "#PWR0125"
+		(property "Reference" "#PWR0115"
 			(at 168.275 27.305 0)
 			(hide yes)
 			(show_name no)
@@ -1635,7 +1485,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0125")
+					(reference "#PWR0115")
 					(unit 1)
 				)
 			)
@@ -1654,7 +1504,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c82611a-e4a4-4144-a599-e600c15fec68")
-		(property "Reference" "#PWR0128"
+		(property "Reference" "#PWR0118"
 			(at 182.245 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1714,7 +1564,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0128")
+					(reference "#PWR0118")
 					(unit 1)
 				)
 			)
@@ -1732,7 +1582,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2103a76e-1b79-4600-8f17-b3f25e309668")
-		(property "Reference" "#PWR0130"
+		(property "Reference" "#PWR0120"
 			(at 200.025 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -1792,7 +1642,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0130")
+					(reference "#PWR0120")
 					(unit 1)
 				)
 			)
@@ -1811,7 +1661,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "217faca3-4a47-4d45-a16b-735517b1024b")
-		(property "Reference" "#PWR0132"
+		(property "Reference" "#PWR0122"
 			(at 210.82 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -1871,7 +1721,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0132")
+					(reference "#PWR0122")
 					(unit 1)
 				)
 			)
@@ -1890,7 +1740,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "252d43eb-6c0c-49df-aeac-472f780112c3")
-		(property "Reference" "#PWR0139"
+		(property "Reference" "#PWR0129"
 			(at 270.51 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -1950,7 +1800,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0139")
+					(reference "#PWR0129")
 					(unit 1)
 				)
 			)
@@ -1968,7 +1818,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "299dab07-bf54-4bc6-a14b-5aedc46bdeca")
-		(property "Reference" "#PWR0137"
+		(property "Reference" "#PWR0127"
 			(at 262.255 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -2028,7 +1878,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0137")
+					(reference "#PWR0127")
 					(unit 1)
 				)
 			)
@@ -2046,7 +1896,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2f8f491e-adc7-40ab-b269-3c54704e3c74")
-		(property "Reference" "#PWR0126"
+		(property "Reference" "#PWR0116"
 			(at 168.275 52.705 0)
 			(hide yes)
 			(show_name no)
@@ -2106,7 +1956,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0126")
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)
@@ -2124,7 +1974,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3bc073dc-5ac9-401c-85dd-bd4c8a748cb7")
-		(property "Reference" "#PWR0134"
+		(property "Reference" "#PWR0124"
 			(at 230.505 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -2184,7 +2034,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0134")
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)
@@ -2202,7 +2052,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "453ea59d-3634-418f-a4b9-983bcb7665e3")
-		(property "Reference" "D49"
+		(property "Reference" "D44"
 			(at 213.995 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2294,7 +2144,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D49")
+					(reference "D44")
 					(unit 1)
 				)
 			)
@@ -2312,7 +2162,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46811b89-9182-479a-80a7-2e1f48040500")
-		(property "Reference" "D53"
+		(property "Reference" "D48"
 			(at 276.86 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2404,229 +2254,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D53")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 154.305 74.295 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "49064b1e-b9a1-47d9-b563-8f3a59faee61")
-		(property "Reference" "D46"
-			(at 140.335 67.8748 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 140.335 70.4148 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 153.035 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 151.765 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 154.305 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C965555"
-			(at 154.305 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "WS2812B-2020"
-			(at 154.305 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "11de155d-9286-4244-8dc3-9d8ae2802abd")
-		)
-		(pin "4"
-			(uuid "12d0bf3d-f54e-4391-8e89-c628c8c02a0b")
-		)
-		(pin "2"
-			(uuid "0e499ff1-17ed-43ef-b034-2d2ab4d1d030")
-		)
-		(pin "1"
-			(uuid "a94a3e1e-1e7d-414a-a417-3ddd3f0709f6")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D46")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 126.365 74.295 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4d8526fd-d9c9-4ea3-accb-aa9c2608f830")
-		(property "Reference" "D44"
-			(at 112.395 67.8748 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 112.395 70.4148 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 125.095 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 123.825 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 126.365 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C965555"
-			(at 126.365 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "WS2812B-2020"
-			(at 126.365 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "706ae2bf-5f2b-40fc-b139-c8183e062fa5")
-		)
-		(pin "4"
-			(uuid "862cbd18-5efa-4b6c-b76d-ea51e21c4bcb")
-		)
-		(pin "2"
-			(uuid "91bba3bb-658d-40e7-ba44-3c8912c67ee8")
-		)
-		(pin "1"
-			(uuid "3cfd5f45-e572-40b7-a277-121f1f276e3b")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D44")
+					(reference "D48")
 					(unit 1)
 				)
 			)
@@ -2644,7 +2272,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4db585b8-b896-4093-b2d4-0ba41143d9d9")
-		(property "Reference" "#PWR0121"
+		(property "Reference" "#PWR0113"
 			(at 139.065 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -2704,165 +2332,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0121")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 36.83 86.995 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5090aef9-7242-4aa4-b0a9-397a7d32a026")
-		(property "Reference" "#PWR0108"
-			(at 36.83 93.345 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 36.83 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 36.83 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 36.83 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ca665efe-d4d1-4fa4-8c51-bd6ed4c4fe72")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0108")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 67.945 64.135 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "50c493b9-4c75-4be5-aa9b-bf6141bb3cd3")
-		(property "Reference" "#PWR0111"
-			(at 67.945 67.945 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 67.945 59.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.945 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.945 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 67.945 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0045a04d-d697-43d7-ac65-073e83a6d0f4")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0111")
+					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -2880,7 +2350,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "50dcabc5-5e94-49a8-8a36-1951bdc96ebf")
-		(property "Reference" "#PWR0129"
+		(property "Reference" "#PWR0119"
 			(at 200.025 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -2940,7 +2410,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0129")
+					(reference "#PWR0119")
 					(unit 1)
 				)
 			)
@@ -2958,7 +2428,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "612aec14-c8fd-4e91-a982-47b09d2892d2")
-		(property "Reference" "#PWR0118"
+		(property "Reference" "#PWR0112"
 			(at 107.95 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -3018,7 +2488,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0118")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
@@ -3036,7 +2506,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "61b29a31-7a20-4b94-bb72-7cb9fc0e7b85")
-		(property "Reference" "D47"
+		(property "Reference" "D42"
 			(at 182.245 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3128,7 +2598,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D47")
+					(reference "D42")
 					(unit 1)
 				)
 			)
@@ -3146,7 +2616,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6761aa15-9460-40d8-81b0-00487d8621a5")
-		(property "Reference" "#PWR0133"
+		(property "Reference" "#PWR0123"
 			(at 230.505 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -3206,7 +2676,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0133")
+					(reference "#PWR0123")
 					(unit 1)
 				)
 			)
@@ -3225,7 +2695,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a43305a-5394-4cd9-bc79-d674024c6df7")
-		(property "Reference" "#PWR0136"
+		(property "Reference" "#PWR0126"
 			(at 240.665 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -3285,86 +2755,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0136")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 36.83 64.135 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6b40272b-b764-4836-b91a-58b4b135c6d7")
-		(property "Reference" "#PWR0107"
-			(at 36.83 67.945 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 36.83 59.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 36.83 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 36.83 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6e0baf3e-ca67-4a99-bcfc-be4443d05ade")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0107")
+					(reference "#PWR0126")
 					(unit 1)
 				)
 			)
@@ -3382,7 +2773,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77d8a3be-02c3-4602-8b7e-3c9c8ece381a")
-		(property "Reference" "D39"
+		(property "Reference" "D38"
 			(at 56.515 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3474,7 +2865,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D39")
+					(reference "D38")
 					(unit 1)
 				)
 			)
@@ -3492,7 +2883,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7d585f9e-c6cc-41f0-bc64-37db202e0c40")
-		(property "Reference" "#PWR0113"
+		(property "Reference" "#PWR0109"
 			(at 75.565 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -3552,7 +2943,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0113")
+					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -3570,7 +2961,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7dad5856-d79e-49b0-85f7-f5e210f23445")
-		(property "Reference" "#PWR0109"
+		(property "Reference" "#PWR0107"
 			(at 42.545 26.67 0)
 			(hide yes)
 			(show_name no)
@@ -3630,355 +3021,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0109")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 67.945 86.995 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8211cb33-6917-4dda-b852-0bbd15e80da8")
-		(property "Reference" "#PWR0112"
-			(at 67.945 93.345 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 67.945 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 67.945 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 67.945 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 67.945 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7bcf769d-aeff-41fa-bb1f-2c6b334eee36")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0112")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 126.365 86.36 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "86647200-a1fd-4794-a47e-b3dbf248e475")
-		(property "Reference" "#PWR0120"
-			(at 126.365 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 126.365 90.805 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 126.365 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 126.365 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 126.365 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d2df02b1-e1f7-46c3-a6af-12361841c5fb")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0120")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 97.155 86.995 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8709cd13-9095-44f9-9229-5acccb56cece")
-		(property "Reference" "#PWR0116"
-			(at 97.155 93.345 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 97.155 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.155 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.155 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 97.155 86.995 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ece8442b-a892-412e-bd68-aef97d8df966")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 36.83 74.295 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "87dc4636-31b1-4a15-89f3-0a640d1f5002")
-		(property "Reference" "D38"
-			(at 22.86 67.8748 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 22.86 70.4148 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 35.56 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 34.29 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 36.83 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C965555"
-			(at 36.83 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "WS2812B-2020"
-			(at 36.83 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "34254579-db4e-4bb5-b85d-b5c7252fca83")
-		)
-		(pin "4"
-			(uuid "e2eb0a82-7e1e-4e6a-ad6c-6bae5e0a49b5")
-		)
-		(pin "2"
-			(uuid "9bf9150a-c110-4fac-98e6-01c6c3487526")
-		)
-		(pin "1"
-			(uuid "7c5803f9-1358-46d4-9a4c-91bef59167f1")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D38")
+					(reference "#PWR0107")
 					(unit 1)
 				)
 			)
@@ -3997,7 +3040,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8eed69d3-43c3-4539-ba21-a272b0abeaf7")
-		(property "Reference" "#PWR0135"
+		(property "Reference" "#PWR0125"
 			(at 240.665 66.04 0)
 			(hide yes)
 			(show_name no)
@@ -4057,7 +3100,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0135")
+					(reference "#PWR0125")
 					(unit 1)
 				)
 			)
@@ -4075,7 +3118,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5735db5-2728-4541-823b-dc7a6c0c9ab2")
-		(property "Reference" "#PWR0114"
+		(property "Reference" "#PWR0110"
 			(at 75.565 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -4135,86 +3178,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0114")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 97.155 64.135 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a5a14b10-69aa-458d-8eb2-3a2607100abb")
-		(property "Reference" "#PWR0115"
-			(at 97.155 67.945 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 97.155 59.69 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 97.155 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 97.155 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 97.155 64.135 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9eb1a128-d6cd-47bb-a559-c0da87479708")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0115")
+					(reference "#PWR0110")
 					(unit 1)
 				)
 			)
@@ -4233,7 +3197,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a731d9ea-2fee-43ab-8895-1d08493e499b")
-		(property "Reference" "#PWR0127"
+		(property "Reference" "#PWR0117"
 			(at 182.245 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -4293,7 +3257,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0127")
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -4311,7 +3275,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "afab19fe-c01c-42a5-bbc7-f3363006a660")
-		(property "Reference" "#PWR0138"
+		(property "Reference" "#PWR0128"
 			(at 262.255 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -4371,86 +3335,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0138")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 154.305 86.36 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b2270bcf-d7af-4cbe-a8b9-44ce4f274333")
-		(property "Reference" "#PWR0124"
-			(at 154.305 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 154.305 90.805 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 154.305 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 154.305 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 154.305 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7a873448-58b7-4993-8be6-089c98ad6da7")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0124")
+					(reference "#PWR0128")
 					(unit 1)
 				)
 			)
@@ -4468,7 +3353,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b91c2205-1a2a-4b3f-8d39-0adbb737408b")
-		(property "Reference" "D45"
+		(property "Reference" "D41"
 			(at 153.035 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4560,7 +3445,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D45")
+					(reference "D41")
 					(unit 1)
 				)
 			)
@@ -4579,7 +3464,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bba83547-f729-41b6-a1df-ebf8ff65e1bf")
-		(property "Reference" "#PWR0131"
+		(property "Reference" "#PWR0121"
 			(at 210.82 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -4639,86 +3524,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0131")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 126.365 63.5 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c859a861-b94a-42e8-9b9e-c954709562b3")
-		(property "Reference" "#PWR0119"
-			(at 126.365 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 126.365 59.055 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 126.365 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 126.365 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 126.365 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "75288596-ba64-45f3-9b48-0dd29c6a3a07")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0119")
+					(reference "#PWR0121")
 					(unit 1)
 				)
 			)
@@ -4736,7 +3542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d652c512-bf27-4893-8e3f-665bacb7a5ba")
-		(property "Reference" "D51"
+		(property "Reference" "D46"
 			(at 244.475 27.2348 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4828,7 +3634,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D51")
+					(reference "D46")
 					(unit 1)
 				)
 			)
@@ -4847,7 +3653,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dd82d7fc-e456-4456-893a-2e56a3121d2b")
-		(property "Reference" "#PWR0140"
+		(property "Reference" "#PWR0130"
 			(at 270.51 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -4907,7 +3713,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0140")
+					(reference "#PWR0130")
 					(unit 1)
 				)
 			)
@@ -4926,7 +3732,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2b51774-44f5-4f79-8a4d-6dd4f3bfc509")
-		(property "Reference" "D50"
+		(property "Reference" "D45"
 			(at 196.85 67.8748 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5018,86 +3824,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 154.305 63.5 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e5cf6b15-a977-4665-bc7f-1926d31d602b")
-		(property "Reference" "#PWR0123"
-			(at 154.305 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 154.305 59.055 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 154.305 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 154.305 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 154.305 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cee313ee-1158-4150-a6b5-9b3cbf3d85cc")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0123")
+					(reference "D45")
 					(unit 1)
 				)
 			)
@@ -5115,7 +3842,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ee303578-24d1-4ab4-98a7-2c4aa43e41d1")
-		(property "Reference" "#PWR0110"
+		(property "Reference" "#PWR0108"
 			(at 42.545 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -5175,7 +3902,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "#PWR0110")
+					(reference "#PWR0108")
 					(unit 1)
 				)
 			)
@@ -5194,7 +3921,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0d74ff8-0977-4f29-bdb9-cc21160b944d")
-		(property "Reference" "D52"
+		(property "Reference" "D47"
 			(at 226.695 67.8748 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5286,7 +4013,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D52")
+					(reference "D47")
 					(unit 1)
 				)
 			)
@@ -5305,7 +4032,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f886a94d-1434-406d-9ed8-430882183f5c")
-		(property "Reference" "D48"
+		(property "Reference" "D43"
 			(at 168.275 67.8748 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5397,229 +4124,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D48")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 97.155 74.295 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fab52cec-44f3-4a09-b679-6c39abf830b6")
-		(property "Reference" "D42"
-			(at 83.185 67.8748 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 83.185 70.4148 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 95.885 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 94.615 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 97.155 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C965555"
-			(at 97.155 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "WS2812B-2020"
-			(at 97.155 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "bfc6c12e-c31f-42ff-9fd2-5428c8b7172c")
-		)
-		(pin "4"
-			(uuid "9118edc8-c2e6-4c90-9acb-69dbf08ea801")
-		)
-		(pin "2"
-			(uuid "c2ba5f3d-28f4-4ffd-8c5e-cf19a3d69a81")
-		)
-		(pin "1"
-			(uuid "975113fe-72c4-490d-b7b8-323c904a83c1")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D42")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "LED:WS2812B-2020")
-		(at 67.945 74.295 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd685979-8da0-4b67-ad8f-2602f3d97001")
-		(property "Reference" "D40"
-			(at 53.975 67.8748 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "WS2812B-2020"
-			(at 53.975 70.4148 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
-			(at 66.675 81.915 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "kicad-embed://4684_WS2812B-2020_V1.3_EN.pdf"
-			(at 65.405 83.82 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
-			(at 67.945 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C965555"
-			(at 67.945 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "WS2812B-2020"
-			(at 67.945 74.295 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "21f6288e-b53f-428e-aa5d-89d6e58c3633")
-		)
-		(pin "4"
-			(uuid "6edf336e-d583-4a6f-95b6-fa4c12791246")
-		)
-		(pin "2"
-			(uuid "dd289917-1269-4578-a3b8-c0edadd5ed76")
-		)
-		(pin "1"
-			(uuid "8366cf8d-6eb2-4a24-ac59-035b7fafc044")
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/9558d30f-15cc-469d-b921-6b74808d7dd0"
-					(reference "D40")
+					(reference "D43")
 					(unit 1)
 				)
 			)
