@@ -2345,6 +2345,17 @@
 				)
 			)
 		)
+		(property "P/N" "USB4105-GF-A-120"
+			(at 35.56 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "B9"
 			(uuid "42000495-e720-4e86-b06d-d76b2751843d")
 		)
