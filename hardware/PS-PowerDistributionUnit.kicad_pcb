@@ -114718,19 +114718,6 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "HSS PAIR 2"
-		(at 170.8 100.49 0)
-		(layer "F.SilkS" knockout)
-		(uuid "bfaccf8e-3bdb-4809-8401-d1a908da62d6")
-		(effects
-			(font
-				(size 0.7 0.7)
-				(thickness 0.175)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-	)
 	(gr_text "HSS PAIR 3"
 		(at 170.9 128.7 0)
 		(layer "F.SilkS" knockout)
@@ -114748,6 +114735,19 @@
 		(at 171.2 62.9 0)
 		(layer "F.SilkS" knockout)
 		(uuid "51876bd4-b29a-4aad-a2e6-d90b6e7cf20a")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.175)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "HSS PAIR 2"
+		(at 171.25 98.29 0)
+		(layer "F.SilkS" knockout)
+		(uuid "bfaccf8e-3bdb-4809-8401-d1a908da62d6")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -115155,10 +115155,10 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "HSS PAIR 2"
-		(at 177.2 100.45 0)
+	(gr_text "HSS PAIR 3"
+		(at 177.2 128.4 0)
 		(layer "B.SilkS" knockout)
-		(uuid "c69b5253-b36c-45c5-b3a0-44a76a92d82f")
+		(uuid "a9a0fe17-3d6e-4f91-ba69-91bce0996d69")
 		(effects
 			(font
 				(size 0.7 0.7)
@@ -115168,10 +115168,10 @@
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "HSS PAIR 3"
-		(at 177.2 128.4 0)
+	(gr_text "HSS PAIR 2"
+		(at 177.579309 98.377056 0)
 		(layer "B.SilkS" knockout)
-		(uuid "a9a0fe17-3d6e-4f91-ba69-91bce0996d69")
+		(uuid "c69b5253-b36c-45c5-b3a0-44a76a92d82f")
 		(effects
 			(font
 				(size 0.7 0.7)
