@@ -1,6 +1,6 @@
 // PDU_Mk1_LVSense.c
 
-#include "PDU_MK1_LVSense.h"
+#include "PDU_Mk1_LVSense.h"
 
 uint8_t readings_queuestorage[QUEUE_LENGTH * ITEM_SIZE];
 static StaticQueue_t readings_staticqueue;
