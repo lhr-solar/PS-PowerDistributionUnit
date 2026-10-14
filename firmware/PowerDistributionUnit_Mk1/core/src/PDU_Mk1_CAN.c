@@ -1,7 +1,6 @@
 // PDU_Mk1_CAN.c
 
 #include "PDU_Mk1_CAN.h"
-#include "printf.h"
 
 #define FDCAN_NVIC_PRIO configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 3
 

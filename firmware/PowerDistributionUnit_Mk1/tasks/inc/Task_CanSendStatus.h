@@ -28,6 +28,8 @@
 
 // VARIABLE DECLARATIONS ------------------------------------------------------
 
+extern float lv_voltage;
+
 // FUNCTIONS ------------------------------------------------------------------
 
 void Task_CanSendStatus(void *argument);

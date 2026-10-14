@@ -56,3 +56,8 @@
 
 #define SDCARD_MOSI_PORT     GPIOA
 #define SDCARD_MOSI_PIN      GPIO_PIN_7
+
+// LVSense ADC stuff start
+
+#define LVSENSE_ADC_PORT    LSOM_12_PORT
+#define LVSENSE_ADC_PIN     LSOM_12_PIN

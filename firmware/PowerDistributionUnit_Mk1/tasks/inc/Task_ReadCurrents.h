@@ -19,7 +19,7 @@
 // DEFINES --------------------------------------------------------------------
 
 #define TASK_READCURRENTS_STACK_SIZE configMINIMAL_STACK_SIZE+200
-#define TASK_READCURRENTS_PRIORITY tskIDLE_PRIORITY + 2
+#define TASK_READCURRENTS_PRIORITY tskIDLE_PRIORITY + 3
 
 // sets how often the current reading ADC is sampled
 #define TASK_READCURRENTS_INTERVAL_MS 500

@@ -10,6 +10,10 @@ StackType_t task_blink_stack[TASK_BLINK_STACK_SIZE];
 StaticTask_t task_readcurrents_buffer;
 StackType_t task_readcurrents_stack[TASK_READCURRENTS_STACK_SIZE];
 
+// Task: Blink
+StaticTask_t task_lvsense_buffer;
+StackType_t task_lvsense_stack[TASK_LVSENSE_STACK_SIZE];
+
 // Task: HSS Output Control
 StaticTask_t task_hsscontrol_buffer;
 StackType_t task_hsscontrol_stack[TASK_HSSCONTROL_STACK_SIZE];
@@ -92,6 +96,12 @@ void Task_Init(void *argument)
         Error_Handler();
     }
 
+    if(PDU_Mk1_ADC_LVSense_Init() != true)
+    {
+        printf("FAIL:ADC_LVSENSE_INIT\n");
+        Error_Handler();
+    }
+
     if(PDU_Mk1_SDCard_Init() != true)
     {
         printf("FAIL:SDCARD_INIT\n");
@@ -123,6 +133,15 @@ void Task_Init(void *argument)
                     TASK_READCURRENTS_PRIORITY,
                     task_readcurrents_stack,
                     &task_readcurrents_buffer
+                );
+
+    xTaskCreateStatic(Task_LVSense,
+                    "LV Voltage Sense Task",
+                    TASK_LVSENSE_STACK_SIZE,
+                    NULL,
+                    TASK_LVSENSE_PRIORITY,
+                    task_lvsense_stack,
+                    &task_lvsense_buffer
                 );
 
     xTaskCreateStatic(Task_HSSControl,

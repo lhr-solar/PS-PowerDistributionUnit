@@ -48,7 +48,7 @@ void Task_CanSendStatus(void *argument)
 
 		// *((uint16_t*) (ch_data+1)) = ((uint16_t) ((24+ch_to_send*0.1)*1000));     // dummy voltage data
 		// *((uint16_t*) (ch_data+3)) = ((uint16_t) ((ch_to_send*0.67)*1000));       // dummy current data
-		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_VOLTAGE_INDEX)) = ((uint16_t) (0));     // no voltage data yet
+		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_VOLTAGE_INDEX)) = ((uint16_t) (lv_voltage*PDU_MK1_CAN_PDUSTATUS_VOLTAGE_INVFACTOR));     // no voltage data yet
 		*((uint16_t*) (ch_data+PDU_MK1_CAN_PDUSTATUS_CURRENT_INDEX)) = ((uint16_t) (PDU_Mk1_CurrentSensing_GetCurrentsPtr()[ch_to_send]*PDU_MK1_CAN_PDUSTATUS_CURRENT_INVFACTOR));
 
 		if (can_fd_send(hfdcan3, &tx_header, ch_data, pdMS_TO_TICKS(PDU_MK1_CAN_SEND_TIMEOUT_MS)) != CAN_OK){

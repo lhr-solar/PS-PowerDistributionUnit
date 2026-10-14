@@ -18,7 +18,7 @@
 // DEFINES --------------------------------------------------------------------
 
 #define TASK_HSSCONTROL_STACK_SIZE configMINIMAL_STACK_SIZE+200
-#define TASK_HSSCONTROL_PRIORITY tskIDLE_PRIORITY + 2
+#define TASK_HSSCONTROL_PRIORITY tskIDLE_PRIORITY + 4
 
 #define TASK_HSSCONTROL_INTERVAL_MS 100
 

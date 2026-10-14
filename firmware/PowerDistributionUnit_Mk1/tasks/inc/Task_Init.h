@@ -15,11 +15,13 @@
 #include "PDU_Mk1_SDCard.h"
 
 #include "PDU_Mk1_CurrentSensing.h"
+#include "PDU_Mk1_LVSense.h"
 #include "PDU_Mk1_HSSControl.h"
 
 // Tasks
 #include "Task_Blink.h"
 #include "Task_ReadCurrents.h"
+#include "Task_LVSense.h"
 #include "Task_HSSControl.h"
 #include "Task_CanSendStatus.h"
 #include "Task_SDCard.h"
@@ -27,7 +29,7 @@
 // DEFINES --------------------------------------------------------------------
 
 #define TASK_INIT_STACK_SIZE configMINIMAL_STACK_SIZE+1000
-#define TASK_INIT_PRIORITY tskIDLE_PRIORITY + 3
+#define TASK_INIT_PRIORITY tskIDLE_PRIORITY + 5
 
 // VARIABLE DECLARATIONS ------------------------------------------------------
 
