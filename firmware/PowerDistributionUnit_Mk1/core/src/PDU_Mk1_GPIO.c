@@ -57,4 +57,12 @@ void PDU_Mk1_GPIO_Init(void)
     };
     HAL_GPIO_Init(ADC_SNS0_CS_PORT, &adc_sns0_cs);
     HAL_GPIO_WritePin(ADC_SNS0_CS_PORT, ADC_SNS0_CS_PIN, 1);
+
+    GPIO_InitTypeDef sdcard_cs = {
+        .Mode = GPIO_MODE_OUTPUT_PP,
+        .Pull = GPIO_NOPULL,
+        .Pin = SDCARD_CS_PIN
+    };
+    HAL_GPIO_Init(SDCARD_CS_PORT, &sdcard_cs);
+    HAL_GPIO_WritePin(SDCARD_CS_PORT, SDCARD_CS_PIN, 1);
 }

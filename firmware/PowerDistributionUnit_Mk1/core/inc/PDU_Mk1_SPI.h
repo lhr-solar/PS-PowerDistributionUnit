@@ -5,6 +5,7 @@
 #pragma once
 
 #include "stm32xx_hal.h"
+#include "sdcard.h"
 
 #define SPI_INIT_DUMMY_SEND_TIMEOUT pdMS_TO_TICKS(100)
 
@@ -32,6 +33,13 @@ bool SPI_RTOS_Mutex_Semaphore_Setup(SemaphoreHandle_t* SPIx_mutex,
                                     StaticSemaphore_t* SPIx_mutex_buffer, 
                                     SemaphoreHandle_t* SPIx_done_sem, 
                                     StaticSemaphore_t* SPIx_done_sem_buffer);
+
+/**
+	* @brief SPI1 Initialization Function for SD card use
+	* @param None
+	* @retval bool: true if successful, false otherwise
+*/
+bool PDU_Mk1_SPI1_SDCard_Init(void);
 
 /**
 	* @brief SPI2 Initialization Function for ADS131M08-Q1 Use

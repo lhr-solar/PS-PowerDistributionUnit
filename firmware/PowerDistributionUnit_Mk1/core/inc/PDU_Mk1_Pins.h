@@ -4,7 +4,15 @@
 
 #pragma once
 
-#include "LSOM_S_Pins.h"
+#include "PDU_Mk1.h"
+
+#if defined(LSOM_U)
+ #include "LSOM_U_Pins.h"
+#elif defined(LSOM_S)
+ #include "LSOM_S_Pins.h"
+#else
+ #error "LSOM type not defined."
+#endif
 
 #define LED_PIN GPIO_PIN_3
 #define LED_PORT GPIOC
@@ -36,3 +44,20 @@
 
 #define ADC_SNS0_SYNCRESET_PORT LSOM_40_PORT
 #define ADC_SNS0_SYNCRESET_PIN LSOM_40_PIN
+
+#define SDCARD_CS_PORT       GPIOA
+#define SDCARD_CS_PIN        GPIO_PIN_4
+
+#define SDCARD_SCK_PORT      GPIOA
+#define SDCARD_SCK_PIN       GPIO_PIN_5
+
+#define SDCARD_MISO_PORT     GPIOA
+#define SDCARD_MISO_PIN      GPIO_PIN_6
+
+#define SDCARD_MOSI_PORT     GPIOA
+#define SDCARD_MOSI_PIN      GPIO_PIN_7
+
+// LVSense ADC stuff start
+
+#define LVSENSE_ADC_PORT    LSOM_12_PORT
+#define LVSENSE_ADC_PIN     LSOM_12_PIN

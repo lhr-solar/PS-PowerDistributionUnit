@@ -86,7 +86,7 @@ int main()
                     "Init Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
-                    tskIDLE_PRIORITY + 1,
+                    tskIDLE_PRIORITY + 2,
                     initTaskStack,
                     &initTaskBuffer
                 );
@@ -104,7 +104,7 @@ int main()
                     "Print Task",
                     configMINIMAL_STACK_SIZE,
                     NULL,
-                    tskIDLE_PRIORITY + 1,
+                    tskIDLE_PRIORITY + 2,
                     printTaskStack,
                     &printTaskBuffer
                 );
