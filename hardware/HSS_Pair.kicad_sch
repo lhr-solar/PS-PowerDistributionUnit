@@ -9633,7 +9633,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PDU_TPS2HCS08AQPWPRQ1:TSSOP16_4P5X5P1_2P78X3P313_TEX"
+		(property "Footprint" "PDU_TPS2HCS08AQPWPRQ1:TPS2HCS08AQPWPRQ1"
 			(at 167.005 179.375 0)
 			(hide yes)
 			(show_name no)
