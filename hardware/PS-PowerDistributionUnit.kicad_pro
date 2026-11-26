@@ -904,7 +904,7 @@
       "3V3 LDO"
     ],
     [
-      "5f882ee8-4058-42ef-8b0d-c295b84bc6de",
+      "86f1cdef-0932-4576-ab28-be5f8ad7602b",
       "PowerProtection"
     ],
     [
@@ -956,8 +956,8 @@
       "12VBuck"
     ],
     [
-      "f81579d2-7db1-4332-bf6b-3f69d0bc1a0d",
-      "USB-C Connector"
+      "627917c3-ac79-4e9c-bed1-32fae5238382",
+      "USB-C_Connector"
     ]
   ],
   "text_variables": {},
