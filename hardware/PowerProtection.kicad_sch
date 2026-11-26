@@ -163,7 +163,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_US"
+		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
 			)
@@ -176,7 +176,7 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "R"
-				(at 2.54 0 90)
+				(at 2.032 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -185,8 +185,8 @@
 					)
 				)
 			)
-			(property "Value" "R_US"
-				(at -2.54 0 90)
+			(property "Value" "R"
+				(at 0 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -196,7 +196,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 1.016 -0.254 90)
+				(at -1.778 0 90)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -217,7 +217,7 @@
 					)
 				)
 			)
-			(property "Description" "Resistor, US symbol"
+			(property "Description" "Resistor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -250,61 +250,12 @@
 					)
 				)
 			)
-			(symbol "R_US_0_1"
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 0 2.54)
-					)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
 					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -312,7 +263,7 @@
 					)
 				)
 			)
-			(symbol "R_US_1_1"
+			(symbol "R_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -1638,6 +1589,16 @@
 			)
 		)
 		(uuid "727bf9c3-1734-4672-b662-92fe1024f40d")
+	)
+	(text "Supp Battery Range:\n10V-14.7V"
+		(exclude_from_sim no)
+		(at 23.622 40.132 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c2dd4931-d5fc-46ac-aa80-da145d727bd3")
 	)
 	(text_box "Resistor Dividers"
 		(exclude_from_sim no)
@@ -4808,7 +4769,7 @@
 				)
 				(uuid "bb270ae7-5c48-4a3d-bfcc-15d90cba6125")
 			)
-			(table_cell "15.29"
+			(table_cell "14.96"
 				(exclude_from_sim no)
 				(at 166.37 67.31 0)
 				(size 10.16 2.54)
@@ -4825,7 +4786,7 @@
 				)
 				(uuid "0d83e666-0207-4c50-9876-b30d7d9b99f8")
 			)
-			(table_cell "16.76\n"
+			(table_cell "16.38\n"
 				(exclude_from_sim no)
 				(at 176.53 67.31 0)
 				(size 8.89 2.54)
@@ -4842,7 +4803,7 @@
 				)
 				(uuid "9ec99d23-9695-4fee-9818-ba0cb597ac63")
 			)
-			(table_cell "18.25"
+			(table_cell "17.84"
 				(exclude_from_sim no)
 				(at 185.42 67.31 0)
 				(size 8.89 2.54)
@@ -4876,7 +4837,7 @@
 				)
 				(uuid "a2520d70-d03d-46ee-bbec-1737311ae36c")
 			)
-			(table_cell "16.77"
+			(table_cell "16.39"
 				(exclude_from_sim no)
 				(at 166.37 69.85 0)
 				(size 10.16 2.54)
@@ -4893,7 +4854,7 @@
 				)
 				(uuid "8b8205f6-5c9f-407a-b5b5-69d13eb85fb5")
 			)
-			(table_cell "18.33"
+			(table_cell "17.92"
 				(exclude_from_sim no)
 				(at 176.53 69.85 0)
 				(size 8.89 2.54)
@@ -4910,7 +4871,7 @@
 				)
 				(uuid "3ea915b5-fbfe-4f0a-914d-575394de6387")
 			)
-			(table_cell "19.91"
+			(table_cell "19.47"
 				(exclude_from_sim no)
 				(at 185.42 69.85 0)
 				(size 8.89 2.54)
@@ -4944,7 +4905,7 @@
 				)
 				(uuid "08de0d4c-6d6e-42ed-91b9-2d361b31a270")
 			)
-			(table_cell "7.40"
+			(table_cell "7.32"
 				(exclude_from_sim no)
 				(at 166.37 72.39 0)
 				(size 10.16 2.54)
@@ -4961,7 +4922,7 @@
 				)
 				(uuid "d73a8751-7549-4433-80e8-162f216db0d8")
 			)
-			(table_cell "8.36"
+			(table_cell "8.26"
 				(exclude_from_sim no)
 				(at 176.53 72.39 0)
 				(size 8.89 2.54)
@@ -4978,7 +4939,7 @@
 				)
 				(uuid "c333a5c9-13a0-47b1-afb3-70cfbf88d03d")
 			)
-			(table_cell "9.21"
+			(table_cell "9.11"
 				(exclude_from_sim no)
 				(at 185.42 72.39 0)
 				(size 8.89 2.54)
@@ -5012,7 +4973,7 @@
 				)
 				(uuid "623d9b45-2718-4b0b-a7dd-ca3a95f7582a")
 			)
-			(table_cell "8.36"
+			(table_cell "8.27"
 				(exclude_from_sim no)
 				(at 166.37 74.93 0)
 				(size 10.16 2.54)
@@ -5029,7 +4990,7 @@
 				)
 				(uuid "b49113f4-919e-41ce-8561-d02e3c487d58")
 			)
-			(table_cell "9.09"
+			(table_cell "8.99"
 				(exclude_from_sim no)
 				(at 176.53 74.93 0)
 				(size 8.89 2.54)
@@ -5046,7 +5007,7 @@
 				)
 				(uuid "c6f2abba-a3e5-484e-905f-5932e575b689")
 			)
-			(table_cell "9.84"
+			(table_cell "9.74"
 				(exclude_from_sim no)
 				(at 185.42 74.93 0)
 				(size 8.89 2.54)
@@ -5291,115 +5252,6 @@
 		(uuid "d4b220b6-0bfb-4e81-a6a0-7446c58193d0")
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 129.54 90.17 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0080b75d-17e1-44a9-a149-150b85562bd3")
-		(property "Reference" "C9"
-			(at 125.984 89.154 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1u"
-			(at 132.842 88.392 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 128.5748 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 129.54 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C1591"
-			(at 129.54 90.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "CL10B104KB8NNNC"
-			(at 129.54 90.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "6ba7675f-70e1-4383-b79d-d0a5bbe78a63")
-		)
-		(pin "1"
-			(uuid "cfc808ec-88b6-4d23-80c9-72cf227e280d")
-		)
-		(instances
-			(project "PowerProtection"
-				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
-					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "lhrs_power:SMAF4758A")
 		(at 43.18 83.82 270)
 		(unit 1)
@@ -5501,7 +5353,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "D3")
 					(unit 1)
 				)
@@ -5576,7 +5428,7 @@
 				)
 			)
 		)
-		(property "P/N" "MSASU168SB7224KTNB25"
+		(property "P/N" "CC0603KRX7R9BB224"
 			(at 54.61 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -5587,18 +5439,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" "963-MSASU168SB7224KT"
-			(at 54.61 81.28 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C344195"
+		(property "LCSC P/N" "C107083"
 			(at 54.61 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -5623,7 +5464,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "C5")
 					(unit 1)
 				)
@@ -5732,7 +5573,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "D2")
 					(unit 1)
 				)
@@ -5740,7 +5581,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:R")
 		(at 43.18 62.23 180)
 		(unit 1)
 		(body_style 1)
@@ -5817,17 +5658,6 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" "71-CRCW060310K0FKEI"
-			(at 43.18 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "LCSC P/N" "C25804"
 			(at 43.18 62.23 0)
 			(hide yes)
@@ -5853,7 +5683,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R9")
 					(unit 1)
 				)
@@ -5861,7 +5691,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:R")
 		(at 139.7 90.17 180)
 		(unit 1)
 		(body_style 1)
@@ -5881,7 +5711,7 @@
 				)
 			)
 		)
-		(property "Value" "15.8k"
+		(property "Value" "16k"
 			(at 141.986 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5924,7 +5754,7 @@
 				)
 			)
 		)
-		(property "P/N" "CRCW0603137KFKEA"
+		(property "P/N" "CRCW060315K8FKEA"
 			(at 139.7 90.17 90)
 			(hide yes)
 			(show_name no)
@@ -5935,7 +5765,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C2090646"
+		(property "LCSC P/N" "C843918"
 			(at 139.7 90.17 90)
 			(hide yes)
 			(show_name no)
@@ -5960,7 +5790,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R14")
 					(unit 1)
 				)
@@ -6069,7 +5899,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "C3")
 					(unit 1)
 				)
@@ -6077,7 +5907,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:R")
 		(at 67.31 57.15 90)
 		(unit 1)
 		(body_style 1)
@@ -6140,7 +5970,7 @@
 				)
 			)
 		)
-		(property "P/N" "CRCW060333R0FKEA"
+		(property "P/N" "MCT06030C3309FP500"
 			(at 67.31 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -6151,18 +5981,7 @@
 				)
 			)
 		)
-		(property "Mouser Part Number" "594-MCT06030C2003FP5"
-			(at 67.31 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C844927"
+		(property "LCSC P/N" "C2074308"
 			(at 67.31 57.15 0)
 			(hide yes)
 			(show_name no)
@@ -6187,117 +6006,8 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 110.49 90.17 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "695f9767-116e-48fc-b456-831abf151e72")
-		(property "Reference" "C8"
-			(at 107.188 88.9 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0.1u"
-			(at 114.046 88.392 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
-			(at 109.5248 86.36 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 110.49 90.17 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC P/N" "C1591"
-			(at 110.49 90.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "CL10B104KB8NNNC"
-			(at 110.49 90.17 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "e2966b97-a24f-4d20-92a4-c931fbb1b711")
-		)
-		(pin "1"
-			(uuid "1f343914-dcdd-4bed-80ca-f3a1a5c02b24")
-		)
-		(instances
-			(project "PowerProtection"
-				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
-					(reference "C7")
-					(unit 1)
-				)
-			)
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
-					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -6381,54 +6091,6 @@
 				(justify left top)
 			)
 		)
-		(property "Mouser Part Number" "595-LM74502DDFR"
-			(at 87.63 572.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/LM74502HDDFR?qs=t7xnP681wgWDbfat8Yg%252B%2Fg%3D%3D"
-			(at 87.63 672.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "Texas Instruments"
-			(at 87.63 772.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "LM74502DDFR"
-			(at 87.63 872.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
 		(property "P/N" "LM74502DDFR"
 			(at 58.42 77.47 0)
 			(hide yes)
@@ -6483,7 +6145,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "IC1")
 					(unit 1)
 				)
@@ -6554,39 +6216,6 @@
 				)
 			)
 		)
-		(property "Sim.Device" "NMOS"
-			(at 73.025 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 74.93 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 71.12 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "P/N" "PSMN012-100YSFX"
 			(at 55.88 46.99 0)
 			(hide yes)
@@ -6632,8 +6261,117 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 110.49 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9ad8d2ea-210c-4b9b-a887-7ae5ea15f9b5")
+		(property "Reference" "C8"
+			(at 113.284 89.154 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 113.03 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 111.4552 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 110.49 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "CL10B104KB8NNNC"
+			(at 110.49 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
+			(at 110.49 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "895e779b-ef52-4051-a908-67797d19d382")
+		)
+		(pin "2"
+			(uuid "2cc562ca-4b0c-40c7-a2f8-639421910e27")
+		)
+		(instances
+			(project "PowerProtection"
+				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
+					(reference "C6")
+					(unit 1)
+				)
+			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -6705,7 +6443,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C57112"
+		(property "P/N" "CC0603KRX7R9BB103"
 			(at 60.96 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6716,18 +6454,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C6600162"
-			(at 60.96 63.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "P/N" "MSASH168SB5103KTNA01"
+		(property "LCSC P/N" "C100042"
 			(at 60.96 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6752,7 +6479,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "C6")
 					(unit 1)
 				)
@@ -6825,7 +6552,7 @@
 				)
 			)
 		)
-		(property "P/N" "GRM21BR61H106KE43K"
+		(property "P/N" "GRM21BR61H106KE43L"
 			(at 109.22 53.975 0)
 			(hide yes)
 			(show_name no)
@@ -6861,7 +6588,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "C7")
 					(unit 1)
 				)
@@ -6933,39 +6660,6 @@
 				)
 			)
 		)
-		(property "Sim.Device" "NMOS"
-			(at 76.835 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 74.93 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 78.74 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "P/N" "PSMN012-100YSFX"
 			(at 93.98 46.99 0)
 			(hide yes)
@@ -7011,7 +6705,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "Q2")
 					(unit 1)
 				)
@@ -7019,7 +6713,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:R")
 		(at 120.65 90.17 0)
 		(unit 1)
 		(body_style 1)
@@ -7039,7 +6733,7 @@
 				)
 			)
 		)
-		(property "Value" "7.32k"
+		(property "Value" "7.5k"
 			(at 123.19 90.17 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7082,7 +6776,7 @@
 				)
 			)
 		)
-		(property "P/N" "CRCW060310K0FKEI"
+		(property "P/N" "RT0603BRE077K32L"
 			(at 120.65 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -7093,7 +6787,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C25804"
+		(property "LCSC P/N" "C862286"
 			(at 120.65 90.17 90)
 			(hide yes)
 			(show_name no)
@@ -7118,7 +6812,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R12")
 					(unit 1)
 				)
@@ -7203,7 +6897,7 @@
 				)
 			)
 		)
-		(property "LCSC P/N" "C15849"
+		(property "LCSC P/N" "C559769"
 			(at 35.56 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -7228,7 +6922,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "C4")
 					(unit 1)
 				)
@@ -7236,7 +6930,116 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:C")
+		(at 129.54 90.17 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d82c2d9c-5f25-43a3-bd89-29d34615c72c")
+		(property "Reference" "C9"
+			(at 132.08 88.9 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1u"
+			(at 131.826 91.44 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 130.5052 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 129.54 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "CL10B104KB8NNNC"
+			(at 129.54 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C1591"
+			(at 129.54 90.17 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2f31ea3-a8a2-4336-9b12-f84fa7f3521a")
+		)
+		(pin "2"
+			(uuid "aa9e46f1-16e6-441f-88d2-e09f0d866751")
+		)
+		(instances
+			(project "PowerProtection"
+				(path "/a968d2b9-0c0e-491c-a5a4-aacd8448ff64"
+					(reference "C7")
+					(unit 1)
+				)
+			)
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 115.57 77.47 0)
 		(unit 1)
 		(body_style 1)
@@ -7337,7 +7140,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R11")
 					(unit 1)
 				)
@@ -7345,7 +7148,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "Device:R")
 		(at 134.62 77.47 0)
 		(unit 1)
 		(body_style 1)
@@ -7444,7 +7247,7 @@
 				)
 			)
 			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/5f882ee8-4058-42ef-8b0d-c295b84bc6de"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3/bc89eca8-b5eb-4f73-93f6-523cd90fd814"
 					(reference "R13")
 					(unit 1)
 				)

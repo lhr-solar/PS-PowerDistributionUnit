@@ -478,17 +478,17 @@
 	)
 	(wire
 		(pts
-			(xy 133.985 136.525) (xy 139.065 136.525)
+			(xy 110.49 55.245) (xy 114.935 55.245)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0f1bd7e6-60aa-44db-8f01-b2769cec2881")
+		(uuid "0a52fa9b-54d3-4304-83dc-7b82bbc08d7b")
 	)
 	(wire
 		(pts
-			(xy 93.98 58.42) (xy 97.155 58.42)
+			(xy 93.98 58.42) (xy 97.79 58.42)
 		)
 		(stroke
 			(width 0)
@@ -535,16 +535,6 @@
 			(type default)
 		)
 		(uuid "27ebc168-f444-414c-8632-d33c528deeda")
-	)
-	(wire
-		(pts
-			(xy 133.985 131.445) (xy 139.065 131.445)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "51ad3ee0-a529-4a67-8820-f516718d3c52")
 	)
 	(wire
 		(pts
@@ -678,16 +668,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.125 55.245) (xy 114.935 55.245)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "905897d0-0347-4575-b9d6-e6a6b135a299")
-	)
-	(wire
-		(pts
 			(xy 189.23 57.785) (xy 189.23 58.42)
 		)
 		(stroke
@@ -695,16 +675,6 @@
 			(type default)
 		)
 		(uuid "910dcd4e-5af7-46f1-9ae2-14adf047efe6")
-	)
-	(wire
-		(pts
-			(xy 133.985 114.935) (xy 168.275 114.935)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92f2e56c-fa23-4030-8738-6ffc47aceb53")
 	)
 	(wire
 		(pts
@@ -738,7 +708,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 55.245) (xy 97.155 55.245)
+			(xy 133.35 114.935) (xy 168.275 114.935)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a78ccf16-d1cc-47f6-9d3f-11f3179d56b3")
+	)
+	(wire
+		(pts
+			(xy 93.98 55.245) (xy 97.79 55.245)
 		)
 		(stroke
 			(width 0)
@@ -755,6 +735,16 @@
 			(type default)
 		)
 		(uuid "d39b63a3-b173-4e6b-9d84-0c34d613c005")
+	)
+	(wire
+		(pts
+			(xy 133.35 131.445) (xy 139.065 131.445)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d697d38d-b769-4925-93b6-b47cde4f8794")
 	)
 	(wire
 		(pts
@@ -778,7 +768,17 @@
 	)
 	(wire
 		(pts
-			(xy 93.345 137.795) (xy 100.965 137.795)
+			(xy 133.35 136.525) (xy 139.065 136.525)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8160f24-2ce5-48d6-975c-8078a37c108a")
+	)
+	(wire
+		(pts
+			(xy 93.345 137.795) (xy 101.6 137.795)
 		)
 		(stroke
 			(width 0)
@@ -1751,8 +1751,8 @@
 		)
 	)
 	(sheet
-		(at 97.155 52.07)
-		(size 13.97 10.16)
+		(at 101.6 111.76)
+		(size 31.75 29.21)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -1765,9 +1765,9 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "5f882ee8-4058-42ef-8b0d-c295b84bc6de")
-		(property "Sheetname" "PowerProtection"
-			(at 97.155 51.3584 0)
+		(uuid "66e7b506-c0ab-424e-b1a5-a50c4506081f")
+		(property "Sheetname" "USB-C_Connector"
+			(at 101.6 111.0484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1777,8 +1777,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "PowerProtection.kicad_sch"
-			(at 97.155 62.8146 0)
+		(property "Sheetfile" "USB-C_Connector.kicad_sch"
+			(at 101.6 141.5546 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1788,9 +1788,31 @@
 				(justify left top)
 			)
 		)
+		(property "Author" "Shuopu Wang"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Date Modified" "9/5/2026"
+			(at 0 0 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "GND" input
-			(at 97.155 58.42 180)
-			(uuid "b994dff6-4640-4508-b55a-be1b490b7a74")
+			(at 101.6 137.795 180)
+			(uuid "dce25a97-0fbd-4168-abc1-c68b018a4feb")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1798,19 +1820,29 @@
 				(justify left)
 			)
 		)
-		(pin "Vin" input
-			(at 97.155 55.245 180)
-			(uuid "cfc5ec2a-175a-42b0-abe1-925ec84c9e99")
+		(pin "USB_D+" bidirectional
+			(at 133.35 131.445 0)
+			(uuid "20d2f2a1-bed3-47e6-9ba2-fe55c1fab9f5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(pin "Vout" output
-			(at 111.125 55.245 0)
-			(uuid "78ef33c2-9f85-4295-9f00-6d0cf18dde9d")
+		(pin "USB_D-" bidirectional
+			(at 133.35 136.525 0)
+			(uuid "efe189e3-b82c-4dcd-a8a0-bdf35c64292d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB_5V" output
+			(at 133.35 114.935 0)
+			(uuid "7bd3e194-219c-4571-b209-43398a47a987")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1821,7 +1853,7 @@
 		(instances
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(page "4")
+					(page "17")
 				)
 			)
 		)
@@ -1979,6 +2011,82 @@
 		)
 	)
 	(sheet
+		(at 97.79 53.34)
+		(size 12.7 6.35)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "bc89eca8-b5eb-4f73-93f6-523cd90fd814")
+		(property "Sheetname" "PowerProtection"
+			(at 97.79 52.6284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "PowerProtection.kicad_sch"
+			(at 97.79 60.2746 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "GND" input
+			(at 97.79 58.42 180)
+			(uuid "50e251b1-d7f0-495c-8415-0867f0f58e37")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Vin" input
+			(at 97.79 55.245 180)
+			(uuid "285ac550-d953-429e-b04e-54ec8dc469fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Vout" output
+			(at 110.49 55.245 0)
+			(uuid "21497289-8b6d-4f1d-80a5-cbb1d886ea3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 168.275 111.76)
 		(size 33.02 31.115)
 		(exclude_from_sim no)
@@ -2070,114 +2178,6 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
 					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 100.965 111.76)
-		(size 33.02 31.115)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "f81579d2-7db1-4332-bf6b-3f69d0bc1a0d")
-		(property "Sheetname" "USB-C Connector"
-			(at 100.965 111.0484 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "USB-C Connector.kicad_sch"
-			(at 100.965 143.4596 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Author" "Shuopu Wang"
-			(at 79.375 29.464 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Date Modified" "9/5/2026"
-			(at 79.375 29.464 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "GND" input
-			(at 100.965 137.795 180)
-			(uuid "6bcac068-e7a5-48dd-9122-ff9f6f5ea737")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "USB_5V" output
-			(at 133.985 114.935 0)
-			(uuid "022dc686-3767-43ed-9d91-011dcd1111fe")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "USB_DM" bidirectional
-			(at 133.985 131.445 0)
-			(uuid "16588aaa-7f0b-4f51-9c29-10abd23d6fe1")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "USB_DP" bidirectional
-			(at 133.985 136.525 0)
-			(uuid "b10f5eb8-4e8d-488e-8f38-38372f7af244")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "PS-PowerDistributionUnit"
-				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362/e5e6ee2e-1d09-4fff-9eef-bc055f220fc3"
-					(page "17")
 				)
 			)
 		)
