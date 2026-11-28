@@ -1478,6 +1478,230 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lhrs_misc:Blue_LED"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LED"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "kicad-embed://Blue LED.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Light emitting diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC P/N" "C125103"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "P/N" "LTST-C193TBKT-5A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "LED diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Blue_LED_0_1"
+				(polyline
+					(pts
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Blue_LED_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+			(embedded_files)
+		)
 		(symbol "power:+12V"
 			(power global)
 			(pin_numbers
@@ -2012,8 +2236,8 @@
 		)
 	)
 	(rectangle
-		(start 129.54 129.54)
-		(end 167.64 152.4)
+		(start 125.73 129.54)
+		(end 172.72 176.53)
 		(stroke
 			(width 0)
 			(type default)
@@ -2060,7 +2284,7 @@
 		(uuid "9775247e-61f3-4217-a51b-57e5a5f7fb30")
 	)
 	(rectangle
-		(start 124.968 155.448)
+		(start 124.968 181.61)
 		(end 173.228 191.008)
 		(stroke
 			(width 0)
@@ -2116,7 +2340,7 @@
 	)
 	(text "12V HSS"
 		(exclude_from_sim no)
-		(at 136.144 133.096 0)
+		(at 132.969 133.096 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2171,6 +2395,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "22ce8845-2e8d-43a7-be31-f2cb10c237d4")
+	)
+	(junction
+		(at 149.225 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "245da635-2158-4e1b-9a60-cfd41e363e69")
 	)
 	(junction
 		(at 248.285 96.52)
@@ -2251,6 +2481,12 @@
 		(uuid "d3bdbffc-12f3-43bb-9306-dd892b2ab059")
 	)
 	(junction
+		(at 156.21 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d955ebe4-d638-470d-98b0-e635222ec749")
+	)
+	(junction
 		(at 124.46 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2285,12 +2521,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb4ab609-ec4c-4152-bdc1-5d2459995a42")
-	)
-	(junction
-		(at 152.4 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f00ef4cc-2464-4eb7-85b1-b7caa9613e74")
 	)
 	(junction
 		(at 248.285 86.36)
@@ -2581,6 +2811,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 155.575) (xy 156.21 158.115)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3284fa7d-4119-4615-ae0a-6f7a019daecd")
+	)
+	(wire
+		(pts
 			(xy 52.705 135.255) (xy 53.975 135.255)
 		)
 		(stroke
@@ -2648,6 +2888,16 @@
 			(type default)
 		)
 		(uuid "3dc2b4ff-dad3-451d-88c7-2d5a6d3fa326")
+	)
+	(wire
+		(pts
+			(xy 156.21 146.05) (xy 149.225 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3edd0341-b922-45c0-bd3c-adecbfe5ddfa")
 	)
 	(wire
 		(pts
@@ -2741,7 +2991,7 @@
 	)
 	(wire
 		(pts
-			(xy 164.465 146.05) (xy 152.4 146.05)
+			(xy 170.815 146.05) (xy 156.21 146.05)
 		)
 		(stroke
 			(width 0)
@@ -2821,7 +3071,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.255 143.51) (xy 135.255 146.05)
+			(xy 132.08 143.51) (xy 132.08 146.05)
 		)
 		(stroke
 			(width 0)
@@ -3241,7 +3491,7 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 146.05) (xy 146.05 146.05)
+			(xy 149.225 146.05) (xy 142.875 146.05)
 		)
 		(stroke
 			(width 0)
@@ -3311,6 +3561,16 @@
 	)
 	(wire
 		(pts
+			(xy 156.21 146.05) (xy 156.21 147.955)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b32bbd11-5b41-4ef7-91f6-526900eab1a9")
+	)
+	(wire
+		(pts
 			(xy 212.09 93.98) (xy 222.25 93.98)
 		)
 		(stroke
@@ -3361,7 +3621,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.255 146.05) (xy 138.43 146.05)
+			(xy 132.08 146.05) (xy 135.255 146.05)
 		)
 		(stroke
 			(width 0)
@@ -3758,6 +4018,16 @@
 			(type default)
 		)
 		(uuid "f1569227-356c-4e05-ad74-e578d67ff2ff")
+	)
+	(wire
+		(pts
+			(xy 156.21 165.735) (xy 156.21 167.005)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f251806e-7d42-4ff8-af57-c47d0d1fd111")
 	)
 	(wire
 		(pts
@@ -4180,7 +4450,7 @@
 		(uuid "b30137ca-47b4-4cd7-b50a-660f1f8728ee")
 	)
 	(label "+12V_HSS"
-		(at 164.465 146.05 180)
+		(at 170.815 146.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4556,6 +4826,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 156.21 161.925 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "150e3ec7-64a6-40d0-bca9-0faa1db7f554")
+		(property "Reference" "R92"
+			(at 158.75 160.6549 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 158.75 163.1949 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 157.988 161.925 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 161.925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 156.21 161.925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C25804"
+			(at 156.21 161.925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "0603WAF1002T5E"
+			(at 156.21 161.925 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "816eab73-8b04-4013-be86-2dc18d9830f3")
+		)
+		(pin "1"
+			(uuid "5431ae29-dc2e-4224-882c-eacf91fd2716")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "R92")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 122.555 121.92 0)
 		(unit 1)
@@ -4733,8 +5107,123 @@
 		)
 	)
 	(symbol
+		(lib_id "lhrs_misc:Blue_LED")
+		(at 156.21 151.765 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2d28540f-d3c1-4bdd-bc3a-6229e89b26e9")
+		(property "Reference" "D52"
+			(at 160.02 152.0824 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 160.02 154.6224 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "kicad-embed://Blue LED.pdf"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC P/N" "C125103"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "P/N" "LTST-C193TBKT-5A"
+			(at 156.21 151.765 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7f58e38c-e5a7-4597-935a-e06ecea3886e")
+		)
+		(pin "2"
+			(uuid "9c2acfaa-a252-436b-b651-5e03f6b7e1bb")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "D52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 152.4 146.05 0)
+		(at 149.225 146.05 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4744,7 +5233,7 @@
 		(dnp no)
 		(uuid "310d7dc7-2e26-4990-a7ae-8661da9175c6")
 		(property "Reference" "TP18"
-			(at 150.241 140.208 0)
+			(at 147.066 140.208 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4755,7 +5244,7 @@
 			)
 		)
 		(property "Value" "12V_PHSS"
-			(at 145.923 148.59 0)
+			(at 142.748 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4766,7 +5255,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_THTPad_D3.0mm_Drill1.5mm"
-			(at 157.48 146.05 0)
+			(at 154.305 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4777,7 +5266,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 146.05 0)
+			(at 154.305 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4788,7 +5277,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 152.4 146.05 0)
+			(at 149.225 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5160,7 +5649,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 142.24 146.05 270)
+		(at 139.065 146.05 270)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -5172,7 +5661,7 @@
 		(fields_autoplaced yes)
 		(uuid "44edc056-e8be-4c6b-8f00-18dd11a791fb")
 		(property "Reference" "F1"
-			(at 142.24 139.7 90)
+			(at 139.065 139.7 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5182,7 +5671,7 @@
 			)
 		)
 		(property "Value" "5A"
-			(at 142.24 142.24 90)
+			(at 139.065 142.24 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5192,7 +5681,7 @@
 			)
 		)
 		(property "Footprint" "LHRS_Power:Fuse-3557-2"
-			(at 142.24 147.828 90)
+			(at 139.065 147.828 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5203,7 +5692,7 @@
 			)
 		)
 		(property "Datasheet" "kicad-embed://3557-2-datasheet.pdf"
-			(at 142.24 146.05 0)
+			(at 139.065 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5214,7 +5703,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 142.24 146.05 0)
+			(at 139.065 146.05 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5225,7 +5714,7 @@
 			)
 		)
 		(property "LCSC P/N" "C3205238"
-			(at 142.24 146.05 90)
+			(at 139.065 146.05 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5236,7 +5725,7 @@
 			)
 		)
 		(property "P/N" "3557-2"
-			(at 142.24 146.05 90)
+			(at 139.065 146.05 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5690,6 +6179,84 @@
 			(project "PS-PowerDistributionUnit"
 				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
 					(reference "TP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 156.21 167.005 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5d99b14c-5147-4794-858b-136290f9fd55")
+		(property "Reference" "#PWR014"
+			(at 156.21 173.355 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 156.21 172.085 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 156.21 167.005 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 156.21 167.005 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 156.21 167.005 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9820bb8d-de4e-43c5-8cc7-254b88942563")
+		)
+		(instances
+			(project "PS-PowerDistributionUnit"
+				(path "/eb16378f-e371-46a9-bfab-b0d9404d0362"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -8218,7 +8785,7 @@
 	)
 	(symbol
 		(lib_id "power:+12V")
-		(at 135.255 143.51 0)
+		(at 132.08 143.51 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8229,7 +8796,7 @@
 		(fields_autoplaced yes)
 		(uuid "d951aeb0-e099-416d-8e54-891c706616ed")
 		(property "Reference" "#PWR013"
-			(at 135.255 147.32 0)
+			(at 132.08 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8240,7 +8807,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 135.255 138.43 0)
+			(at 132.08 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8250,7 +8817,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 135.255 143.51 0)
+			(at 132.08 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8261,7 +8828,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 135.255 143.51 0)
+			(at 132.08 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8272,7 +8839,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 135.255 143.51 0)
+			(at 132.08 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
